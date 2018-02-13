@@ -62,6 +62,7 @@ namespace Presentacion.Otros
             chk1.Checked = false;
             chk2.Checked = false;
             chk3.Checked = false;
+            chkmodificar.Checked = false;
         }
         #endregion
 
