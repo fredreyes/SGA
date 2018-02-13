@@ -21,7 +21,23 @@ BEGIN
 		)
 END
 go
-
+CREATE PROC MODIFICAR_TURNOS
+(
+@TURNOID int,
+@TURNO VARCHAR(200),
+@OBSERVACION NVARCHAR(200),
+@ACTIVO BIT
+)
+AS
+BEGIN
+		UPDATE  Turnos
+		SET
+		Turno = @TURNO,
+		Descripcion = @OBSERVACION,
+		Activo = @ACTIVO
+		where TurnoId = @TURNOID
+END
+go
 
 --COLEGIO
 CREATE PROC IngresarColegio
