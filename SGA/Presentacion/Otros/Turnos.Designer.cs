@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbtncancelar = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rbtnActivo = new MaterialSkin.Controls.MaterialRadioButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +51,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.rbtncancelar);
+            this.groupBox1.Controls.Add(this.rbtnActivo);
             this.groupBox1.Controls.Add(this.menuStrip1);
             this.groupBox1.Controls.Add(this.chkeditar);
             this.groupBox1.Controls.Add(this.gridControl1);
@@ -57,10 +61,44 @@
             this.groupBox1.Controls.Add(this.txtTurno);
             this.groupBox1.Location = new System.Drawing.Point(0, 64);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(294, 341);
+            this.groupBox1.Size = new System.Drawing.Size(294, 330);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // rbtncancelar
+            // 
+            this.rbtncancelar.AutoSize = true;
+            this.rbtncancelar.Depth = 0;
+            this.rbtncancelar.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbtncancelar.Location = new System.Drawing.Point(169, 164);
+            this.rbtncancelar.Margin = new System.Windows.Forms.Padding(0);
+            this.rbtncancelar.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbtncancelar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbtncancelar.Name = "rbtncancelar";
+            this.rbtncancelar.Ripple = true;
+            this.rbtncancelar.Size = new System.Drawing.Size(83, 30);
+            this.rbtncancelar.TabIndex = 14;
+            this.rbtncancelar.TabStop = true;
+            this.rbtncancelar.Text = "Cancelar";
+            this.rbtncancelar.UseVisualStyleBackColor = true;
+            // 
+            // rbtnActivo
+            // 
+            this.rbtnActivo.AutoSize = true;
+            this.rbtnActivo.Depth = 0;
+            this.rbtnActivo.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbtnActivo.Location = new System.Drawing.Point(29, 164);
+            this.rbtnActivo.Margin = new System.Windows.Forms.Padding(0);
+            this.rbtnActivo.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbtnActivo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbtnActivo.Name = "rbtnActivo";
+            this.rbtnActivo.Ripple = true;
+            this.rbtnActivo.Size = new System.Drawing.Size(68, 30);
+            this.rbtnActivo.TabIndex = 13;
+            this.rbtnActivo.TabStop = true;
+            this.rbtnActivo.Text = "Activo";
+            this.rbtnActivo.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
@@ -86,20 +124,20 @@
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
             // exportarToolStripMenuItem
             // 
             this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
-            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.exportarToolStripMenuItem.Text = "Exportar XLS";
             // 
             // exportarPDFToolStripMenuItem
             // 
             this.exportarPDFToolStripMenuItem.Name = "exportarPDFToolStripMenuItem";
-            this.exportarPDFToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportarPDFToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.exportarPDFToolStripMenuItem.Text = "Exportar PDF";
             // 
             // chkeditar
@@ -120,7 +158,7 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 181);
+            this.gridControl1.Location = new System.Drawing.Point(12, 244);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(270, 149);
@@ -140,7 +178,7 @@
             this.btnGuardar.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Appearance.Options.UseFont = true;
             this.btnGuardar.ImageUri.Uri = "Save";
-            this.btnGuardar.Location = new System.Drawing.Point(107, 136);
+            this.btnGuardar.Location = new System.Drawing.Point(110, 202);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(91, 32);
             this.btnGuardar.TabIndex = 9;
@@ -151,7 +189,7 @@
             // 
             this.txtObservacion.Depth = 0;
             this.txtObservacion.Hint = "Observación";
-            this.txtObservacion.Location = new System.Drawing.Point(45, 107);
+            this.txtObservacion.Location = new System.Drawing.Point(49, 129);
             this.txtObservacion.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtObservacion.Name = "txtObservacion";
             this.txtObservacion.PasswordChar = '\0';
@@ -166,7 +204,7 @@
             // 
             this.txtTurno.Depth = 0;
             this.txtTurno.Hint = "Turno";
-            this.txtTurno.Location = new System.Drawing.Point(45, 65);
+            this.txtTurno.Location = new System.Drawing.Point(49, 87);
             this.txtTurno.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTurno.Name = "txtTurno";
             this.txtTurno.PasswordChar = '\0';
@@ -181,7 +219,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(294, 406);
+            this.ClientSize = new System.Drawing.Size(294, 469);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -213,5 +251,7 @@
         private DevExpress.XtraEditors.SimpleButton btnGuardar;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtObservacion;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtTurno;
+        private MaterialSkin.Controls.MaterialRadioButton rbtncancelar;
+        private MaterialSkin.Controls.MaterialRadioButton rbtnActivo;
     }
 }

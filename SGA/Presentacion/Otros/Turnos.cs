@@ -27,11 +27,40 @@ namespace Presentacion.Otros
         public int Bandera;
         private void Turnos_Load(object sender, EventArgs e)
         {
-            BloquearControles();
-        }
+            try
+            {
 
+                BloquearControles();
+                OcultarControles();
+                CargaLista();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+        void CargaLista()
+        {
+            NTurnos n = new NTurnos();
+            List<ETurnos> Lista = n.ListaTurnos();
+            gridControl1.DataSource = Lista;
+            gridView1.Columns[0].Visible = false;
+            gridView1.BestFitColumns();
+            
+        }
         #region Controles
-                void BloquearControles()
+                void OcultarControles()
+                    {
+                        rbtnActivo.Visible = false;
+                        rbtncancelar.Visible = false;
+                    }
+                void MostarControles()
+                {
+                    rbtnActivo.Visible = true;
+                    rbtncancelar.Visible = true;
+                }
+        void BloquearControles()
                 {
                     txtObservacion.Enabled = false;
                     txtTurno.Enabled = false;
@@ -48,7 +77,10 @@ namespace Presentacion.Otros
                 {
                     txtObservacion.Clear();
                     txtTurno.Clear();
-                }
+                    rbtnActivo.Checked = false;
+                    rbtncancelar.Checked = false;
+                    chkeditar.Checked = false;
+        }
         #endregion
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -69,8 +101,14 @@ namespace Presentacion.Otros
                 txtTurno.Tag = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "TurnoId").ToString());
                 txtTurno.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Turno").ToString();
                 txtObservacion.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Descripcion").ToString();
+                if (Convert.ToBoolean(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Activo").ToString()) == true)
+                    rbtnActivo.Checked = true;
+                else
+                rbtncancelar.Checked = true;
                 chkeditar.Checked = true;
                 Bandera = 1;
+                DesbloquearControles();
+                MostarControles();
             }
             catch (Exception ex)
             {
@@ -93,14 +131,21 @@ namespace Presentacion.Otros
                     LimpiarControles();
                     BloquearControles();
                     MessageBox.Show("Turno Ingresado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargaLista();
                 }
                 if (Bandera == 1)
                 {
                     t.TurnoId = Convert.ToInt32(txtTurno.Tag);
                     t.Turno = txtTurno.Text;
                     t.Descripcion = txtObservacion.Text;
+                    t.Activo = Convert.ToBoolean(rbtnActivo.Checked ?1 : 0 ); 
+                    n.ModificarTurno(t);
                     LimpiarControles();
                     BloquearControles();
+                    MessageBox.Show("Turno Modificado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargaLista();
+                    OcultarControles();
+
                 }
             }
             catch (Exception ex)
