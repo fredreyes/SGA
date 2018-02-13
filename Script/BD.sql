@@ -1,7 +1,7 @@
---Create database SGA
---go
---use SGA
---go
+Create database SGA
+go
+use SGA
+go
 
 --DEPARTAMENTOS
 CREATE TABLE Departamentos
@@ -11,7 +11,6 @@ Departamento Nvarchar(150),
 constraint pk_DepartamentoId Primary key (DepartamentoID)
 )
 GO
-
 ---TABLA COLEGIO
 create table Colegio
 (
