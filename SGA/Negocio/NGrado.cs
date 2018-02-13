@@ -29,6 +29,12 @@ namespace Negocio
             try
             {
                 DGrados n = new DGrados();
+
+                List<EGrados> lista = ListaGrados().Where(x => x.Grado == g.Grado && x.Tipo == g.Tipo).ToList();
+                if(g.Grado == "")
+                    throw new ArgumentException("Ingrese un Grado");
+                if (lista.Count > 0)
+                            throw new ArgumentException("El Grado : " + g.Grado + " ya existe");
                 n.IngresarGrados(g);
             }
             catch (Exception ex)
@@ -42,8 +48,8 @@ namespace Negocio
         {
             try
             {
-                NGrado n = new NGrado();
-                n.ModificarGrado(g);
+                DGrados n = new DGrados();
+                n.ModificarGrados(g);
             }
             catch (Exception ex)
             {

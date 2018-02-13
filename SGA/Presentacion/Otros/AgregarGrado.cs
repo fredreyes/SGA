@@ -84,6 +84,7 @@ namespace Presentacion.Otros
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DesbloquearControles();
+            Bandera = 0;
         }
 
         private void btnagregar_Click(object sender, EventArgs e)
@@ -94,28 +95,74 @@ namespace Presentacion.Otros
                     MessageBox.Show("Marcar un Solo Tipo", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
-                    EGrados g = new EGrados();
-                    NGrado N = new NGrado();
-                    g.Grado = txtxgrado.Text;
-                    char x;
-                    if (chk1.Checked)
-                        x = Convert.ToChar('I');
-                    else if (chk2.Checked)
-                        x = Convert.ToChar('P');
-                    else
-                        x = Convert.ToChar('S');
-                    g.Tipo = Convert.ToChar(x).ToString();
-                    N.IngresarGrado(g);
-                    MessageBox.Show("Grados ingresados con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiaContorles();
-                    BloquearControles();
-                    CargarLista();
+                    if (Bandera == 0)
+                    {
+                        EGrados g = new EGrados();
+                        NGrado N = new NGrado();
+                        g.Grado = txtxgrado.Text;
+                        char x;
+                        if (chk1.Checked)
+                            x = Convert.ToChar('I');
+                        else if (chk2.Checked)
+                            x = Convert.ToChar('P');
+                        else
+                            x = Convert.ToChar('S');
+                        g.Tipo = Convert.ToChar(x).ToString();
+                        N.IngresarGrado(g);
+                        MessageBox.Show("Grados ingresados con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimpiaContorles();
+                        BloquearControles();
+                        CargarLista();
+                    }
+                    if (Bandera == 1)
+                    {
+                        EGrados g = new EGrados();
+                        NGrado N = new NGrado();
+                        g.GradoId = Convert.ToInt32(txtxgrado.Tag);
+                        g.Grado = txtxgrado.Text;
+                        char x;
+                        if (chk1.Checked)
+                            x = Convert.ToChar('I');
+                        else if (chk2.Checked)
+                            x = Convert.ToChar('P');
+                        else
+                            x = Convert.ToChar('S');
+                        g.Tipo = Convert.ToChar(x).ToString();
+                        N.ModificarGrado(g);
+                        MessageBox.Show("Grados Modificados con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimpiaContorles();
+                        BloquearControles();
+                        CargarLista();
+                    }
                 }
             }
             catch (Exception ex)
             {
 
-                throw ex;
+                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                txtxgrado.Tag = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "GradoId"));
+                txtxgrado.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Grado").ToString();
+                if (Convert.ToChar(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Tipo").ToString()) == 'I')
+                    chk1.Checked = true;
+                else if (Convert.ToChar(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Tipo").ToString()) == 'P')
+                    chk2.Checked = true;
+                else
+                    chk3.Checked = true;
+                Bandera = 1;
+                DesbloquearControles();
+                chkmodificar.Checked = true;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

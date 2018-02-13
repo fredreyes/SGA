@@ -72,7 +72,7 @@ namespace Datos
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@GRADO", g.Grado);
                 comando.Parameters.AddWithValue("@TIPO", g.Tipo);
-                comando.Parameters.AddWithValue("@CODIGO_GRADO", g.Tipo);
+                comando.Parameters.AddWithValue("@CODIGO_GRADO", g.GradoId);
                 comando.Connection = conexion;
                 conexion.Open();
                 comando.ExecuteNonQuery();
