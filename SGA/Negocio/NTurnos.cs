@@ -43,5 +43,20 @@ namespace Negocio
                 throw ex; 
             }
         }
+        public void ModificarTurno(ETurnos t)
+        {
+            try
+            {
+                if (t.Turno == string.Empty)
+                    throw new ArgumentException("Ingrese un Turno");
+                DTurno d = new DTurno();
+                d.ModificarTurnos(t);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
