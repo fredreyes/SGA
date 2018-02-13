@@ -8,9 +8,9 @@ namespace Entidades
 {
     public class EGrados
     {
-        public int CODIGO_GRADO { get; set; }
-        public string GRADO { get; set; }
-        public string TIPO { get; set; }
+        public int GradoId { get; set; }
+        public string Grado { get; set; }
+        public string Tipo { get; set; }
 
     }
 }

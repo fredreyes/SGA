@@ -12,7 +12,6 @@ namespace Entidades
         public string AULA { get; set; }
         public int CAPACIDAD { get; set; }
         public int VACANTES { get; set; }
-        public int CODIGO_GRADO { get; set; }
-        public string GRADO { get; set; }
+        public EGrados GRADOS;
     }
 }

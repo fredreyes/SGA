@@ -11,13 +11,12 @@ namespace Datos
 {
     public class DGrados
     {
+        SqlCommand comando;
+        SqlConnection conexion = new SqlConnection(Properties.Settings.Default.CadenaConexion);
         public List<EGrados> ListaGrados()
         {
             try
             {
-                SqlCommand comando;
-                SqlConnection conexion = new SqlConnection(Properties.Settings.Default.CadenaConexion);
-
                 comando = new SqlCommand("select * FROM GRADOS ", conexion);
                 comando.CommandType = CommandType.Text;
                 comando.Connection = conexion;
@@ -27,15 +26,27 @@ namespace Datos
                 while (leer.Read())
                 {
                     EGrados g = new EGrados();
-                    g.CODIGO_GRADO = (int)leer[0];
-                    g.GRADO = leer[1].ToString();
-                    g.TIPO = leer[2].ToString();
+                    g.GradoId = (int)leer[0];
+                    g.Grado = leer[1].ToString();
+                    g.Tipo = leer[2].ToString();
                     lista.Add(g);
                 }
                 leer.Close();
                 conexion.Close();
                 conexion.Dispose();
                 return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void IngresarGrados(EGrados g)
+        {
+            try
+            {
             }
             catch (Exception ex)
             {

@@ -18,7 +18,7 @@ namespace Datos
                 SqlCommand comando;
                 SqlConnection conexion = new SqlConnection(Properties.Settings.Default.CadenaConexion);
 
-                comando = new SqlCommand("select CODIGO_AULA,AULA,CAPACIDAD,VACANTES,A.CODIGO_GRADO,GRADO from AULAS A inner join GRADOS G ON A.CODIGO_GRADO = G.CODIGO_GRADO", conexion);
+                comando = new SqlCommand("select AulaId,AULA,CAPACIDAD,VACANTES,A.GradoId,GRADO from AULAS A inner join GRADOS G ON A.GradoId = G.GradoId", conexion);
                 comando.CommandType = CommandType.Text;
                 comando.Connection = conexion;
                 conexion.Open();
@@ -31,8 +31,8 @@ namespace Datos
                     a.AULA = leer[1].ToString();
                     a.CAPACIDAD = (int)leer[2];
                     a.VACANTES = (int)leer[3];
-                    a.CODIGO_GRADO = (int)leer[4];
-                    a.GRADO = leer[5].ToString();
+                    a.GRADOS.GradoId = (int)leer[4];
+                    a.GRADOS.Grado = leer[5].ToString();
                     lista.Add(a);
                 }
                 leer.Close();
