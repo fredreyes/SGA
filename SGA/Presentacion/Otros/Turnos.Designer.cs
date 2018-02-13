@@ -124,21 +124,23 @@
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
             // exportarToolStripMenuItem
             // 
             this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
-            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exportarToolStripMenuItem.Text = "Exportar XLS";
+            this.exportarToolStripMenuItem.Click += new System.EventHandler(this.exportarToolStripMenuItem_Click);
             // 
             // exportarPDFToolStripMenuItem
             // 
             this.exportarPDFToolStripMenuItem.Name = "exportarPDFToolStripMenuItem";
-            this.exportarPDFToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.exportarPDFToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exportarPDFToolStripMenuItem.Text = "Exportar PDF";
+            this.exportarPDFToolStripMenuItem.Click += new System.EventHandler(this.exportarPDFToolStripMenuItem_Click);
             // 
             // chkeditar
             // 

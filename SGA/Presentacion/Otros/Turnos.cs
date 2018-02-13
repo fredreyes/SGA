@@ -155,5 +155,40 @@ namespace Presentacion.Otros
             }  
             
         }
+
+        private void exportarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog o = new SaveFileDialog();
+                o.Filter = "LIRBO EXCEL|*.xlsx";
+                o.ShowDialog();
+                string file = o.FileName;
+                gridControl1.ExportToXlsx(file);
+                MessageBox.Show("Turnos Exportados correctamente", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message,"SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void exportarPDFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog o = new SaveFileDialog();
+                o.Filter = "PDF|*.PDF";
+                o.ShowDialog();
+                gridControl1.ExportToPdf(o.FileName);
+                MessageBox.Show("Turnos Exportados correctamente", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
