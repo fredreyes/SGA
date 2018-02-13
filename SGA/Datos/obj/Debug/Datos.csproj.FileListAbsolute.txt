@@ -1,0 +1,32 @@
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Datos\bin\Debug\Datos.dll.config
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Datos\bin\Debug\Datos.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Datos\bin\Debug\Datos.pdb
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Datos\bin\Debug\Entidades.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Datos\bin\Debug\Entidades.pdb
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Datos\obj\Debug\Datos.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Datos\obj\Debug\Datos.pdb
+G:\SGA\Datos\bin\Debug\Datos.dll.config
+G:\SGA\Datos\bin\Debug\Datos.dll
+G:\SGA\Datos\bin\Debug\Datos.pdb
+G:\SGA\Datos\bin\Debug\Entidades.dll
+G:\SGA\Datos\bin\Debug\Entidades.pdb
+G:\SGA\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+G:\SGA\Datos\obj\Debug\Datos.dll
+G:\SGA\Datos\obj\Debug\Datos.pdb
+G:\Proyecto IS\SGA\Datos\bin\Debug\Datos.dll.config
+G:\Proyecto IS\SGA\Datos\bin\Debug\Datos.dll
+G:\Proyecto IS\SGA\Datos\bin\Debug\Datos.pdb
+G:\Proyecto IS\SGA\Datos\bin\Debug\Entidades.dll
+G:\Proyecto IS\SGA\Datos\bin\Debug\Entidades.pdb
+G:\Proyecto IS\SGA\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+G:\Proyecto IS\SGA\Datos\obj\Debug\Datos.dll
+G:\Proyecto IS\SGA\Datos\obj\Debug\Datos.pdb
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Datos\bin\Debug\Datos.dll.config
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Datos\bin\Debug\Datos.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Datos\bin\Debug\Datos.pdb
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Datos\bin\Debug\Entidades.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Datos\bin\Debug\Entidades.pdb
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Datos\obj\Debug\Datos.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Datos\obj\Debug\Datos.pdb

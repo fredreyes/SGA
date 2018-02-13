@@ -1,0 +1,20 @@
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Entidades\bin\Debug\Entidades.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Entidades\obj\Debug\Entidades.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Entidades\obj\Debug\Entidades.pdb
+G:\SGA\Entidades\bin\Debug\Entidades.dll
+G:\SGA\Entidades\bin\Debug\Entidades.pdb
+G:\SGA\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+G:\SGA\Entidades\obj\Debug\Entidades.dll
+G:\SGA\Entidades\obj\Debug\Entidades.pdb
+G:\Proyecto IS\SGA\Entidades\bin\Debug\Entidades.dll
+G:\Proyecto IS\SGA\Entidades\bin\Debug\Entidades.pdb
+G:\Proyecto IS\SGA\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+G:\Proyecto IS\SGA\Entidades\obj\Debug\Entidades.dll
+G:\Proyecto IS\SGA\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Entidades\bin\Debug\Entidades.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Entidades\obj\Debug\Entidades.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Entidades\obj\Debug\Entidades.pdb

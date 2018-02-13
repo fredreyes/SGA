@@ -1,0 +1,36 @@
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Negocio\bin\Debug\Negocio.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Negocio\bin\Debug\Datos.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Negocio\bin\Debug\Entidades.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Negocio\bin\Debug\Datos.pdb
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Negocio\bin\Debug\Entidades.pdb
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Negocio\obj\Debug\Negocio.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Negocio\obj\Debug\Negocio.pdb
+G:\SGA\Negocio\bin\Debug\Negocio.dll
+G:\SGA\Negocio\bin\Debug\Negocio.pdb
+G:\SGA\Negocio\bin\Debug\Datos.dll
+G:\SGA\Negocio\bin\Debug\Entidades.dll
+G:\SGA\Negocio\bin\Debug\Datos.pdb
+G:\SGA\Negocio\bin\Debug\Entidades.pdb
+G:\SGA\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+G:\SGA\Negocio\obj\Debug\Negocio.dll
+G:\SGA\Negocio\obj\Debug\Negocio.pdb
+G:\Proyecto IS\SGA\Negocio\bin\Debug\Negocio.dll
+G:\Proyecto IS\SGA\Negocio\bin\Debug\Negocio.pdb
+G:\Proyecto IS\SGA\Negocio\bin\Debug\Datos.dll
+G:\Proyecto IS\SGA\Negocio\bin\Debug\Entidades.dll
+G:\Proyecto IS\SGA\Negocio\bin\Debug\Datos.pdb
+G:\Proyecto IS\SGA\Negocio\bin\Debug\Entidades.pdb
+G:\Proyecto IS\SGA\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+G:\Proyecto IS\SGA\Negocio\obj\Debug\Negocio.dll
+G:\Proyecto IS\SGA\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Negocio\bin\Debug\Negocio.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Negocio\bin\Debug\Datos.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Negocio\bin\Debug\Entidades.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Negocio\bin\Debug\Datos.pdb
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Negocio\bin\Debug\Entidades.pdb
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Negocio\obj\Debug\Negocio.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Negocio\obj\Debug\Negocio.pdb
