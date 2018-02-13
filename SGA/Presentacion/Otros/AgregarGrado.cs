@@ -24,26 +24,98 @@ namespace Presentacion.Otros
             m.Theme = MaterialSkinManager.Themes.LIGHT;
             m.ColorScheme = new ColorScheme(Primary.Blue900, Primary.Blue800, Primary.Blue500, Accent.LightBlue400, TextShade.WHITE);
         }
-
+        public int Bandera;
         private void AgregarGrado_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void materialRadioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialRaisedButton1_Click(object sender, EventArgs e)
-        {
-            if (materialCheckBox1.Checked)
+            try
             {
-
+                CargarLista();
+                BloquearControles();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Confirmación no aceptada");
+
+                MessageBox.Show(ex.Message,"SGA", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+        #region Controles
+            void BloquearControles()
+                {
+                    txtxgrado.Enabled = false;
+                    chk1.Enabled = false;
+                    chk2.Enabled = false;
+            chk3.Enabled = false;
+            btnagregar.Enabled = false;
+                }
+                void DesbloquearControles()
+                {
+                    txtxgrado.Enabled = true;
+            chk1.Enabled = true;
+            chk2.Enabled = true;
+            chk3.Enabled = true;
+            btnagregar.Enabled = true;
+        }
+        void LimpiaContorles()
+        {
+            txtxgrado.Clear();
+            chk1.Checked = false;
+            chk2.Checked = false;
+            chk3.Checked = false;
+        }
+        #endregion
+
+        void CargarLista()
+        {
+            try
+            {
+                NGrado n = new NGrado();
+                List<EGrados> L = n.ListaGrados();
+                gridControl1.DataSource = L;
+                gridView1.BestFitColumns();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DesbloquearControles();
+        }
+
+        private void btnagregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (chk1.Checked && chk2.Checked && chk3.Checked || chk1.Checked && chk2.Checked)
+                    MessageBox.Show("Marcar un Solo Tipo", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                {
+                    EGrados g = new EGrados();
+                    NGrado N = new NGrado();
+                    g.Grado = txtxgrado.Text;
+                    char x;
+                    if (chk1.Checked)
+                        x = Convert.ToChar('I');
+                    else if (chk2.Checked)
+                        x = Convert.ToChar('P');
+                    else
+                        x = Convert.ToChar('S');
+                    g.Tipo = Convert.ToChar(x).ToString();
+                    N.IngresarGrado(g);
+                    MessageBox.Show("Grados ingresados con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiaContorles();
+                    BloquearControles();
+                    CargarLista();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
     }

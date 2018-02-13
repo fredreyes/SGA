@@ -47,7 +47,37 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("");
+                comando = new SqlCommand("INSERTAR_GRADOS");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@GRADO", g.Grado);
+                comando.Parameters.AddWithValue("@TIPO", g.Tipo);
+                comando.Connection = conexion;
+                conexion.Open();
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                conexion.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void ModificarGrados(EGrados g)
+        {
+            try
+            {
+                comando = new SqlCommand("MODIFICAR_GRADOS");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@GRADO", g.Grado);
+                comando.Parameters.AddWithValue("@TIPO", g.Tipo);
+                comando.Parameters.AddWithValue("@CODIGO_GRADO", g.Tipo);
+                comando.Connection = conexion;
+                conexion.Open();
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                conexion.Dispose();
             }
             catch (Exception ex)
             {

@@ -145,7 +145,7 @@
             this.chkeditar.AutoSize = true;
             this.chkeditar.Depth = 0;
             this.chkeditar.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkeditar.Location = new System.Drawing.Point(216, 42);
+            this.chkeditar.Location = new System.Drawing.Point(216, 54);
             this.chkeditar.Margin = new System.Windows.Forms.Padding(0);
             this.chkeditar.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkeditar.MouseState = MaterialSkin.MouseState.HOVER;

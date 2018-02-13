@@ -24,5 +24,32 @@ namespace Negocio
                 throw ex;
             }
         }
+        public void IngresarGrado(EGrados g)
+        {
+            try
+            {
+                DGrados n = new DGrados();
+                n.IngresarGrados(g);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void ModificarGrado(EGrados g)
+        {
+            try
+            {
+                NGrado n = new NGrado();
+                n.ModificarGrado(g);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

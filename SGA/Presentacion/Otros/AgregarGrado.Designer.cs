@@ -28,19 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnagregar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtxgrado = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.rbtnpreescolar = new MaterialSkin.Controls.MaterialRadioButton();
-            this.rbtnprimaria = new MaterialSkin.Controls.MaterialRadioButton();
-            this.rbtnsecundaria = new MaterialSkin.Controls.MaterialRadioButton();
-            this.materialCheckBox1 = new MaterialSkin.Controls.MaterialCheckBox();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportarXLSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportarPDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.chkmodificar = new MaterialSkin.Controls.MaterialCheckBox();
+            this.chk1 = new MaterialSkin.Controls.MaterialCheckBox();
+            this.chk2 = new MaterialSkin.Controls.MaterialCheckBox();
+            this.chk3 = new MaterialSkin.Controls.MaterialCheckBox();
+            this.groupBox1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.chk3);
+            this.groupBox1.Controls.Add(this.chk2);
+            this.groupBox1.Controls.Add(this.chk1);
+            this.groupBox1.Controls.Add(this.chkmodificar);
+            this.groupBox1.Controls.Add(this.gridControl1);
+            this.groupBox1.Controls.Add(this.btnagregar);
+            this.groupBox1.Controls.Add(this.txtxgrado);
+            this.groupBox1.Controls.Add(this.menuStrip1);
+            this.groupBox1.Location = new System.Drawing.Point(1, 64);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(334, 401);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            // 
+            // btnagregar
+            // 
+            this.btnagregar.Depth = 0;
+            this.btnagregar.Location = new System.Drawing.Point(114, 188);
+            this.btnagregar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnagregar.Name = "btnagregar";
+            this.btnagregar.Primary = true;
+            this.btnagregar.Size = new System.Drawing.Size(109, 33);
+            this.btnagregar.TabIndex = 11;
+            this.btnagregar.Text = "Guardar";
+            this.btnagregar.UseVisualStyleBackColor = true;
+            this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
             // 
             // txtxgrado
             // 
             this.txtxgrado.Depth = 0;
             this.txtxgrado.Hint = "Grado";
-            this.txtxgrado.Location = new System.Drawing.Point(32, 76);
+            this.txtxgrado.Location = new System.Drawing.Point(46, 53);
             this.txtxgrado.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtxgrado.Name = "txtxgrado";
             this.txtxgrado.PasswordChar = '\0';
@@ -48,120 +90,168 @@
             this.txtxgrado.SelectionLength = 0;
             this.txtxgrado.SelectionStart = 0;
             this.txtxgrado.Size = new System.Drawing.Size(226, 23);
-            this.txtxgrado.TabIndex = 0;
+            this.txtxgrado.TabIndex = 6;
             this.txtxgrado.UseSystemPasswordChar = false;
             // 
-            // rbtnpreescolar
+            // menuStrip1
             // 
-            this.rbtnpreescolar.AutoSize = true;
-            this.rbtnpreescolar.Depth = 0;
-            this.rbtnpreescolar.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbtnpreescolar.Location = new System.Drawing.Point(33, 111);
-            this.rbtnpreescolar.Margin = new System.Windows.Forms.Padding(0);
-            this.rbtnpreescolar.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rbtnpreescolar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rbtnpreescolar.Name = "rbtnpreescolar";
-            this.rbtnpreescolar.Ripple = true;
-            this.rbtnpreescolar.Size = new System.Drawing.Size(100, 30);
-            this.rbtnpreescolar.TabIndex = 1;
-            this.rbtnpreescolar.TabStop = true;
-            this.rbtnpreescolar.Text = "Pre-Escolar";
-            this.rbtnpreescolar.UseVisualStyleBackColor = true;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivoToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(3, 16);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(328, 24);
+            this.menuStrip1.TabIndex = 12;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // rbtnprimaria
+            // archivoToolStripMenuItem
             // 
-            this.rbtnprimaria.AutoSize = true;
-            this.rbtnprimaria.Depth = 0;
-            this.rbtnprimaria.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbtnprimaria.Location = new System.Drawing.Point(33, 151);
-            this.rbtnprimaria.Margin = new System.Windows.Forms.Padding(0);
-            this.rbtnprimaria.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rbtnprimaria.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rbtnprimaria.Name = "rbtnprimaria";
-            this.rbtnprimaria.Ripple = true;
-            this.rbtnprimaria.Size = new System.Drawing.Size(81, 30);
-            this.rbtnprimaria.TabIndex = 2;
-            this.rbtnprimaria.TabStop = true;
-            this.rbtnprimaria.Text = "Primaria";
-            this.rbtnprimaria.UseVisualStyleBackColor = true;
+            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoToolStripMenuItem,
+            this.exportarXLSToolStripMenuItem,
+            this.exportarPDFToolStripMenuItem});
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.archivoToolStripMenuItem.Text = "Archivo";
             // 
-            // rbtnsecundaria
+            // nuevoToolStripMenuItem
             // 
-            this.rbtnsecundaria.AutoSize = true;
-            this.rbtnsecundaria.Depth = 0;
-            this.rbtnsecundaria.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbtnsecundaria.Location = new System.Drawing.Point(33, 195);
-            this.rbtnsecundaria.Margin = new System.Windows.Forms.Padding(0);
-            this.rbtnsecundaria.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rbtnsecundaria.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rbtnsecundaria.Name = "rbtnsecundaria";
-            this.rbtnsecundaria.Ripple = true;
-            this.rbtnsecundaria.Size = new System.Drawing.Size(98, 30);
-            this.rbtnsecundaria.TabIndex = 3;
-            this.rbtnsecundaria.TabStop = true;
-            this.rbtnsecundaria.Text = "Secundaria";
-            this.rbtnsecundaria.UseVisualStyleBackColor = true;
-            this.rbtnsecundaria.CheckedChanged += new System.EventHandler(this.materialRadioButton3_CheckedChanged);
+            this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nuevoToolStripMenuItem.Text = "Nuevo";
+            this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
-            // materialCheckBox1
+            // exportarXLSToolStripMenuItem
             // 
-            this.materialCheckBox1.AutoSize = true;
-            this.materialCheckBox1.Depth = 0;
-            this.materialCheckBox1.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialCheckBox1.Location = new System.Drawing.Point(95, 239);
-            this.materialCheckBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckBox1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckBox1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckBox1.Name = "materialCheckBox1";
-            this.materialCheckBox1.Ripple = true;
-            this.materialCheckBox1.Size = new System.Drawing.Size(92, 30);
-            this.materialCheckBox1.TabIndex = 4;
-            this.materialCheckBox1.Text = "Confirmar";
-            this.materialCheckBox1.UseVisualStyleBackColor = true;
+            this.exportarXLSToolStripMenuItem.Name = "exportarXLSToolStripMenuItem";
+            this.exportarXLSToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportarXLSToolStripMenuItem.Text = "Exportar XLS";
             // 
-            // materialRaisedButton1
+            // exportarPDFToolStripMenuItem
             // 
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(95, 296);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(109, 33);
-            this.materialRaisedButton1.TabIndex = 5;
-            this.materialRaisedButton1.Text = "Guardar";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
-            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
+            this.exportarPDFToolStripMenuItem.Name = "exportarPDFToolStripMenuItem";
+            this.exportarPDFToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportarPDFToolStripMenuItem.Text = "Exportar PDF";
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(11, 236);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(310, 150);
+            this.gridControl1.TabIndex = 14;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // chkmodificar
+            // 
+            this.chkmodificar.AutoSize = true;
+            this.chkmodificar.Depth = 0;
+            this.chkmodificar.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chkmodificar.Location = new System.Drawing.Point(229, 88);
+            this.chkmodificar.Margin = new System.Windows.Forms.Padding(0);
+            this.chkmodificar.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkmodificar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkmodificar.Name = "chkmodificar";
+            this.chkmodificar.Ripple = true;
+            this.chkmodificar.Size = new System.Drawing.Size(66, 30);
+            this.chkmodificar.TabIndex = 15;
+            this.chkmodificar.Text = "Editar";
+            this.chkmodificar.UseVisualStyleBackColor = true;
+            // 
+            // chk1
+            // 
+            this.chk1.AutoSize = true;
+            this.chk1.Depth = 0;
+            this.chk1.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chk1.Location = new System.Drawing.Point(46, 88);
+            this.chk1.Margin = new System.Windows.Forms.Padding(0);
+            this.chk1.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chk1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chk1.Name = "chk1";
+            this.chk1.Ripple = true;
+            this.chk1.Size = new System.Drawing.Size(101, 30);
+            this.chk1.TabIndex = 16;
+            this.chk1.Text = "Pre-Escolar";
+            this.chk1.UseVisualStyleBackColor = true;
+            // 
+            // chk2
+            // 
+            this.chk2.AutoSize = true;
+            this.chk2.Depth = 0;
+            this.chk2.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chk2.Location = new System.Drawing.Point(46, 118);
+            this.chk2.Margin = new System.Windows.Forms.Padding(0);
+            this.chk2.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chk2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chk2.Name = "chk2";
+            this.chk2.Ripple = true;
+            this.chk2.Size = new System.Drawing.Size(82, 30);
+            this.chk2.TabIndex = 17;
+            this.chk2.Text = "Primaria";
+            this.chk2.UseVisualStyleBackColor = true;
+            // 
+            // chk3
+            // 
+            this.chk3.AutoSize = true;
+            this.chk3.Depth = 0;
+            this.chk3.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chk3.Location = new System.Drawing.Point(46, 155);
+            this.chk3.Margin = new System.Windows.Forms.Padding(0);
+            this.chk3.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chk3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chk3.Name = "chk3";
+            this.chk3.Ripple = true;
+            this.chk3.Size = new System.Drawing.Size(99, 30);
+            this.chk3.TabIndex = 18;
+            this.chk3.Text = "Secundaria";
+            this.chk3.UseVisualStyleBackColor = true;
             // 
             // AgregarGrado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(298, 341);
-            this.Controls.Add(this.materialRaisedButton1);
-            this.Controls.Add(this.materialCheckBox1);
-            this.Controls.Add(this.rbtnsecundaria);
-            this.Controls.Add(this.rbtnprimaria);
-            this.Controls.Add(this.rbtnpreescolar);
-            this.Controls.Add(this.txtxgrado);
+            this.ClientSize = new System.Drawing.Size(334, 462);
+            this.Controls.Add(this.groupBox1);
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AgregarGrado";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Agregar Grado";
+            this.Text = "Grados";
             this.Load += new System.EventHandler(this.AgregarGrado_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
+        private System.Windows.Forms.GroupBox groupBox1;
+        private MaterialSkin.Controls.MaterialRaisedButton btnagregar;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtxgrado;
-        private MaterialSkin.Controls.MaterialRadioButton rbtnpreescolar;
-        private MaterialSkin.Controls.MaterialRadioButton rbtnprimaria;
-        private MaterialSkin.Controls.MaterialRadioButton rbtnsecundaria;
-        private MaterialSkin.Controls.MaterialCheckBox materialCheckBox1;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportarXLSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportarPDFToolStripMenuItem;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private MaterialSkin.Controls.MaterialCheckBox chkmodificar;
+        private MaterialSkin.Controls.MaterialCheckBox chk3;
+        private MaterialSkin.Controls.MaterialCheckBox chk2;
+        private MaterialSkin.Controls.MaterialCheckBox chk1;
     }
 }
