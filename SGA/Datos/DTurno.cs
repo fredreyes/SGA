@@ -67,12 +67,13 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("EDITAR_TURNOS", conexion);
+                comando = new SqlCommand("MODIFICAR_TURNOS");
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("", t.Turno);
-                comando.Parameters.AddWithValue("", t.Descripcion);
-                comando.Parameters.AddWithValue("", t.Activo);
-                comando.Parameters.AddWithValue("", t.TurnoId);
+                comando.Parameters.AddWithValue("@TURNO", t.Turno);
+                comando.Parameters.AddWithValue("@OBSERVACION", t.Descripcion);
+                comando.Parameters.AddWithValue("@ACTIVO", t.Activo);
+                comando.Parameters.AddWithValue("@TURNOID", t.TurnoId);
+                comando.Connection = conexion;
                 conexion.Open();
                 comando.ExecuteNonQuery();
                 conexion.Close();
