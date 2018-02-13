@@ -47,6 +47,7 @@ namespace Datos
         {
             try
             {
+                comando = new SqlCommand("");
             }
             catch (Exception ex)
             {
