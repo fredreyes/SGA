@@ -125,12 +125,6 @@
     <Compile Include="Otros\Asignaturas.Designer.cs">
       <DependentUpon>Asignaturas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Otros\Aulas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Otros\Aulas.Designer.cs">
-      <DependentUpon>Aulas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Otros\CicloEscolar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,12 +136,6 @@
     </Compile>
     <Compile Include="Otros\Colegios.Designer.cs">
       <DependentUpon>Colegios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Otros\Grado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Otros\Grado.Designer.cs">
-      <DependentUpon>Grado.cs</DependentUpon>
     </Compile>
     <Compile Include="Otros\Turnos.cs">
       <SubType>Form</SubType>
@@ -190,17 +178,11 @@
     <EmbeddedResource Include="Otros\Asignaturas.resx">
       <DependentUpon>Asignaturas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Otros\Aulas.resx">
-      <DependentUpon>Aulas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Otros\CicloEscolar.resx">
       <DependentUpon>CicloEscolar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Otros\Colegios.resx">
       <DependentUpon>Colegios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Otros\Grado.resx">
-      <DependentUpon>Grado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Otros\Turnos.resx">
       <DependentUpon>Turnos.cs</DependentUpon>

@@ -8,8 +8,8 @@ namespace Entidades
 {
     public class EAsignatura
     {
-        public int CODIGO_ASIGNATURA { get; set; }
-        public string NOMBRE{ get; set; }
-        public bool ACTIVO { get; set; }
+        public int AsignaturaId { get; set; }
+        public string Asignatura{ get; set; }
+        public bool Activo { get; set; }
     }
 }

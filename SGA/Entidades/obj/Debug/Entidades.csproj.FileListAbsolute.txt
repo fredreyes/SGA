@@ -20,6 +20,5 @@ C:\Users\Freddy\Desktop\Proyecto IS\SGA\Entidades\obj\Debug\Entidades.dll
 C:\Users\Freddy\Desktop\Proyecto IS\SGA\Entidades\obj\Debug\Entidades.pdb
 C:\Users\Freddy\Documents\GitHub\SGA\SGA\Entidades\bin\Debug\Entidades.dll
 C:\Users\Freddy\Documents\GitHub\SGA\SGA\Entidades\bin\Debug\Entidades.pdb
-C:\Users\Freddy\Documents\GitHub\SGA\SGA\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
 C:\Users\Freddy\Documents\GitHub\SGA\SGA\Entidades\obj\Debug\Entidades.dll
 C:\Users\Freddy\Documents\GitHub\SGA\SGA\Entidades\obj\Debug\Entidades.pdb
