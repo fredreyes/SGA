@@ -165,5 +165,39 @@ namespace Presentacion.Otros
                 MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void exportarXLSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                 exportarArchivos ex = new exportarArchivos();
+                  ex.ExportarExcel(gridControl1,"Grados");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void exportarPDFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                exportarArchivos EX = new exportarArchivos();
+                EX.ExportarPDF(gridControl1, "Grados");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
