@@ -1,0 +1,646 @@
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\MaterialSkin.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\obj\Debug\Presentacion.csprojResolveAssemblyReference.cache
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.Cache
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.Data.v16.2.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.Printing.v16.2.Core.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.Sparkline.v16.2.Core.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.Utils.v16.2.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.XtraEditors.v16.2.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.Pdf.v16.2.Core.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.Data.v16.2.xml
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.Printing.v16.2.Core.xml
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.Sparkline.v16.2.Core.xml
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.Utils.v16.2.xml
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.XtraEditors.v16.2.xml
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.Pdf.v16.2.Core.xml
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\de\DevExpress.Data.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\es\DevExpress.Data.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ja\DevExpress.Data.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ru\DevExpress.Data.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\de\DevExpress.Printing.v16.2.Core.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\es\DevExpress.Printing.v16.2.Core.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ja\DevExpress.Printing.v16.2.Core.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ru\DevExpress.Printing.v16.2.Core.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\de\DevExpress.Sparkline.v16.2.Core.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\es\DevExpress.Sparkline.v16.2.Core.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ja\DevExpress.Sparkline.v16.2.Core.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ru\DevExpress.Sparkline.v16.2.Core.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\de\DevExpress.Utils.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\es\DevExpress.Utils.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ja\DevExpress.Utils.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ru\DevExpress.Utils.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\de\DevExpress.XtraEditors.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\es\DevExpress.XtraEditors.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraEditors.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraEditors.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\de\DevExpress.Pdf.v16.2.Core.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\es\DevExpress.Pdf.v16.2.Core.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ja\DevExpress.Pdf.v16.2.Core.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ru\DevExpress.Pdf.v16.2.Core.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\obj\Debug\Presentacion.exe.licenses
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.XtraBars.v16.2.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.XtraBars.v16.2.xml
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\de\DevExpress.XtraBars.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\es\DevExpress.XtraBars.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraBars.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraBars.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\obj\Debug\Presentacion.frmLogin.resources
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\obj\Debug\Presentacion.frmPrincipal.resources
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\obj\Debug\Presentacion.Student.AddNewStudent.resources
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\MetroFramework.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.XtraGrid.v16.2.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.XtraLayout.v16.2.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.XtraPrinting.v16.2.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.RichEdit.v16.2.Core.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.XtraTreeList.v16.2.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.Office.v16.2.Core.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.XtraGrid.v16.2.xml
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.XtraLayout.v16.2.xml
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.XtraPrinting.v16.2.xml
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.RichEdit.v16.2.Core.xml
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.XtraTreeList.v16.2.xml
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\DevExpress.Office.v16.2.Core.xml
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\de\DevExpress.XtraGrid.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\es\DevExpress.XtraGrid.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraGrid.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraGrid.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\de\DevExpress.XtraLayout.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\es\DevExpress.XtraLayout.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraLayout.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraLayout.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\de\DevExpress.XtraPrinting.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\es\DevExpress.XtraPrinting.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraPrinting.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraPrinting.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\de\DevExpress.RichEdit.v16.2.Core.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\es\DevExpress.RichEdit.v16.2.Core.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ja\DevExpress.RichEdit.v16.2.Core.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ru\DevExpress.RichEdit.v16.2.Core.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\de\DevExpress.XtraTreeList.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\es\DevExpress.XtraTreeList.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraTreeList.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraTreeList.v16.2.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\de\DevExpress.Office.v16.2.Core.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\es\DevExpress.Office.v16.2.Core.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ja\DevExpress.Office.v16.2.Core.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\bin\Debug\ru\DevExpress.Office.v16.2.Core.resources.dll
+C:\Users\uSUARIO\Desktop\SGA\Presentacion\obj\Debug\Presentacion.Funcionarios.Ocupaciones.resources
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.Data.v16.2.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.Printing.v16.2.Core.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.Sparkline.v16.2.Core.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.Utils.v16.2.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.XtraBars.v16.2.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.XtraEditors.v16.2.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.XtraGrid.v16.2.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.XtraLayout.v16.2.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.XtraPrinting.v16.2.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\Entidades.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\MaterialSkin.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\Negocio.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\Datos.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.Pdf.v16.2.Core.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.RichEdit.v16.2.Core.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.XtraTreeList.v16.2.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.Office.v16.2.Core.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\Entidades.pdb
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\Negocio.pdb
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.Data.v16.2.xml
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.Printing.v16.2.Core.xml
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.Sparkline.v16.2.Core.xml
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.Utils.v16.2.xml
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.XtraBars.v16.2.xml
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.XtraEditors.v16.2.xml
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.XtraGrid.v16.2.xml
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.XtraLayout.v16.2.xml
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.XtraPrinting.v16.2.xml
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\Datos.pdb
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.Pdf.v16.2.Core.xml
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.RichEdit.v16.2.Core.xml
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.XtraTreeList.v16.2.xml
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\DevExpress.Office.v16.2.Core.xml
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\de\DevExpress.Data.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\es\DevExpress.Data.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ja\DevExpress.Data.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ru\DevExpress.Data.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\de\DevExpress.Printing.v16.2.Core.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\es\DevExpress.Printing.v16.2.Core.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ja\DevExpress.Printing.v16.2.Core.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ru\DevExpress.Printing.v16.2.Core.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\de\DevExpress.Sparkline.v16.2.Core.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\es\DevExpress.Sparkline.v16.2.Core.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ja\DevExpress.Sparkline.v16.2.Core.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ru\DevExpress.Sparkline.v16.2.Core.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\de\DevExpress.Utils.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\es\DevExpress.Utils.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ja\DevExpress.Utils.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ru\DevExpress.Utils.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\de\DevExpress.XtraBars.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\es\DevExpress.XtraBars.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraBars.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraBars.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\de\DevExpress.XtraEditors.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\es\DevExpress.XtraEditors.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraEditors.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraEditors.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\de\DevExpress.XtraGrid.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\es\DevExpress.XtraGrid.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraGrid.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraGrid.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\de\DevExpress.XtraLayout.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\es\DevExpress.XtraLayout.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraLayout.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraLayout.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\de\DevExpress.XtraPrinting.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\es\DevExpress.XtraPrinting.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraPrinting.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraPrinting.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\de\DevExpress.Pdf.v16.2.Core.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\es\DevExpress.Pdf.v16.2.Core.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ja\DevExpress.Pdf.v16.2.Core.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ru\DevExpress.Pdf.v16.2.Core.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\de\DevExpress.RichEdit.v16.2.Core.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\es\DevExpress.RichEdit.v16.2.Core.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ja\DevExpress.RichEdit.v16.2.Core.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ru\DevExpress.RichEdit.v16.2.Core.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\de\DevExpress.XtraTreeList.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\es\DevExpress.XtraTreeList.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraTreeList.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraTreeList.v16.2.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\de\DevExpress.Office.v16.2.Core.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\es\DevExpress.Office.v16.2.Core.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ja\DevExpress.Office.v16.2.Core.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\bin\Debug\ru\DevExpress.Office.v16.2.Core.resources.dll
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\obj\Debug\Presentacion.csprojResolveAssemblyReference.cache
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\obj\Debug\Presentacion.frmLogin.resources
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\obj\Debug\Presentacion.frmPrincipal.resources
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\obj\Debug\Presentacion.Funcionarios.Ocupaciones.resources
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\obj\Debug\Presentacion.Student.AddNewStudent.resources
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.Cache
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\obj\Debug\Presentacion.exe.licenses
+C:\Users\Freddy\Documents\Visual Studio 2015\Projects\SGA\Presentacion\obj\Debug\Presentacion.Otros.Asignaturas.resources
+E:\SGA\Presentacion\bin\Debug\Presentacion.exe.config
+E:\SGA\Presentacion\obj\Debug\Presentacion.exe
+E:\SGA\Presentacion\obj\Debug\Presentacion.pdb
+E:\SGA\Presentacion\bin\Debug\Presentacion.exe
+E:\SGA\Presentacion\bin\Debug\Presentacion.pdb
+E:\SGA\Presentacion\bin\Debug\DevExpress.Data.v16.2.dll
+E:\SGA\Presentacion\bin\Debug\DevExpress.Printing.v16.2.Core.dll
+E:\SGA\Presentacion\bin\Debug\DevExpress.Sparkline.v16.2.Core.dll
+E:\SGA\Presentacion\bin\Debug\DevExpress.Utils.v16.2.dll
+E:\SGA\Presentacion\bin\Debug\DevExpress.XtraBars.v16.2.dll
+E:\SGA\Presentacion\bin\Debug\DevExpress.XtraEditors.v16.2.dll
+E:\SGA\Presentacion\bin\Debug\DevExpress.XtraGrid.v16.2.dll
+E:\SGA\Presentacion\bin\Debug\DevExpress.XtraLayout.v16.2.dll
+E:\SGA\Presentacion\bin\Debug\DevExpress.XtraPrinting.v16.2.dll
+E:\SGA\Presentacion\bin\Debug\Entidades.dll
+E:\SGA\Presentacion\bin\Debug\MaterialSkin.dll
+E:\SGA\Presentacion\bin\Debug\Negocio.dll
+E:\SGA\Presentacion\bin\Debug\Datos.dll
+E:\SGA\Presentacion\bin\Debug\DevExpress.Pdf.v16.2.Core.dll
+E:\SGA\Presentacion\bin\Debug\DevExpress.RichEdit.v16.2.Core.dll
+E:\SGA\Presentacion\bin\Debug\DevExpress.XtraTreeList.v16.2.dll
+E:\SGA\Presentacion\bin\Debug\DevExpress.Office.v16.2.Core.dll
+E:\SGA\Presentacion\bin\Debug\Entidades.pdb
+E:\SGA\Presentacion\bin\Debug\Negocio.pdb
+E:\SGA\Presentacion\bin\Debug\DevExpress.Data.v16.2.xml
+E:\SGA\Presentacion\bin\Debug\DevExpress.Printing.v16.2.Core.xml
+E:\SGA\Presentacion\bin\Debug\DevExpress.Sparkline.v16.2.Core.xml
+E:\SGA\Presentacion\bin\Debug\DevExpress.Utils.v16.2.xml
+E:\SGA\Presentacion\bin\Debug\DevExpress.XtraBars.v16.2.xml
+E:\SGA\Presentacion\bin\Debug\DevExpress.XtraEditors.v16.2.xml
+E:\SGA\Presentacion\bin\Debug\DevExpress.XtraGrid.v16.2.xml
+E:\SGA\Presentacion\bin\Debug\DevExpress.XtraLayout.v16.2.xml
+E:\SGA\Presentacion\bin\Debug\DevExpress.XtraPrinting.v16.2.xml
+E:\SGA\Presentacion\bin\Debug\Datos.pdb
+E:\SGA\Presentacion\bin\Debug\DevExpress.Pdf.v16.2.Core.xml
+E:\SGA\Presentacion\bin\Debug\DevExpress.RichEdit.v16.2.Core.xml
+E:\SGA\Presentacion\bin\Debug\DevExpress.XtraTreeList.v16.2.xml
+E:\SGA\Presentacion\bin\Debug\DevExpress.Office.v16.2.Core.xml
+E:\SGA\Presentacion\bin\Debug\de\DevExpress.Data.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\es\DevExpress.Data.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\ja\DevExpress.Data.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\ru\DevExpress.Data.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\de\DevExpress.Printing.v16.2.Core.resources.dll
+E:\SGA\Presentacion\bin\Debug\es\DevExpress.Printing.v16.2.Core.resources.dll
+E:\SGA\Presentacion\bin\Debug\ja\DevExpress.Printing.v16.2.Core.resources.dll
+E:\SGA\Presentacion\bin\Debug\ru\DevExpress.Printing.v16.2.Core.resources.dll
+E:\SGA\Presentacion\bin\Debug\de\DevExpress.Sparkline.v16.2.Core.resources.dll
+E:\SGA\Presentacion\bin\Debug\es\DevExpress.Sparkline.v16.2.Core.resources.dll
+E:\SGA\Presentacion\bin\Debug\ja\DevExpress.Sparkline.v16.2.Core.resources.dll
+E:\SGA\Presentacion\bin\Debug\ru\DevExpress.Sparkline.v16.2.Core.resources.dll
+E:\SGA\Presentacion\bin\Debug\de\DevExpress.Utils.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\es\DevExpress.Utils.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\ja\DevExpress.Utils.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\ru\DevExpress.Utils.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\de\DevExpress.XtraBars.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\es\DevExpress.XtraBars.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraBars.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraBars.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\de\DevExpress.XtraEditors.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\es\DevExpress.XtraEditors.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraEditors.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraEditors.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\de\DevExpress.XtraGrid.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\es\DevExpress.XtraGrid.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraGrid.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraGrid.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\de\DevExpress.XtraLayout.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\es\DevExpress.XtraLayout.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraLayout.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraLayout.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\de\DevExpress.XtraPrinting.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\es\DevExpress.XtraPrinting.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraPrinting.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraPrinting.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\de\DevExpress.Pdf.v16.2.Core.resources.dll
+E:\SGA\Presentacion\bin\Debug\es\DevExpress.Pdf.v16.2.Core.resources.dll
+E:\SGA\Presentacion\bin\Debug\ja\DevExpress.Pdf.v16.2.Core.resources.dll
+E:\SGA\Presentacion\bin\Debug\ru\DevExpress.Pdf.v16.2.Core.resources.dll
+E:\SGA\Presentacion\bin\Debug\de\DevExpress.RichEdit.v16.2.Core.resources.dll
+E:\SGA\Presentacion\bin\Debug\es\DevExpress.RichEdit.v16.2.Core.resources.dll
+E:\SGA\Presentacion\bin\Debug\ja\DevExpress.RichEdit.v16.2.Core.resources.dll
+E:\SGA\Presentacion\bin\Debug\ru\DevExpress.RichEdit.v16.2.Core.resources.dll
+E:\SGA\Presentacion\bin\Debug\de\DevExpress.XtraTreeList.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\es\DevExpress.XtraTreeList.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraTreeList.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraTreeList.v16.2.resources.dll
+E:\SGA\Presentacion\bin\Debug\de\DevExpress.Office.v16.2.Core.resources.dll
+E:\SGA\Presentacion\bin\Debug\es\DevExpress.Office.v16.2.Core.resources.dll
+E:\SGA\Presentacion\bin\Debug\ja\DevExpress.Office.v16.2.Core.resources.dll
+E:\SGA\Presentacion\bin\Debug\ru\DevExpress.Office.v16.2.Core.resources.dll
+E:\SGA\Presentacion\obj\Debug\Presentacion.csprojResolveAssemblyReference.cache
+E:\SGA\Presentacion\obj\Debug\Presentacion.frmLogin.resources
+E:\SGA\Presentacion\obj\Debug\Presentacion.frmPrincipal.resources
+E:\SGA\Presentacion\obj\Debug\Presentacion.Funcionarios.Ocupaciones.resources
+E:\SGA\Presentacion\obj\Debug\Presentacion.Otros.Asignaturas.resources
+E:\SGA\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+E:\SGA\Presentacion\obj\Debug\Presentacion.Student.AddNewStudent.resources
+E:\SGA\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.Cache
+E:\SGA\Presentacion\obj\Debug\Presentacion.exe.licenses
+F:\SGA\Presentacion\bin\Debug\Presentacion.exe.config
+F:\SGA\Presentacion\obj\Debug\Presentacion.exe
+F:\SGA\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\Rene\Desktop\Ingenieria de Software I\SGA\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\Rene\Desktop\Ingenieria de Software I\SGA\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\Rene\Desktop\Ingenieria de Software I\SGA\Presentacion\obj\Debug\Presentacion.pdb
+G:\SGA\Presentacion\bin\Debug\Presentacion.exe.config
+G:\SGA\Presentacion\obj\Debug\Presentacion.exe
+G:\SGA\Presentacion\obj\Debug\Presentacion.pdb
+G:\SGA\Presentacion\bin\Debug\Presentacion.exe
+G:\SGA\Presentacion\bin\Debug\Presentacion.pdb
+G:\SGA\Presentacion\bin\Debug\DevExpress.Data.v16.2.dll
+G:\SGA\Presentacion\bin\Debug\DevExpress.Printing.v16.2.Core.dll
+G:\SGA\Presentacion\bin\Debug\DevExpress.Sparkline.v16.2.Core.dll
+G:\SGA\Presentacion\bin\Debug\DevExpress.Utils.v16.2.dll
+G:\SGA\Presentacion\bin\Debug\DevExpress.XtraBars.v16.2.dll
+G:\SGA\Presentacion\bin\Debug\DevExpress.XtraEditors.v16.2.dll
+G:\SGA\Presentacion\bin\Debug\DevExpress.XtraGrid.v16.2.dll
+G:\SGA\Presentacion\bin\Debug\DevExpress.XtraLayout.v16.2.dll
+G:\SGA\Presentacion\bin\Debug\DevExpress.XtraPrinting.v16.2.dll
+G:\SGA\Presentacion\bin\Debug\Entidades.dll
+G:\SGA\Presentacion\bin\Debug\MaterialSkin.dll
+G:\SGA\Presentacion\bin\Debug\Negocio.dll
+G:\SGA\Presentacion\bin\Debug\Datos.dll
+G:\SGA\Presentacion\bin\Debug\DevExpress.Pdf.v16.2.Core.dll
+G:\SGA\Presentacion\bin\Debug\DevExpress.RichEdit.v16.2.Core.dll
+G:\SGA\Presentacion\bin\Debug\DevExpress.XtraTreeList.v16.2.dll
+G:\SGA\Presentacion\bin\Debug\DevExpress.Office.v16.2.Core.dll
+G:\SGA\Presentacion\bin\Debug\Entidades.pdb
+G:\SGA\Presentacion\bin\Debug\Negocio.pdb
+G:\SGA\Presentacion\bin\Debug\DevExpress.Data.v16.2.xml
+G:\SGA\Presentacion\bin\Debug\DevExpress.Printing.v16.2.Core.xml
+G:\SGA\Presentacion\bin\Debug\DevExpress.Sparkline.v16.2.Core.xml
+G:\SGA\Presentacion\bin\Debug\DevExpress.Utils.v16.2.xml
+G:\SGA\Presentacion\bin\Debug\DevExpress.XtraBars.v16.2.xml
+G:\SGA\Presentacion\bin\Debug\DevExpress.XtraEditors.v16.2.xml
+G:\SGA\Presentacion\bin\Debug\DevExpress.XtraGrid.v16.2.xml
+G:\SGA\Presentacion\bin\Debug\DevExpress.XtraLayout.v16.2.xml
+G:\SGA\Presentacion\bin\Debug\DevExpress.XtraPrinting.v16.2.xml
+G:\SGA\Presentacion\bin\Debug\Datos.pdb
+G:\SGA\Presentacion\bin\Debug\DevExpress.Pdf.v16.2.Core.xml
+G:\SGA\Presentacion\bin\Debug\DevExpress.RichEdit.v16.2.Core.xml
+G:\SGA\Presentacion\bin\Debug\DevExpress.XtraTreeList.v16.2.xml
+G:\SGA\Presentacion\bin\Debug\DevExpress.Office.v16.2.Core.xml
+G:\SGA\Presentacion\bin\Debug\de\DevExpress.Data.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\es\DevExpress.Data.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\ja\DevExpress.Data.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\ru\DevExpress.Data.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\de\DevExpress.Printing.v16.2.Core.resources.dll
+G:\SGA\Presentacion\bin\Debug\es\DevExpress.Printing.v16.2.Core.resources.dll
+G:\SGA\Presentacion\bin\Debug\ja\DevExpress.Printing.v16.2.Core.resources.dll
+G:\SGA\Presentacion\bin\Debug\ru\DevExpress.Printing.v16.2.Core.resources.dll
+G:\SGA\Presentacion\bin\Debug\de\DevExpress.Sparkline.v16.2.Core.resources.dll
+G:\SGA\Presentacion\bin\Debug\es\DevExpress.Sparkline.v16.2.Core.resources.dll
+G:\SGA\Presentacion\bin\Debug\ja\DevExpress.Sparkline.v16.2.Core.resources.dll
+G:\SGA\Presentacion\bin\Debug\ru\DevExpress.Sparkline.v16.2.Core.resources.dll
+G:\SGA\Presentacion\bin\Debug\de\DevExpress.Utils.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\es\DevExpress.Utils.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\ja\DevExpress.Utils.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\ru\DevExpress.Utils.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\de\DevExpress.XtraBars.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\es\DevExpress.XtraBars.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraBars.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraBars.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\de\DevExpress.XtraEditors.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\es\DevExpress.XtraEditors.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraEditors.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraEditors.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\de\DevExpress.XtraGrid.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\es\DevExpress.XtraGrid.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraGrid.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraGrid.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\de\DevExpress.XtraLayout.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\es\DevExpress.XtraLayout.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraLayout.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraLayout.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\de\DevExpress.XtraPrinting.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\es\DevExpress.XtraPrinting.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraPrinting.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraPrinting.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\de\DevExpress.Pdf.v16.2.Core.resources.dll
+G:\SGA\Presentacion\bin\Debug\es\DevExpress.Pdf.v16.2.Core.resources.dll
+G:\SGA\Presentacion\bin\Debug\ja\DevExpress.Pdf.v16.2.Core.resources.dll
+G:\SGA\Presentacion\bin\Debug\ru\DevExpress.Pdf.v16.2.Core.resources.dll
+G:\SGA\Presentacion\bin\Debug\de\DevExpress.RichEdit.v16.2.Core.resources.dll
+G:\SGA\Presentacion\bin\Debug\es\DevExpress.RichEdit.v16.2.Core.resources.dll
+G:\SGA\Presentacion\bin\Debug\ja\DevExpress.RichEdit.v16.2.Core.resources.dll
+G:\SGA\Presentacion\bin\Debug\ru\DevExpress.RichEdit.v16.2.Core.resources.dll
+G:\SGA\Presentacion\bin\Debug\de\DevExpress.XtraTreeList.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\es\DevExpress.XtraTreeList.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraTreeList.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraTreeList.v16.2.resources.dll
+G:\SGA\Presentacion\bin\Debug\de\DevExpress.Office.v16.2.Core.resources.dll
+G:\SGA\Presentacion\bin\Debug\es\DevExpress.Office.v16.2.Core.resources.dll
+G:\SGA\Presentacion\bin\Debug\ja\DevExpress.Office.v16.2.Core.resources.dll
+G:\SGA\Presentacion\bin\Debug\ru\DevExpress.Office.v16.2.Core.resources.dll
+G:\SGA\Presentacion\obj\Debug\Presentacion.csprojResolveAssemblyReference.cache
+G:\SGA\Presentacion\obj\Debug\Presentacion.frmLogin.resources
+G:\SGA\Presentacion\obj\Debug\Presentacion.frmPrincipal.resources
+G:\SGA\Presentacion\obj\Debug\Presentacion.Funcionarios.Ocupaciones.resources
+G:\SGA\Presentacion\obj\Debug\Presentacion.Otros.Asignaturas.resources
+G:\SGA\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+G:\SGA\Presentacion\obj\Debug\Presentacion.Student.AddNewStudent.resources
+G:\SGA\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.Cache
+G:\SGA\Presentacion\obj\Debug\Presentacion.exe.licenses
+G:\SGA\Presentacion\obj\Debug\Presentacion.Otros.Colegios.resources
+G:\SGA\Presentacion\obj\Debug\Presentacion.Otros.Aulas.resources
+G:\SGA\Presentacion\obj\Debug\Presentacion.Otros.AgregarAula.resources
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\Presentacion.exe.config
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\Presentacion.exe
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\Presentacion.pdb
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Data.v16.2.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Printing.v16.2.Core.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Sparkline.v16.2.Core.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Utils.v16.2.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraBars.v16.2.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraEditors.v16.2.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraGrid.v16.2.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraLayout.v16.2.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraPrinting.v16.2.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\Entidades.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\MaterialSkin.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\Negocio.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\Datos.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Pdf.v16.2.Core.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.RichEdit.v16.2.Core.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraTreeList.v16.2.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Office.v16.2.Core.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\Entidades.pdb
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\Negocio.pdb
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Data.v16.2.xml
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Printing.v16.2.Core.xml
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Sparkline.v16.2.Core.xml
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Utils.v16.2.xml
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraBars.v16.2.xml
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraEditors.v16.2.xml
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraGrid.v16.2.xml
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraLayout.v16.2.xml
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraPrinting.v16.2.xml
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\Datos.pdb
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Pdf.v16.2.Core.xml
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.RichEdit.v16.2.Core.xml
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraTreeList.v16.2.xml
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Office.v16.2.Core.xml
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.Data.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.Data.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.Data.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.Data.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.Printing.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.Printing.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.Printing.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.Printing.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.Sparkline.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.Sparkline.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.Sparkline.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.Sparkline.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.Utils.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.Utils.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.Utils.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.Utils.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.XtraBars.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.XtraBars.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraBars.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraBars.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.XtraEditors.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.XtraEditors.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraEditors.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraEditors.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.XtraGrid.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.XtraGrid.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraGrid.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraGrid.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.XtraLayout.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.XtraLayout.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraLayout.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraLayout.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.XtraPrinting.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.XtraPrinting.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraPrinting.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraPrinting.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.Pdf.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.Pdf.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.Pdf.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.Pdf.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.RichEdit.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.RichEdit.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.RichEdit.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.RichEdit.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.XtraTreeList.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.XtraTreeList.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraTreeList.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraTreeList.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.Office.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.Office.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.Office.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.Office.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.csprojResolveAssemblyReference.cache
+G:\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.frmLogin.resources
+G:\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.frmPrincipal.resources
+G:\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Funcionarios.AgregarFuncionario.resources
+G:\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Funcionarios.Funcionarios.resources
+G:\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Funcionarios.Ocupaciones.resources
+G:\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Otros.AgregarAula.resources
+G:\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Otros.AgregarGrado.resources
+G:\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Otros.Asignaturas.resources
+G:\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Otros.Aulas.resources
+G:\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Otros.CicloEscolar.resources
+G:\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Otros.Colegios.resources
+G:\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Otros.Grado.resources
+G:\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+G:\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Student.AddNewStudent.resources
+G:\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.Cache
+G:\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.exe.licenses
+G:\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.exe
+G:\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.pdb
+G:\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Notas.Evaluaciones.resources
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraScheduler.v16.2.Core.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraScheduler.v16.2.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraScheduler.v16.2.xml
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraScheduler.v16.2.Core.xml
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.XtraScheduler.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.XtraScheduler.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraScheduler.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraScheduler.v16.2.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.XtraScheduler.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.XtraScheduler.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraScheduler.v16.2.Core.resources.dll
+G:\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraScheduler.v16.2.Core.resources.dll
+I:\Proyecto IS\SGA\Presentacion\bin\Debug\Presentacion.exe.config
+I:\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.exe
+I:\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Data.v16.2.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Printing.v16.2.Core.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Sparkline.v16.2.Core.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Utils.v16.2.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraBars.v16.2.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraEditors.v16.2.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraGrid.v16.2.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraLayout.v16.2.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraPrinting.v16.2.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraScheduler.v16.2.Core.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraScheduler.v16.2.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\Entidades.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\MaterialSkin.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\Negocio.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\Datos.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Pdf.v16.2.Core.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.RichEdit.v16.2.Core.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraTreeList.v16.2.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Office.v16.2.Core.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\Entidades.pdb
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\Negocio.pdb
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Data.v16.2.xml
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Printing.v16.2.Core.xml
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Sparkline.v16.2.Core.xml
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Utils.v16.2.xml
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraBars.v16.2.xml
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraEditors.v16.2.xml
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraGrid.v16.2.xml
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraLayout.v16.2.xml
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraPrinting.v16.2.xml
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraScheduler.v16.2.xml
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraScheduler.v16.2.Core.xml
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\Datos.pdb
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Pdf.v16.2.Core.xml
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.RichEdit.v16.2.Core.xml
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.XtraTreeList.v16.2.xml
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\DevExpress.Office.v16.2.Core.xml
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.Data.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.Data.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.Data.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.Data.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.Printing.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.Printing.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.Printing.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.Printing.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.Sparkline.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.Sparkline.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.Sparkline.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.Sparkline.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.Utils.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.Utils.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.Utils.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.Utils.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.XtraBars.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.XtraBars.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraBars.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraBars.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.XtraEditors.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.XtraEditors.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraEditors.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraEditors.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.XtraGrid.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.XtraGrid.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraGrid.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraGrid.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.XtraLayout.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.XtraLayout.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraLayout.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraLayout.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.XtraPrinting.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.XtraPrinting.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraPrinting.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraPrinting.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.XtraScheduler.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.XtraScheduler.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraScheduler.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraScheduler.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.XtraScheduler.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.XtraScheduler.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraScheduler.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraScheduler.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.Pdf.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.Pdf.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.Pdf.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.Pdf.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.RichEdit.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.RichEdit.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.RichEdit.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.RichEdit.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.XtraTreeList.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.XtraTreeList.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.XtraTreeList.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.XtraTreeList.v16.2.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\de\DevExpress.Office.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\es\DevExpress.Office.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ja\DevExpress.Office.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\bin\Debug\ru\DevExpress.Office.v16.2.Core.resources.dll
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.csprojResolveAssemblyReference.cache
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.frmLogin.resources
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.frmPrincipal.resources
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Funcionarios.AgregarFuncionario.resources
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Funcionarios.Funcionarios.resources
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Funcionarios.Ocupaciones.resources
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Notas.Evaluaciones.resources
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Otros.AgregarAula.resources
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Otros.AgregarGrado.resources
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Otros.Asignaturas.resources
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Otros.Aulas.resources
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Otros.CicloEscolar.resources
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Otros.Colegios.resources
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Otros.Grado.resources
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Otros.Turnos.resources
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.Student.AddNewStudent.resources
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.Cache
+C:\Users\Freddy\Desktop\Proyecto IS\SGA\Presentacion\obj\Debug\Presentacion.exe.licenses
+C:\Users\Freddy\Documents\GitHub\SGA\SGA\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\Freddy\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\Freddy\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\Presentacion.pdb

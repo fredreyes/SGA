@@ -67,7 +67,7 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("", conexion);
+                comando = new SqlCommand("EDITAR_TURNOS", conexion);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("", t.Turno);
                 comando.Parameters.AddWithValue("", t.Descripcion);
