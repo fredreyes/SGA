@@ -45,5 +45,9 @@ namespace Datos
                 throw ex;
             }
         }
+        public void Ingresar()
+        {
+
+        }
     }
 }
