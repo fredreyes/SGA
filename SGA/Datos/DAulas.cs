@@ -47,7 +47,7 @@ namespace Datos
         }
         public void Ingresar()
         {
-
+            SqlCommand c = new SqlCommand();
         }
     }
 }
