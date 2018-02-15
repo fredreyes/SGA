@@ -19,17 +19,16 @@ namespace Presentacion.Otros
         public Colegios()
         {
             InitializeComponent();
-            MaterialSkinManager m = MaterialSkinManager.Instance;
-            m.AddFormToManage(this);
-            m.Theme = MaterialSkinManager.Themes.LIGHT;
-            m.ColorScheme = new ColorScheme(Primary.Blue900,Primary.Blue500,Primary.Blue400,Accent.Amber400,TextShade.WHITE);
+            EstiloMenu e = new EstiloMenu();
+            e.AplicarEstilo(this);
         }
-       public string texto = "";
+        public int Bandera = 0;
         private void Colegios_Load(object sender, EventArgs e)
         {
             try
             {
                 CargarColegios();
+                chkeditar.Visible = false;
                
             }
             catch (Exception ex)
@@ -43,7 +42,7 @@ namespace Presentacion.Otros
             try
             {
                 NColegio n = new NColegio();
-                List<EColegios> l = n.ListaColegios().Where(x => x.NOMBRE_COLEGIO.ToLower().StartsWith(texto.ToLower())).ToList();
+                List<EColegios> l = n.ListaColegios();
                 gridControl1.DataSource = l;
                 gridView1.Columns[0].Visible = false;
                 gridView1.Columns[1].Caption = "NOMBRE COLEGIO";
@@ -53,6 +52,51 @@ namespace Presentacion.Otros
 
                 throw ex;
             }
+        }
+        void limpiar()
+        {
+            txtcolegio.Clear();
+            cbmDepartmento.SelectedValue = -1;
+            chkeditar.Visible = false;
+            chkeditar.Checked = false;
+            Bandera = 0;
+        }
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EColegios C = new EColegios();
+                NColegio n = new NColegio();
+                if (Bandera == 0)
+                {
+                    C.Colegio = txtcolegio.Text;
+                    C.Departamento.DepartamentoID = int.Parse(cbmDepartmento.SelectedValue.ToString());
+                    n.IngresarColegio(C);
+                    MessageBox.Show("Colegio ingresado correctamente", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    limpiar();
+                    CargarColegios();
+                }
+                if (Bandera == 1)
+                {
+                    C.ColegioId = Convert.ToInt32(txtcolegio.Tag);
+                    C.Colegio = txtcolegio.Text;
+                    C.Departamento.DepartamentoID = int.Parse(cbmDepartmento.SelectedValue.ToString());
+                    n.ModificarColegio(C);
+                    MessageBox.Show("Colegio Modificado correctamente", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    limpiar();
+                    CargarColegios();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message,"SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            //doble click
         }
     }
 }

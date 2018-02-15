@@ -60,6 +60,7 @@ namespace Presentacion.Otros
                 txtdepartamento.Text = "";
                 txtdepartamento.Tag = "";
                 chkeditar.Visible = false;
+                chkeditar.Checked = false;
                 txtdepartamento.Focus();
             }
             catch (Exception ex)
@@ -110,6 +111,7 @@ namespace Presentacion.Otros
                     txtdepartamento.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Departamento").ToString();
                     Bandera = 1;
                     chkeditar.Visible = true;
+                    chkeditar.Checked = true;
                 }
                 else
                 {

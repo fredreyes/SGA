@@ -8,7 +8,8 @@ namespace Entidades
 {
     public class EColegios
     {
-        public int COLEGIO_ID { get; set; }
-        public string NOMBRE_COLEGIO { get; set; }
+        public int ColegioId { get; set; }
+        public string Colegio { get; set; }
+        public EDepartamentos Departamento;
     }
 }

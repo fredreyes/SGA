@@ -11,13 +11,12 @@ namespace Datos
 {
     public class DColegios
     {
+        SqlCommand comando;
+        SqlConnection conexion = new SqlConnection(Properties.Settings.Default.CadenaConexion);
         public List<EColegios> ListaColegios()
         {
             try
             {
-                SqlCommand comando;
-                SqlConnection conexion = new SqlConnection(Properties.Settings.Default.CadenaConexion);
-
                 comando = new SqlCommand("select * from Colegio", conexion);
                 comando.CommandType = CommandType.Text;
                 comando.Connection = conexion;
@@ -27,14 +26,56 @@ namespace Datos
                 while (leer.Read())
                 {
                     EColegios c = new EColegios();
-                    c.COLEGIO_ID = (int)leer[0];
-                    c.NOMBRE_COLEGIO = leer[1].ToString();
+                    c.ColegioId = (int)leer[0];
+                    c.Colegio = leer[1].ToString();
+                    c.Departamento.DepartamentoID = (int)leer[2];
                     lista.Add(c);
                 }
                 leer.Close();
                 conexion.Close();
                 conexion.Dispose();
                 return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public void IngresarColegio(EColegios c)
+        {
+            try
+            {
+                comando = new SqlCommand("INGRESAR_COLEGIO");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@COLEGIO", c.Colegio);
+                comando.Parameters.AddWithValue("@DEPARTAMENTO_ID", c.Departamento.DepartamentoID);
+                comando.Connection = conexion;
+                conexion.Open();
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                conexion.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public void ModificarColegio(EColegios c)
+        {
+            try
+            {
+                comando = new SqlCommand("MODIFICAR_COLEGIO");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@COLEGIO", c.Colegio);
+                comando.Parameters.AddWithValue("@DEPARTAMENTO_ID", c.Departamento.DepartamentoID);
+                comando.Parameters.AddWithValue("@COLEGIO_ID", c.ColegioId);
+                comando.Connection = conexion;
+                conexion.Open();
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                conexion.Dispose();
             }
             catch (Exception ex)
             {
