@@ -43,6 +43,7 @@
     <Compile Include="NAsignatura.cs" />
     <Compile Include="NAulas.cs" />
     <Compile Include="NColegio.cs" />
+    <Compile Include="NDepartamento.cs" />
     <Compile Include="NFuncionario.cs" />
     <Compile Include="NGrado.cs" />
     <Compile Include="NOcupaciones.cs" />

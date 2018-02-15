@@ -43,6 +43,7 @@
     <Compile Include="DAsignatura.cs" />
     <Compile Include="DAulas.cs" />
     <Compile Include="DCicloEscolar.cs" />
+    <Compile Include="DDepartamentos.cs" />
     <Compile Include="DFuncionario.cs" />
     <Compile Include="DGrados.cs" />
     <Compile Include="DOcupaciones.cs" />

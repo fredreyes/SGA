@@ -46,6 +46,7 @@
     <Compile Include="EAulas.cs" />
     <Compile Include="EBus.cs" />
     <Compile Include="EColegios.cs" />
+    <Compile Include="EDepartamentos.cs" />
     <Compile Include="EDetalleBus.cs" />
     <Compile Include="EDetalleServicio.cs" />
     <Compile Include="EDocuemntosAlumnos.cs" />
