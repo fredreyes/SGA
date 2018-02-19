@@ -29,13 +29,22 @@ namespace Presentacion.Otros
             {
                 CargarColegios();
                 chkeditar.Visible = false;
-               
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+       void CargarDepartamento()
+        {
+            NDepartamento n = new NDepartamento();
+            List<EDepartamentos> d = n.ListaDepartamento();
+            cbmDepartmento.DataSource = d;
+            cbmDepartmento.DisplayMember = "Departamento";
+            cbmDepartmento.ValueMember = "DepartamentoID";
+            cbmDepartmento.Text = "Seleccione un Departamento";
         }
         void CargarColegios()
         {
@@ -44,8 +53,9 @@ namespace Presentacion.Otros
                 NColegio n = new NColegio();
                 List<EColegios> l = n.ListaColegios();
                 gridControl1.DataSource = l;
+                CargarDepartamento();
                 gridView1.Columns[0].Visible = false;
-                gridView1.Columns[1].Caption = "NOMBRE COLEGIO";
+                gridView1.Columns[3].Visible = false;
             }
             catch (Exception ex)
             {
@@ -56,7 +66,8 @@ namespace Presentacion.Otros
         void limpiar()
         {
             txtcolegio.Clear();
-            cbmDepartmento.SelectedValue = -1;
+            txttelefono.Clear();
+            cbmDepartmento.Text = "Seleccione un Departamento";
             chkeditar.Visible = false;
             chkeditar.Checked = false;
             Bandera = 0;
@@ -67,10 +78,12 @@ namespace Presentacion.Otros
             {
                 EColegios C = new EColegios();
                 NColegio n = new NColegio();
+              
                 if (Bandera == 0)
                 {
                     C.Colegio = txtcolegio.Text;
-                    C.Departamento.DepartamentoID = int.Parse(cbmDepartmento.SelectedValue.ToString());
+                    C.Telefono = txttelefono.Text;
+                    C.DepartamentoID = Convert.ToInt32(cbmDepartmento.SelectedValue.ToString());
                     n.IngresarColegio(C);
                     MessageBox.Show("Colegio ingresado correctamente", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     limpiar();
@@ -80,22 +93,23 @@ namespace Presentacion.Otros
                 {
                     if (chkeditar.Checked == true)
                     {
-                        C.ColegioId = Convert.ToInt32(txtcolegio.Tag);
+                        C.ColegioId = Convert.ToInt32(txtcolegio.Tag);                        
                         C.Colegio = txtcolegio.Text;
-                        C.Departamento.DepartamentoID = int.Parse(cbmDepartmento.SelectedValue.ToString());
+                        C.Telefono = txttelefono.Text;
+                        C.DepartamentoID = int.Parse(cbmDepartmento.SelectedValue.ToString());
                         n.ModificarColegio(C);
                         MessageBox.Show("Colegio Modificado correctamente", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         limpiar();
                         CargarColegios();
                     }
                     else
-                        MessageBox.Show("Si has elegido un dato, por favor vuelve a marcar el check editar", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Si has elegido un dato, por favor vuelve a marcar el check EDITAR", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message,"SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -103,10 +117,50 @@ namespace Presentacion.Otros
         {
             txtcolegio.Tag = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ColegioId").ToString());
             txtcolegio.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Colegio").ToString();
+            txttelefono.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Telefono").ToString();
             cbmDepartmento.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Departamento").ToString();
             Bandera = 1;
             chkeditar.Visible = true;
             chkeditar.Checked = true;
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EColegios c = new EColegios();
+                NColegio n = new NColegio();
+                c.ColegioId = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ColegioId");
+                var colegio = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Colegio").ToString();
+                DialogResult o = MessageBox.Show("¿Eliminar el Departamento " + colegio + "?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (o == DialogResult.OK)
+                {
+                    n.EliminarColegio(c);
+                    MessageBox.Show("Colegio eliminado correctamente", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarColegios();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message,"SGA",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+        private void brncancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult o = new DialogResult();
+            if (txtcolegio.Text != "")
+            {
+                o = MessageBox.Show("Hay registros marcados ¿Realmente deseas cancelar?", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                if (o == DialogResult.OK)
+                {
+                    limpiar();
+                }
+            }
+            else
+                limpiar();
+            
         }
     }
 }

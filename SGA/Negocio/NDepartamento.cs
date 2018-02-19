@@ -57,6 +57,22 @@ namespace Negocio
                 throw ex;
             }
         }
+
+        public void EliminarDepartamento(EDepartamentos d)
+        {
+            try
+            {
+                if (d.DepartamentoID == 0)
+                    throw new ArgumentException("Departamento no se encuentra");
+                    DDepartamentos de = new DDepartamentos();
+                    de.EliminarDepartamento(d);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }
  

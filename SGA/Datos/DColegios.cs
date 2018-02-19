@@ -17,7 +17,7 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("select * from Colegio", conexion);
+                comando = new SqlCommand("select ColegioId,Colegio,Telefono,c.DepartamentoId,Departamento d from colegio c inner join Departamentos d on c.DepartamentoId = d.DepartamentoID", conexion);
                 comando.CommandType = CommandType.Text;
                 comando.Connection = conexion;
                 conexion.Open();
@@ -28,7 +28,9 @@ namespace Datos
                     EColegios c = new EColegios();
                     c.ColegioId = (int)leer[0];
                     c.Colegio = leer[1].ToString();
-                    c.Departamento.DepartamentoID = (int)leer[2];
+                    c.Telefono = leer[2].ToString();
+                    c.DepartamentoID = (int)leer["DepartamentoId"];
+                    c.Departamento = leer["d"].ToString();
                     lista.Add(c);
                 }
                 leer.Close();
@@ -49,7 +51,8 @@ namespace Datos
                 comando = new SqlCommand("IngresarColegio");
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Colegio", c.Colegio);
-                comando.Parameters.AddWithValue("@DepartamentoId", c.Departamento.DepartamentoID);
+                comando.Parameters.AddWithValue("@Telefono", c.Telefono);
+                comando.Parameters.AddWithValue("@DepartamentoId", c.DepartamentoID);
                 comando.Connection = conexion;
                 conexion.Open();
                 comando.ExecuteNonQuery();
@@ -69,7 +72,27 @@ namespace Datos
                 comando = new SqlCommand("ModificarColegio");
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Colegio", c.Colegio);
-                comando.Parameters.AddWithValue("@DepartamentoId", c.Departamento.DepartamentoID);
+                comando.Parameters.AddWithValue("@Telefono", c.Telefono);
+                comando.Parameters.AddWithValue("@DepartamentoId", c.DepartamentoID);
+                comando.Parameters.AddWithValue("@ColegioId", c.ColegioId);
+                comando.Connection = conexion;
+                conexion.Open();
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                conexion.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public void EliminarColegio(EColegios c)
+        {
+            try
+            {
+                comando = new SqlCommand("EliminarColegio");
+                comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@ColegioId", c.ColegioId);
                 comando.Connection = conexion;
                 conexion.Open();

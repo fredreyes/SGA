@@ -37,6 +37,16 @@ begin
 	end catch
 end
 go
+create proc EliminarDepartamento
+(
+@DepartamentoID int
+)
+as
+begin
+delete Departamentos where DepartamentoID = @DepartamentoID
+end
+go
+
 --COLEGIO
 create proc IngresarColegio
 (
@@ -74,7 +84,7 @@ begin
 			Colegio =	@Colegio,
 			Telefono = @Telefono,
 			DepartamentoId = @DepartamentoId
-			where DepartamentoId = @DepartamentoId
+			where ColegioId = @ColegioId
 		end try
 		begin catch
 			if @@TRANCOUNT > 0
@@ -82,6 +92,17 @@ begin
 		end catch
 end
 go
+create proc EliminarColegio
+(
+@ColegioId int
+)
+as
+begin
+delete Colegio where ColegioId = @ColegioId
+end
+go
+
+
 --PROFESION OCUPACION
 create proc InsertarOcupacion
 (

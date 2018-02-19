@@ -62,6 +62,7 @@ namespace Presentacion.Otros
                 chkeditar.Visible = false;
                 chkeditar.Checked = false;
                 txtdepartamento.Focus();
+                Bandera = 0;
             }
             catch (Exception ex)
             {
@@ -73,25 +74,32 @@ namespace Presentacion.Otros
         {
             try
             {
-                EDepartamentos d = new EDepartamentos();
-                NDepartamento n = new NDepartamento();
+               
                 if (Bandera == 0)
                 {
+                    EDepartamentos d = new EDepartamentos();
+                    NDepartamento n = new NDepartamento();
                     d.Departamento = txtdepartamento.Text;
                     n.IngresarDepartamento(d);
                     MessageBox.Show("Departamento Ingresado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
                     CargarDepartamento();
-
                 }
                 if (Bandera == 1)
                 {
-                    d.DepartamentoID = Convert.ToInt32(txtdepartamento.Tag);
-                    d.Departamento = txtdepartamento.Text;
-                    n.ModificarDepartamento(d);
-                    MessageBox.Show("Departamento Modificado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar();
-                    CargarDepartamento();
+                    if (chkeditar.Checked)
+                    {
+                        EDepartamentos d = new EDepartamentos();
+                        NDepartamento n = new NDepartamento();
+                        d.DepartamentoID = Convert.ToInt32(txtdepartamento.Tag);
+                        d.Departamento = txtdepartamento.Text;
+                        n.ModificarDepartamento(d);
+                        MessageBox.Show("Departamento Modificado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Limpiar();
+                        CargarDepartamento();
+                    }
+                    else
+                        MessageBox.Show("Si desea editar el dato, por favor vuelve a marca la casila EDITAR", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -105,9 +113,9 @@ namespace Presentacion.Otros
         {
             try
             {
-                if (gridView1.RowCount >0)
+                if (gridView1.RowCount > 0)
                 {
-                    txtdepartamento.Tag = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "DepartamentoId"));
+                    txtdepartamento.Tag = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "DepartamentoID"));
                     txtdepartamento.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Departamento").ToString();
                     Bandera = 1;
                     chkeditar.Visible = true;
@@ -123,6 +131,30 @@ namespace Presentacion.Otros
 
                 MessageBox.Show(ex.Message,"SGA", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EDepartamentos d = new EDepartamentos();
+                NDepartamento n = new NDepartamento();
+                d.DepartamentoID = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "DepartamentoID"));
+                var Departamento = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Departamento").ToString();
+                DialogResult o = MessageBox.Show("¿Eliminar el Departamento" + Departamento + "?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (o == DialogResult.OK)
+                {
+                    n.EliminarDepartamento(d);
+                    MessageBox.Show("Departamento Eliminado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarDepartamento();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message,"Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+
         }
     }
 }

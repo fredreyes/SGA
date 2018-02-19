@@ -80,5 +80,24 @@ namespace Datos
                 throw ex;
             }
         }
+        public void EliminarDepartamento(EDepartamentos d)
+        {
+            try
+            {
+                comando = new SqlCommand("EliminarDepartamento");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@DepartamentoId", d.DepartamentoID);
+                comando.Connection = conexion;
+                conexion.Open();
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                conexion.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

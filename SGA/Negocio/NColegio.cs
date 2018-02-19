@@ -22,8 +22,8 @@ namespace Negocio
             {
                 if (c.Colegio == "")
                     throw new ArgumentException("Ingrese Nombre del Colegio");
-                List<EColegios> l = ListaColegios().Where(x => x.Colegio == c.Colegio.ToLower()).ToList();
-                if(l.Count >0)
+                List<EColegios> l = ListaColegios().Where(x => x.Colegio == c.Colegio && x.DepartamentoID == c.DepartamentoID).ToList();
+                if(l.Count > 0)
                     throw new ArgumentException("El Colegio : " + c.Colegio + " ya existe");
                 DColegios d = new DColegios();
                 d.IngresarColegio(c);
@@ -43,6 +43,22 @@ namespace Negocio
                     throw new ArgumentException("Ingrese Nombre del Colegio");
                 DColegios d = new DColegios();
                 d.ModificarColegio(c);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void EliminarColegio(EColegios c)
+        {
+            try
+            {
+                if (c.ColegioId == 0)
+                    throw new ArgumentException("Colegio no existe");
+                DColegios d = new DColegios();
+                d.EliminarColegio(c);
             }
             catch (Exception ex)
             {
