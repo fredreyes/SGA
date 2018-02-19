@@ -45,7 +45,7 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("INSERTAR_DEPARTAMENTO");
+                comando = new SqlCommand("IngresarDepartamento");
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Departamento", d.Departamento);
                 comando.Connection = conexion;
@@ -64,7 +64,7 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("MODIFICAR_DEPARTAMENTO");
+                comando = new SqlCommand("ModificarDepartamento");
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Departamento", d.Departamento);
                 comando.Parameters.AddWithValue("@DepartamentoId", d.DepartamentoID);
