@@ -41,7 +41,7 @@ go
 create proc IngresarColegio
 (
 @Colegio nvarchar(100),
-@Telefono nvarchar(100),
+@Telefono nvarchar(20),
 @DepartamentoId int
 )
 as
@@ -64,7 +64,7 @@ create proc ModificarColegio
 (
 @ColegioId int,
 @Colegio nvarchar(100),
-@Telefono nvarchar(100),
+@Telefono nvarchar(20),
 @DepartamentoId int
 )
 as
@@ -85,7 +85,7 @@ go
 --PROFESION OCUPACION
 create proc InsertarOcupacion
 (
-@Ocupacion nvarchar (70)
+@Ocupacion nvarchar (150)
 )
 as
 begin
@@ -105,7 +105,7 @@ go
 CREATE PROC EditarOcupacion
 (
 @OcupacionId int,
-@Ocupacion nvarchar (70)
+@Ocupacion nvarchar (150)
 )
 as
 begin
@@ -120,6 +120,16 @@ begin
 		end catch
 end
 go
+create proc eliminarOcupacion
+(
+@ocupacionId int
+)
+as
+begin
+	delete ProfesionOcupacion where OcupacionId = @ocupacionId
+end
+go
+
 --TURNOS
 create proc InsertarTurnos
 (
@@ -156,26 +166,14 @@ begin
 		where TurnoId = @TurnoId
 end
 
-
-
-
-CREATE PROC MODIFICAR_TURNOS
+create proc eliminarTurno
 (
-@TURNOID int,
-@TURNO VARCHAR(200),
-@OBSERVACION NVARCHAR(200),
-@ACTIVO BIT
+@TurnoId int
 )
-AS
-BEGIN
-		UPDATE  Turnos
-		SET
-		Turno = @TURNO,
-		Descripcion = @OBSERVACION,
-		Activo = @ACTIVO
-		where TurnoId = @TURNOID
-END
-go
+as
+begin
+	delete Turnos where TurnoId = @TurnoId
+end
 
 -- GRADOS
 create proc InsertarGrados
@@ -227,81 +225,93 @@ begin
 end
 go
 
+create proc eliminarGrado
+(
+@GradoId int
+)
+as
+begin
+	delete Grados where GradoId  = @GradoId
+end
+go
+
+--AULAS
+create proc IngresarAula
+(
+@Aula nvarchar(30),
+@capacidad int,
+@Vacantes int,
+@GradoId int
+)
+as
+begin
+		declare @activo bit
+		set @activo = 1
+		insert into Aulas values
+		(
+		@Aula,
+		@capacidad,
+		@Vacantes,
+		@GradoId,
+		@activo
+		)
+end
+go
+create proc ModificarAula
+(
+@AulaId int,
+@Aula nvarchar(30),
+@capacidad int,
+@Vacantes int,
+@GradoId int,
+@activo bit
+)
+as
+begin
+		update Aulas set
+		Aula = @Aula,
+		Capacidad = @capacidad,
+		Vacantes = @Vacantes,
+		Grado = @GradoId,
+		Activo = @activo
+		where AulaId = @AulaId
+end
+go
+--Asignatura
+create proc IngresarAsignatura
+(
+@Asignatura nvarchar(100)
+)
+as
+begin
+		declare @activo bit
+		set @activo = 1
+		insert into Asignaturas values
+		(
+		@Asignatura,
+		@activo
+		)
+end
+go
+
+create proc ModificarAsignatura
+(
+@AsignaturaId int,
+@Asignatura nvarchar(100),
+@activo bit
+)
+as
+begin
+		update Asignaturas set
+		Asignatura = @Asignatura,
+		Activo = @activo
+		where AsignaturaId = @AsignaturaId
+end
+go
+
+---CREAR LOS DE CICLO ESCOLAR
+
 ----------------------------------------
-
-
---ASIGNATURAS
-CREATE PROC INSERTAR_ASIGNATURAS
-(
-@NOMBRE NVARCHAR(50)
-)
-AS
-BEGIN
-		BEGIN TRY
-		DECLARE @ID INT
-		SELECT @ID = ISNULL (MAX(AsignaturaId),0)+1 FROM ASIGNATURAS
-		DECLARE @ACTIVO BIT
-		SELECT @ACTIVO = 1
-			INSERT INTO ASIGNATURAS VALUES
-			(
-			@ID,
-			@NOMBRE,
-			@ACTIVO
-			)
-		END TRY
-		BEGIN CATCH
-			IF @@TRANCOUNT > 0
-				ROLLBACK
-		END CATCH
-		
-END
-GO
-CREATE PROC MODIFICAR_ASIGNATURAS
-(
-@CODIGO_ASIGNATURA INT,
-@NOMBRE NVARCHAR(50),
-@ACTIVO BIT
-)
-AS
-BEGIN
-		BEGIN TRY
-			UPDATE ASIGNATURAS  SET
-			Asignatura = @NOMBRE,
-			ACTIVO = @ACTIVO
-			WHERE AsignaturaId = @CODIGO_ASIGNATURA
-		END TRY
-		BEGIN CATCH
-		IF @@TRANCOUNT > 0
-		ROLLBACK
-		END CATCH
-END
-GO
-
-
-
---COLEGIO
-CREATE PROC ModificarColegio
-(
-@ColegioId  int,
-@Colegio nvarchar(100),
-@DepartamentoId int
-)
-AS
-BEGIN
-		BEGIN TRY
-		update Colegio set
-		NOMBRE_COLEGIO = @Colegio,
-		DepartamentoId = @DepartamentoId
-		where COLEGIO_ID= @ColegioId
-		END TRY
-		BEGIN CATCH
-			IF @@TRANCOUNT > 0
-				ROLLBACK
-		END CATCH
-END
-GO
-
-
 
 --------------------------------------------Procedimientos No creados------------------------------------------------
 

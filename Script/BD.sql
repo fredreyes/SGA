@@ -30,7 +30,6 @@ Ocupacion nvarchar(150) not null
 constraint PK_Ocupacion primary key(OcupacionId)
 )
 go
-
 --TABLA TURNOS
 create table Turnos
 (
@@ -41,7 +40,6 @@ Activo bit
 CONSTRAINT PK_TURNOS PRIMARY KEY(TurnoId)
 )
 GO
-
 --TABLA GRADO
 create table Grados
 (
@@ -52,6 +50,53 @@ Activo bit
 CONSTRAINT PK_GRADO PRIMARY KEY(GradoId)
 )
 GO
+--TABLA AULAS
+create table Aulas
+(
+AulaId INT NOT NULL identity(1,1),
+Aula NVARCHAR(30) NOT NULL,
+Capacidad INT NOT NULL CHECK(CAPACIDAD >= 0),
+Vacantes INT NOT NULL CHECK(VACANTES >= 0),
+GradoId INT NOT NULL,
+Activo bit
+CONSTRAINT PK_AULAS PRIMARY KEY(AulaId),
+CONSTRAINT FK_AULAS_GRADOS FOREIGN KEY(GradoId) REFERENCES Grados(GradoId)
+)
+go
+--TABLA ASIGNATURA
+create table Asignaturas
+(
+AsignaturaId int  NOT NULL identity(1,1),
+Asignatura nvarchar(100) NOT NULL,
+Activo bit
+CONSTRAINT PK_ASIGNATURA PRIMARY KEY(AsignaturaId)
+)
+go
+--CICLO_ESCOLAR
+create table CicloEscolar
+( 
+CicloEscolarId INT NOT NULL identity(1,1),
+Año INT NOT NULL,
+FechaInicio DATE NOT NULL,
+FechaFin DATE NOT NULL,
+Activo bit
+CONSTRAINT PK_CICLO PRIMARY KEY(CicloEscolarId) 
+)
+GO
+--TABLA EVALUACIONES
+CREATE TABLE Evaluaciones
+(
+EvaluacionId INT NOT NULL identity(1,1),
+Mes NVARCHAR(20) NOT NULL,
+Pacial NVARCHAR(30) NOT NULL,
+Observaciones NVARCHAR(300),
+CicloEscolarId INT NOT NULL,
+Activo bit
+CONSTRAINT PK_EVALUACIONES PRIMARY KEY(EvaluacionId),
+CONSTRAINT FK_EVALU_CICLO FOREIGN KEY(CicloEscolarId) REFERENCES CicloEscolar(CicloEscolarId)
+)
+GO
+
 
 ---------------------------------------------------
 --TABLA ALUMNO
@@ -150,31 +195,8 @@ CONSTRAINT PK_USUARIO_ALUMNO PRIMARY KEY(UsuarioAlumno),
 CONSTRAINT FK_USUARIO_ALUMNOS FOREIGN KEY(AlumnoId) REFERENCES ALUMNOS(AlumnoId)
 )
 
---TABLA ASIGNATURA
-create table Asignaturas
-(
-AsignaturaId INT NOT NULL,
-Asignatura NVARCHAR(50) NOT NULL,
-Activo BIT
-CONSTRAINT PK_ASIGNATURA PRIMARY KEY(AsignaturaId)
-)
-go
 
 
-
-
---TABLA AULAS
-create table Aulas
-(
-AulaId INT NOT NULL,
-Aula NVARCHAR(30) NOT NULL,
-Capacidad INT NOT NULL CHECK(CAPACIDAD >= 0),
-Vacantes INT NOT NULL CHECK(VACANTES >= 0),
-GradoId INT NOT NULL
-CONSTRAINT PK_AULAS PRIMARY KEY(AulaId),
-CONSTRAINT FK_AULAS_GRADOS FOREIGN KEY(GradoId) REFERENCES Grados(GradoId)
-)
-go
 
 --MATERIA_DOCENTES
 CREATE TABLE MateriaDocente
@@ -188,30 +210,9 @@ CONSTRAINT FK_MATE_ASIGNATURA FOREIGN KEY(AsignaturaId) REFERENCES ASIGNATURAS(A
 )
 GO
 
---CICLO_ESCOLAR
-CREATE TABLE CicloEscolar
-( 
-CicloEscolarId INT NOT NULL,
-Año INT NOT NULL,
-FechaInicio DATE NOT NULL,
-FechaFin DATE NOT NULL,
-Activo bit
-CONSTRAINT PK_CICLO PRIMARY KEY(CicloEscolarId) 
-)
-GO
 
---TABLA EVALUACIONES
-CREATE TABLE Evaluaciones
-(
-EvaluacionId INT NOT NULL,
-Mes NVARCHAR(20) NOT NULL,
-Pacial NVARCHAR(30) NOT NULL,
-Observaciones NVARCHAR(300),
-CicloEscolarId INT NOT NULL 
-CONSTRAINT PK_EVALUACIONES PRIMARY KEY(EvaluacionId),
-CONSTRAINT FK_EVALU_CICLO FOREIGN KEY(CicloEscolarId) REFERENCES CicloEscolar(CicloEscolarId)
-)
-GO
+
+
 
 --TABLA NOTAS
 CREATE TABLE Calificaciones
