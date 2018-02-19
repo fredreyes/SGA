@@ -201,7 +201,7 @@ GO
 
 
 
-
+-------------faltan
 -- GRADOS
 create proc InsertarGrados
 (
