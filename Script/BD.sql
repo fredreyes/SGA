@@ -30,6 +30,7 @@ Ocupacion nvarchar(150) not null
 constraint PK_Ocupacion primary key(OcupacionId)
 )
 go
+
 --TABLA TURNOS
 create table Turnos
 (

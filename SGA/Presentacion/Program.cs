@@ -16,7 +16,7 @@ namespace Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Otros.Colegios());
+            Application.Run(new Funcionarios.Ocupaciones());
         }
     }
 }

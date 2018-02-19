@@ -16,6 +16,5 @@ namespace Entidades
         //{
         //    this.Departamentos = new EDepartamentos();            
         //}
-
     }
 }

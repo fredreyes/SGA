@@ -150,7 +150,7 @@ begin
 	delete ProfesionOcupacion where OcupacionId = @ocupacionId
 end
 go
-
+--crear
 --TURNOS
 create proc InsertarTurnos
 (

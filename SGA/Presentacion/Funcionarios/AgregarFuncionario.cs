@@ -35,7 +35,7 @@ namespace Presentacion.Funcionarios
             Ocupaciones o = new Ocupaciones();
             if (o.ShowDialog() == DialogResult.OK)
             {
-                txtocupacion.Text = o.ocupacion; 
+              //  txtocupacion.Text = o.ocupacion; 
             }
         }
     }

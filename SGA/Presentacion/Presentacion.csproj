@@ -226,7 +226,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icons\delete.png" />
+    <Content Include="icons\error %281%29.png" />
     <Content Include="icons\login.png" />
+    <Content Include="icons\save %281%29.png" />
+    <Content Include="icons\save.png" />
     <Content Include="icons\student.png" />
     <Content Include="icons\user.png" />
   </ItemGroup>

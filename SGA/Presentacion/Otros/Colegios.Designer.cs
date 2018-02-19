@@ -106,7 +106,7 @@
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.Red;
             this.btnGuardar.Depth = 0;
-            this.btnGuardar.Location = new System.Drawing.Point(71, 193);
+            this.btnGuardar.Location = new System.Drawing.Point(54, 193);
             this.btnGuardar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Primary = true;
@@ -150,7 +150,7 @@
             // brncancelar
             // 
             this.brncancelar.Depth = 0;
-            this.brncancelar.Location = new System.Drawing.Point(212, 193);
+            this.brncancelar.Location = new System.Drawing.Point(224, 193);
             this.brncancelar.MouseState = MaterialSkin.MouseState.HOVER;
             this.brncancelar.Name = "brncancelar";
             this.brncancelar.Primary = true;

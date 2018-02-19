@@ -76,7 +76,7 @@ namespace Presentacion.Student
             Funcionarios.Ocupaciones o = new Funcionarios.Ocupaciones();
             if (o.ShowDialog() == DialogResult.OK)
             {
-                txtocupacionPadre.Text = o.ocupacion;
+             //   txtocupacionPadre.Text = o.ocupacion;
             }
         }
 

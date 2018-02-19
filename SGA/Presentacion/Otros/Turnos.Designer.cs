@@ -42,6 +42,8 @@
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.txtObservacion = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtTurno = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btncancelar = new System.Windows.Forms.Button();
+            this.btningresar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -51,6 +53,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.btncancelar);
+            this.groupBox1.Controls.Add(this.btningresar);
             this.groupBox1.Controls.Add(this.rbtncancelar);
             this.groupBox1.Controls.Add(this.rbtnActivo);
             this.groupBox1.Controls.Add(this.menuStrip1);
@@ -124,21 +128,21 @@
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
             // exportarToolStripMenuItem
             // 
             this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
-            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.exportarToolStripMenuItem.Text = "Exportar XLS";
             this.exportarToolStripMenuItem.Click += new System.EventHandler(this.exportarToolStripMenuItem_Click);
             // 
             // exportarPDFToolStripMenuItem
             // 
             this.exportarPDFToolStripMenuItem.Name = "exportarPDFToolStripMenuItem";
-            this.exportarPDFToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportarPDFToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.exportarPDFToolStripMenuItem.Text = "Exportar PDF";
             this.exportarPDFToolStripMenuItem.Click += new System.EventHandler(this.exportarPDFToolStripMenuItem_Click);
             // 
@@ -180,7 +184,7 @@
             this.btnGuardar.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Appearance.Options.UseFont = true;
             this.btnGuardar.ImageUri.Uri = "Save";
-            this.btnGuardar.Location = new System.Drawing.Point(110, 202);
+            this.btnGuardar.Location = new System.Drawing.Point(112, 206);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(91, 32);
             this.btnGuardar.TabIndex = 9;
@@ -216,6 +220,42 @@
             this.txtTurno.Size = new System.Drawing.Size(214, 23);
             this.txtTurno.TabIndex = 7;
             this.txtTurno.UseSystemPasswordChar = false;
+            // 
+            // btncancelar
+            // 
+            this.btncancelar.BackColor = System.Drawing.Color.Firebrick;
+            this.btncancelar.FlatAppearance.BorderSize = 0;
+            this.btncancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkRed;
+            this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancelar.ForeColor = System.Drawing.Color.White;
+            this.btncancelar.Image = global::Presentacion.Properties.Resources.delete;
+            this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncancelar.Location = new System.Drawing.Point(187, 174);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Size = new System.Drawing.Size(103, 38);
+            this.btncancelar.TabIndex = 16;
+            this.btncancelar.Text = "Cancelar";
+            this.btncancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btncancelar.UseVisualStyleBackColor = false;
+            // 
+            // btningresar
+            // 
+            this.btningresar.BackColor = System.Drawing.Color.Blue;
+            this.btningresar.FlatAppearance.BorderSize = 0;
+            this.btningresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btningresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btningresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btningresar.ForeColor = System.Drawing.Color.White;
+            this.btningresar.Image = global::Presentacion.Properties.Resources.save;
+            this.btningresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btningresar.Location = new System.Drawing.Point(3, 174);
+            this.btningresar.Name = "btningresar";
+            this.btningresar.Size = new System.Drawing.Size(103, 38);
+            this.btningresar.TabIndex = 15;
+            this.btningresar.Text = "Guardar";
+            this.btningresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btningresar.UseVisualStyleBackColor = false;
             // 
             // Turnos
             // 
@@ -255,5 +295,7 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txtTurno;
         private MaterialSkin.Controls.MaterialRadioButton rbtncancelar;
         private MaterialSkin.Controls.MaterialRadioButton rbtnActivo;
+        private System.Windows.Forms.Button btncancelar;
+        private System.Windows.Forms.Button btningresar;
     }
 }

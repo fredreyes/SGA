@@ -17,7 +17,7 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("SELECT OCUPACION_ID,UPPER(NOMBRE_OCUPACION)FROM PROFESION_OCUPACION", conexion);
+                comando = new SqlCommand("select * from ProfesionOcupacion", conexion);
                 comando.Connection = conexion;
                 conexion.Open();
                 SqlDataReader leer = comando.ExecuteReader();
@@ -43,7 +43,54 @@ namespace Datos
         {
             try
             {
-               
+                comando = new SqlCommand("InsertarOcupacion");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Ocupacion", o.Ocupacion);
+                comando.Connection = conexion;
+                conexion.Open();
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                conexion.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public void ModificarOcupaciones(EOcupaciones o)
+        {
+            try
+            {
+                comando = new SqlCommand("EditarOcupacion");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Ocupacion", o.Ocupacion);
+                comando.Parameters.AddWithValue("@OcupacionId", o.OcupacionId);
+                comando.Connection = conexion;
+                conexion.Open();
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                conexion.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void EliminarOcupaciones(EOcupaciones o)
+        {
+            try
+            {
+                comando = new SqlCommand("eliminarOcupacion");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@OcupacionId", o.OcupacionId);
+                comando.Connection = conexion;
+                conexion.Open();
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                conexion.Dispose();
             }
             catch (Exception ex)
             {
