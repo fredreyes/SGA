@@ -131,19 +131,20 @@ BEGIN
 END
 GO
 
---------------------------------------------Procedimientos No creados-------------------------------------------------
 
 --COLEGIO
 CREATE PROC IngresarColegio
 (
-@Colegio nvarchar(100)
+@Colegio nvarchar(100),
+@DepartamentoId int
 )
 AS
 BEGIN
 		BEGIN TRY
 		INSERT INTO Colegio VALUES
 		(
-			@Colegio
+			@Colegio,
+			@DepartamentoId
 		)
 		END TRY
 		BEGIN CATCH
@@ -152,6 +153,32 @@ BEGIN
 		END CATCH
 END
 GO
+
+--COLEGIO
+CREATE PROC ModificarColegio
+(
+@ColegioId  int,
+@Colegio nvarchar(100),
+@DepartamentoId int
+)
+AS
+BEGIN
+		BEGIN TRY
+		update Colegio set
+		NOMBRE_COLEGIO = @Colegio,
+		DepartamentoId = @DepartamentoId
+		where COLEGIO_ID= @ColegioId
+		END TRY
+		BEGIN CATCH
+			IF @@TRANCOUNT > 0
+				ROLLBACK
+		END CATCH
+END
+GO
+
+--------------------------------------------Procedimientos No creados------------------------------------------------
+
+
 
 --PROFESION OCUPACION
 CREATE PROC INSERTAR_OCUPACION

@@ -46,10 +46,10 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("INGRESAR_COLEGIO");
+                comando = new SqlCommand("IngresarColegio");
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@COLEGIO", c.Colegio);
-                comando.Parameters.AddWithValue("@DEPARTAMENTO_ID", c.Departamento.DepartamentoID);
+                comando.Parameters.AddWithValue("@Colegio", c.Colegio);
+                comando.Parameters.AddWithValue("@DepartamentoId", c.Departamento.DepartamentoID);
                 comando.Connection = conexion;
                 conexion.Open();
                 comando.ExecuteNonQuery();
@@ -66,11 +66,11 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("MODIFICAR_COLEGIO");
+                comando = new SqlCommand("ModificarColegio");
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@COLEGIO", c.Colegio);
-                comando.Parameters.AddWithValue("@DEPARTAMENTO_ID", c.Departamento.DepartamentoID);
-                comando.Parameters.AddWithValue("@COLEGIO_ID", c.ColegioId);
+                comando.Parameters.AddWithValue("@Colegio", c.Colegio);
+                comando.Parameters.AddWithValue("@DepartamentoId", c.Departamento.DepartamentoID);
+                comando.Parameters.AddWithValue("@ColegioId", c.ColegioId);
                 comando.Connection = conexion;
                 conexion.Open();
                 comando.ExecuteNonQuery();

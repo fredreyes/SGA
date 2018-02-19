@@ -38,3 +38,11 @@ C:\Users\Freddy\Documents\GitHub\SGA\SGA\Datos\bin\Debug\Entidades.pdb
 C:\Users\Freddy\Documents\GitHub\SGA\SGA\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
 C:\Users\Freddy\Documents\GitHub\SGA\SGA\Datos\obj\Debug\Datos.dll
 C:\Users\Freddy\Documents\GitHub\SGA\SGA\Datos\obj\Debug\Datos.pdb
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Datos\bin\Debug\Datos.dll.config
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Datos\bin\Debug\Datos.dll
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Datos\bin\Debug\Datos.pdb
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Datos\bin\Debug\Entidades.dll
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Datos\bin\Debug\Entidades.pdb
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Datos\obj\Debug\Datos.dll
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Datos\obj\Debug\Datos.pdb

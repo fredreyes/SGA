@@ -78,13 +78,18 @@ namespace Presentacion.Otros
                 }
                 if (Bandera == 1)
                 {
-                    C.ColegioId = Convert.ToInt32(txtcolegio.Tag);
-                    C.Colegio = txtcolegio.Text;
-                    C.Departamento.DepartamentoID = int.Parse(cbmDepartmento.SelectedValue.ToString());
-                    n.ModificarColegio(C);
-                    MessageBox.Show("Colegio Modificado correctamente", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    limpiar();
-                    CargarColegios();
+                    if (chkeditar.Checked == true)
+                    {
+                        C.ColegioId = Convert.ToInt32(txtcolegio.Tag);
+                        C.Colegio = txtcolegio.Text;
+                        C.Departamento.DepartamentoID = int.Parse(cbmDepartmento.SelectedValue.ToString());
+                        n.ModificarColegio(C);
+                        MessageBox.Show("Colegio Modificado correctamente", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        limpiar();
+                        CargarColegios();
+                    }
+                    else
+                        MessageBox.Show("Si has elegido un dato, por favor vuelve a marcar el check editar", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -96,7 +101,12 @@ namespace Presentacion.Otros
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
         {
-            //doble click
+            txtcolegio.Tag = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ColegioId").ToString());
+            txtcolegio.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Colegio").ToString();
+            cbmDepartmento.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Departamento").ToString();
+            Bandera = 1;
+            chkeditar.Visible = true;
+            chkeditar.Checked = true;
         }
     }
 }
