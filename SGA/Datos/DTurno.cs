@@ -17,7 +17,7 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("SELECT * FROM TURNOS");
+                comando = new SqlCommand("select * from turnos");
                 comando.CommandType = CommandType.Text;
                 comando.Connection = conexion;
                 conexion.Open();
@@ -47,10 +47,10 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("INSERTAR_TURNOS");
+                comando = new SqlCommand("InsertarTurnos");
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@TURNO", t.Turno);
-                comando.Parameters.AddWithValue("@OBSERVACION", t.Descripcion);
+                comando.Parameters.AddWithValue("@Turno", t.Turno);
+                comando.Parameters.AddWithValue("@Descripcion", t.Descripcion);
                 comando.Connection = conexion;
                 conexion.Open();
                 comando.ExecuteNonQuery();
@@ -67,12 +67,31 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("MODIFICAR_TURNOS");
+                comando = new SqlCommand("ModificarTurnos");
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@TURNO", t.Turno);
-                comando.Parameters.AddWithValue("@OBSERVACION", t.Descripcion);
-                comando.Parameters.AddWithValue("@ACTIVO", t.Activo);
-                comando.Parameters.AddWithValue("@TURNOID", t.TurnoId);
+                comando.Parameters.AddWithValue("@Turno", t.Turno);
+                comando.Parameters.AddWithValue("@Descripcion", t.Descripcion);
+                comando.Parameters.AddWithValue("@Activo", t.Activo);
+                comando.Parameters.AddWithValue("@TurnoId", t.TurnoId);
+                comando.Connection = conexion;
+                conexion.Open();
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                conexion.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public void EliminarTurnos(ETurnos t)
+        {
+            try
+            {
+                comando = new SqlCommand("eliminarTurno");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@TurnoId", t.TurnoId);
                 comando.Connection = conexion;
                 conexion.Open();
                 comando.ExecuteNonQuery();

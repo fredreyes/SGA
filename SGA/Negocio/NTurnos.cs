@@ -29,11 +29,11 @@ namespace Negocio
         {
             try
             {
-                if (t.Turno == string.Empty)
+                if (t.Turno == "")
                     throw new ArgumentException("Ingrese un Turno");
-                List<ETurnos> lista = ListaTurnos().Where(x => x.Turno == t.Turno).ToList();
-                if (lista.Count >0)
-                    throw new ArgumentException("El Turno: " + t.Turno + " ya existe");
+                //List<ETurnos> lista = ListaTurnos().Where(x => x.Turno == t.Turno).ToList();
+                //if (lista.Count >0)
+                //    throw new ArgumentException("El Turno: " + t.Turno + " ya existe");
                 DTurno d = new DTurno();
                 d.IngresarTurno(t);
                     
@@ -47,11 +47,24 @@ namespace Negocio
         {
             try
             {
-                if (t.Turno == string.Empty)
+                if (t.Turno == "")
                     throw new ArgumentException("Ingrese un Turno");
                 DTurno d = new DTurno();
                 d.ModificarTurnos(t);
-
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public void EliminarTurno(ETurnos t)
+        {
+            try
+            {
+                if (t.TurnoId == 0)
+                    throw new ArgumentException("Ingrese un Turno valido");
+                DTurno d = new DTurno();
+                d.EliminarTurnos(t);
             }
             catch (Exception ex)
             {

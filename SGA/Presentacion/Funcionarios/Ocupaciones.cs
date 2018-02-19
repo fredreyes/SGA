@@ -87,7 +87,7 @@ namespace Presentacion.Funcionarios
         {
             if (txtprofesion.Text != null)
             {
-                DialogResult o = MessageBox.Show("¿Realmente deseas cancelar?", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                DialogResult o = MessageBox.Show("¿Realmente deseas cancelar?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (o == DialogResult.OK)
                 {
                     Limpiar();

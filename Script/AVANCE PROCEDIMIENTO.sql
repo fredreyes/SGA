@@ -150,7 +150,7 @@ begin
 	delete ProfesionOcupacion where OcupacionId = @ocupacionId
 end
 go
---crear
+
 --TURNOS
 create proc InsertarTurnos
 (
@@ -186,7 +186,7 @@ begin
 		Activo = @activo
 		where TurnoId = @TurnoId
 end
-
+GO
 create proc eliminarTurno
 (
 @TurnoId int
@@ -195,6 +195,12 @@ as
 begin
 	delete Turnos where TurnoId = @TurnoId
 end
+GO
+
+
+
+
+
 
 -- GRADOS
 create proc InsertarGrados
@@ -221,6 +227,9 @@ begin
 	end catch
 end
 go
+
+
+
 create proc ModificarGrados
 (
 @GradoId int,
