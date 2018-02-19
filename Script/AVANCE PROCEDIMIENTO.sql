@@ -1,3 +1,43 @@
+--departamentos
+create proc IngresarDepartamento
+(
+@Departamento nvarchar(150)
+)
+as
+begin
+	begin try
+		insert into Departamentos
+		values
+		(
+			@Departamento
+		)
+	end try
+	begin catch
+		if @@TRANCOUNT > 1
+			rollback
+	end catch
+end
+go
+create proc ModificarDepartamento
+(
+@DepartamentoId int,
+@Departamento nvarchar(150)
+)
+as
+begin
+	begin try
+		update Departamentos
+		set
+			Departamento = @Departamento
+			where DepartamentoId = @DepartamentoId
+	end try
+	begin catch
+		if @@TRANCOUNT > 1
+			rollback
+	end catch
+end
+go
+
 --TURNOS
 CREATE PROC INSERTAR_TURNOS
 (
@@ -21,6 +61,7 @@ BEGIN
 		)
 END
 go
+
 CREATE PROC MODIFICAR_TURNOS
 (
 @TURNOID int,
@@ -176,20 +217,14 @@ BEGIN
 END
 GO
 
---------------------------------------------Procedimientos No creados------------------------------------------------
-
-
-
 --PROFESION OCUPACION
-CREATE PROC INSERTAR_OCUPACION
+CREATE PROC InsertarOcupacion
 (
 @Ocupacion NVARCHAR (70)
 )
 AS
 BEGIN
 		BEGIN TRY
-			DECLARE @EXISTE NVARCHAR(70)
-			DECLARE @MSG NVARCHAR(100)
 					INSERT INTO PROFESION_OCUPACION
 					VALUES
 					(
@@ -202,8 +237,26 @@ BEGIN
 		END CATCH
 END
 GO
+CREATE PROC EditarOcupacion
+(
+@OcupacionId int,
+@Ocupacion NVARCHAR (70)
+)
+AS
+BEGIN
+		BEGIN TRY
+					update PROFESION_OCUPACION set
+					Ocupacion = @Ocupacion
+					where  @OcupacionId = OcupacionId
+		END TRY
+		BEGIN CATCH
+			IF @@TRANCOUNT > 0
+		ROLLBACK
+		END CATCH
+END
+GO
 
-
+--------------------------------------------Procedimientos No creados------------------------------------------------
 
 --Alumno
 --CREATE PROC INSERTAR_ALUMNO

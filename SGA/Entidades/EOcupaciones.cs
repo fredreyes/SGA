@@ -8,7 +8,7 @@ namespace Entidades
 {
     public class EOcupaciones
     {
-        public int OCUPACION_ID { get; set; }
-        public string NOMBRE_OCUPACION { get; set; }
+        public int OcupacionId { get; set; }
+        public string Ocupacion { get; set; }
     }
 }

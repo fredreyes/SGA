@@ -25,13 +25,25 @@ namespace Datos
                 while (leer.Read())
                 {
                     EOcupaciones o = new EOcupaciones();
-                    o.OCUPACION_ID = (int)leer[0];
-                    o.NOMBRE_OCUPACION = leer[1].ToString();
+                    o.OcupacionId = (int)leer[0];
+                    o.Ocupacion = leer[1].ToString();
                     lista.Add(o);
                 }
                 leer.Close();
                 conexion.Close();
                 return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+         public void IngresarOcupaciones(EOcupaciones o)
+        {
+            try
+            {
+               
             }
             catch (Exception ex)
             {

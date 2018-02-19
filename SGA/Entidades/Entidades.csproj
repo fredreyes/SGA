@@ -44,10 +44,8 @@
     <Compile Include="EAlumnos.cs" />
     <Compile Include="EAsignatura.cs" />
     <Compile Include="EAulas.cs" />
-    <Compile Include="EBus.cs" />
     <Compile Include="EColegios.cs" />
     <Compile Include="EDepartamentos.cs" />
-    <Compile Include="EDetalleBus.cs" />
     <Compile Include="EDetalleServicio.cs" />
     <Compile Include="EDocuemntosAlumnos.cs" />
     <Compile Include="EEvaluaciones.cs" />
@@ -59,8 +57,6 @@
     <Compile Include="EOcupaciones.cs" />
     <Compile Include="EPadres-Tutor.cs" />
     <Compile Include="EPago.cs" />
-    <Compile Include="ERecorrido.cs" />
-    <Compile Include="ERuta.cs" />
     <Compile Include="EServicios.cs" />
     <Compile Include="ETurnos.cs" />
     <Compile Include="EUniforme.cs" />

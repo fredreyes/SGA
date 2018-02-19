@@ -16,12 +16,12 @@ create table Colegio
 (
 ColegioId int not null identity(1,1),
 Colegio nvarchar(100) not null,
+Telefono nvarchar(20),
 DepartamentoId int
 constraint PK_Colegio primary key(ColegioId),
 constraint fk_Departamento foreign key(DepartamentoId) references Departamentos(DepartamentoID)
 )
 go
-
 --TABLA PROFESION_OCUPACION
 create table ProfesionOcupacion
 (
