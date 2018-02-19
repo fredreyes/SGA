@@ -13,7 +13,7 @@ begin
 		)
 	end try
 	begin catch
-		if @@TRANCOUNT > 1
+		if @@TRANCOUNT > 0
 			rollback
 	end catch
 end
@@ -32,35 +32,132 @@ begin
 			where DepartamentoId = @DepartamentoId
 	end try
 	begin catch
-		if @@TRANCOUNT > 1
+		if @@TRANCOUNT > 0
 			rollback
 	end catch
 end
 go
-
---TURNOS
-CREATE PROC INSERTAR_TURNOS
+--COLEGIO
+create proc IngresarColegio
 (
-@TURNO VARCHAR(200),
-@OBSERVACION NVARCHAR(200)
+@Colegio nvarchar(100),
+@Telefono nvarchar(100),
+@DepartamentoId int
 )
-AS
-BEGIN
-		DECLARE @ID INT
+as
+begin
+		begin try
+		insert into Colegio values
+		(
+			@Colegio,
+			@Telefono,
+			@DepartamentoId
+		)
+		end try
+		begin catch
+			if @@TRANCOUNT > 0
+				rollback
+		end catch
+end
+go
+create proc ModificarColegio
+(
+@ColegioId int,
+@Colegio nvarchar(100),
+@Telefono nvarchar(100),
+@DepartamentoId int
+)
+as
+begin
+		begin try
+		update Colegio set
+			Colegio =	@Colegio,
+			Telefono = @Telefono,
+			DepartamentoId = @DepartamentoId
+			where DepartamentoId = @DepartamentoId
+		end try
+		begin catch
+			if @@TRANCOUNT > 0
+				rollback
+		end catch
+end
+go
+--PROFESION OCUPACION
+create proc InsertarOcupacion
+(
+@Ocupacion nvarchar (70)
+)
+as
+begin
+	begin try
+					insert into ProfesionOcupacion
+					values
+					(
+					@Ocupacion
+					)
+		end try
+		begin catch
+			if @@TRANCOUNT > 0
+		rollback
+		end catch
+end
+go
+CREATE PROC EditarOcupacion
+(
+@OcupacionId int,
+@Ocupacion nvarchar (70)
+)
+as
+begin
+		begin try
+					update ProfesionOcupacion set
+					Ocupacion = @Ocupacion
+					where  @OcupacionId = OcupacionId
+		end try
+		begin catch
+			if @@TRANCOUNT > 0
+		rollback
+		end catch
+end
+go
+--TURNOS
+create proc InsertarTurnos
+(
+@Turno nvarchar(200),
+@Descripcion nvarchar(200)
+)
+as
+begin
 		declare @activo bit
-		set @activo = 1
-		select @ID = ISNULL(MAX(turnoId),0)+1 FROM Turnos
-		
+		set @activo = 1		
 		insert into Turnos
 		values
 		(
-		@ID,
-		@TURNO,
-		@OBSERVACION,
+		@Turno,
+		@Descripcion,
 		@activo
 		)
-END
+end
 go
+
+create proc ModificarTurnos
+(
+@TurnoId int,
+@Turno nvarchar(200),
+@Descripcion nvarchar(200),
+@Activo bit
+)
+as
+begin
+		update Turnos set
+		Turno = @Turno,
+		Descripcion = @Descripcion,
+		Activo = @activo
+		where TurnoId = @TurnoId
+end
+
+
+
 
 CREATE PROC MODIFICAR_TURNOS
 (
@@ -79,50 +176,58 @@ BEGIN
 		where TurnoId = @TURNOID
 END
 go
+
 -- GRADOS
-CREATE PROC INSERTAR_GRADOS
+create proc InsertarGrados
 (
-@GRADO NVARCHAR(20),
-@TIPO CHAR (1)
+@Grado nvarchar(20),
+@Tipo char(1)
 )
-AS
-BEGIN
-		BEGIN TRY
-		DECLARE @CODIGO_GRADO INT
-		SELECT @CODIGO_GRADO = ISNULL(MAX(GradoId),0) + 1 FROM GRADOS
-		INSERT INTO GRADOS VALUES
+as
+begin
+	begin try
+	declare @activo bit
+	set @activo = 1
+		insert into Grados 
+		values
 		(
-		@CODIGO_GRADO,
-		@GRADO,
-		@TIPO
+		@Grado,
+		@Tipo,
+		@activo
 		)
-		END TRY
-		BEGIN CATCH
-			IF @@TRANCOUNT > 0
-			ROLLBACK
-		END CATCH
-END
-GO
-CREATE PROC MODIFICAR_GRADOS
+	end try
+	begin catch
+	if @@TRANCOUNT > 0
+		rollback
+	end catch
+end
+go
+create proc ModificarGrados
 (
-@CODIGO_GRADO INT,
-@GRADO NVARCHAR(20),
-@TIPO CHAR (1)
+@GradoId int,
+@Grado nvarchar(20),
+@Tipo char(1),
+@Activo bit
 )
-AS
-BEGIN
-		BEGIN TRY
-		UPDATE GRADOS SET
-		GRADO = @GRADO,
-		TIPO = @TIPO
-		WHERE GradoId = @CODIGO_GRADO
-		END TRY
-		BEGIN CATCH
-			IF @@TRANCOUNT > 0
-			ROLLBACK
-		END CATCH
-END
-GO
+as
+begin
+	begin try
+	update Grados 
+		set
+		
+		Grado = @Grado,
+		Tipo = @Tipo,
+		Activo = @activo
+		where GradoId = @GradoId
+	end try
+	begin catch
+	if @@TRANCOUNT > 0
+		rollback
+	end catch
+end
+go
+
+----------------------------------------
 
 
 --ASIGNATURAS
@@ -173,27 +278,6 @@ END
 GO
 
 
---COLEGIO
-CREATE PROC IngresarColegio
-(
-@Colegio nvarchar(100),
-@DepartamentoId int
-)
-AS
-BEGIN
-		BEGIN TRY
-		INSERT INTO Colegio VALUES
-		(
-			@Colegio,
-			@DepartamentoId
-		)
-		END TRY
-		BEGIN CATCH
-			IF @@TRANCOUNT > 0
-				ROLLBACK
-		END CATCH
-END
-GO
 
 --COLEGIO
 CREATE PROC ModificarColegio
@@ -217,44 +301,7 @@ BEGIN
 END
 GO
 
---PROFESION OCUPACION
-CREATE PROC InsertarOcupacion
-(
-@Ocupacion NVARCHAR (70)
-)
-AS
-BEGIN
-		BEGIN TRY
-					INSERT INTO PROFESION_OCUPACION
-					VALUES
-					(
-					@Ocupacion
-					)
-		END TRY
-		BEGIN CATCH
-			IF @@TRANCOUNT > 0
-		ROLLBACK
-		END CATCH
-END
-GO
-CREATE PROC EditarOcupacion
-(
-@OcupacionId int,
-@Ocupacion NVARCHAR (70)
-)
-AS
-BEGIN
-		BEGIN TRY
-					update PROFESION_OCUPACION set
-					Ocupacion = @Ocupacion
-					where  @OcupacionId = OcupacionId
-		END TRY
-		BEGIN CATCH
-			IF @@TRANCOUNT > 0
-		ROLLBACK
-		END CATCH
-END
-GO
+
 
 --------------------------------------------Procedimientos No creados------------------------------------------------
 

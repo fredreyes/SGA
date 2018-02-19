@@ -31,6 +31,29 @@ constraint PK_Ocupacion primary key(OcupacionId)
 )
 go
 
+--TABLA TURNOS
+create table Turnos
+(
+TurnoId int NOT NULL identity(1,1),
+Turno nvarchar(20) NOT NULL,
+Descripcion nvarchar(200),
+Activo bit
+CONSTRAINT PK_TURNOS PRIMARY KEY(TurnoId)
+)
+GO
+
+--TABLA GRADO
+create table Grados
+(
+GradoId int NOT NULL identity(1,1),
+Grado nvarchar(20) NOT NULL,
+Tipo char (1),
+Activo bit
+CONSTRAINT PK_GRADO PRIMARY KEY(GradoId)
+)
+GO
+
+---------------------------------------------------
 --TABLA ALUMNO
 create table Alumnos
 (
@@ -137,26 +160,8 @@ CONSTRAINT PK_ASIGNATURA PRIMARY KEY(AsignaturaId)
 )
 go
 
---TABLA TURNOS
-CREATE TABLE Turnos
-(
-TurnoId INT NOT NULL,
-Turno NVARCHAR(20) NOT NULL,
-Descripcion NVARCHAR(200),
-Activo BIT
-CONSTRAINT PK_TURNOS PRIMARY KEY(TurnoId)
-)
-GO
 
---TABLA GRADO
-CREATE TABLE Grados
-(
-GradoId INT NOT NULL,
-Grado NVARCHAR(20) NOT NULL,
-Tipo CHAR (1)
-CONSTRAINT PK_GRADO PRIMARY KEY(GradoId)
-)
-GO
+
 
 --TABLA AULAS
 create table Aulas
