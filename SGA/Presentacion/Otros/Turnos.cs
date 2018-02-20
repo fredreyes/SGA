@@ -11,6 +11,7 @@ using MaterialSkin;
 using MaterialSkin.Controls;
 using Entidades;
 using Negocio;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace Presentacion.Otros
 {
@@ -41,23 +42,14 @@ namespace Presentacion.Otros
         {
             NTurnos n = new NTurnos();
             List<ETurnos> Lista = n.ListaTurnos();
-
             gridControl1.DataSource = Lista;
-           
             gridView1.Columns[0].Visible = false;
             gridView1.BestFitColumns();
-
-            //if (gridView1.Columns[1].ToString() == "Matutino")
-            //{
-            gridView1.PaintAppearance.Row.ForeColor = Color.Tomato;
-            //}
-            //if(gridView1.Columns[1].ToString() == "Matutino")
-            //{
-            //    gridControl1.BackColor = Color.Red;
-            //}
-            //else
-            //gridView1.BackColor = Color.Yellow;
-
+            gridView1.RowCellStyle += (sender, e) => {
+                GridView view = sender as GridView;
+                bool _mark = (bool)view.GetRowCellValue(e.RowHandle, "Activo");
+                    e.Appearance.ForeColor = _mark ? Color.Black : Color.Red;
+            };
         }
                 void OcultarControles()
                     {
@@ -175,6 +167,11 @@ namespace Presentacion.Otros
 
                 MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
         }
     }
 }

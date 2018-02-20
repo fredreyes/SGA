@@ -29,6 +29,7 @@ namespace Datos
                     g.GradoId = (int)leer[0];
                     g.Grado = leer[1].ToString();
                     g.Tipo = leer[2].ToString();
+                    g.Activo = (bool)leer[3];
                     lista.Add(g);
                 }
                 leer.Close();
@@ -47,10 +48,10 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("INSERTAR_GRADOS");
+                comando = new SqlCommand("InsertarGrados");
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@GRADO", g.Grado);
-                comando.Parameters.AddWithValue("@TIPO", g.Tipo);
+                comando.Parameters.AddWithValue("@Grado", g.Grado);
+                comando.Parameters.AddWithValue("@Tipo", g.Tipo);
                 comando.Connection = conexion;
                 conexion.Open();
                 comando.ExecuteNonQuery();
@@ -68,11 +69,31 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("MODIFICAR_GRADOS");
+                comando = new SqlCommand("ModificarGrados");
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@GRADO", g.Grado);
-                comando.Parameters.AddWithValue("@TIPO", g.Tipo);
-                comando.Parameters.AddWithValue("@CODIGO_GRADO", g.GradoId);
+                comando.Parameters.AddWithValue("@Grado", g.Grado);
+                comando.Parameters.AddWithValue("@Tipo", g.Tipo);
+                comando.Parameters.AddWithValue("@Activo", g.Activo);
+                comando.Parameters.AddWithValue("@GradoId", g.GradoId);
+                comando.Connection = conexion;
+                conexion.Open();
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                conexion.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public void EliminarGrados(EGrados g)
+        {
+            try
+            {
+                comando = new SqlCommand("eliminarGrado");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@GradoId", g.GradoId);
                 comando.Connection = conexion;
                 conexion.Open();
                 comando.ExecuteNonQuery();

@@ -11,6 +11,6 @@ namespace Entidades
         public int GradoId { get; set; }
         public string Grado { get; set; }
         public string Tipo { get; set; }
-
+        public bool Activo { get; set; }
     }
 }

@@ -19,18 +19,18 @@ namespace Presentacion.Otros
         public AgregarGrado()
         {
             InitializeComponent();
-            MaterialSkinManager m = MaterialSkinManager.Instance;
-            m.AddFormToManage(this);
-            m.Theme = MaterialSkinManager.Themes.LIGHT;
-            m.ColorScheme = new ColorScheme(Primary.Blue900, Primary.Blue800, Primary.Blue500, Accent.LightBlue400, TextShade.WHITE);
+            EstiloMenu x = new EstiloMenu();
+            x.AplicarEstilo(this);
         }
-        public int Bandera;
+        public int Bandera = 0;
         private void AgregarGrado_Load(object sender, EventArgs e)
         {
             try
             {
                 CargarLista();
-                BloquearControles();
+                chkmodificar.Visible = false;
+                rbtncancelar.Visible = false;
+                rbtnactivo.Visible = false;
             }
             catch (Exception ex)
             {
@@ -38,24 +38,7 @@ namespace Presentacion.Otros
                 MessageBox.Show(ex.Message,"SGA", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
-
-        #region Controles
-            void BloquearControles()
-                {
-                    txtxgrado.Enabled = false;
-                    chk1.Enabled = false;
-                    chk2.Enabled = false;
-            chk3.Enabled = false;
-            btnagregar.Enabled = false;
-                }
-                void DesbloquearControles()
-                {
-                    txtxgrado.Enabled = true;
-            chk1.Enabled = true;
-            chk2.Enabled = true;
-            chk3.Enabled = true;
-            btnagregar.Enabled = true;
-        }
+              
         void LimpiaContorles()
         {
             txtxgrado.Clear();
@@ -63,8 +46,14 @@ namespace Presentacion.Otros
             chk2.Checked = false;
             chk3.Checked = false;
             chkmodificar.Checked = false;
+            chkmodificar.Visible = false;
+            rbtncancelar.Checked = false;
+            rbtnactivo.Checked = false;
+            rbtncancelar.Visible = false;
+            rbtnactivo.Visible = false;
+            Bandera = 0;
+            CargarLista();
         }
-        #endregion
 
         void CargarLista()
         {
@@ -82,13 +71,30 @@ namespace Presentacion.Otros
             }
         }
 
-        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DesbloquearControles();
-            Bandera = 0;
-        }
+      
 
-        private void btnagregar_Click(object sender, EventArgs e)
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtxgrado.Text != "")
+                {
+                    DialogResult o = MessageBox.Show("¿Estas seguro de cancelar la operación actual?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (o == DialogResult.OK)
+                    {
+                        LimpiaContorles();
+                    }
+                }
+                else
+                    LimpiaContorles();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        private void btningresar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -96,10 +102,10 @@ namespace Presentacion.Otros
                     MessageBox.Show("Marcar un Solo Tipo", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
+                    EGrados g = new EGrados();
+                    NGrado N = new NGrado();
                     if (Bandera == 0)
                     {
-                        EGrados g = new EGrados();
-                        NGrado N = new NGrado();
                         g.Grado = txtxgrado.Text;
                         char x;
                         if (chk1.Checked)
@@ -112,13 +118,9 @@ namespace Presentacion.Otros
                         N.IngresarGrado(g);
                         MessageBox.Show("Grados ingresados con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LimpiaContorles();
-                        BloquearControles();
-                        CargarLista();
                     }
                     if (Bandera == 1)
                     {
-                        EGrados g = new EGrados();
-                        NGrado N = new NGrado();
                         g.GradoId = Convert.ToInt32(txtxgrado.Tag);
                         g.Grado = txtxgrado.Text;
                         char x;
@@ -129,36 +131,46 @@ namespace Presentacion.Otros
                         else
                             x = Convert.ToChar('S');
                         g.Tipo = Convert.ToChar(x).ToString();
+                        g.Activo = Convert.ToBoolean(rbtnactivo.Checked ? 1 : 0);
                         N.ModificarGrado(g);
                         MessageBox.Show("Grados Modificados con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LimpiaContorles();
-                        BloquearControles();
-                        CargarLista();
                     }
                 }
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        private void gridControl1_DoubleClick_1(object sender, EventArgs e)
         {
             try
             {
-                txtxgrado.Tag = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "GradoId"));
-                txtxgrado.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Grado").ToString();
-                if (Convert.ToChar(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Tipo").ToString()) == 'I')
-                    chk1.Checked = true;
-                else if (Convert.ToChar(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Tipo").ToString()) == 'P')
-                    chk2.Checked = true;
+                if (gridView1.RowCount > 0)
+                {
+                    txtxgrado.Tag = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "GradoId"));
+                    txtxgrado.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Grado").ToString();
+                    if (Convert.ToChar(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Tipo").ToString()) == 'I')
+                        chk1.Checked = true;
+                    else if (Convert.ToChar(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Tipo").ToString()) == 'P')
+                        chk2.Checked = true;
+                    else
+                        chk3.Checked = true;
+                    if (Convert.ToBoolean(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Activo").ToString()) == true)
+                        rbtnactivo.Checked = true;
+                    else
+                        rbtncancelar.Checked = true;
+                    Bandera = 1;
+                    chkmodificar.Checked = true;
+                    chkmodificar.Visible = true;
+                    rbtnactivo.Visible = true;
+                    rbtncancelar.Visible = true;
+                }
                 else
-                    chk3.Checked = true;
-                Bandera = 1;
-                DesbloquearControles();
-                chkmodificar.Checked = true;
+                    MessageBox.Show("No hay registros que seleccionar", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             catch (Exception ex)
             {
@@ -167,38 +179,27 @@ namespace Presentacion.Otros
             }
         }
 
-        private void exportarXLSToolStripMenuItem_Click(object sender, EventArgs e)
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
-                 exportarArchivos ex = new exportarArchivos();
-                  ex.ExportarExcel(gridControl1,"Grados");
+                EGrados gr = new EGrados();
+                NGrado n = new NGrado();
+                gr.GradoId = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "GradoId"));
+                var g = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Grado").ToString();
+                DialogResult o = MessageBox.Show("¿Estas seguro de eliminar el grado " + g + "?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (o == DialogResult.OK)
+                {
+                    n.EliminarGrado(gr);
+                    LimpiaContorles();
+                    MessageBox.Show("Grado eliminado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                } 
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw ex;
             }
-
-        }
-
-        private void exportarPDFToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                exportarArchivos EX = new exportarArchivos();
-                EX.ExportarPDF(gridControl1, "Grados");
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

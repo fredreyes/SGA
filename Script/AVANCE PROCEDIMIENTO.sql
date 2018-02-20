@@ -197,11 +197,6 @@ begin
 end
 GO
 
-
-
-
-
--------------faltan
 -- GRADOS
 create proc InsertarGrados
 (
@@ -228,8 +223,6 @@ begin
 end
 go
 
-
-
 create proc ModificarGrados
 (
 @GradoId int,
@@ -241,8 +234,7 @@ as
 begin
 	begin try
 	update Grados 
-		set
-		
+		set		
 		Grado = @Grado,
 		Tipo = @Tipo,
 		Activo = @activo
@@ -254,7 +246,6 @@ begin
 	end catch
 end
 go
-
 create proc eliminarGrado
 (
 @GradoId int
@@ -264,6 +255,12 @@ begin
 	delete Grados where GradoId  = @GradoId
 end
 go
+
+
+
+
+
+-------------faltan
 
 --AULAS
 create proc IngresarAula
