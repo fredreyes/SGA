@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class EAulas
+    public class EAulas: EGrados
     {
-        public int CODIGO_AULA { get; set; }
-        public string AULA { get; set; }
-        public int CAPACIDAD { get; set; }
-        public int VACANTES { get; set; }
-        public EGrados GRADOS;
+        public int AulaId { get; set; }
+        public string Aula { get; set; }
+        public int Capacidad { get; set; }
+        public int Vacantes { get; set; }
+        public new bool Activo { get; set; }
     }
 }

@@ -8,9 +8,10 @@ namespace Entidades
 {
     public class CicloEscolar
     {
-        public int ID_CICLO { get; set; }
-        public int AÑO { get; set; }
-        public DateTime FECHA_INICIO { get; set;}
-        public DateTime FECHA_FIN { get; set; }
+        public int CicloEscolarId { get; set; }
+        public int ciclo { get; set; }
+        public DateTime FechaInicio { get; set;}
+        public DateTime FechaFin { get; set; }
+        public bool Activo { get; set; }
     }
 }

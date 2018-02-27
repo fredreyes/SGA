@@ -60,6 +60,18 @@ Activo bit
 CONSTRAINT PK_ASIGNATURA PRIMARY KEY(AsignaturaId)
 )
 go
+--CICLO_ESCOLAR
+create table CicloEscolar
+( 
+CicloEscolarId INT NOT NULL identity(1,1),
+Ciclo INT NOT NULL,
+FechaInicio DATE NOT NULL,
+FechaFin DATE NOT NULL,
+Activo bit
+CONSTRAINT PK_CICLO PRIMARY KEY(CicloEscolarId) 
+)
+GO
+
 --TABLA AULAS
 create table Aulas
 (
@@ -73,18 +85,6 @@ CONSTRAINT PK_AULAS PRIMARY KEY(AulaId),
 CONSTRAINT FK_AULAS_GRADOS FOREIGN KEY(GradoId) REFERENCES Grados(GradoId)
 )
 go
-
---CICLO_ESCOLAR
-create table CicloEscolar
-( 
-CicloEscolarId INT NOT NULL identity(1,1),
-Año INT NOT NULL,
-FechaInicio DATE NOT NULL,
-FechaFin DATE NOT NULL,
-Activo bit
-CONSTRAINT PK_CICLO PRIMARY KEY(CicloEscolarId) 
-)
-GO
 --TABLA EVALUACIONES
 CREATE TABLE Evaluaciones
 (

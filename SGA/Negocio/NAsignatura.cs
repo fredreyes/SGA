@@ -57,5 +57,19 @@ namespace Negocio
                 throw ex;
             }
         }
+
+        public void Eliminarsignatura(EAsignatura A)
+        {
+            try
+            {
+                DAsignatura d = new DAsignatura();
+                d.EliminarAsignatura(A);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

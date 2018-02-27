@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="NAsignatura.cs" />
     <Compile Include="NAulas.cs" />
+    <Compile Include="Nciclo.cs" />
     <Compile Include="NColegio.cs" />
     <Compile Include="NDepartamento.cs" />
     <Compile Include="NFuncionario.cs" />

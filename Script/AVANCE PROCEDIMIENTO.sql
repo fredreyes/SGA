@@ -256,54 +256,6 @@ begin
 end
 go
 
-
-
-
-
--------------faltan
-
---AULAS
-create proc IngresarAula
-(
-@Aula nvarchar(30),
-@capacidad int,
-@Vacantes int,
-@GradoId int
-)
-as
-begin
-		declare @activo bit
-		set @activo = 1
-		insert into Aulas values
-		(
-		@Aula,
-		@capacidad,
-		@Vacantes,
-		@GradoId,
-		@activo
-		)
-end
-go
-create proc ModificarAula
-(
-@AulaId int,
-@Aula nvarchar(30),
-@capacidad int,
-@Vacantes int,
-@GradoId int,
-@activo bit
-)
-as
-begin
-		update Aulas set
-		Aula = @Aula,
-		Capacidad = @capacidad,
-		Vacantes = @Vacantes,
-		Grado = @GradoId,
-		Activo = @activo
-		where AulaId = @AulaId
-end
-go
 --Asignatura
 create proc IngresarAsignatura
 (
@@ -336,10 +288,116 @@ begin
 end
 go
 
----CREAR LOS DE CICLO ESCOLAR
+create proc EliminarAsignatura
+(
+@AsignaturaId int
+)
+as
+begin
+		delete Asignaturas
+		where AsignaturaId = @AsignaturaId
+end
+go
 
-----------------------------------------
+--CICLO  ESCOLAR
+create proc IngresarCicloEscolar
+(
+@Ciclo int,
+@FechaInicio date,
+@FechaFin date
+)
+as
+begin
+		declare @activo bit
+		set @activo = 1
+		insert into CicloEscolar values
+		(
+		@Ciclo,
+		@FechaInicio,
+		@FechaFin,
+		@activo
+		)
+end
+go
 
+create proc ModificarCicloEscolar
+(
+@CicloEscolarId int,
+@Ciclo int,
+@FechaInicio date,
+@FechaFin date,
+@Activo bit
+)
+as
+begin
+		update CicloEscolar set
+		Ciclo = @Ciclo,
+		FechaInicio =@FechaInicio,
+		FechaFin = @FechaFin,
+		Activo = @activo
+		where CicloEscolarId = @CicloEscolarId
+end
+go
+
+
+create proc EliminarCicloEscolar
+(
+@CicloEscolarId int
+)
+as
+begin
+		delete CicloEscolar 
+		where CicloEscolarId = @CicloEscolarId
+end
+go
+
+--AULAS
+create proc IngresarAula
+(
+@Aula nvarchar(30),
+@capacidad int,
+@Vacantes int,
+@GradoId int
+)
+as
+begin
+		declare @activo bit
+		set @activo = 1
+		insert into Aulas values
+		(
+		@Aula,
+		@capacidad,
+		@Vacantes,
+		@GradoId,
+		@activo
+		)
+end
+go
+
+
+create proc ModificarAula
+(
+@AulaId int,
+@Aula nvarchar(30),
+@capacidad int,
+@Vacantes int,
+@GradoId int,
+@activo bit
+)
+as
+begin
+		update Aulas set
+		Aula = @Aula,
+		Capacidad = @capacidad,
+		Vacantes = @Vacantes,
+		GradoId = @GradoId,
+		Activo = @activo
+		where AulaId = @AulaId
+end
+go
+
+
+-------------faltan
 --------------------------------------------Procedimientos No creados------------------------------------------------
 
 --Alumno

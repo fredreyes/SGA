@@ -47,9 +47,9 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("INSERTAR_ASIGNATURAS");
+                comando = new SqlCommand("IngresarAsignatura");
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@NOMBRE", a.Asignatura);
+                comando.Parameters.AddWithValue("@Asignatura", a.Asignatura);
                 comando.Connection = conexion;
                 conexion.Open();
                 comando.ExecuteNonQuery();
@@ -66,11 +66,31 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("MODIFICAR_ASIGNATURAS");
+                comando = new SqlCommand("ModificarAsignatura");
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@NOMBRE",A.Asignatura);
-                comando.Parameters.AddWithValue("@ACTIVO", A.Activo);
-                comando.Parameters.AddWithValue("@CODIGO_ASIGNATURA", A.AsignaturaId);
+                comando.Parameters.AddWithValue("@Asignatura", A.Asignatura);
+                comando.Parameters.AddWithValue("@activo", A.Activo);
+                comando.Parameters.AddWithValue("@AsignaturaId", A.AsignaturaId);
+                comando.Connection = conexion;
+                conexion.Open();
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                conexion.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void EliminarAsignatura(EAsignatura A)
+        {
+            try
+            {
+                comando = new SqlCommand("EliminarAsignatura");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@AsignaturaId", A.AsignaturaId);
                 comando.Connection = conexion;
                 conexion.Open();
                 comando.ExecuteNonQuery();

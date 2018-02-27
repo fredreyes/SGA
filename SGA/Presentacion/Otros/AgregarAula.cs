@@ -18,18 +18,21 @@ namespace Presentacion.Otros
         public AgregarAula()
         {
             InitializeComponent();
-            MaterialSkinManager m = MaterialSkinManager.Instance;
-            m.AddFormToManage(this);
-            m.Theme = MaterialSkinManager.Themes.LIGHT;
-            m.ColorScheme = new ColorScheme(Primary.Blue900, Primary.Blue800, Primary.Blue500,Accent.LightBlue700, TextShade.WHITE);
+            EstiloMenu x = new EstiloMenu();
+            x.AplicarEstilo(this);
         }
-        public int Bandera;
+        public int Bandera = 0;
+        EAulas a = new EAulas();
+        NAulas n = new NAulas();
         private void AgregarAula_Load(object sender, EventArgs e)
         {
             try
             {
                 CargarGrados();
                 CargarLista();
+                rbtnactivo.Visible = false;
+                rbrncancelar.Visible = false;
+                chkEditar.Visible = false;
             }
             catch (Exception ex)
             {
@@ -37,7 +40,6 @@ namespace Presentacion.Otros
                 MessageBox.Show(ex.Message, "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
-        #region CargarListas
         void CargarLista()
         {
             try
@@ -45,12 +47,30 @@ namespace Presentacion.Otros
                 NAulas n = new NAulas();
                 List<EAulas> L = n.ListaAulas();
                 gridControl1.DataSource = L;
+                gridView1.Columns[0].Visible = false;
+                gridView1.Columns[5].Visible = false;
+                gridView1.Columns[7].Visible = false;
+                gridView1.BestFitColumns();
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
+        }
+
+        void Limpiar()
+        {
+            txtaula.Clear();
+            txtcpacidad.Clear();
+            txtvacantes.Clear();
+            rbtnactivo.Checked = false;
+            rbrncancelar.Checked = false;
+            chkEditar.Checked = false;
+            rbtnactivo.Visible = false;
+            rbrncancelar.Visible = false;
+            chkEditar.Visible = false;
+            Bandera = 0;
         }
         void CargarGrados()
         {
@@ -68,11 +88,60 @@ namespace Presentacion.Otros
                 throw ex;
             }
         }
-        #endregion
 
         private void txtcpacidad_TextChanged(object sender, EventArgs e)
         {
             txtvacantes.Text = txtcpacidad.Text;
         }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            if (txtaula.Text != "" || txtcpacidad.Text != "")
+            {
+                DialogResult o = MessageBox.Show("¿Realmente deseas cancelar?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (o == DialogResult.OK)
+                {
+                    Limpiar();
+                }
+            }
+            else
+                Limpiar();
+        }
+
+        private void btningresar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Bandera == 0)
+                {
+                    a.Aula = txtaula.Text;
+                    a.Capacidad = int.Parse(txtcpacidad.Text);
+                    a.Vacantes = int.Parse(txtcpacidad.Text);
+                    a.GradoId = Convert.ToInt32(LbxGrado.SelectedValue.ToString());
+                    n.IngresaAulas(a);
+                    MessageBox.Show("Aula Ingresada con Exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                    CargarGrados();
+                    CargarLista();
+            }
+                if (Bandera == 1)
+                {
+                    a.AulaId = Convert.ToInt32(txtaula.Tag);
+                    a.Aula = txtaula.Text;
+                    a.Capacidad = int.Parse(txtcpacidad.Text);
+                    a.Vacantes = int.Parse(txtcpacidad.Text);
+                    a.GradoId = Convert.ToInt32(LbxGrado.SelectedValue.ToString());
+                    a.Activo = Convert.ToBoolean(rbtnactivo.Checked ? 1 : 0);
+                    n.ModificarAulas(a);
+                    MessageBox.Show("Aula Modificada con Exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+               }
+        }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+}
     }
 }

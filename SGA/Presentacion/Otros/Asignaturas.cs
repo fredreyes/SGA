@@ -20,9 +20,9 @@ namespace Presentacion.Otros
         public Asignaturas()
         {
             InitializeComponent();
-            MaterialSkinManager m = MaterialSkinManager.Instance;
-            m.Theme = MaterialSkinManager.Themes.LIGHT;
-            m.ColorScheme = new ColorScheme(Primary.Blue900,Primary.Blue700,Primary.Blue500,Accent.LightBlue700,TextShade.WHITE); 
+            EstiloMenu x = new EstiloMenu();
+            x.AplicarEstilo(this);
+
         }
         public int Bandera = 0;
         private void Asignaturas_Load(object sender, EventArgs e)
@@ -30,6 +30,8 @@ namespace Presentacion.Otros
             try
             {
                 CargarLista();
+                rbtnactivo.Visible = false;
+                rbtnCancelar.Visible = false;
             }
             catch (Exception ex)
             {
@@ -56,7 +58,36 @@ namespace Presentacion.Otros
             }
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+             try
+            {
+                if (gridView1.RowCount > 0)
+                {
+                    txtasignatura.Tag = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "AsignaturaId"));
+                    txtasignatura.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Asignatura").ToString();
+                    if (Convert.ToBoolean(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Activo")) == true)
+                        rbtnactivo.Checked = true;
+                    else
+                        rbtnCancelar.Checked = true;
+                    Bandera = 1;
+                    chkEditar.Checked = true;
+                    rbtnactivo.Visible = true;
+                    rbtnCancelar.Visible = true;
+                }
+                else
+                    MessageBox.Show("No hay datos que seleccionar", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btningresar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -70,6 +101,7 @@ namespace Presentacion.Otros
                     chkEditar.Checked = false;
                     CargarLista();
                     MessageBox.Show("Asignatura Ingresado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtasignatura.Focus();
                 }
                 if (Bandera == 1)
                 {
@@ -82,7 +114,11 @@ namespace Presentacion.Otros
                     txtasignatura.Clear();
                     CargarLista();
                     chkEditar.Checked = false;
+                    rbtnactivo.Visible = false;
+                    rbtnCancelar.Visible = false;
                     MessageBox.Show("Asignatura Modificada con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Bandera = 0;
+                    txtasignatura.Focus();
                 }
             }
             catch (Exception ex)
@@ -92,52 +128,41 @@ namespace Presentacion.Otros
             }
         }
 
-        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        private void btncancelar_Click(object sender, EventArgs e)
         {
-            try
+            if (txtasignatura.Text != "")
             {
-                txtasignatura.Tag = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "AsignaturaId"));
-                txtasignatura.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Asignatura").ToString();
-                if (Convert.ToBoolean(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Activo")) == true)
-                    rbtnactivo.Checked = true;
-                else
-                    rbtnCancelar.Checked = true;
-                Bandera = 1;
-                chkEditar.Checked = true;
+                DialogResult o = MessageBox.Show("¿Realmente deseas cancelar?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (o == DialogResult.OK)
+                {
+                    txtasignatura.Clear();
+                    rbtnactivo.Visible = false;
+                    rbtnCancelar.Visible = false;
+                    chkEditar.Checked = false;
+                    txtasignatura.Focus();
+                }
             }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            else
+            txtasignatura.Clear();
+            rbtnactivo.Visible = false;
+            rbtnCancelar.Visible = false;
+            chkEditar.Checked = false;
+            txtasignatura.Focus();
         }
 
-        private void exportarXlsxToolStripMenuItem_Click(object sender, EventArgs e)
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                exportarArchivos ex = new exportarArchivos();
-                ex.ExportarExcel(gridControl1, "Asignaturas");
-            }
-            catch (Exception ex)
-            {
+            EAsignatura a = new EAsignatura();
+            NAsignatura n = new NAsignatura();
 
-                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-
-        private void exportarPDFToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
+            a.AsignaturaId = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "AsignaturaId"));
+            var As = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Asignatura").ToString();
+            DialogResult o = MessageBox.Show("¿Realmente deseas elliminar la asignatura " + As +" ?","SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (o == DialogResult.OK)
             {
-                exportarArchivos ex = new exportarArchivos();
-                ex.ExportarPDF(gridControl1, "Asignaturas");
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                n.Eliminarsignatura(a);
+                MessageBox.Show("¿Asignatura eliminada con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarLista();
             }
         }
     }
