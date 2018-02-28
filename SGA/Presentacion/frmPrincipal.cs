@@ -7,13 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace Presentacion
 {
-    public partial class frmPrincipal : Form
+    public partial class frmPrincipal : MaterialForm
     {
         public frmPrincipal()
         {
+            EstiloMenu x = new EstiloMenu();
+            x.AplicarEstilo(this);
             InitializeComponent();
         }
 
@@ -22,26 +26,10 @@ namespace Presentacion
 
         }
 
-        private void accordionControlElement1_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void accordionControlElement8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void accordionControlElement11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void accordionControlElement10_Click(object sender, EventArgs e)
-        {
-            Student.AddNewStudent a = new Student.AddNewStudent();
-            a.ShowDialog();
-
+            Otros.Asignaturas A = new Otros.Asignaturas();
+            A.ShowDialog();
         }
     }
 }

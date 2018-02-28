@@ -51,5 +51,19 @@ namespace Negocio
                 throw ex;
             }
         }
+
+        public void EliminarAulas(EAulas e)
+        {
+            try
+            {
+                DAulas d = new DAulas();
+                d.EliminarAula(e);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

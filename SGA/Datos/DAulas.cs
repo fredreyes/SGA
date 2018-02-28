@@ -90,5 +90,24 @@ namespace Datos
                 throw ex;
             }
         }
+
+        public void EliminarAula(EAulas A)
+        {
+            try
+            {
+                comando = new SqlCommand("EliminarAulas");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@AulaId", A.AulaId);
+                comando.Connection = conexion;
+                conexion.Open();
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                conexion.Dispose();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

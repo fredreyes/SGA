@@ -71,6 +71,7 @@ namespace Presentacion.Otros
             rbrncancelar.Visible = false;
             chkEditar.Visible = false;
             Bandera = 0;
+            txtcpacidad.TextChanged += txtcpacidad_TextChanged;
         }
         void CargarGrados()
         {
@@ -143,5 +144,66 @@ namespace Presentacion.Otros
                 MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 }
+
+
+       
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (gridView1.RowCount > 0)
+                {
+                    //Cancelar evento Textchange
+                    txtcpacidad.TextChanged -= txtcpacidad_TextChanged;
+                    //Pasar Datos a textbox
+                    txtaula.Tag = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "AulaId").ToString());
+                    txtaula.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Aula").ToString();
+                    txtcpacidad.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Capacidad").ToString();
+                    txtvacantes.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Vacantes").ToString();
+                    rbtnactivo.Visible = true;
+                    rbrncancelar.Visible = true;
+                    chkEditar.Visible = true;
+                    chkEditar.Checked = true;
+                    if (Convert.ToBoolean(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Activo").ToString()) == true)
+                        rbtnactivo.Checked = true;
+                    else
+                        rbrncancelar.Checked = true;
+                    Bandera = 1;
+                }
+                else
+                    MessageBox.Show("No hay registros que seleccionar","SGA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            }
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EAulas A = new EAulas();
+                NAulas n = new NAulas(); 
+               A.AulaId = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "AulaId").ToString());
+               var Aula =  gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Aula").ToString();
+                DialogResult o = MessageBox.Show("¿Realmente deseas eliminar la Aula " + Aula + " ?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (o == DialogResult.OK)
+                {
+                    n.EliminarAulas(A);
+                    MessageBox.Show("Aula Eliminada con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                    CargarGrados();
+                    CargarLista();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

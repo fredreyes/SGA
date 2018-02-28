@@ -396,6 +396,15 @@ begin
 end
 go
 
+create proc EliminarAulas
+(
+@AulaId int
+)
+as
+begin
+delete Aulas where AulaId = @AulaId
+end
+go
 
 -------------faltan
 --------------------------------------------Procedimientos No creados------------------------------------------------

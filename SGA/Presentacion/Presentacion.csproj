@@ -229,9 +229,12 @@
     <Content Include="icons\delete.png" />
     <Content Include="icons\error %281%29.png" />
     <Content Include="icons\login.png" />
+    <Content Include="icons\notepad.png" />
     <Content Include="icons\save %281%29.png" />
     <Content Include="icons\save.png" />
+    <Content Include="icons\settings.png" />
     <Content Include="icons\student.png" />
+    <Content Include="icons\university.png" />
     <Content Include="icons\user.png" />
   </ItemGroup>
   <ItemGroup>
