@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using Entidades;
+using Negocio;
 
 namespace Presentacion.Notas
 {
@@ -17,15 +19,16 @@ namespace Presentacion.Notas
         public Evaluaciones()
         {
             InitializeComponent();
-            MaterialSkinManager m = MaterialSkinManager.Instance;
-            m.AddFormToManage(this);
-            m.Theme = MaterialSkinManager.Themes.LIGHT;
-            m.ColorScheme = new ColorScheme(Primary.Blue900,Primary.Blue700,Primary.Blue500,Accent.LightBlue700,TextShade.WHITE);
+            EstiloMenu x = new EstiloMenu();
+            x.AplicarEstilo(this);
+       
         }
 
+        public int Bandera = 0;
         private void Evaluaciones_Load(object sender, EventArgs e)
         {
-            
+            CargarEvaluaciones();
+            CargarCiclo();
         }
 
         private void calendarControl1_Click(object sender, EventArgs e)
@@ -38,6 +41,7 @@ namespace Presentacion.Notas
             
         }
 
+      
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedItem != null)
@@ -46,16 +50,16 @@ namespace Presentacion.Notas
                 switch (id)
                 {
                     case 1:
-                        dataGridView1.Rows.Add("Enero",listBox1.Text,txtobservaciones.Text,cbmciclo.Text);
+                        dataGridView1.Rows.Add("Enero",listBox1.Text,txtobservaciones.Text,cbmciclo.Text,cbmciclo.SelectedValue.ToString());
                         break;
                     case 2:
-                        dataGridView1.Rows.Add("Febrero", listBox1.Text,txtobservaciones.Text, cbmciclo.Text);
+                        dataGridView1.Rows.Add("Febrero", listBox1.Text,txtobservaciones.Text, cbmciclo.Text, cbmciclo.SelectedValue.ToString());
                         break;
                     case 3:
-                        dataGridView1.Rows.Add("Marzo", listBox1.Text, txtobservaciones.Text, cbmciclo.Text);
+                        dataGridView1.Rows.Add("Marzo", listBox1.Text, txtobservaciones.Text, cbmciclo.Text, cbmciclo.SelectedValue.ToString());
                         break;
                     case 4:
-                        dataGridView1.Rows.Add("Abril", listBox1.Text, txtobservaciones.Text, cbmciclo.Text);
+                        dataGridView1.Rows.Add("Abril", listBox1.Text, txtobservaciones.Text, cbmciclo.Text, cbmciclo.SelectedValue.ToString());
                         break;
                     case 5:
                         dataGridView1.Rows.Add("Mayo", listBox1.Text, txtobservaciones.Text, cbmciclo.Text);
@@ -87,7 +91,117 @@ namespace Presentacion.Notas
             }
             else
             {
-                MessageBox.Show("Debes de seleccionar un Parcial","ERROR", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Debes de seleccionar un Parcial","SGA", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+        }
+
+        void Limpiar()
+        {
+            try
+            {
+                txtobservaciones.Clear();
+                calendarControl1.EditValue = DateTime.Today;
+                cbmciclo.Text = "";
+                dataGridView1.Rows.Clear();
+                Bandera = 0;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        void CargarCiclo()
+        {
+            try
+            {
+                Nciclo n = new Nciclo();
+                List<CicloEscolar> lista = n.ListaCicloEscolar();
+                cbmciclo.DataSource = lista;
+                cbmciclo.DisplayMember = "ciclo";
+                cbmciclo.ValueMember = "CicloEscolarId";
+            }
+            catch (Exception ex)
+            {
+ 
+                throw ex;
+            }
+        }
+
+        void CargarEvaluaciones()
+        {
+            try
+            {
+                NEvaluacion _NegocioEvaluacion = new NEvaluacion();
+                List<EEvaluaciones>Lista = _NegocioEvaluacion.ListaEvaluacion();
+                var NuevaLista = (from i in Lista 
+                                  select new
+                                  {
+                                      i.EvaluacionId,
+                                      i.Mes,
+                                      i.Pacial,
+                                      i.CicloEscolar.ciclo,
+                                      i.Observaciones,
+                                      i.Activo
+                                  }
+                                  ).ToList();
+                gridControl1.DataSource = NuevaLista;
+                gridView1.BestFitColumns();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.RowCount > 0)
+                {
+                    DialogResult Mensaje = MessageBox.Show("¿Realmente deseas cancelar?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (Mensaje == DialogResult.OK)
+                    {
+                        Limpiar();
+                    }
+                }
+                else
+                    Limpiar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btningresar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Bandera == 0)
+                {
+                    foreach (DataGridViewRow datos in dataGridView1.Rows)
+                    {
+                        EEvaluaciones _Evaluaciones = new EEvaluaciones();
+                        _Evaluaciones.Mes = datos.Cells["Column1"].ToString();
+                        _Evaluaciones.Pacial = datos.Cells["Column2"].ToString();
+                        _Evaluaciones.Observaciones = datos.Cells["Column3"].ToString();
+                        _Evaluaciones.CicloEscolar.CicloEscolarId = Convert.ToInt32(datos.Cells["Column5"].ToString());
+                        NEvaluacion n = new NEvaluacion();
+                        n.IngresarEvaluaciones(_Evaluaciones);
+                    }
+                    CargarEvaluaciones();
+                    MessageBox.Show("Guardado");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

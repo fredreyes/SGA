@@ -72,6 +72,12 @@
   <ItemGroup>
     <Compile Include="EstiloMenu.cs" />
     <Compile Include="exportarArchivos.cs" />
+    <Compile Include="frmAdministracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministracion.Designer.cs">
+      <DependentUpon>frmAdministracion.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     <Compile Include="Student\AddNewStudent.Designer.cs">
       <DependentUpon>AddNewStudent.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmAdministracion.resx">
+      <DependentUpon>frmAdministracion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,16 +235,23 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icons\cycle.png" />
     <Content Include="icons\delete.png" />
     <Content Include="icons\error %281%29.png" />
+    <Content Include="icons\evaluation.png" />
+    <Content Include="icons\grades.png" />
     <Content Include="icons\login.png" />
+    <Content Include="icons\map.png" />
     <Content Include="icons\notepad.png" />
+    <Content Include="icons\presentation.png" />
     <Content Include="icons\save %281%29.png" />
     <Content Include="icons\save.png" />
+    <Content Include="icons\school.png" />
     <Content Include="icons\settings.png" />
     <Content Include="icons\student.png" />
     <Content Include="icons\university.png" />
     <Content Include="icons\user.png" />
+    <Content Include="icons\wall-calendar.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj">

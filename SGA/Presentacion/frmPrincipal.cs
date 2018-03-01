@@ -30,6 +30,13 @@ namespace Presentacion
         {
             Otros.Asignaturas A = new Otros.Asignaturas();
             A.ShowDialog();
+           
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            frmAdministracion a = new frmAdministracion();
+            a.ShowDialog();
         }
     }
 }

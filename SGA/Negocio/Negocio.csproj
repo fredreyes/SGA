@@ -45,6 +45,7 @@
     <Compile Include="Nciclo.cs" />
     <Compile Include="NColegio.cs" />
     <Compile Include="NDepartamento.cs" />
+    <Compile Include="NEvaluacion.cs" />
     <Compile Include="NFuncionario.cs" />
     <Compile Include="NGrado.cs" />
     <Compile Include="NOcupaciones.cs" />
@@ -60,6 +61,9 @@
       <Project>{90997cee-6504-4ef3-a7dd-85c3193440a6}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="school.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
