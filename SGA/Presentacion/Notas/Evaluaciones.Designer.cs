@@ -121,7 +121,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calendarControl1.Location = new System.Drawing.Point(12, 83);
             this.calendarControl1.Name = "calendarControl1";
-            this.calendarControl1.Size = new System.Drawing.Size(270, 227);
+            this.calendarControl1.Size = new System.Drawing.Size(245, 227);
             this.calendarControl1.TabIndex = 5;
             // 
             // txtobservaciones
@@ -156,6 +156,7 @@
             this.gridControl1.TabIndex = 8;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
             // 
             // gridView1
             // 

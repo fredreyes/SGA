@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblasignatura = new MaterialSkin.Controls.MaterialLabel();
+            this.lblgrado = new MaterialSkin.Controls.MaterialLabel();
+            this.lblaula = new MaterialSkin.Controls.MaterialLabel();
+            this.lblciclo = new MaterialSkin.Controls.MaterialLabel();
+            this.lblturnos = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblcolegio = new MaterialSkin.Controls.MaterialLabel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -52,98 +52,98 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // materialLabel1
+            // lblasignatura
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(12, 9);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(85, 18);
-            this.materialLabel1.TabIndex = 3;
-            this.materialLabel1.Text = "Asignaturas";
+            this.lblasignatura.AutoSize = true;
+            this.lblasignatura.Depth = 0;
+            this.lblasignatura.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblasignatura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblasignatura.Location = new System.Drawing.Point(12, 9);
+            this.lblasignatura.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblasignatura.Name = "lblasignatura";
+            this.lblasignatura.Size = new System.Drawing.Size(89, 19);
+            this.lblasignatura.TabIndex = 3;
+            this.lblasignatura.Text = "Asignaturas";
             // 
-            // materialLabel2
+            // lblgrado
             // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(28, 117);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(58, 18);
-            this.materialLabel2.TabIndex = 5;
-            this.materialLabel2.Text = "Grados";
+            this.lblgrado.AutoSize = true;
+            this.lblgrado.Depth = 0;
+            this.lblgrado.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblgrado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblgrado.Location = new System.Drawing.Point(28, 117);
+            this.lblgrado.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblgrado.Name = "lblgrado";
+            this.lblgrado.Size = new System.Drawing.Size(57, 19);
+            this.lblgrado.TabIndex = 5;
+            this.lblgrado.Text = "Grados";
             // 
-            // materialLabel3
+            // lblaula
             // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(28, 242);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(44, 18);
-            this.materialLabel3.TabIndex = 7;
-            this.materialLabel3.Text = "Aulas";
+            this.lblaula.AutoSize = true;
+            this.lblaula.Depth = 0;
+            this.lblaula.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblaula.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblaula.Location = new System.Drawing.Point(28, 242);
+            this.lblaula.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblaula.Name = "lblaula";
+            this.lblaula.Size = new System.Drawing.Size(47, 19);
+            this.lblaula.TabIndex = 7;
+            this.lblaula.Text = "Aulas";
             // 
-            // materialLabel4
+            // lblciclo
             // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(12, 383);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(97, 18);
-            this.materialLabel4.TabIndex = 9;
-            this.materialLabel4.Text = "Ciclo Escolar";
-            this.materialLabel4.Click += new System.EventHandler(this.materialLabel4_Click);
+            this.lblciclo.AutoSize = true;
+            this.lblciclo.Depth = 0;
+            this.lblciclo.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblciclo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblciclo.Location = new System.Drawing.Point(12, 383);
+            this.lblciclo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblciclo.Name = "lblciclo";
+            this.lblciclo.Size = new System.Drawing.Size(99, 19);
+            this.lblciclo.TabIndex = 9;
+            this.lblciclo.Text = "Ciclo Escolar";
+            this.lblciclo.Click += new System.EventHandler(this.materialLabel4_Click);
             // 
-            // materialLabel5
+            // lblturnos
             // 
-            this.materialLabel5.AutoSize = true;
-            this.materialLabel5.Depth = 0;
-            this.materialLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(1045, 242);
-            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(55, 18);
-            this.materialLabel5.TabIndex = 11;
-            this.materialLabel5.Text = "Turnos";
+            this.lblturnos.AutoSize = true;
+            this.lblturnos.Depth = 0;
+            this.lblturnos.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblturnos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblturnos.Location = new System.Drawing.Point(1045, 242);
+            this.lblturnos.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblturnos.Name = "lblturnos";
+            this.lblturnos.Size = new System.Drawing.Size(56, 19);
+            this.lblturnos.TabIndex = 11;
+            this.lblturnos.Text = "Turnos";
             // 
             // materialLabel7
             // 
             this.materialLabel7.AutoSize = true;
             this.materialLabel7.Depth = 0;
-            this.materialLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel7.Location = new System.Drawing.Point(2029, 35);
             this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel7.Name = "materialLabel7";
-            this.materialLabel7.Size = new System.Drawing.Size(110, 18);
+            this.materialLabel7.Size = new System.Drawing.Size(112, 19);
             this.materialLabel7.TabIndex = 15;
             this.materialLabel7.Text = "Departamentos";
             this.materialLabel7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // materialLabel8
+            // lblcolegio
             // 
-            this.materialLabel8.AutoSize = true;
-            this.materialLabel8.Depth = 0;
-            this.materialLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.materialLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel8.Location = new System.Drawing.Point(1033, 9);
-            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel8.Name = "materialLabel8";
-            this.materialLabel8.Size = new System.Drawing.Size(67, 18);
-            this.materialLabel8.TabIndex = 13;
-            this.materialLabel8.Text = "Colegios";
+            this.lblcolegio.AutoSize = true;
+            this.lblcolegio.Depth = 0;
+            this.lblcolegio.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblcolegio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblcolegio.Location = new System.Drawing.Point(1033, 9);
+            this.lblcolegio.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblcolegio.Name = "lblcolegio";
+            this.lblcolegio.Size = new System.Drawing.Size(69, 19);
+            this.lblcolegio.TabIndex = 13;
+            this.lblcolegio.Text = "Colegios";
             // 
             // pictureBox7
             // 
@@ -244,17 +244,17 @@
             this.Controls.Add(this.lblDepartamento);
             this.Controls.Add(this.materialLabel7);
             this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.materialLabel8);
+            this.Controls.Add(this.lblcolegio);
             this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.materialLabel5);
+            this.Controls.Add(this.lblturnos);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.materialLabel4);
+            this.Controls.Add(this.lblciclo);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.materialLabel3);
+            this.Controls.Add(this.lblaula);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.lblgrado);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.lblasignatura);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximizeBox = false;
@@ -276,19 +276,19 @@
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel lblasignatura;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialLabel lblgrado;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialLabel lblaula;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private MaterialSkin.Controls.MaterialLabel lblciclo;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private MaterialSkin.Controls.MaterialLabel materialLabel5;
+        private MaterialSkin.Controls.MaterialLabel lblturnos;
         private System.Windows.Forms.PictureBox pictureBox5;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private MaterialSkin.Controls.MaterialLabel materialLabel8;
+        private MaterialSkin.Controls.MaterialLabel lblcolegio;
         private System.Windows.Forms.PictureBox pictureBox8;
         private MaterialSkin.Controls.MaterialLabel lblDepartamento;
     }

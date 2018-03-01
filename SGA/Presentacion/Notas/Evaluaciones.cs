@@ -62,28 +62,28 @@ namespace Presentacion.Notas
                         dataGridView1.Rows.Add("Abril", listBox1.Text, txtobservaciones.Text, cbmciclo.Text, cbmciclo.SelectedValue.ToString());
                         break;
                     case 5:
-                        dataGridView1.Rows.Add("Mayo", listBox1.Text, txtobservaciones.Text, cbmciclo.Text);
+                        dataGridView1.Rows.Add("Mayo", listBox1.Text, txtobservaciones.Text, cbmciclo.Text, cbmciclo.SelectedValue.ToString());
                         break;
                     case 6:
-                        dataGridView1.Rows.Add("Junio", listBox1.Text, txtobservaciones.Text, cbmciclo.Text);
+                        dataGridView1.Rows.Add("Junio", listBox1.Text, txtobservaciones.Text, cbmciclo.Text, cbmciclo.SelectedValue.ToString());
                         break;
                     case 7:
-                        dataGridView1.Rows.Add("Julio", listBox1.Text, txtobservaciones.Text, cbmciclo.Text);
+                        dataGridView1.Rows.Add("Julio", listBox1.Text, txtobservaciones.Text, cbmciclo.Text, cbmciclo.SelectedValue.ToString());
                         break;
                     case 8:
-                        dataGridView1.Rows.Add("Agosto", listBox1.Text, txtobservaciones.Text, cbmciclo.Text);
+                        dataGridView1.Rows.Add("Agosto", listBox1.Text, txtobservaciones.Text, cbmciclo.Text, cbmciclo.SelectedValue.ToString());
                         break;
                     case 9:
-                        dataGridView1.Rows.Add("Septiembre", listBox1.Text, txtobservaciones.Text, cbmciclo.Text);
+                        dataGridView1.Rows.Add("Septiembre", listBox1.Text, txtobservaciones.Text, cbmciclo.Text, cbmciclo.SelectedValue.ToString());
                         break;
                     case 10:
-                        dataGridView1.Rows.Add("Octubre", listBox1.Text, txtobservaciones.Text, cbmciclo.Text);
+                        dataGridView1.Rows.Add("Octubre", listBox1.Text, txtobservaciones.Text, cbmciclo.Text, cbmciclo.SelectedValue.ToString());
                         break;
                     case 11:
-                        dataGridView1.Rows.Add("Noviembre", listBox1.Text, txtobservaciones.Text, cbmciclo.Text);
+                        dataGridView1.Rows.Add("Noviembre", listBox1.Text, txtobservaciones.Text, cbmciclo.Text, cbmciclo.SelectedValue.ToString());
                         break;
                     case 12:
-                        dataGridView1.Rows.Add("Diciembre", listBox1.Text, txtobservaciones.Text, cbmciclo.Text);
+                        dataGridView1.Rows.Add("Diciembre", listBox1.Text, txtobservaciones.Text, cbmciclo.Text, cbmciclo.SelectedValue.ToString());
                         break;
                     default:
                         break;
@@ -187,21 +187,45 @@ namespace Presentacion.Notas
                     foreach (DataGridViewRow datos in dataGridView1.Rows)
                     {
                         EEvaluaciones _Evaluaciones = new EEvaluaciones();
-                        _Evaluaciones.Mes = datos.Cells["Column1"].ToString();
-                        _Evaluaciones.Pacial = datos.Cells["Column2"].ToString();
-                        _Evaluaciones.Observaciones = datos.Cells["Column3"].ToString();
-                        _Evaluaciones.CicloEscolar.CicloEscolarId = Convert.ToInt32(datos.Cells["Column5"].ToString());
+                        _Evaluaciones.Mes = Convert.ToString(datos.Cells[0].Value);
+                        _Evaluaciones.Pacial = Convert.ToString(datos.Cells[1].Value);
+                        _Evaluaciones.Observaciones = Convert.ToString(datos.Cells[2].Value);
+                        _Evaluaciones.CicloEscolar.CicloEscolarId = Convert.ToInt32(datos.Cells[4].Value);
                         NEvaluacion n = new NEvaluacion();
                         n.IngresarEvaluaciones(_Evaluaciones);
                     }
                     CargarEvaluaciones();
                     MessageBox.Show("Guardado");
+                    Limpiar();
+                }
+                if (Bandera == 1)
+                {
+
                 }
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                //var mes = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Mes").ToString();
+                //var parcial = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Pacial").ToString();
+                //var observaciones = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Observaciones").ToString();
+                //var ciclo = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ciclo").ToString();
+                txtobservaciones.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Observaciones").ToString();
+                listBox1.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Pacial").ToString();
+                cbmciclo.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ciclo").ToString();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
             }
         }
     }

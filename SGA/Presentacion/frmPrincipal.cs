@@ -38,5 +38,11 @@ namespace Presentacion
             frmAdministracion a = new frmAdministracion();
             a.ShowDialog();
         }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            Notas.Evaluaciones evaluaciones = new Notas.Evaluaciones();
+            evaluaciones.ShowDialog();
+        }
     }
 }
