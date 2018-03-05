@@ -50,7 +50,7 @@ go
 --COLEGIO
 create proc IngresarColegio
 (
-@Colegio nvarchar(100),
+f@Colegio nvarchar(100),
 @Telefono nvarchar(20),
 @DepartamentoId int
 )

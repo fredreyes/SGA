@@ -69,5 +69,25 @@ namespace Datos
                 throw ex;
             }
         }
+
+        public void EliminarEvaluaciones(EEvaluaciones e)
+        {
+            try
+            {
+                comando = new SqlCommand("EliminarEvaluaciones");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@EvaluacionId", e.EvaluacionId);             
+                comando.Connection = conexion;
+                conexion.Open();
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                conexion.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

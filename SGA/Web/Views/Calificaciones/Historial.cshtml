@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Historial";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="center-align">Historial de Asignaturas</h2>
+<p class="center-align">Ciclo Academico correspondiente al año lectivo  @DateTime.Now.Year </p>
+<div class="row">
+    <div class="col s12 m6 l12">
+        <div class="card">
+            <div class="card-image">
+                <a class="btn-floating halfway-fab waves-effect waves-light blue center-align">1</a>
+            </div>
+            <div class="card-content">
+                <table class="highlight responsive-table">
+                    <thead>
+                        <tr>
+                            <th>Asignatura</th>
+                            <th>Profesor</th>
+                            <th>Descripcion</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Matemática</td>
+                            <td>Prof. Rene Rivas</td>
+                            <td class="green-text">✔</td>
+                        </tr>
+                        <tr>
+                            <td>Lengua y Literatura</td>
+                            <td>Prof. Karla Garcia</td>
+                            <td class="red-text">✔</td>
+                        </tr>
+                        <tr>
+                            <td>Educación Fisica</td>
+                            <td>Prof. William López</td>
+                            <td class="green-text">✔</td>
+                        </tr>
+                        <tr>
+                            <td>Ciencias Naturales</td>
+                            <td>Prof. Suni Gaitan</td>
+                            <td class="green-text">✔</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

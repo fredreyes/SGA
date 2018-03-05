@@ -195,7 +195,7 @@ namespace Presentacion.Notas
                         n.IngresarEvaluaciones(_Evaluaciones);
                     }
                     CargarEvaluaciones();
-                    MessageBox.Show("Guardado");
+                    MessageBox.Show("Evaluaciones Guardadas Correctamente","SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
                 }
                 if (Bandera == 1)
@@ -212,21 +212,49 @@ namespace Presentacion.Notas
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    ////var mes = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Mes").ToString();
+            //    ////var parcial = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Pacial").ToString();
+            //    ////var observaciones = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Observaciones").ToString();
+            //    ////var ciclo = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ciclo").ToString();
+            //    //txtobservaciones.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Observaciones").ToString();
+            //    //listBox1.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Pacial").ToString();
+            //    //cbmciclo.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ciclo").ToString();
+            //}
+            //catch (Exception ex)
+            //{
+
+            //    MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            //}
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             try
             {
-                //var mes = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Mes").ToString();
-                //var parcial = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Pacial").ToString();
-                //var observaciones = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Observaciones").ToString();
-                //var ciclo = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ciclo").ToString();
-                txtobservaciones.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Observaciones").ToString();
-                listBox1.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Pacial").ToString();
-                cbmciclo.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ciclo").ToString();
+                EEvaluaciones evaluaciones = new EEvaluaciones();
+                NEvaluacion n = new NEvaluacion();
+                var mes = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Mes").ToString();
+                var Año = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ciclo").ToString();
+                evaluaciones.EvaluacionId = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "EvaluacionId").ToString());
+                DialogResult mensaje = MessageBox.Show("¿Estas seguro de elimar la evaluacion correspondiente al mes de " + mes + " del año " + Año + " ?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (mensaje == DialogResult.OK)
+                {
+                    n.EliminarEvaluaciones(evaluaciones);
+                    MessageBox.Show("Evaluación eliminada con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarCiclo();
+                    CargarEvaluaciones();
+                    Limpiar();
+                }
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
+                throw ex;
             }
+
+
         }
     }
 }

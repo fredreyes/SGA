@@ -37,5 +37,19 @@ namespace Negocio
                 throw ex;
             }
         }
+
+        public void EliminarEvaluaciones(EEvaluaciones e)
+        {
+            try
+            {
+                DEvaluaciones d = new DEvaluaciones();
+                d.EliminarEvaluaciones(e);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }
