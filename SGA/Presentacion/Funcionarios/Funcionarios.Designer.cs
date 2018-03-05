@@ -38,10 +38,10 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(2, 124);
+            this.gridControl1.Location = new System.Drawing.Point(12, 143);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(657, 281);
+            this.gridControl1.Size = new System.Drawing.Size(640, 281);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -55,7 +55,7 @@
             // btnNuevoFuncionario
             // 
             this.btnNuevoFuncionario.Depth = 0;
-            this.btnNuevoFuncionario.Location = new System.Drawing.Point(12, 81);
+            this.btnNuevoFuncionario.Location = new System.Drawing.Point(12, 82);
             this.btnNuevoFuncionario.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnNuevoFuncionario.Name = "btnNuevoFuncionario";
             this.btnNuevoFuncionario.Primary = true;
@@ -71,7 +71,7 @@
             this.btnexportar.Appearance.Options.UseFont = true;
             this.btnexportar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnexportar.ImageUri.Uri = "ExportToXLSX";
-            this.btnexportar.Location = new System.Drawing.Point(453, 81);
+            this.btnexportar.Location = new System.Drawing.Point(545, 81);
             this.btnexportar.Name = "btnexportar";
             this.btnexportar.Size = new System.Drawing.Size(107, 37);
             this.btnexportar.TabIndex = 2;
@@ -82,7 +82,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 406);
+            this.ClientSize = new System.Drawing.Size(671, 448);
             this.Controls.Add(this.btnexportar);
             this.Controls.Add(this.btnNuevoFuncionario);
             this.Controls.Add(this.gridControl1);

@@ -8,17 +8,23 @@ namespace Entidades
 {
     public class EFuncionarios
     {
-        public int ID_FUNCIONARIO { get; set; }
-        public string NOMBRE { get; set; }
-        public string APELLIDO { get; set; }
-        public string SEXO { get; set; }
-        public DateTime FECHA_NACIMIENTO { get; set; }
-        public string CEDULA { get; set; }
-        public string TELEFONO { get; set; }
-        public string CARGO { get; set; }
-        public string EMAIL { get; set; }
-        public int OCUPACION_ID { get; set; }
-        public string OCUPACION { get; set; }
+        public int FuncionarioId { get; set; }
+        public string Nombres { get; set; }
+        public string Apellidos { get; set; }
+        public string Cedula { get; set; }
+        public string Sexo { get; set; }
+        public DateTime FechaNacimiento { get; set; }
+        
+        public string Telefono { get; set; }
+        public string Cargo { get; set; }
+        public EOcupaciones Ocupacion { get; set; }
+        public string Email { get; set; }
+        public byte[] Foto { get; set; }
+        public bool Activo { get; set; }
 
+        public EFuncionarios()
+        {
+            Ocupacion = new EOcupaciones();
+        }
     }
 }

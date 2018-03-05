@@ -431,6 +431,17 @@ begin
 end
 go
 
+create proc EliminarEvaluaciones
+(
+@EvaluacionId INT
+)
+as
+begin
+		delete Evaluaciones
+		where EvaluacionId = @EvaluacionId
+end
+go
+
 -------------faltan
 --------------------------------------------Procedimientos No creados------------------------------------------------
 

@@ -19,15 +19,13 @@ namespace Presentacion.Funcionarios
         public AgregarFuncionario()
         {
             InitializeComponent();
-            MaterialSkinManager m = MaterialSkinManager.Instance;
-            m.AddFormToManage(this);
-            m.Theme = MaterialSkinManager.Themes.LIGHT;
-            m.ColorScheme = new ColorScheme(Primary.Blue900,Primary.Blue600,Primary.Blue500,Accent.LightBlue700,TextShade.WHITE);
+            EstiloMenu x = new EstiloMenu();
+            x.AplicarEstilo(this);
         }
 
         private void AgregarFuncionario_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

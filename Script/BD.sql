@@ -99,6 +99,24 @@ CONSTRAINT FK_EVALU_CICLO FOREIGN KEY(CicloEscolarId) REFERENCES CicloEscolar(Ci
 )
 GO
 
+CREATE TABLE Funcionarios
+(
+FuncionarioId INT not null identity(1,1),
+Nombres nvarchar(100) not null,
+Apellidos nvarchar(100) not null,
+Cedula nvarchar(18) ,
+Sexo char (1),--F,M
+FechaNacimiento DATE,
+Telefono nvarchar(15),
+Cargo nvarchar(40) ,
+OcupacionId INT,
+Email nvarchar(100),
+Foto Image,
+Activo Bit
+constraint PK_Funcionario primary key(FuncionarioId),
+constraint FK_Funcionario_Ocupacion foreign key(OcupacionId) references ProfesionOcupacion(OcupacionId)
+)
+go
 
 ---------------------------------------------------
 --TABLA ALUMNO

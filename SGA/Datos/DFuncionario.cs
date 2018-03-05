@@ -17,7 +17,9 @@ namespace Datos
                 SqlCommand comando;
                 SqlConnection conexion = new SqlConnection(Properties.Settings.Default.CadenaConexion);
 
-                comando = new SqlCommand("select ID_FUNCIONARIO,NOMBRE,APELLIDO,SEXO,FECHA_NACIMIENTO,CEDULA,TELEFONO,CARGO,F.OCUPACION_ID,NOMBRE_OCUPACION FROM FUNCIONARIOS F INNER JOIN PROFESION_OCUPACION O ON F.OCUPACION_ID = O.OCUPACION_ID", conexion);
+                comando = new SqlCommand
+               ("select FuncionarioId,Nombres,Apellidos,Cedula,Sexo,FechaNacimiento,Telefono,Cargo,F.OcupacionId,Ocupacion,Email,Foto,Activo \n"+
+               "from funcionarios f inner join ProfesionOcupacion po on f.OcupacionId = po.OcupacionId",conexion);
                 comando.CommandType = CommandType.Text;
                 comando.Connection = conexion;
                 conexion.Open();
@@ -26,17 +28,19 @@ namespace Datos
                 while (leer.Read())
                 {
                     EFuncionarios f = new EFuncionarios();
-                    f.ID_FUNCIONARIO = (int)leer[0];
-                    f.NOMBRE = leer[1].ToString();
-                    f.APELLIDO = leer[2].ToString();
-                    f.SEXO = leer[3].ToString();
-                    f.FECHA_NACIMIENTO = Convert.ToDateTime(leer[4].ToString());
-                    f.CEDULA = leer[5].ToString();
-                    f.TELEFONO = leer[6].ToString();
-                    f.CARGO = leer[7].ToString();
-                    f.EMAIL = leer[8].ToString();
-                    f.OCUPACION_ID = (int)leer[9];
-                    f.OCUPACION = leer[10].ToString();
+                    f.FuncionarioId = (int)leer[0];
+                    f.Nombres = leer[1].ToString();
+                    f.Apellidos = leer[2].ToString();
+                    f.Cedula = leer[3].ToString();
+                    f.Sexo = leer[4].ToString();
+                    f.FechaNacimiento = (DateTime)leer[5];
+                    f.Telefono = leer[6].ToString();
+                    f.Cargo = leer[7].ToString();
+                    f.Ocupacion.OcupacionId = (int)leer[8];
+                    f.Ocupacion.Ocupacion = leer[9].ToString();
+                    f.Email = leer[10].ToString();
+                    f.Foto = (byte[])leer[11];
+                    f.Activo = (bool)leer[12];
                     lista.Add(f);
                 }
                 leer.Close();
@@ -45,7 +49,6 @@ namespace Datos
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
