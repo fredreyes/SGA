@@ -10,13 +10,12 @@ namespace Datos
 {
    public class DFuncionario
     {
+        SqlCommand comando;
+        SqlConnection conexion = new SqlConnection(Properties.Settings.Default.CadenaConexion);
         public List<EFuncionarios> ListaFuncionarios()
         {
             try
             {
-                SqlCommand comando;
-                SqlConnection conexion = new SqlConnection(Properties.Settings.Default.CadenaConexion);
-
                 comando = new SqlCommand
                ("select FuncionarioId,Nombres,Apellidos,Cedula,Sexo,FechaNacimiento,Telefono,Cargo,F.OcupacionId,Ocupacion,Email,Foto,Activo \n"+
                "from funcionarios f inner join ProfesionOcupacion po on f.OcupacionId = po.OcupacionId",conexion);
@@ -49,6 +48,63 @@ namespace Datos
             }
             catch (Exception ex)
             {
+                throw ex;
+            }
+        }
+
+        public void IngresarFuncionario(EFuncionarios f)
+        {
+            try
+            {
+                comando = new SqlCommand("IngresarFuncioarios", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Nombres", f.Nombres);
+                comando.Parameters.AddWithValue("@Apellidos", f.Apellidos);
+                comando.Parameters.AddWithValue("@Cedula", f.Cedula);
+                comando.Parameters.AddWithValue("@Sexo", f.Sexo);
+                comando.Parameters.AddWithValue("@FechaNacimiento", f.FechaNacimiento);
+                comando.Parameters.AddWithValue("@Telefono", f.Telefono);
+                comando.Parameters.AddWithValue("@Cargo", f.Cargo);
+                comando.Parameters.AddWithValue("@OcupacionId", f.Ocupacion.OcupacionId);
+                comando.Parameters.AddWithValue("@Email", f.Email);
+                comando.Parameters.AddWithValue("@Foto", f.Foto);
+                conexion.Open();
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                conexion.Dispose();
+            }
+            catch (Exception ex)
+            {
+ 
+                throw ex;
+            }
+        }
+        public void ModificarFuncionario(EFuncionarios f)
+        {
+            try
+            {
+                comando = new SqlCommand("ModificarFuncioarios", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Nombres", f.Nombres);
+                comando.Parameters.AddWithValue("@Apellidos", f.Apellidos);
+                comando.Parameters.AddWithValue("@Cedula", f.Cedula);
+                comando.Parameters.AddWithValue("@Sexo", f.Sexo);
+                comando.Parameters.AddWithValue("@FechaNacimiento", f.FechaNacimiento);
+                comando.Parameters.AddWithValue("@Telefono", f.Telefono);
+                comando.Parameters.AddWithValue("@Cargo", f.Cargo);
+                comando.Parameters.AddWithValue("@OcupacionId", f.Ocupacion.OcupacionId);
+                comando.Parameters.AddWithValue("@Email", f.Email);
+                comando.Parameters.AddWithValue("@Foto", f.Foto);
+                comando.Parameters.AddWithValue("@activo", f.Activo);
+                comando.Parameters.AddWithValue("@FuncionarioId", f.FuncionarioId);
+                conexion.Open();
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                conexion.Dispose();
+            }
+            catch (Exception ex)
+            {
+
                 throw ex;
             }
         }

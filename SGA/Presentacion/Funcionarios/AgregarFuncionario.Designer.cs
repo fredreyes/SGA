@@ -28,254 +28,299 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialSingleLineTextField2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialRadioButton1 = new MaterialSkin.Controls.MaterialRadioButton();
-            this.materialRadioButton2 = new MaterialSkin.Controls.MaterialRadioButton();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.materialSingleLineTextField3 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialSingleLineTextField4 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.txtocupacion = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialSingleLineTextField6 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
+            this.txtnombres = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtapellido = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.rbtnMasculino = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rbtnFemenino = new MaterialSkin.Controls.MaterialRadioButton();
+            this.dateFechaNac = new DevExpress.XtraEditors.DateEdit();
+            this.txtcedula = new System.Windows.Forms.MaskedTextBox();
+            this.txttelefono = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtcargo = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtemail = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btncancelar = new System.Windows.Forms.Button();
+            this.btningresar = new System.Windows.Forms.Button();
+            this.pictureFoto = new DevExpress.XtraEditors.PictureEdit();
+            this.cbmOcupacion = new System.Windows.Forms.ComboBox();
+            this.chkactivo = new MaterialSkin.Controls.MaterialCheckBox();
+            this.chkcancelar = new MaterialSkin.Controls.MaterialCheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dateFechaNac.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateFechaNac.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // materialSingleLineTextField1
+            // txtnombres
             // 
-            this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Hint = "Nombres";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(12, 85);
-            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.PasswordChar = '\0';
-            this.materialSingleLineTextField1.SelectedText = "";
-            this.materialSingleLineTextField1.SelectionLength = 0;
-            this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(272, 23);
-            this.materialSingleLineTextField1.TabIndex = 0;
-            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
+            this.txtnombres.Depth = 0;
+            this.txtnombres.Hint = "Nombres";
+            this.txtnombres.Location = new System.Drawing.Point(12, 85);
+            this.txtnombres.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtnombres.Name = "txtnombres";
+            this.txtnombres.PasswordChar = '\0';
+            this.txtnombres.SelectedText = "";
+            this.txtnombres.SelectionLength = 0;
+            this.txtnombres.SelectionStart = 0;
+            this.txtnombres.Size = new System.Drawing.Size(272, 23);
+            this.txtnombres.TabIndex = 0;
+            this.txtnombres.UseSystemPasswordChar = false;
             // 
-            // materialSingleLineTextField2
+            // txtapellido
             // 
-            this.materialSingleLineTextField2.Depth = 0;
-            this.materialSingleLineTextField2.Hint = "Apellidos";
-            this.materialSingleLineTextField2.Location = new System.Drawing.Point(12, 120);
-            this.materialSingleLineTextField2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField2.Name = "materialSingleLineTextField2";
-            this.materialSingleLineTextField2.PasswordChar = '\0';
-            this.materialSingleLineTextField2.SelectedText = "";
-            this.materialSingleLineTextField2.SelectionLength = 0;
-            this.materialSingleLineTextField2.SelectionStart = 0;
-            this.materialSingleLineTextField2.Size = new System.Drawing.Size(272, 23);
-            this.materialSingleLineTextField2.TabIndex = 1;
-            this.materialSingleLineTextField2.UseSystemPasswordChar = false;
+            this.txtapellido.Depth = 0;
+            this.txtapellido.Hint = "Apellidos";
+            this.txtapellido.Location = new System.Drawing.Point(12, 120);
+            this.txtapellido.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtapellido.Name = "txtapellido";
+            this.txtapellido.PasswordChar = '\0';
+            this.txtapellido.SelectedText = "";
+            this.txtapellido.SelectionLength = 0;
+            this.txtapellido.SelectionStart = 0;
+            this.txtapellido.Size = new System.Drawing.Size(272, 23);
+            this.txtapellido.TabIndex = 1;
+            this.txtapellido.UseSystemPasswordChar = false;
             // 
-            // materialRadioButton1
+            // rbtnMasculino
             // 
-            this.materialRadioButton1.AutoSize = true;
-            this.materialRadioButton1.Depth = 0;
-            this.materialRadioButton1.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialRadioButton1.Location = new System.Drawing.Point(140, 200);
-            this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton1.Name = "materialRadioButton1";
-            this.materialRadioButton1.Ripple = true;
-            this.materialRadioButton1.Size = new System.Drawing.Size(93, 30);
-            this.materialRadioButton1.TabIndex = 2;
-            this.materialRadioButton1.TabStop = true;
-            this.materialRadioButton1.Text = "Masculino";
-            this.materialRadioButton1.UseVisualStyleBackColor = true;
+            this.rbtnMasculino.AutoSize = true;
+            this.rbtnMasculino.Depth = 0;
+            this.rbtnMasculino.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbtnMasculino.Location = new System.Drawing.Point(12, 200);
+            this.rbtnMasculino.Margin = new System.Windows.Forms.Padding(0);
+            this.rbtnMasculino.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbtnMasculino.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbtnMasculino.Name = "rbtnMasculino";
+            this.rbtnMasculino.Ripple = true;
+            this.rbtnMasculino.Size = new System.Drawing.Size(93, 30);
+            this.rbtnMasculino.TabIndex = 2;
+            this.rbtnMasculino.TabStop = true;
+            this.rbtnMasculino.Text = "Masculino";
+            this.rbtnMasculino.UseVisualStyleBackColor = true;
             // 
-            // materialRadioButton2
+            // rbtnFemenino
             // 
-            this.materialRadioButton2.AutoSize = true;
-            this.materialRadioButton2.Depth = 0;
-            this.materialRadioButton2.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialRadioButton2.Location = new System.Drawing.Point(9, 200);
-            this.materialRadioButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton2.Name = "materialRadioButton2";
-            this.materialRadioButton2.Ripple = true;
-            this.materialRadioButton2.Size = new System.Drawing.Size(90, 30);
-            this.materialRadioButton2.TabIndex = 3;
-            this.materialRadioButton2.TabStop = true;
-            this.materialRadioButton2.Text = "Femenino";
-            this.materialRadioButton2.UseVisualStyleBackColor = true;
+            this.rbtnFemenino.AutoSize = true;
+            this.rbtnFemenino.Depth = 0;
+            this.rbtnFemenino.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbtnFemenino.Location = new System.Drawing.Point(151, 200);
+            this.rbtnFemenino.Margin = new System.Windows.Forms.Padding(0);
+            this.rbtnFemenino.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbtnFemenino.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbtnFemenino.Name = "rbtnFemenino";
+            this.rbtnFemenino.Ripple = true;
+            this.rbtnFemenino.Size = new System.Drawing.Size(90, 30);
+            this.rbtnFemenino.TabIndex = 3;
+            this.rbtnFemenino.TabStop = true;
+            this.rbtnFemenino.Text = "Femenino";
+            this.rbtnFemenino.UseVisualStyleBackColor = true;
             // 
-            // dateEdit1
+            // dateFechaNac
             // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(42, 246);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dateFechaNac.EditValue = null;
+            this.dateFechaNac.Location = new System.Drawing.Point(42, 246);
+            this.dateFechaNac.Name = "dateFechaNac";
+            this.dateFechaNac.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dateFechaNac.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(170, 20);
-            this.dateEdit1.TabIndex = 4;
+            this.dateFechaNac.Size = new System.Drawing.Size(170, 20);
+            this.dateFechaNac.TabIndex = 4;
             // 
-            // maskedTextBox1
+            // txtcedula
             // 
-            this.maskedTextBox1.BackColor = System.Drawing.Color.White;
-            this.maskedTextBox1.Location = new System.Drawing.Point(12, 161);
-            this.maskedTextBox1.Mask = ">000-000000-0000L";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(272, 20);
-            this.maskedTextBox1.TabIndex = 5;
-            
-            
-
-
+            this.txtcedula.BackColor = System.Drawing.Color.White;
+            this.txtcedula.Location = new System.Drawing.Point(12, 161);
+            this.txtcedula.Mask = ">000-000000-0000L";
+            this.txtcedula.Name = "txtcedula";
+            this.txtcedula.Size = new System.Drawing.Size(272, 20);
+            this.txtcedula.TabIndex = 5;
             // 
-            // materialSingleLineTextField3
+            // txttelefono
             // 
-            this.materialSingleLineTextField3.Depth = 0;
-            this.materialSingleLineTextField3.Hint = "Teléfono";
-            this.materialSingleLineTextField3.Location = new System.Drawing.Point(12, 282);
-            this.materialSingleLineTextField3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField3.Name = "materialSingleLineTextField3";
-            this.materialSingleLineTextField3.PasswordChar = '\0';
-            this.materialSingleLineTextField3.SelectedText = "";
-            this.materialSingleLineTextField3.SelectionLength = 0;
-            this.materialSingleLineTextField3.SelectionStart = 0;
-            this.materialSingleLineTextField3.Size = new System.Drawing.Size(272, 23);
-            this.materialSingleLineTextField3.TabIndex = 6;
-            this.materialSingleLineTextField3.UseSystemPasswordChar = false;
+            this.txttelefono.Depth = 0;
+            this.txttelefono.Hint = "Teléfono";
+            this.txttelefono.Location = new System.Drawing.Point(12, 282);
+            this.txttelefono.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txttelefono.Name = "txttelefono";
+            this.txttelefono.PasswordChar = '\0';
+            this.txttelefono.SelectedText = "";
+            this.txttelefono.SelectionLength = 0;
+            this.txttelefono.SelectionStart = 0;
+            this.txttelefono.Size = new System.Drawing.Size(272, 23);
+            this.txttelefono.TabIndex = 6;
+            this.txttelefono.UseSystemPasswordChar = false;
             // 
-            // materialSingleLineTextField4
+            // txtcargo
             // 
-            this.materialSingleLineTextField4.Depth = 0;
-            this.materialSingleLineTextField4.Hint = "Cargo";
-            this.materialSingleLineTextField4.Location = new System.Drawing.Point(12, 311);
-            this.materialSingleLineTextField4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField4.Name = "materialSingleLineTextField4";
-            this.materialSingleLineTextField4.PasswordChar = '\0';
-            this.materialSingleLineTextField4.SelectedText = "";
-            this.materialSingleLineTextField4.SelectionLength = 0;
-            this.materialSingleLineTextField4.SelectionStart = 0;
-            this.materialSingleLineTextField4.Size = new System.Drawing.Size(144, 23);
-            this.materialSingleLineTextField4.TabIndex = 7;
-            this.materialSingleLineTextField4.UseSystemPasswordChar = false;
+            this.txtcargo.Depth = 0;
+            this.txtcargo.Hint = "Cargo";
+            this.txtcargo.Location = new System.Drawing.Point(12, 311);
+            this.txtcargo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtcargo.Name = "txtcargo";
+            this.txtcargo.PasswordChar = '\0';
+            this.txtcargo.SelectedText = "";
+            this.txtcargo.SelectionLength = 0;
+            this.txtcargo.SelectionStart = 0;
+            this.txtcargo.Size = new System.Drawing.Size(272, 23);
+            this.txtcargo.TabIndex = 7;
+            this.txtcargo.UseSystemPasswordChar = false;
             // 
-            // simpleButton1
+            // txtemail
             // 
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton1.ImageUri.Uri = "Preview";
-            this.simpleButton1.Location = new System.Drawing.Point(384, 362);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(87, 34);
-            this.simpleButton1.TabIndex = 8;
-            this.simpleButton1.Text = "Buscar";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.txtemail.Depth = 0;
+            this.txtemail.Hint = "E-Mail";
+            this.txtemail.Location = new System.Drawing.Point(12, 349);
+            this.txtemail.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtemail.Name = "txtemail";
+            this.txtemail.PasswordChar = '\0';
+            this.txtemail.SelectedText = "";
+            this.txtemail.SelectionLength = 0;
+            this.txtemail.SelectionStart = 0;
+            this.txtemail.Size = new System.Drawing.Size(272, 23);
+            this.txtemail.TabIndex = 10;
+            this.txtemail.UseSystemPasswordChar = false;
             // 
-            // txtocupacion
+            // btncancelar
             // 
-            this.txtocupacion.Depth = 0;
-            this.txtocupacion.Hint = "Ocupación";
-            this.txtocupacion.Location = new System.Drawing.Point(12, 390);
-            this.txtocupacion.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtocupacion.Name = "txtocupacion";
-            this.txtocupacion.PasswordChar = '\0';
-            this.txtocupacion.SelectedText = "";
-            this.txtocupacion.SelectionLength = 0;
-            this.txtocupacion.SelectionStart = 0;
-            this.txtocupacion.Size = new System.Drawing.Size(272, 23);
-            this.txtocupacion.TabIndex = 9;
-            this.txtocupacion.UseSystemPasswordChar = false;
+            this.btncancelar.BackColor = System.Drawing.Color.Firebrick;
+            this.btncancelar.FlatAppearance.BorderSize = 0;
+            this.btncancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkRed;
+            this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancelar.ForeColor = System.Drawing.Color.White;
+            this.btncancelar.Image = global::Presentacion.Properties.Resources.delete;
+            this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncancelar.Location = new System.Drawing.Point(495, 311);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Size = new System.Drawing.Size(103, 38);
+            this.btncancelar.TabIndex = 41;
+            this.btncancelar.Text = "Cancelar";
+            this.btncancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btncancelar.UseVisualStyleBackColor = false;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
-            // materialSingleLineTextField6
+            // btningresar
             // 
-            this.materialSingleLineTextField6.Depth = 0;
-            this.materialSingleLineTextField6.Hint = "E-Mail";
-            this.materialSingleLineTextField6.Location = new System.Drawing.Point(12, 349);
-            this.materialSingleLineTextField6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField6.Name = "materialSingleLineTextField6";
-            this.materialSingleLineTextField6.PasswordChar = '\0';
-            this.materialSingleLineTextField6.SelectedText = "";
-            this.materialSingleLineTextField6.SelectionLength = 0;
-            this.materialSingleLineTextField6.SelectionStart = 0;
-            this.materialSingleLineTextField6.Size = new System.Drawing.Size(272, 23);
-            this.materialSingleLineTextField6.TabIndex = 10;
-            this.materialSingleLineTextField6.UseSystemPasswordChar = false;
+            this.btningresar.BackColor = System.Drawing.Color.Blue;
+            this.btningresar.FlatAppearance.BorderSize = 0;
+            this.btningresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btningresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btningresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btningresar.ForeColor = System.Drawing.Color.White;
+            this.btningresar.Image = global::Presentacion.Properties.Resources.save;
+            this.btningresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btningresar.Location = new System.Drawing.Point(338, 311);
+            this.btningresar.Name = "btningresar";
+            this.btningresar.Size = new System.Drawing.Size(103, 38);
+            this.btningresar.TabIndex = 40;
+            this.btningresar.Text = "Guardar";
+            this.btningresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btningresar.UseVisualStyleBackColor = false;
+            this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
             // 
-            // materialLabel1
+            // pictureFoto
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(432, 120);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(131, 19);
-            this.materialLabel1.TabIndex = 11;
-            this.materialLabel1.Text = "Fecha Nacimiento";
+            this.pictureFoto.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureFoto.EditValue = global::Presentacion.Properties.Resources.student;
+            this.pictureFoto.Location = new System.Drawing.Point(387, 120);
+            this.pictureFoto.Name = "pictureFoto";
+            this.pictureFoto.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureFoto.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.pictureFoto.Properties.ZoomAccelerationFactor = 1D;
+            this.pictureFoto.Size = new System.Drawing.Size(147, 151);
+            this.pictureFoto.TabIndex = 42;
             // 
-            // materialLabel2
+            // cbmOcupacion
             // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(458, 190);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(55, 19);
-            this.materialLabel2.TabIndex = 12;
-            this.materialLabel2.Text = "Cedula";
+            this.cbmOcupacion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbmOcupacion.FormattingEnabled = true;
+            this.cbmOcupacion.Location = new System.Drawing.Point(12, 386);
+            this.cbmOcupacion.Name = "cbmOcupacion";
+            this.cbmOcupacion.Size = new System.Drawing.Size(272, 23);
+            this.cbmOcupacion.TabIndex = 43;
+            this.cbmOcupacion.Text = "Seleccione una Profesión u Ocupación";
+            // 
+            // chkactivo
+            // 
+            this.chkactivo.AutoSize = true;
+            this.chkactivo.Depth = 0;
+            this.chkactivo.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chkactivo.Location = new System.Drawing.Point(361, 78);
+            this.chkactivo.Margin = new System.Windows.Forms.Padding(0);
+            this.chkactivo.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkactivo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkactivo.Name = "chkactivo";
+            this.chkactivo.Ripple = true;
+            this.chkactivo.Size = new System.Drawing.Size(69, 30);
+            this.chkactivo.TabIndex = 46;
+            this.chkactivo.Text = "Activo";
+            this.chkactivo.UseVisualStyleBackColor = true;
+            this.chkactivo.CheckedChanged += new System.EventHandler(this.chkactivo_CheckedChanged);
+            // 
+            // chkcancelar
+            // 
+            this.chkcancelar.AutoSize = true;
+            this.chkcancelar.Depth = 0;
+            this.chkcancelar.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chkcancelar.Location = new System.Drawing.Point(476, 78);
+            this.chkcancelar.Margin = new System.Windows.Forms.Padding(0);
+            this.chkcancelar.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkcancelar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkcancelar.Name = "chkcancelar";
+            this.chkcancelar.Ripple = true;
+            this.chkcancelar.Size = new System.Drawing.Size(95, 30);
+            this.chkcancelar.TabIndex = 47;
+            this.chkcancelar.Text = "Cancelado";
+            this.chkcancelar.UseVisualStyleBackColor = true;
+            this.chkcancelar.CheckedChanged += new System.EventHandler(this.chkcancelar_CheckedChanged);
             // 
             // AgregarFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 425);
-            this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.materialSingleLineTextField6);
-            this.Controls.Add(this.txtocupacion);
-            this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.materialSingleLineTextField4);
-            this.Controls.Add(this.materialSingleLineTextField3);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.dateEdit1);
-            this.Controls.Add(this.materialRadioButton2);
-            this.Controls.Add(this.materialRadioButton1);
-            this.Controls.Add(this.materialSingleLineTextField2);
-            this.Controls.Add(this.materialSingleLineTextField1);
+            this.Controls.Add(this.chkcancelar);
+            this.Controls.Add(this.chkactivo);
+            this.Controls.Add(this.cbmOcupacion);
+            this.Controls.Add(this.pictureFoto);
+            this.Controls.Add(this.btncancelar);
+            this.Controls.Add(this.btningresar);
+            this.Controls.Add(this.txtemail);
+            this.Controls.Add(this.txtcargo);
+            this.Controls.Add(this.txttelefono);
+            this.Controls.Add(this.txtcedula);
+            this.Controls.Add(this.dateFechaNac);
+            this.Controls.Add(this.rbtnFemenino);
+            this.Controls.Add(this.rbtnMasculino);
+            this.Controls.Add(this.txtapellido);
+            this.Controls.Add(this.txtnombres);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AgregarFuncionario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Funcionario";
             this.Load += new System.EventHandler(this.AgregarFuncionario_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateFechaNac.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateFechaNac.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField2;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton1;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton2;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField3;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtocupacion;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField6;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private System.Windows.Forms.Button btncancelar;
+        private System.Windows.Forms.Button btningresar;
+        public MaterialSkin.Controls.MaterialSingleLineTextField txtnombres;
+        public MaterialSkin.Controls.MaterialSingleLineTextField txtapellido;
+        public MaterialSkin.Controls.MaterialRadioButton rbtnMasculino;
+        public MaterialSkin.Controls.MaterialRadioButton rbtnFemenino;
+        public DevExpress.XtraEditors.DateEdit dateFechaNac;
+        public System.Windows.Forms.MaskedTextBox txtcedula;
+        public MaterialSkin.Controls.MaterialSingleLineTextField txttelefono;
+        public MaterialSkin.Controls.MaterialSingleLineTextField txtcargo;
+        public MaterialSkin.Controls.MaterialSingleLineTextField txtemail;
+        public DevExpress.XtraEditors.PictureEdit pictureFoto;
+        public System.Windows.Forms.ComboBox cbmOcupacion;
+        public MaterialSkin.Controls.MaterialCheckBox chkactivo;
+        public MaterialSkin.Controls.MaterialCheckBox chkcancelar;
     }
 }

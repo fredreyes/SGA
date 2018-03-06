@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Entidades
 {
     public class EAlumnos
     {
-        public string CODIGO_ALUMNO { get; set; }
-        public string NOMBRE { get; set; }
-        public string APELLIDO { get; set; }
-        public string SEXO { get; set; }
-        public DateTime FECHA_NACIMIENTO { get; set; }
-        public string DIRECCION { get; set; }
-        public int CODIGO_MINED { get; set; }
-        public string ESTADO { get; set; }
+        public int AlumnoId { get; set; }
+        public string Nombres { get; set; }
+        public string Apellidos { get; set; }
+        public string Sexo { get; set; }
+        public DateTime FechaNacimiento { get; set; }
+        public string Direccion { get; set; }
+        public int CodigoMined { get; set; }
+        public bool Activo { get; set; }
     }
 }

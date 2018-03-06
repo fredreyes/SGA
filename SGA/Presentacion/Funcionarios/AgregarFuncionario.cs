@@ -11,6 +11,7 @@ using Entidades;
 using Negocio;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using System.IO;
 
 namespace Presentacion.Funcionarios
 {
@@ -21,20 +22,139 @@ namespace Presentacion.Funcionarios
             InitializeComponent();
             EstiloMenu x = new EstiloMenu();
             x.AplicarEstilo(this);
+            CargarOcupaciones();
+            chkactivo.Visible = false;
+            chkcancelar.Visible = false;
         }
 
+        public int Bandera = 0;
         private void AgregarFuncionario_Load(object sender, EventArgs e)
         {
             
         }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
+        void Limpiar()
         {
-            Ocupaciones o = new Ocupaciones();
-            if (o.ShowDialog() == DialogResult.OK)
+            txtnombres.Clear();
+            txtapellido.Clear();
+            txtcargo.Clear();
+            txtcedula.Clear();
+            txtemail.Clear();
+            txttelefono.Clear();
+            cbmOcupacion.Text = "Seleccione una Ocupación";
+            rbtnFemenino.Checked = false;
+            rbtnMasculino.Checked = false;
+            pictureFoto.Image = Properties.Resources.student;
+            CargarOcupaciones();
+            chkcancelar.Checked = false;
+            chkactivo.Checked = false;
+            chkactivo.Visible = false;
+            chkcancelar.Visible = false;
+        }
+
+        void CargarOcupaciones()
+        {
+            try
             {
-              //  txtocupacion.Text = o.ocupacion; 
+                NOcupaciones n = new NOcupaciones();
+                List<EOcupaciones> lista = n.ListaOcupaciones();
+                cbmOcupacion.DataSource = lista;
+                cbmOcupacion.DisplayMember = "Ocupacion";
+                cbmOcupacion.ValueMember = "OcupacionId";
+                cbmOcupacion.Text = "Seleccione una Ocupación";
             }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private void btningresar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EFuncionarios funcionario = new EFuncionarios();
+                NFuncionario n = new NFuncionario();
+                MemoryStream ms = new MemoryStream();
+                pictureFoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                byte[] picture = ms.GetBuffer();
+                if (Bandera == 0)
+                {
+                    funcionario.Nombres = txtnombres.Text;
+                    funcionario.Apellidos = txtapellido.Text;
+                    funcionario.Cedula = txtcedula.Text;
+                    funcionario.Sexo = rbtnMasculino.Checked ? "M" : "F";
+                    funcionario.FechaNacimiento = Convert.ToDateTime(dateFechaNac.EditValue);
+                    funcionario.Telefono = txttelefono.Text;
+                    funcionario.Cargo = txtcargo.Text;
+                    funcionario.Ocupacion.OcupacionId = Convert.ToInt32(cbmOcupacion.SelectedValue.ToString());
+                    funcionario.Email = txtemail.Text;
+                    funcionario.Foto = picture;  
+                    n.IngresarFuncionario(funcionario);
+                    MessageBox.Show("Funcionario ingresado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                }
+                if (Bandera == 1)
+                {
+                    funcionario.FuncionarioId = Convert.ToInt32(txtnombres.Tag);
+                    funcionario.Nombres = txtnombres.Text;
+                    funcionario.Apellidos = txtapellido.Text;
+                    funcionario.Cedula = txtcedula.Text;
+                    funcionario.Sexo = rbtnMasculino.Checked ? "M" : "F";
+                    funcionario.FechaNacimiento = Convert.ToDateTime(dateFechaNac.EditValue);
+                    funcionario.Telefono = txttelefono.Text;
+                    funcionario.Cargo = txtcargo.Text;
+                    funcionario.Ocupacion.OcupacionId = Convert.ToInt32(cbmOcupacion.SelectedValue.ToString());
+                    funcionario.Email = txtemail.Text;
+                    funcionario.Foto = picture;
+                    funcionario.Activo = Convert.ToBoolean(chkactivo.Checked ? 1 : 0);
+                    n.ModificarFuncionario(funcionario);
+                    MessageBox.Show("Funcionario Modificado con exito","SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                    this.Close();
+                    Funcionarios x = new Funcionarios();
+                    x.Show();
+                    
+             
+                }
+            }
+            catch (Exception ex)
+            {
+
+                 MessageBox.Show( ex.Message);
+            }
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtnombres.Text != "" || txtapellido.Text != "")
+                {
+                    DialogResult mensaje = MessageBox.Show("¿Deseas cancelar la edición de este registro?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (mensaje == DialogResult.OK)
+                    {
+                        Limpiar();
+                    }
+                }
+                else
+                    Limpiar();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private void chkactivo_CheckedChanged(object sender, EventArgs e)
+        {
+            chkcancelar.Checked = false;
+        }
+
+        private void chkcancelar_CheckedChanged(object sender, EventArgs e)
+        {
+            chkactivo.Checked = false;
         }
     }
 }

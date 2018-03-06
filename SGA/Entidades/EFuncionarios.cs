@@ -14,7 +14,6 @@ namespace Entidades
         public string Cedula { get; set; }
         public string Sexo { get; set; }
         public DateTime FechaNacimiento { get; set; }
-        
         public string Telefono { get; set; }
         public string Cargo { get; set; }
         public EOcupaciones Ocupacion { get; set; }
@@ -24,7 +23,7 @@ namespace Entidades
 
         public EFuncionarios()
         {
-            Ocupacion = new EOcupaciones();
+            this.Ocupacion = new EOcupaciones();
         }
     }
 }

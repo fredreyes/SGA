@@ -14,9 +14,43 @@ namespace Negocio
         {
             try
             {
-                NFuncionario n = new NFuncionario();
-                List<EFuncionarios> l = n.ListaFuncionarios();
+                DFuncionario D = new DFuncionario();
+                List<EFuncionarios> l = D.ListaFuncionarios();
                 return l;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public void IngresarFuncionario(EFuncionarios f)
+        {
+            try
+            {
+                if (f.Nombres == "" || f.Apellidos == "")
+                    throw new ArgumentException("Ingrese Nombre y Apellido");
+                List<EFuncionarios> lista = ListaFuncionarios().Where(x => x.Cedula == f.Cedula).ToList();
+                if (lista.Count > 0)
+                    throw new ArgumentException("La cedula " + f.Cedula + " ya existe");
+                DFuncionario d = new DFuncionario();
+                d.IngresarFuncionario(f);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void ModificarFuncionario(EFuncionarios f)
+        {
+            try
+            {
+                if (f.Nombres == "" || f.Apellidos == "")
+                    throw new ArgumentException("Ingrese Nombre y Apellido");
+                DFuncionario d = new DFuncionario();
+                d.ModificarFuncionario(f);
             }
             catch (Exception ex)
             {

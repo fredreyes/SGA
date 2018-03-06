@@ -118,13 +118,13 @@ constraint FK_Funcionario_Ocupacion foreign key(OcupacionId) references Profesio
 )
 go
 
----------------------------------------------------
+
 --TABLA ALUMNO
 create table Alumnos
 (
-AlumnoId NVARCHAR(10) not null,
-Nombre nvarchar(30) not null,
-Apellido nvarchar(30) not null,
+AlumnoId int not null,
+Nombres nvarchar(30) not null,
+Apellidos nvarchar(30) not null,
 Sexo CHAR(1) not null,--F,M
 FechaNacimiento DATE not null,
 Direccion nvarchar(200) not null,
@@ -133,6 +133,24 @@ Activo bit
 constraint PK_Alumno primary key(AlumnoId)
 )
 go
+
+---------------------------------------------------
+
+
+
+--USUARIOS
+CREATE TABLE UsuariosFuncionarios
+(
+Usuario NVARCHAR(50) NOT NULL,
+Password NVARCHAR(200) NOT NULL,
+FuncionarioId INT NOT NULL,
+Tipo char(5), --ADM - DCT, SCR
+Activo BIT,
+CONSTRAINT PK_USUARIO PRIMARY KEY(Usuario),
+CONSTRAINT FK_USUARIO_FUNCIONARIO FOREIGN KEY(FuncionarioId) REFERENCES FUNCIONARIOS(FuncionarioId)
+)
+GO
+
 --TABLA DOCUMENTO ALUMNO
 CREATE TABLE DocumentosAlumnos
 (
@@ -171,32 +189,12 @@ CONSTRAINT FK_PADRES_ALUMNOS FOREIGN KEY(AlumnoId) REFERENCES Alumnos(AlumnoId)
 )
 GO
 
----TABLA FUNCIONARIO
-CREATE TABLE Funcionarios
-(
-FuncionarioId INT not null identity(1,1),
-Nombres nvarchar(100) not null,
-Apellidos nvarchar(100) not null,
-Cedula nvarchar(18) not null,
-Sexo char (1) not null,--F,M
-FechaNacimiento DATE not null,
-Telefono nvarchar(15),
-Cargo nvarchar(40) not null,
-OcupacionId INT not null,
-Email nvarchar(100),
-Foto Image,
-Activo Bit
-constraint PK_Funcionario primary key(FuncionarioId),
-constraint FK_Funcionario_Ocupacion foreign key(OcupacionId) references ProfesionOcupacion(OcupacionId)
-)
-go
-
 --TABLA USUARIOS
 CREATE TABLE UsuariosFuncionarios
 (
 UsuarioID INT NOT NULL,
 Usuario NVARCHAR(50) NOT NULL,
-Contrasenia NVARCHAR(200) NOT NULL,
+Password NVARCHAR(200) NOT NULL,
 Activo BIT,
 FuncionarioId INT NOT NULL
 CONSTRAINT PK_USUARIO PRIMARY KEY(UsuarioID),
@@ -208,7 +206,7 @@ CREATE TABLE UsuariosAlumnos
 (
 UsuarioAlumno INT NOT NULL,
 Usuario NVARCHAR(20) NOT NULL,
-Contraseña NVARCHAR(200) NOT NULL,
+Password NVARCHAR(200) NOT NULL,
 Estado BIT,
 AlumnoId NVARCHAR(10)
 CONSTRAINT PK_USUARIO_ALUMNO PRIMARY KEY(UsuarioAlumno),

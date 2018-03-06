@@ -442,6 +442,74 @@ begin
 end
 go
 
+--FUNCIONARIOS
+CREATE PROC IngresarFuncioarios
+(
+@Nombres nvarchar(100),
+@Apellidos nvarchar(100),
+@Cedula nvarchar(18) ,
+@Sexo char (1),--F,M
+@FechaNacimiento DATE,
+@Telefono nvarchar(15),
+@Cargo nvarchar(40) ,
+@OcupacionId INT,
+@Email nvarchar(100),
+@Foto Image
+)
+AS
+BEGIN
+		declare @activo bit
+		set  @activo = 1
+		insert into Funcionarios values
+		(
+		@Nombres,
+		@Apellidos,
+		@Cedula,
+		@Sexo,--F,M
+		@FechaNacimiento,
+		@Telefono,
+		@Cargo,
+		@OcupacionId,
+		@Email,
+		@Foto,
+		@activo
+		)
+END
+GO
+
+CREATE PROC ModificarFuncioarios
+(
+@FuncionarioId int,
+@Nombres nvarchar(100),
+@Apellidos nvarchar(100),
+@Cedula nvarchar(18) ,
+@Sexo char (1),--F,M
+@FechaNacimiento DATE,
+@Telefono nvarchar(15),
+@Cargo nvarchar(40) ,
+@OcupacionId INT,
+@Email nvarchar(100),
+@Foto Image,
+@activo bit
+)
+AS
+BEGIN
+		update Funcionarios set
+		Nombres = @Nombres,
+		Apellidos = @Apellidos,
+		Cedula = @Cedula,
+		Sexo = @Sexo,--F,M
+		FechaNacimiento = @FechaNacimiento,
+		Telefono = @Telefono,
+		Cargo = @Cargo,
+		OcupacionId = @OcupacionId,
+		 Email =@Email,
+		Foto = @Foto,
+		Activo = @activo
+		where FuncionarioId = @FuncionarioId
+END
+GO
+
 -------------faltan
 --------------------------------------------Procedimientos No creados------------------------------------------------
 
@@ -645,79 +713,6 @@ BEGIN
 END
 GO
 
---FUNCIONARIOS
-CREATE PROC INSERTAR_FUNCIONARIO
-(
-@NOMBRE nvarchar(30),
-@APELLIDO nvarchar(30),
-@SEXO char (1),--F,M
-@FECHA_NACIMIENTO DATE,
-@CEDULA nvarchar(18),
-@TELEFONO nvarchar(15),
-@CARGO nvarchar(40),
-@OCUPACION_ID INT,
-@EMAIL nvarchar(60)
-)
-AS
-BEGIN
-		BEGIN TRY
-		DECLARE @ID_FUNCIONARIO INT
-		SELECT @ID_FUNCIONARIO = ISNULL(MAX(ID_FUNCIONARIO),0)+1 FROM FUNCIONARIOS
-		INSERT INTO FUNCIONARIOS VALUES
-		(
-			@ID_FUNCIONARIO,
-            @NOMBRE,
-            @APELLIDO,
-            @SEXO,
-            @FECHA_NACIMIENTO,
-            @CEDULA,
-            @TELEFONO,
-            @CARGO,
-            @OCUPACION_ID,
-            @EMAIL
-		)
-		END TRY
-		BEGIN CATCH
-			IF @@TRANCOUNT > 0
-			ROLLBACK
-		END CATCH
-END
-GO
-
-CREATE PROC EDITAR_FUNCIONARIO
-(
-@ID_FUNCIONARIO INT,
-@NOMBRE nvarchar(30),
-@APELLIDO nvarchar(30),
-@SEXO char (1),
-@FECHA_NACIMIENTO DATE,
-@CEDULA nvarchar(18),
-@TELEFONO nvarchar(15),
-@CARGO nvarchar(40),
-@OCUPACION_ID INT,
-@EMAIL nvarchar(60)
-)
-AS
-BEGIN
-		BEGIN TRY
-		UPDATE FUNCIONARIOS  SET
-            NOMBRE = @NOMBRE,
-            APELLIDO = @APELLIDO,
-            SEXO = @SEXO,
-            FECHA_NACIMIENTO = @FECHA_NACIMIENTO,
-            CEDULA = @CEDULA,
-            TELEFONO = @TELEFONO,
-            CARGO = @CARGO,
-            OCUPACION_ID = @OCUPACION_ID,
-            EMAIL = @EMAIL
-			WHERE ID_FUNCIONARIO = @ID_FUNCIONARIO
-		END TRY
-		BEGIN CATCH
-			IF @@TRANCOUNT > 0
-			ROLLBACK
-		END CATCH
-END
-GO
 
 --USUARIOS
 CREATE PROC INSERTAR_USUARIOS

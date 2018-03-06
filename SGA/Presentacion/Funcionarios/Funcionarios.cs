@@ -18,13 +18,11 @@ namespace Presentacion.Funcionarios
         public Funcionarios()
         {
             InitializeComponent();
-            MaterialSkinManager m = MaterialSkinManager.Instance;
-            m.AddFormToManage(this);
-            m.Theme = MaterialSkinManager.Themes.LIGHT;
-            m.ColorScheme = new ColorScheme(Primary.Blue900, Primary.Blue700,Primary.Blue500,Accent.LightGreen400,TextShade.WHITE);
+            EstiloMenu x = new EstiloMenu();
+            x.AplicarEstilo(this);
         }
 
-        private void Funcionarios_Load(object sender, EventArgs e)
+        public void Funcionarios_Load(object sender, EventArgs e)
         {
             try
             {
@@ -43,11 +41,8 @@ namespace Presentacion.Funcionarios
             {
                 try
                 {
-                    SaveFileDialog o = new SaveFileDialog();
-                    o.Filter = "LIBRO EXCEL|*.xlsx";
-                    o.ShowDialog();
-                    gridControl1.ExportToXlsx(o.FileName);
-                    MessageBox.Show("Datos exportados correctamente", "EXPORTAR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    exportarArchivos exp = new exportarArchivos();
+                    exp.ExportarExcel(gridControl1, "Funcionarios");
                 }
                 catch (Exception ex)
                 {
@@ -68,23 +63,84 @@ namespace Presentacion.Funcionarios
             a.ShowDialog();
            
         }
-        void CargarFuncionarios()
+ public  void CargarFuncionarios()
         {
             try
             {
                 NFuncionario n = new NFuncionario();
-                List<EFuncionarios> l = new List<EFuncionarios>();
-                gridControl1.DataSource = l;
+                List<EFuncionarios> l = n.ListaFuncionarios();
+                var lista = (from i in l
+                             select new
+                             {
+                                 i.FuncionarioId,
+                                 i.Nombres,
+                                 i.Apellidos,
+                                 i.Cedula,
+                                 i.Telefono,
+                                 i.Cargo,
+                                 i.Ocupacion.Ocupacion,
+                                 i.Ocupacion.OcupacionId,
+                                 i.FechaNacimiento,
+                                 i.Foto,
+                                 i.Sexo,
+                                 i.Activo,
+                                 i.Email
+                             }
+                             ).ToList();
+                gridControl1.DataSource = lista;
                 gridView1.BestFitColumns();
+                //Columnas no visibles
                 gridView1.Columns[0].Visible = false;
-                gridView1.Columns[4].Visible = false;
+                gridView1.Columns[7].Visible = false;
+                gridView1.Columns[8].Visible = false;
                 gridView1.Columns[9].Visible = false;
+                gridView1.Columns[12].Visible = false;
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
+        }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            AgregarFuncionario agregarFuncionaroio = new AgregarFuncionario();
+            agregarFuncionaroio.txtnombres.Tag = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "FuncionarioId").ToString());
+            agregarFuncionaroio.txtnombres.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Nombres").ToString();
+            agregarFuncionaroio.txtapellido.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Apellidos").ToString();
+            agregarFuncionaroio.txtcedula.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Cedula").ToString();
+            agregarFuncionaroio.txttelefono.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Telefono").ToString();
+            agregarFuncionaroio.txtcargo.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Cargo").ToString();
+            agregarFuncionaroio.dateFechaNac.EditValue = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "FechaNacimiento").ToString();
+            agregarFuncionaroio.txtemail.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Email").ToString();
+            agregarFuncionaroio.cbmOcupacion.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Ocupacion").ToString();
+            //Sexo
+            if (gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Sexo").ToString() == "M")
+            {
+                agregarFuncionaroio.rbtnMasculino.Checked = true;
+            }            
+            else
+            {
+                agregarFuncionaroio.rbtnFemenino.Checked = true;
+            }
+
+            //Activo o Cancelado
+            if (Convert.ToBoolean(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Activo").ToString()) == true)
+                agregarFuncionaroio.chkactivo.Checked = true;
+            else
+                agregarFuncionaroio.chkcancelar.Checked = true;
+
+            //convertir Imagen 
+            byte[] imagenBuffer = (byte[])gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Foto");
+            System.IO.MemoryStream ms = new System.IO.MemoryStream(imagenBuffer);
+            agregarFuncionaroio.pictureFoto.Image = Image.FromStream(ms);
+            agregarFuncionaroio.Text = "Editar Funcionario";
+            agregarFuncionaroio.chkactivo.Visible = true;
+            agregarFuncionaroio.chkcancelar.Visible = true;
+            agregarFuncionaroio.Bandera = 1;
+            this.Hide();
+            agregarFuncionaroio.ShowDialog();
         }
     }
 }
