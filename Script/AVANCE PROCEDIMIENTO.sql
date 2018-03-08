@@ -510,6 +510,38 @@ BEGIN
 END
 GO
 
+create proc IngresarEstudiante
+(
+@Nombres nvarchar(30),
+@Apellidos nvarchar(30),
+@Sexo CHAR(1),
+@FechaNacimiento DATE,
+@Direccion nvarchar(200),
+@CodigoMined int 
+)
+as
+begin 
+declare @Activo bit
+set @Activo = 1
+DECLARE @ID int
+declare @Año int = (select RIGHT(Ciclo,2) from CicloEscolar where Activo = 1)
+declare @Sumar int  = (select top 1 COUNT(AlumnoId) from Alumnos where LEFT(AlumnoId,2) = @Año group by left(AlumnoId,2)) + 2
+select @ID = CONCAT(@Año,'0000')+ @Sumar
+select @ID
+insert into Alumnos values
+(
+@ID,
+@Nombres,
+@Apellidos,
+@Sexo,
+@FechaNacimiento,
+@Direccion,
+@CodigoMined,
+@Activo
+)
+end
+go
+
 -------------faltan
 --------------------------------------------Procedimientos No creados------------------------------------------------
 

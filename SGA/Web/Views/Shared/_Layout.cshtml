@@ -7,6 +7,7 @@
     <link href="~/Content/materialize.css" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
     <ul id="slide-out" class="side-nav fixed">
@@ -20,17 +21,18 @@
                 <a href="#!email"><span class="white-text email">efredreyes9@gmail.com</span></a>
             </div>
         </li>
-        <li><a href="#!"><i class="material-icons">cloud</i>Historial</a></li>
-        <li><a href="#!"><i class="material-icons">cloud</i>Calificaciones</a></li>
+        <li><a href="#!"><i class="material-icons">home</i>Inicio</a></li>
+        <li><a href="@Url.Action("Historial","Calificaciones")"><i class="material-icons">class</i>Historial</a></li>
+        <li><a href="@Url.Action("Index","Calificaciones")"><i class="material-icons">description</i>Calificaciones</a></li>
         <li><div class="divider"></div></li>
-        <li><a href="#!"><i class="material-icons">cloud</i>Cerrar Sesión</a></li>
+        <li><a href="#!"><i class="material-icons">reply</i>Cerrar Sesión</a></li>
     </ul>
     <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Sistema Gestión Academica</p>
         </footer>
     </div>
 

@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NAlumno.cs" />
     <Compile Include="NAsignatura.cs" />
     <Compile Include="NAulas.cs" />
     <Compile Include="Nciclo.cs" />

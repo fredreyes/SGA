@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using Entidades;
+using Negocio;
 
 namespace Presentacion.Student
 {
@@ -94,13 +96,22 @@ namespace Presentacion.Student
         {
             try
             {
-               
-
+                EAlumnos alumno = new EAlumnos();
+                alumno.Nombres = txtnombreAlumno.Text;
+                alumno.Apellidos = txtApellidoAlumno.Text;
+                alumno.Sexo = rbtnMasculino.Checked ? "M" : "F";
+                alumno.FechaNacimiento = Convert.ToDateTime(dtpFechaNacimiento.EditValue);
+                alumno.Direccion = txtdomicilio.Text;
+                alumno.CodigoMined = Convert.ToInt32(txtCodigoMined.Text);
+                NAlumno n = new NAlumno();
+                n.IngresarAlumno(alumno);
+                 MessageBox.Show("Alumno Guardado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,"SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -63,9 +63,9 @@
             this.txtapellidoPadre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtnombrePadre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.ListaDocumentos = new System.Windows.Forms.CheckedListBox();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -121,7 +121,7 @@
             this.groupBox1.Controls.Add(this.txtnombreAlumno);
             this.groupBox1.Location = new System.Drawing.Point(20, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(323, 349);
+            this.groupBox1.Size = new System.Drawing.Size(669, 349);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Generales";
@@ -131,7 +131,7 @@
             // 
             this.txtdomicilio.Depth = 0;
             this.txtdomicilio.Hint = "Domicilio";
-            this.txtdomicilio.Location = new System.Drawing.Point(21, 159);
+            this.txtdomicilio.Location = new System.Drawing.Point(356, 99);
             this.txtdomicilio.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtdomicilio.Name = "txtdomicilio";
             this.txtdomicilio.PasswordChar = '\0';
@@ -146,7 +146,7 @@
             // 
             this.txtCodigoMined.Depth = 0;
             this.txtCodigoMined.Hint = "Codigo MINED";
-            this.txtCodigoMined.Location = new System.Drawing.Point(21, 119);
+            this.txtCodigoMined.Location = new System.Drawing.Point(21, 99);
             this.txtCodigoMined.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCodigoMined.Name = "txtCodigoMined";
             this.txtCodigoMined.PasswordChar = '\0';
@@ -163,7 +163,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(89, 226);
+            this.materialLabel1.Location = new System.Drawing.Point(261, 215);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(131, 19);
@@ -173,7 +173,7 @@
             // dtpFechaNacimiento
             // 
             this.dtpFechaNacimiento.EditValue = null;
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(21, 257);
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(203, 256);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -187,7 +187,7 @@
             this.rbtnFemenino.AutoSize = true;
             this.rbtnFemenino.Depth = 0;
             this.rbtnFemenino.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbtnFemenino.Location = new System.Drawing.Point(157, 185);
+            this.rbtnFemenino.Location = new System.Drawing.Point(356, 155);
             this.rbtnFemenino.Margin = new System.Windows.Forms.Padding(0);
             this.rbtnFemenino.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rbtnFemenino.MouseState = MaterialSkin.MouseState.HOVER;
@@ -204,7 +204,7 @@
             this.rbtnMasculino.AutoSize = true;
             this.rbtnMasculino.Depth = 0;
             this.rbtnMasculino.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbtnMasculino.Location = new System.Drawing.Point(21, 185);
+            this.rbtnMasculino.Location = new System.Drawing.Point(224, 155);
             this.rbtnMasculino.Margin = new System.Windows.Forms.Padding(0);
             this.rbtnMasculino.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rbtnMasculino.MouseState = MaterialSkin.MouseState.HOVER;
@@ -220,7 +220,7 @@
             // 
             this.txtApellidoAlumno.Depth = 0;
             this.txtApellidoAlumno.Hint = "Apellidos Alumno";
-            this.txtApellidoAlumno.Location = new System.Drawing.Point(21, 78);
+            this.txtApellidoAlumno.Location = new System.Drawing.Point(356, 38);
             this.txtApellidoAlumno.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtApellidoAlumno.Name = "txtApellidoAlumno";
             this.txtApellidoAlumno.PasswordChar = '\0';
@@ -524,6 +524,19 @@
             this.tabNavigationPage3.Name = "tabNavigationPage3";
             this.tabNavigationPage3.Size = new System.Drawing.Size(751, 375);
             // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureEdit1.EditValue = global::Presentacion.Properties.Resources.student;
+            this.pictureEdit1.Location = new System.Drawing.Point(340, 36);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.PictureStoreMode = DevExpress.XtraEditors.Controls.PictureStoreMode.ByteArray;
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Always;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit1.Properties.ZoomAccelerationFactor = 1D;
+            this.pictureEdit1.Size = new System.Drawing.Size(247, 227);
+            this.pictureEdit1.TabIndex = 7;
+            // 
             // btnGuardar
             // 
             this.btnGuardar.ImageUri.Uri = "SaveAll";
@@ -549,19 +562,6 @@
             this.ListaDocumentos.Name = "ListaDocumentos";
             this.ListaDocumentos.Size = new System.Drawing.Size(184, 114);
             this.ListaDocumentos.TabIndex = 0;
-            // 
-            // pictureEdit1
-            // 
-            this.pictureEdit1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureEdit1.EditValue = global::Presentacion.Properties.Resources.student;
-            this.pictureEdit1.Location = new System.Drawing.Point(340, 36);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.PictureStoreMode = DevExpress.XtraEditors.Controls.PictureStoreMode.ByteArray;
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Always;
-            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit1.Properties.ZoomAccelerationFactor = 1D;
-            this.pictureEdit1.Size = new System.Drawing.Size(247, 227);
-            this.pictureEdit1.TabIndex = 7;
             // 
             // AddNewStudent
             // 

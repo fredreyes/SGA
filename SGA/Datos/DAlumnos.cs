@@ -45,5 +45,30 @@ namespace Datos
             }
         }
 
+        public void IngresarAlumno(EAlumnos a)
+        {
+            try
+            {
+                comando = new SqlCommand("IngresarEstudiante");
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Nombres", a.Nombres);
+                comando.Parameters.AddWithValue("@Apellidos", a.Apellidos);
+                comando.Parameters.AddWithValue("@Sexo", a.Sexo);
+                comando.Parameters.AddWithValue("@FechaNacimiento", a.FechaNacimiento);
+                comando.Parameters.AddWithValue("@Direccion", a.Direccion);
+                comando.Parameters.AddWithValue("@CodigoMined", a.CodigoMined);
+                comando.Connection = conexion;
+                conexion.Open();
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                conexion.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
     }
 }
