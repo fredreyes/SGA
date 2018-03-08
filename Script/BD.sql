@@ -134,6 +134,45 @@ constraint PK_Alumno primary key(AlumnoId)
 )
 go
 
+--TABLA PARENTEZCO ALUMNO
+create table PadresTutorAlumno
+(
+PadresTutorId INT not null,
+AlumnoId int not null,
+NombresPadres nvarchar(200),
+CedulaPadre NVARCHAR(18),
+TelefonoPadre nvarchar(15),
+EmailPadre NVARCHAR(100),
+OcupacionPadre NVARCHAR(150),
+NombresMadres nvarchar(200),
+CedulaMadre NVARCHAR(18),
+TelefonoMadre nvarchar(15),
+EmailMadre NVARCHAR(100),
+OcupacionMadre NVARCHAR(150),
+NombreTutor NVARCHAR(150) Not null,
+TelefonoTutor NVARCHAR(15)
+CONSTRAINT PK_PADRE PRIMARY KEY(PadresTutorId),
+CONSTRAINT FK_PADRES_ALUMNOS FOREIGN KEY(AlumnoId) REFERENCES Alumnos(AlumnoId)
+)
+GO
+
+
+--TABLA DOCUMENTO ALUMNO
+CREATE TABLE DocumentosAlumnos
+(
+DocumentoId INT NOT NULL,
+AlumnoId int NOT NULL,
+PartidaNaciminto CHAR(2), -- SI,NO
+CertificadoNotas CHAR(2),
+TarjetaVacuna CHAR(2),
+CartaTraslado CHAR(2),
+CertificadoSalud CHAR(2),
+Foto IMAGE
+CONSTRAINT PK_DOCUMENTOS PRIMARY KEY(DocumentoId),
+CONSTRAINT FK_DOCUMENTOS_ALUMNOS FOREIGN KEY(AlumnoId) REFERENCES ALUMNOS(AlumnoId)
+)
+GO
+
 ---------------------------------------------------
 
 

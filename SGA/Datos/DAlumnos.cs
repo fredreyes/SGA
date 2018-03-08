@@ -45,11 +45,12 @@ namespace Datos
             }
         }
 
-        public void IngresarAlumno(EAlumnos a)
+        public void IngresarAlumno(EAlumnos a, EPadres_Tutor p,EDocuemntosAlumnos d)
         {
             try
             {
                 comando = new SqlCommand("IngresarEstudiante");
+                //Alumnos
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Nombres", a.Nombres);
                 comando.Parameters.AddWithValue("@Apellidos", a.Apellidos);
@@ -57,6 +58,26 @@ namespace Datos
                 comando.Parameters.AddWithValue("@FechaNacimiento", a.FechaNacimiento);
                 comando.Parameters.AddWithValue("@Direccion", a.Direccion);
                 comando.Parameters.AddWithValue("@CodigoMined", a.CodigoMined);
+                //Padres Alumnos
+                comando.Parameters.AddWithValue("@NombresPadres", p.NOMBRE_PADRE);
+                comando.Parameters.AddWithValue("@CedulaPadre", p.CEDULA_PADRE);
+                comando.Parameters.AddWithValue("@TelefonoPadre", p.TELEFONO_PADRE);
+                comando.Parameters.AddWithValue("@EmailPadre", p.EMAIL_PADRE);
+                comando.Parameters.AddWithValue("@OcupacionPadre", p.OCUPACION_PADRE);
+                comando.Parameters.AddWithValue("@NombresMadres", p.NOMBRE_MADRE);
+                comando.Parameters.AddWithValue("@CedulaMadre", p.CEDULA_MADRE);
+                comando.Parameters.AddWithValue("@TelefonoMadre", p.TELEFONO_MADRE);
+                comando.Parameters.AddWithValue("@EmailMadre", p.EMAIL_MADRE);
+                comando.Parameters.AddWithValue("@OcupacionMadre", p.OCUPACION_MADRE);
+                comando.Parameters.AddWithValue("@NombreTutor", p.NOMBRE_TUTOR);
+                comando.Parameters.AddWithValue("@TelefonoTutor", p.TELEFONO_TUTOR);
+                //Documentos Alumnos
+                comando.Parameters.AddWithValue("@PartidaNaciminto", d.PARTIDA_DE_NACIMINETO);
+                comando.Parameters.AddWithValue("@CertificadoNotas", d.CERTIFICADO_NOTAS);
+                comando.Parameters.AddWithValue("@TarjetaVacuna", d.TARJETA_VACUNA);
+                comando.Parameters.AddWithValue("@CartaTraslado", d.CARTA_TRASLADO);
+                comando.Parameters.AddWithValue("@CertificadoSalud", d.CERTIFICADO_DE_SALUD);
+                comando.Parameters.AddWithValue("@Foto", d.FOTO);
                 comando.Connection = conexion;
                 conexion.Open();
                 comando.ExecuteNonQuery();

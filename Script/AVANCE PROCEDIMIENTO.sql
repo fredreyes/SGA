@@ -510,14 +510,36 @@ BEGIN
 END
 GO
 
+--Estudiantes
 create proc IngresarEstudiante
 (
+--Alumnos
 @Nombres nvarchar(30),
 @Apellidos nvarchar(30),
 @Sexo CHAR(1),
 @FechaNacimiento DATE,
 @Direccion nvarchar(200),
-@CodigoMined int 
+@CodigoMined int,
+--Padres
+@NombresPadres nvarchar(200),
+@CedulaPadre NVARCHAR(18),
+@TelefonoPadre nvarchar(15),
+@EmailPadre NVARCHAR(100),
+@OcupacionPadre NVARCHAR(150),
+@NombresMadres nvarchar(200),
+@CedulaMadre NVARCHAR(18),
+@TelefonoMadre nvarchar(15),
+@EmailMadre NVARCHAR(100),
+@OcupacionMadre NVARCHAR(150),
+@NombreTutor NVARCHAR(150),
+@TelefonoTutor NVARCHAR(15),
+--Documentos Alumnos
+@PartidaNaciminto CHAR(2),
+@CertificadoNotas CHAR(2),
+@TarjetaVacuna CHAR(2),
+@CartaTraslado CHAR(2),
+@CertificadoSalud CHAR(2),
+@Foto IMAGE
 )
 as
 begin 
@@ -528,17 +550,57 @@ declare @Año int = (select RIGHT(Ciclo,2) from CicloEscolar where Activo = 1)
 declare @Sumar int  = (select top 1 COUNT(AlumnoId) from Alumnos where LEFT(AlumnoId,2) = @Año group by left(AlumnoId,2)) + 2
 select @ID = CONCAT(@Año,'0000')+ @Sumar
 select @ID
-insert into Alumnos values
-(
-@ID,
-@Nombres,
-@Apellidos,
-@Sexo,
-@FechaNacimiento,
-@Direccion,
-@CodigoMined,
-@Activo
-)
+		Begin Tran 
+					insert into Alumnos values
+			(
+			@ID,
+			@Nombres,
+			@Apellidos,
+			@Sexo,
+			@FechaNacimiento,
+			@Direccion,
+			@CodigoMined,
+			@Activo
+			)
+				if @ID is not null
+				begin
+				declare @PadresTutorId INT
+				select @PadresTutorId = ISNULL(max(PadresTutorId),0) +1 from PadresTutorAlumno
+					insert into PadresTutorAlumno 
+					values 
+					(
+					@PadresTutorId,
+					@ID,
+					@NombresPadres,
+					@CedulaPadre,
+					@TelefonoPadre,
+					@EmailPadre,
+					@OcupacionPadre,
+					@NombresMadres,
+					@CedulaMadre,
+					@TelefonoMadre,
+					@EmailMadre,
+					@OcupacionMadre,
+					@NombreTutor ,
+					@TelefonoTutor
+					)
+				declare @DocumentoId INT
+				select @DocumentoId = ISNULL(max(DocumentoId),0) +1 from DocumentosAlumnos
+				insert into DocumentosAlumnos values
+				(
+				@DocumentoId,
+				@ID,
+				@PartidaNaciminto,
+				@CertificadoNotas,
+				@TarjetaVacuna,
+				@CartaTraslado,
+				@CertificadoSalud,
+				@Foto
+				)
+				end
+		commit
+		if @@TRANCOUNT> 1
+		Rollback tran
 end
 go
 

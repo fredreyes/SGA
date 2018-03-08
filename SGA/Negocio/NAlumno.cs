@@ -24,7 +24,7 @@ namespace Negocio
                 throw ex;
             }
         }
-        public void IngresarAlumno(EAlumnos alumno)
+        public void IngresarAlumno(EAlumnos alumno,EPadres_Tutor padres, EDocuemntosAlumnos documentos)
         {
             try
             {
@@ -32,7 +32,7 @@ namespace Negocio
                 if (lista.Count > 0)
                     throw new ArgumentException("El codigo Mined " + alumno.CodigoMined + " ya existe");
                 DAlumnos d = new DAlumnos();
-                d.IngresarAlumno(alumno);
+                d.IngresarAlumno(alumno,padres,documentos);
             }
             catch (Exception ex)
             {

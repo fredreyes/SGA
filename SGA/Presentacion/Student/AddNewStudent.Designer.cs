@@ -63,9 +63,13 @@
             this.txtapellidoPadre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtnombrePadre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
-            this.ListaDocumentos = new System.Windows.Forms.CheckedListBox();
+            this.chkpartidaNacimiento = new MaterialSkin.Controls.MaterialCheckBox();
+            this.chkcertificadoNotas = new MaterialSkin.Controls.MaterialCheckBox();
+            this.chktarjetaVacunas = new MaterialSkin.Controls.MaterialCheckBox();
+            this.chkCertificadoSalud = new MaterialSkin.Controls.MaterialCheckBox();
+            this.chkcartaTraslado = new MaterialSkin.Controls.MaterialCheckBox();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -161,12 +165,12 @@
             // 
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(261, 215);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(131, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(128, 18);
             this.materialLabel1.TabIndex = 7;
             this.materialLabel1.Text = "Fecha Nacimiento";
             // 
@@ -186,7 +190,7 @@
             // 
             this.rbtnFemenino.AutoSize = true;
             this.rbtnFemenino.Depth = 0;
-            this.rbtnFemenino.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbtnFemenino.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.rbtnFemenino.Location = new System.Drawing.Point(356, 155);
             this.rbtnFemenino.Margin = new System.Windows.Forms.Padding(0);
             this.rbtnFemenino.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -203,7 +207,7 @@
             // 
             this.rbtnMasculino.AutoSize = true;
             this.rbtnMasculino.Depth = 0;
-            this.rbtnMasculino.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbtnMasculino.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.rbtnMasculino.Location = new System.Drawing.Point(224, 155);
             this.rbtnMasculino.Margin = new System.Windows.Forms.Padding(0);
             this.rbtnMasculino.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -517,25 +521,16 @@
             this.tabNavigationPage3.Appearance.BackColor = System.Drawing.Color.White;
             this.tabNavigationPage3.Appearance.Options.UseBackColor = true;
             this.tabNavigationPage3.Caption = "Documentos";
+            this.tabNavigationPage3.Controls.Add(this.chkCertificadoSalud);
+            this.tabNavigationPage3.Controls.Add(this.chkcartaTraslado);
+            this.tabNavigationPage3.Controls.Add(this.chktarjetaVacunas);
+            this.tabNavigationPage3.Controls.Add(this.chkcertificadoNotas);
+            this.tabNavigationPage3.Controls.Add(this.chkpartidaNacimiento);
             this.tabNavigationPage3.Controls.Add(this.pictureEdit1);
             this.tabNavigationPage3.Controls.Add(this.btnGuardar);
-            this.tabNavigationPage3.Controls.Add(this.ListaDocumentos);
             this.tabNavigationPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabNavigationPage3.Name = "tabNavigationPage3";
             this.tabNavigationPage3.Size = new System.Drawing.Size(751, 375);
-            // 
-            // pictureEdit1
-            // 
-            this.pictureEdit1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureEdit1.EditValue = global::Presentacion.Properties.Resources.student;
-            this.pictureEdit1.Location = new System.Drawing.Point(340, 36);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.PictureStoreMode = DevExpress.XtraEditors.Controls.PictureStoreMode.ByteArray;
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Always;
-            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit1.Properties.ZoomAccelerationFactor = 1D;
-            this.pictureEdit1.Size = new System.Drawing.Size(247, 227);
-            this.pictureEdit1.TabIndex = 7;
             // 
             // btnGuardar
             // 
@@ -547,21 +542,98 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // ListaDocumentos
+            // chkpartidaNacimiento
             // 
-            this.ListaDocumentos.BackColor = System.Drawing.Color.White;
-            this.ListaDocumentos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ListaDocumentos.FormattingEnabled = true;
-            this.ListaDocumentos.Items.AddRange(new object[] {
-            "Partida Nacimiento",
-            "Notas",
-            "Tarjeta de Vacuna",
-            "Carta de Traslado",
-            "Certificado de Salud"});
-            this.ListaDocumentos.Location = new System.Drawing.Point(36, 87);
-            this.ListaDocumentos.Name = "ListaDocumentos";
-            this.ListaDocumentos.Size = new System.Drawing.Size(184, 114);
-            this.ListaDocumentos.TabIndex = 0;
+            this.chkpartidaNacimiento.AutoSize = true;
+            this.chkpartidaNacimiento.Depth = 0;
+            this.chkpartidaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.chkpartidaNacimiento.Location = new System.Drawing.Point(41, 77);
+            this.chkpartidaNacimiento.Margin = new System.Windows.Forms.Padding(0);
+            this.chkpartidaNacimiento.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkpartidaNacimiento.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkpartidaNacimiento.Name = "chkpartidaNacimiento";
+            this.chkpartidaNacimiento.Ripple = true;
+            this.chkpartidaNacimiento.Size = new System.Drawing.Size(167, 30);
+            this.chkpartidaNacimiento.TabIndex = 8;
+            this.chkpartidaNacimiento.Text = "Partida de Nacimiento";
+            this.chkpartidaNacimiento.UseVisualStyleBackColor = true;
+            // 
+            // chkcertificadoNotas
+            // 
+            this.chkcertificadoNotas.AutoSize = true;
+            this.chkcertificadoNotas.Depth = 0;
+            this.chkcertificadoNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.chkcertificadoNotas.Location = new System.Drawing.Point(41, 121);
+            this.chkcertificadoNotas.Margin = new System.Windows.Forms.Padding(0);
+            this.chkcertificadoNotas.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkcertificadoNotas.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkcertificadoNotas.Name = "chkcertificadoNotas";
+            this.chkcertificadoNotas.Ripple = true;
+            this.chkcertificadoNotas.Size = new System.Drawing.Size(163, 30);
+            this.chkcertificadoNotas.TabIndex = 9;
+            this.chkcertificadoNotas.Text = "Certificados de Notas";
+            this.chkcertificadoNotas.UseVisualStyleBackColor = true;
+            // 
+            // chktarjetaVacunas
+            // 
+            this.chktarjetaVacunas.AutoSize = true;
+            this.chktarjetaVacunas.Depth = 0;
+            this.chktarjetaVacunas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.chktarjetaVacunas.Location = new System.Drawing.Point(41, 166);
+            this.chktarjetaVacunas.Margin = new System.Windows.Forms.Padding(0);
+            this.chktarjetaVacunas.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chktarjetaVacunas.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chktarjetaVacunas.Name = "chktarjetaVacunas";
+            this.chktarjetaVacunas.Ripple = true;
+            this.chktarjetaVacunas.Size = new System.Drawing.Size(141, 30);
+            this.chktarjetaVacunas.TabIndex = 10;
+            this.chktarjetaVacunas.Text = "Tarjeta de Vacuna";
+            this.chktarjetaVacunas.UseVisualStyleBackColor = true;
+            // 
+            // chkCertificadoSalud
+            // 
+            this.chkCertificadoSalud.AutoSize = true;
+            this.chkCertificadoSalud.Depth = 0;
+            this.chkCertificadoSalud.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.chkCertificadoSalud.Location = new System.Drawing.Point(41, 251);
+            this.chkCertificadoSalud.Margin = new System.Windows.Forms.Padding(0);
+            this.chkCertificadoSalud.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkCertificadoSalud.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkCertificadoSalud.Name = "chkCertificadoSalud";
+            this.chkCertificadoSalud.Ripple = true;
+            this.chkCertificadoSalud.Size = new System.Drawing.Size(154, 30);
+            this.chkCertificadoSalud.TabIndex = 12;
+            this.chkCertificadoSalud.Text = "Certificado de Salud";
+            this.chkCertificadoSalud.UseVisualStyleBackColor = true;
+            // 
+            // chkcartaTraslado
+            // 
+            this.chkcartaTraslado.AutoSize = true;
+            this.chkcartaTraslado.Depth = 0;
+            this.chkcartaTraslado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.chkcartaTraslado.Location = new System.Drawing.Point(41, 206);
+            this.chkcartaTraslado.Margin = new System.Windows.Forms.Padding(0);
+            this.chkcartaTraslado.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkcartaTraslado.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkcartaTraslado.Name = "chkcartaTraslado";
+            this.chkcartaTraslado.Ripple = true;
+            this.chkcartaTraslado.Size = new System.Drawing.Size(139, 30);
+            this.chkcartaTraslado.TabIndex = 11;
+            this.chkcartaTraslado.Text = "Carta de Traslado";
+            this.chkcartaTraslado.UseVisualStyleBackColor = true;
+            // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureEdit1.EditValue = global::Presentacion.Properties.Resources.user1;
+            this.pictureEdit1.Location = new System.Drawing.Point(400, 87);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.PictureStoreMode = DevExpress.XtraEditors.Controls.PictureStoreMode.ByteArray;
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Always;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit1.Properties.ZoomAccelerationFactor = 1D;
+            this.pictureEdit1.Size = new System.Drawing.Size(170, 161);
+            this.pictureEdit1.TabIndex = 7;
             // 
             // AddNewStudent
             // 
@@ -591,6 +663,7 @@
             this.groupBox2.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
             this.tabNavigationPage3.ResumeLayout(false);
+            this.tabNavigationPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
@@ -629,11 +702,15 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txttutorName;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckedListBox ListaDocumentos;
         private DevExpress.XtraEditors.SimpleButton btnGuardar;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ocupacionesToolStripMenuItem;
         private System.Windows.Forms.TextBox txtocupacionPadre;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
+        private MaterialSkin.Controls.MaterialCheckBox chkCertificadoSalud;
+        private MaterialSkin.Controls.MaterialCheckBox chkcartaTraslado;
+        private MaterialSkin.Controls.MaterialCheckBox chktarjetaVacunas;
+        private MaterialSkin.Controls.MaterialCheckBox chkcertificadoNotas;
+        private MaterialSkin.Controls.MaterialCheckBox chkpartidaNacimiento;
     }
 }

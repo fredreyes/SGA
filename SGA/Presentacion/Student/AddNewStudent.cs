@@ -11,6 +11,7 @@ using MaterialSkin;
 using MaterialSkin.Controls;
 using Entidades;
 using Negocio;
+using System.IO;
 
 namespace Presentacion.Student
 {
@@ -19,10 +20,8 @@ namespace Presentacion.Student
         public AddNewStudent()
         {
             InitializeComponent();
-            MaterialSkinManager m = MaterialSkinManager.Instance;
-            m.AddFormToManage(this);
-            m.Theme = MaterialSkinManager.Themes.LIGHT;
-            m.ColorScheme = new ColorScheme(Primary.Blue400, Primary.Blue600, Primary.Blue800, Accent.Cyan200, TextShade.BLACK);
+            EstiloMenu x = new EstiloMenu();
+            x.AplicarEstilo(this);
 
         }
 
@@ -96,6 +95,7 @@ namespace Presentacion.Student
         {
             try
             {
+                //Alumno
                 EAlumnos alumno = new EAlumnos();
                 alumno.Nombres = txtnombreAlumno.Text;
                 alumno.Apellidos = txtApellidoAlumno.Text;
@@ -103,10 +103,37 @@ namespace Presentacion.Student
                 alumno.FechaNacimiento = Convert.ToDateTime(dtpFechaNacimiento.EditValue);
                 alumno.Direccion = txtdomicilio.Text;
                 alumno.CodigoMined = Convert.ToInt32(txtCodigoMined.Text);
+                //Padres
+                EPadres_Tutor padres = new EPadres_Tutor();
+                padres.NOMBRE_PADRE = txtnombrePadre.Text;
+                padres.CEDULA_PADRE = txtcedulaP.Text;
+                padres.TELEFONO_PADRE = txtelPadre.Text;
+                padres.EMAIL_PADRE = txtemailPadre.Text;
+                padres.OCUPACION_PADRE = txtocupacionPadre.Text;
+                padres.NOMBRE_MADRE = txtnombreMadre.Text;
+                padres.CEDULA_MADRE = txtcedulaMadre.Text;
+                padres.TELEFONO_MADRE = txttelMadre.Text;
+                padres.EMAIL_MADRE = txtemailMadre.Text;
+                padres.OCUPACION_MADRE = txtOcupacionMadre.Text;
+                padres.NOMBRE_TUTOR = txttutorName.Text;
+                padres.TELEFONO_TUTOR = txttutorTelefono.Text;
+                //Documentos
+                EDocuemntosAlumnos documentos = new EDocuemntosAlumnos();
+                documentos.PARTIDA_DE_NACIMINETO = chkpartidaNacimiento.Checked ? "SI" : "NO";
+                documentos.CERTIFICADO_NOTAS = chkcertificadoNotas.Checked ? "SI": "NO";
+                documentos.TARJETA_VACUNA = chktarjetaVacunas.Checked ? "SI" : "NO";
+                documentos.CARTA_TRASLADO = chkcartaTraslado.Checked ? "SI" : "NO";
+                documentos.CERTIFICADO_DE_SALUD = chkCertificadoSalud.Checked ? "SI" : "NO";
+                //convertir foto
+                MemoryStream ms = new MemoryStream();
+                pictureEdit1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                byte[] foto = ms.GetBuffer();
+                documentos.FOTO = foto;
                 NAlumno n = new NAlumno();
-                n.IngresarAlumno(alumno);
+                n.IngresarAlumno(alumno,padres,documentos);
                  MessageBox.Show("Alumno Guardado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+                //Limpiar
+
             }
             catch (Exception ex)
             {
