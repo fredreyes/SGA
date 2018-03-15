@@ -44,5 +44,11 @@ namespace Presentacion
             Notas.Evaluaciones evaluaciones = new Notas.Evaluaciones();
             evaluaciones.ShowDialog();
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Student.Buscar buscar = new Student.Buscar();
+            buscar.ShowDialog();
+        }
     }
 }

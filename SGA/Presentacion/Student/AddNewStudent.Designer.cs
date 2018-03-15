@@ -35,7 +35,6 @@
             this.txtdomicilio = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtCodigoMined = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.dtpFechaNacimiento = new DevExpress.XtraEditors.DateEdit();
             this.rbtnFemenino = new MaterialSkin.Controls.MaterialRadioButton();
             this.rbtnMasculino = new MaterialSkin.Controls.MaterialRadioButton();
             this.txtApellidoAlumno = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -50,32 +49,32 @@
             this.txttelMadre = new System.Windows.Forms.MaskedTextBox();
             this.txtemailMadre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtnombreMadre = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtApellidoMadre = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtOcupacionMadre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtocupacionPadre = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ocupacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txtcedulaP = new System.Windows.Forms.MaskedTextBox();
             this.txtelPadre = new System.Windows.Forms.MaskedTextBox();
             this.txtemailPadre = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtapellidoPadre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtnombrePadre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
-            this.chkpartidaNacimiento = new MaterialSkin.Controls.MaterialCheckBox();
-            this.chkcertificadoNotas = new MaterialSkin.Controls.MaterialCheckBox();
-            this.chktarjetaVacunas = new MaterialSkin.Controls.MaterialCheckBox();
             this.chkCertificadoSalud = new MaterialSkin.Controls.MaterialCheckBox();
             this.chkcartaTraslado = new MaterialSkin.Controls.MaterialCheckBox();
+            this.chktarjetaVacunas = new MaterialSkin.Controls.MaterialCheckBox();
+            this.chkcertificadoNotas = new MaterialSkin.Controls.MaterialCheckBox();
+            this.chkpartidaNacimiento = new MaterialSkin.Controls.MaterialCheckBox();
+            this.btncancelar = new System.Windows.Forms.Button();
+            this.btningresar = new System.Windows.Forms.Button();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.chkactivo = new MaterialSkin.Controls.MaterialCheckBox();
+            this.chkcancelado = new MaterialSkin.Controls.MaterialCheckBox();
+            this.cbmOcupacionPadre = new System.Windows.Forms.ComboBox();
+            this.cbmOcupacionMadre = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpFechaNacimiento.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpFechaNacimiento.Properties)).BeginInit();
             this.tabNavigationPage2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -115,10 +114,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkcancelado);
+            this.groupBox1.Controls.Add(this.chkactivo);
+            this.groupBox1.Controls.Add(this.dtpFechaNacimiento);
             this.groupBox1.Controls.Add(this.txtdomicilio);
             this.groupBox1.Controls.Add(this.txtCodigoMined);
             this.groupBox1.Controls.Add(this.materialLabel1);
-            this.groupBox1.Controls.Add(this.dtpFechaNacimiento);
             this.groupBox1.Controls.Add(this.rbtnFemenino);
             this.groupBox1.Controls.Add(this.rbtnMasculino);
             this.groupBox1.Controls.Add(this.txtApellidoAlumno);
@@ -173,18 +174,6 @@
             this.materialLabel1.Size = new System.Drawing.Size(128, 18);
             this.materialLabel1.TabIndex = 7;
             this.materialLabel1.Text = "Fecha Nacimiento";
-            // 
-            // dtpFechaNacimiento
-            // 
-            this.dtpFechaNacimiento.EditValue = null;
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(203, 256);
-            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpFechaNacimiento.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(279, 20);
-            this.dtpFechaNacimiento.TabIndex = 6;
             // 
             // rbtnFemenino
             // 
@@ -299,13 +288,12 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.cbmOcupacionMadre);
             this.groupBox3.Controls.Add(this.checkBox2);
             this.groupBox3.Controls.Add(this.txtcedulaMadre);
             this.groupBox3.Controls.Add(this.txttelMadre);
             this.groupBox3.Controls.Add(this.txtemailMadre);
             this.groupBox3.Controls.Add(this.txtnombreMadre);
-            this.groupBox3.Controls.Add(this.txtApellidoMadre);
-            this.groupBox3.Controls.Add(this.txtOcupacionMadre);
             this.groupBox3.Location = new System.Drawing.Point(418, 14);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(303, 281);
@@ -326,7 +314,7 @@
             // 
             // txtcedulaMadre
             // 
-            this.txtcedulaMadre.Location = new System.Drawing.Point(6, 196);
+            this.txtcedulaMadre.Location = new System.Drawing.Point(6, 185);
             this.txtcedulaMadre.Mask = ">###-######-####L";
             this.txtcedulaMadre.Name = "txtcedulaMadre";
             this.txtcedulaMadre.Size = new System.Drawing.Size(279, 24);
@@ -335,7 +323,7 @@
             // txttelMadre
             // 
             this.txttelMadre.BeepOnError = true;
-            this.txttelMadre.Location = new System.Drawing.Point(6, 159);
+            this.txttelMadre.Location = new System.Drawing.Point(6, 143);
             this.txttelMadre.Mask = "0000-0000";
             this.txttelMadre.Name = "txttelMadre";
             this.txttelMadre.Size = new System.Drawing.Size(279, 24);
@@ -371,44 +359,13 @@
             this.txtnombreMadre.TabIndex = 12;
             this.txtnombreMadre.UseSystemPasswordChar = false;
             // 
-            // txtApellidoMadre
-            // 
-            this.txtApellidoMadre.Depth = 0;
-            this.txtApellidoMadre.Hint = "Apellidos ";
-            this.txtApellidoMadre.Location = new System.Drawing.Point(6, 78);
-            this.txtApellidoMadre.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtApellidoMadre.Name = "txtApellidoMadre";
-            this.txtApellidoMadre.PasswordChar = '\0';
-            this.txtApellidoMadre.SelectedText = "";
-            this.txtApellidoMadre.SelectionLength = 0;
-            this.txtApellidoMadre.SelectionStart = 0;
-            this.txtApellidoMadre.Size = new System.Drawing.Size(279, 23);
-            this.txtApellidoMadre.TabIndex = 13;
-            this.txtApellidoMadre.UseSystemPasswordChar = false;
-            // 
-            // txtOcupacionMadre
-            // 
-            this.txtOcupacionMadre.Depth = 0;
-            this.txtOcupacionMadre.Hint = "Ocupación";
-            this.txtOcupacionMadre.Location = new System.Drawing.Point(6, 119);
-            this.txtOcupacionMadre.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtOcupacionMadre.Name = "txtOcupacionMadre";
-            this.txtOcupacionMadre.PasswordChar = '\0';
-            this.txtOcupacionMadre.SelectedText = "";
-            this.txtOcupacionMadre.SelectionLength = 0;
-            this.txtOcupacionMadre.SelectionStart = 0;
-            this.txtOcupacionMadre.Size = new System.Drawing.Size(279, 23);
-            this.txtOcupacionMadre.TabIndex = 14;
-            this.txtOcupacionMadre.UseSystemPasswordChar = false;
-            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtocupacionPadre);
+            this.groupBox2.Controls.Add(this.cbmOcupacionPadre);
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.txtcedulaP);
             this.groupBox2.Controls.Add(this.txtelPadre);
             this.groupBox2.Controls.Add(this.txtemailPadre);
-            this.groupBox2.Controls.Add(this.txtapellidoPadre);
             this.groupBox2.Controls.Add(this.txtnombrePadre);
             this.groupBox2.Location = new System.Drawing.Point(15, 13);
             this.groupBox2.Name = "groupBox2";
@@ -416,18 +373,6 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Padre";
-            // 
-            // txtocupacionPadre
-            // 
-            this.txtocupacionPadre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtocupacionPadre.ContextMenuStrip = this.contextMenuStrip1;
-            this.txtocupacionPadre.Location = new System.Drawing.Point(21, 120);
-            this.txtocupacionPadre.Name = "txtocupacionPadre";
-            this.txtocupacionPadre.Size = new System.Drawing.Size(279, 24);
-            this.txtocupacionPadre.TabIndex = 15;
-            this.txtocupacionPadre.Text = "Ocupaciones";
-            this.txtocupacionPadre.MouseLeave += new System.EventHandler(this.txtocupacionPadre_MouseLeave);
-            this.txtocupacionPadre.MouseHover += new System.EventHandler(this.txtocupacionPadre_MouseHover);
             // 
             // contextMenuStrip1
             // 
@@ -465,7 +410,7 @@
             // txtelPadre
             // 
             this.txtelPadre.BeepOnError = true;
-            this.txtelPadre.Location = new System.Drawing.Point(21, 159);
+            this.txtelPadre.Location = new System.Drawing.Point(21, 144);
             this.txtelPadre.Mask = "0000-0000";
             this.txtelPadre.Name = "txtelPadre";
             this.txtelPadre.Size = new System.Drawing.Size(279, 24);
@@ -485,21 +430,6 @@
             this.txtemailPadre.Size = new System.Drawing.Size(279, 23);
             this.txtemailPadre.TabIndex = 11;
             this.txtemailPadre.UseSystemPasswordChar = false;
-            // 
-            // txtapellidoPadre
-            // 
-            this.txtapellidoPadre.Depth = 0;
-            this.txtapellidoPadre.Hint = "Apellidos ";
-            this.txtapellidoPadre.Location = new System.Drawing.Point(21, 78);
-            this.txtapellidoPadre.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtapellidoPadre.Name = "txtapellidoPadre";
-            this.txtapellidoPadre.PasswordChar = '\0';
-            this.txtapellidoPadre.SelectedText = "";
-            this.txtapellidoPadre.SelectionLength = 0;
-            this.txtapellidoPadre.SelectionStart = 0;
-            this.txtapellidoPadre.Size = new System.Drawing.Size(279, 23);
-            this.txtapellidoPadre.TabIndex = 2;
-            this.txtapellidoPadre.UseSystemPasswordChar = false;
             // 
             // txtnombrePadre
             // 
@@ -521,74 +451,17 @@
             this.tabNavigationPage3.Appearance.BackColor = System.Drawing.Color.White;
             this.tabNavigationPage3.Appearance.Options.UseBackColor = true;
             this.tabNavigationPage3.Caption = "Documentos";
+            this.tabNavigationPage3.Controls.Add(this.btncancelar);
+            this.tabNavigationPage3.Controls.Add(this.btningresar);
             this.tabNavigationPage3.Controls.Add(this.chkCertificadoSalud);
             this.tabNavigationPage3.Controls.Add(this.chkcartaTraslado);
             this.tabNavigationPage3.Controls.Add(this.chktarjetaVacunas);
             this.tabNavigationPage3.Controls.Add(this.chkcertificadoNotas);
             this.tabNavigationPage3.Controls.Add(this.chkpartidaNacimiento);
             this.tabNavigationPage3.Controls.Add(this.pictureEdit1);
-            this.tabNavigationPage3.Controls.Add(this.btnGuardar);
             this.tabNavigationPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabNavigationPage3.Name = "tabNavigationPage3";
             this.tabNavigationPage3.Size = new System.Drawing.Size(751, 375);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.ImageUri.Uri = "SaveAll";
-            this.btnGuardar.Location = new System.Drawing.Point(437, 286);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(100, 44);
-            this.btnGuardar.TabIndex = 1;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // chkpartidaNacimiento
-            // 
-            this.chkpartidaNacimiento.AutoSize = true;
-            this.chkpartidaNacimiento.Depth = 0;
-            this.chkpartidaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.chkpartidaNacimiento.Location = new System.Drawing.Point(41, 77);
-            this.chkpartidaNacimiento.Margin = new System.Windows.Forms.Padding(0);
-            this.chkpartidaNacimiento.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkpartidaNacimiento.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkpartidaNacimiento.Name = "chkpartidaNacimiento";
-            this.chkpartidaNacimiento.Ripple = true;
-            this.chkpartidaNacimiento.Size = new System.Drawing.Size(167, 30);
-            this.chkpartidaNacimiento.TabIndex = 8;
-            this.chkpartidaNacimiento.Text = "Partida de Nacimiento";
-            this.chkpartidaNacimiento.UseVisualStyleBackColor = true;
-            // 
-            // chkcertificadoNotas
-            // 
-            this.chkcertificadoNotas.AutoSize = true;
-            this.chkcertificadoNotas.Depth = 0;
-            this.chkcertificadoNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.chkcertificadoNotas.Location = new System.Drawing.Point(41, 121);
-            this.chkcertificadoNotas.Margin = new System.Windows.Forms.Padding(0);
-            this.chkcertificadoNotas.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkcertificadoNotas.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkcertificadoNotas.Name = "chkcertificadoNotas";
-            this.chkcertificadoNotas.Ripple = true;
-            this.chkcertificadoNotas.Size = new System.Drawing.Size(163, 30);
-            this.chkcertificadoNotas.TabIndex = 9;
-            this.chkcertificadoNotas.Text = "Certificados de Notas";
-            this.chkcertificadoNotas.UseVisualStyleBackColor = true;
-            // 
-            // chktarjetaVacunas
-            // 
-            this.chktarjetaVacunas.AutoSize = true;
-            this.chktarjetaVacunas.Depth = 0;
-            this.chktarjetaVacunas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.chktarjetaVacunas.Location = new System.Drawing.Point(41, 166);
-            this.chktarjetaVacunas.Margin = new System.Windows.Forms.Padding(0);
-            this.chktarjetaVacunas.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chktarjetaVacunas.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chktarjetaVacunas.Name = "chktarjetaVacunas";
-            this.chktarjetaVacunas.Ripple = true;
-            this.chktarjetaVacunas.Size = new System.Drawing.Size(141, 30);
-            this.chktarjetaVacunas.TabIndex = 10;
-            this.chktarjetaVacunas.Text = "Tarjeta de Vacuna";
-            this.chktarjetaVacunas.UseVisualStyleBackColor = true;
             // 
             // chkCertificadoSalud
             // 
@@ -622,6 +495,92 @@
             this.chkcartaTraslado.Text = "Carta de Traslado";
             this.chkcartaTraslado.UseVisualStyleBackColor = true;
             // 
+            // chktarjetaVacunas
+            // 
+            this.chktarjetaVacunas.AutoSize = true;
+            this.chktarjetaVacunas.Depth = 0;
+            this.chktarjetaVacunas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.chktarjetaVacunas.Location = new System.Drawing.Point(41, 166);
+            this.chktarjetaVacunas.Margin = new System.Windows.Forms.Padding(0);
+            this.chktarjetaVacunas.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chktarjetaVacunas.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chktarjetaVacunas.Name = "chktarjetaVacunas";
+            this.chktarjetaVacunas.Ripple = true;
+            this.chktarjetaVacunas.Size = new System.Drawing.Size(141, 30);
+            this.chktarjetaVacunas.TabIndex = 10;
+            this.chktarjetaVacunas.Text = "Tarjeta de Vacuna";
+            this.chktarjetaVacunas.UseVisualStyleBackColor = true;
+            // 
+            // chkcertificadoNotas
+            // 
+            this.chkcertificadoNotas.AutoSize = true;
+            this.chkcertificadoNotas.Depth = 0;
+            this.chkcertificadoNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.chkcertificadoNotas.Location = new System.Drawing.Point(41, 121);
+            this.chkcertificadoNotas.Margin = new System.Windows.Forms.Padding(0);
+            this.chkcertificadoNotas.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkcertificadoNotas.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkcertificadoNotas.Name = "chkcertificadoNotas";
+            this.chkcertificadoNotas.Ripple = true;
+            this.chkcertificadoNotas.Size = new System.Drawing.Size(163, 30);
+            this.chkcertificadoNotas.TabIndex = 9;
+            this.chkcertificadoNotas.Text = "Certificados de Notas";
+            this.chkcertificadoNotas.UseVisualStyleBackColor = true;
+            // 
+            // chkpartidaNacimiento
+            // 
+            this.chkpartidaNacimiento.AutoSize = true;
+            this.chkpartidaNacimiento.Depth = 0;
+            this.chkpartidaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.chkpartidaNacimiento.Location = new System.Drawing.Point(41, 77);
+            this.chkpartidaNacimiento.Margin = new System.Windows.Forms.Padding(0);
+            this.chkpartidaNacimiento.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkpartidaNacimiento.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkpartidaNacimiento.Name = "chkpartidaNacimiento";
+            this.chkpartidaNacimiento.Ripple = true;
+            this.chkpartidaNacimiento.Size = new System.Drawing.Size(167, 30);
+            this.chkpartidaNacimiento.TabIndex = 8;
+            this.chkpartidaNacimiento.Text = "Partida de Nacimiento";
+            this.chkpartidaNacimiento.UseVisualStyleBackColor = true;
+            // 
+            // btncancelar
+            // 
+            this.btncancelar.BackColor = System.Drawing.Color.Firebrick;
+            this.btncancelar.FlatAppearance.BorderSize = 0;
+            this.btncancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkRed;
+            this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancelar.ForeColor = System.Drawing.Color.White;
+            this.btncancelar.Image = global::Presentacion.Properties.Resources.delete;
+            this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncancelar.Location = new System.Drawing.Point(509, 275);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Size = new System.Drawing.Size(103, 38);
+            this.btncancelar.TabIndex = 46;
+            this.btncancelar.Text = "Cancelar";
+            this.btncancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btncancelar.UseVisualStyleBackColor = false;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
+            // 
+            // btningresar
+            // 
+            this.btningresar.BackColor = System.Drawing.Color.Blue;
+            this.btningresar.FlatAppearance.BorderSize = 0;
+            this.btningresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btningresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btningresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btningresar.ForeColor = System.Drawing.Color.White;
+            this.btningresar.Image = global::Presentacion.Properties.Resources.save;
+            this.btningresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btningresar.Location = new System.Drawing.Point(373, 275);
+            this.btningresar.Name = "btningresar";
+            this.btningresar.Size = new System.Drawing.Size(103, 38);
+            this.btningresar.TabIndex = 45;
+            this.btningresar.Text = "Guardar";
+            this.btningresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btningresar.UseVisualStyleBackColor = false;
+            this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
+            // 
             // pictureEdit1
             // 
             this.pictureEdit1.Cursor = System.Windows.Forms.Cursors.Default;
@@ -635,6 +594,61 @@
             this.pictureEdit1.Size = new System.Drawing.Size(170, 161);
             this.pictureEdit1.TabIndex = 7;
             // 
+            // dtpFechaNacimiento
+            // 
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(186, 252);
+            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(277, 24);
+            this.dtpFechaNacimiento.TabIndex = 10;
+            // 
+            // chkactivo
+            // 
+            this.chkactivo.AutoSize = true;
+            this.chkactivo.Depth = 0;
+            this.chkactivo.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chkactivo.Location = new System.Drawing.Point(231, 316);
+            this.chkactivo.Margin = new System.Windows.Forms.Padding(0);
+            this.chkactivo.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkactivo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkactivo.Name = "chkactivo";
+            this.chkactivo.Ripple = true;
+            this.chkactivo.Size = new System.Drawing.Size(69, 30);
+            this.chkactivo.TabIndex = 11;
+            this.chkactivo.Text = "Activo";
+            this.chkactivo.UseVisualStyleBackColor = true;
+            // 
+            // chkcancelado
+            // 
+            this.chkcancelado.AutoSize = true;
+            this.chkcancelado.Depth = 0;
+            this.chkcancelado.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chkcancelado.Location = new System.Drawing.Point(384, 316);
+            this.chkcancelado.Margin = new System.Windows.Forms.Padding(0);
+            this.chkcancelado.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkcancelado.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkcancelado.Name = "chkcancelado";
+            this.chkcancelado.Ripple = true;
+            this.chkcancelado.Size = new System.Drawing.Size(79, 30);
+            this.chkcancelado.TabIndex = 12;
+            this.chkcancelado.Text = "Inactivo";
+            this.chkcancelado.UseVisualStyleBackColor = true;
+            // 
+            // cbmOcupacionPadre
+            // 
+            this.cbmOcupacionPadre.FormattingEnabled = true;
+            this.cbmOcupacionPadre.Location = new System.Drawing.Point(21, 96);
+            this.cbmOcupacionPadre.Name = "cbmOcupacionPadre";
+            this.cbmOcupacionPadre.Size = new System.Drawing.Size(279, 26);
+            this.cbmOcupacionPadre.TabIndex = 19;
+            // 
+            // cbmOcupacionMadre
+            // 
+            this.cbmOcupacionMadre.FormattingEnabled = true;
+            this.cbmOcupacionMadre.Location = new System.Drawing.Point(6, 95);
+            this.cbmOcupacionMadre.Name = "cbmOcupacionMadre";
+            this.cbmOcupacionMadre.Size = new System.Drawing.Size(279, 26);
+            this.cbmOcupacionMadre.TabIndex = 20;
+            // 
             // AddNewStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -646,14 +660,13 @@
             this.Name = "AddNewStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Estudiante";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddNewStudent_FormClosed);
             this.Load += new System.EventHandler(this.AddNewStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
             this.tabPane1.ResumeLayout(false);
             this.tabNavigationPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpFechaNacimiento.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpFechaNacimiento.Properties)).EndInit();
             this.tabNavigationPage2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -676,41 +689,42 @@
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtnombreAlumno;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtApellidoAlumno;
-        private DevExpress.XtraEditors.DateEdit dtpFechaNacimiento;
-        private MaterialSkin.Controls.MaterialRadioButton rbtnFemenino;
-        private MaterialSkin.Controls.MaterialRadioButton rbtnMasculino;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtdomicilio;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtCodigoMined;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtapellidoPadre;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtnombrePadre;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtemailPadre;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtemailMadre;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtnombreMadre;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtApellidoMadre;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtOcupacionMadre;
-        private System.Windows.Forms.MaskedTextBox txtelPadre;
-        private System.Windows.Forms.MaskedTextBox txttelMadre;
-        private System.Windows.Forms.MaskedTextBox txtcedulaP;
-        private System.Windows.Forms.MaskedTextBox txtcedulaMadre;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.MaskedTextBox txttutorTelefono;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txttutorName;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private DevExpress.XtraEditors.SimpleButton btnGuardar;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ocupacionesToolStripMenuItem;
-        private System.Windows.Forms.TextBox txtocupacionPadre;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
-        private MaterialSkin.Controls.MaterialCheckBox chkCertificadoSalud;
-        private MaterialSkin.Controls.MaterialCheckBox chkcartaTraslado;
-        private MaterialSkin.Controls.MaterialCheckBox chktarjetaVacunas;
-        private MaterialSkin.Controls.MaterialCheckBox chkcertificadoNotas;
-        private MaterialSkin.Controls.MaterialCheckBox chkpartidaNacimiento;
+        public MaterialSkin.Controls.MaterialSingleLineTextField txtnombreAlumno;
+        public MaterialSkin.Controls.MaterialSingleLineTextField txtApellidoAlumno;
+        public MaterialSkin.Controls.MaterialRadioButton rbtnFemenino;
+        public MaterialSkin.Controls.MaterialRadioButton rbtnMasculino;
+        public MaterialSkin.Controls.MaterialSingleLineTextField txtdomicilio;
+        public MaterialSkin.Controls.MaterialSingleLineTextField txtCodigoMined;
+        public MaterialSkin.Controls.MaterialSingleLineTextField txtnombrePadre;
+        public MaterialSkin.Controls.MaterialSingleLineTextField txtemailPadre;
+        public MaterialSkin.Controls.MaterialSingleLineTextField txtemailMadre;
+        public MaterialSkin.Controls.MaterialSingleLineTextField txtnombreMadre;
+        public System.Windows.Forms.MaskedTextBox txtelPadre;
+        public System.Windows.Forms.MaskedTextBox txttelMadre;
+        public System.Windows.Forms.MaskedTextBox txtcedulaP;
+        public System.Windows.Forms.MaskedTextBox txtcedulaMadre;
+        public System.Windows.Forms.MaskedTextBox txttutorTelefono;
+        public MaterialSkin.Controls.MaterialSingleLineTextField txttutorName;
+        public System.Windows.Forms.CheckBox checkBox2;
+        public System.Windows.Forms.CheckBox checkBox1;
+        public DevExpress.XtraEditors.PictureEdit pictureEdit1;
+        public MaterialSkin.Controls.MaterialCheckBox chkCertificadoSalud;
+        public MaterialSkin.Controls.MaterialCheckBox chkcartaTraslado;
+        public MaterialSkin.Controls.MaterialCheckBox chktarjetaVacunas;
+        public MaterialSkin.Controls.MaterialCheckBox chkcertificadoNotas;
+        public MaterialSkin.Controls.MaterialCheckBox chkpartidaNacimiento;
+        private System.Windows.Forms.Button btningresar;
+        private System.Windows.Forms.Button btncancelar;
+        public System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
+        public MaterialSkin.Controls.MaterialCheckBox chkcancelado;
+        public MaterialSkin.Controls.MaterialCheckBox chkactivo;
+        public System.Windows.Forms.ComboBox cbmOcupacionPadre;
+        public System.Windows.Forms.ComboBox cbmOcupacionMadre;
     }
 }

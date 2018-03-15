@@ -164,6 +164,12 @@
     <Compile Include="Student\AddNewStudent.Designer.cs">
       <DependentUpon>AddNewStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student\Buscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Buscar.Designer.cs">
+      <DependentUpon>Buscar.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmAdministracion.resx">
       <DependentUpon>frmAdministracion.cs</DependentUpon>
     </EmbeddedResource>
@@ -220,6 +226,9 @@
     <EmbeddedResource Include="Student\AddNewStudent.resx">
       <DependentUpon>AddNewStudent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Student\Buscar.resx">
+      <DependentUpon>Buscar.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -245,6 +254,7 @@
     <Content Include="icons\notepad.png" />
     <Content Include="icons\pexels-photo-370799.jpeg" />
     <Content Include="icons\presentation.png" />
+    <Content Include="icons\reading.png" />
     <Content Include="icons\save %281%29.png" />
     <Content Include="icons\save.png" />
     <Content Include="icons\school.png" />

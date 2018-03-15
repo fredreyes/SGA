@@ -22,12 +22,65 @@ namespace Presentacion.Student
             InitializeComponent();
             EstiloMenu x = new EstiloMenu();
             x.AplicarEstilo(this);
-
+            dtpFechaNacimiento.Value = DateTime.Today;
+            chkactivo.Visible = false;
+            chkcancelado.Visible = false;
+            CargarOcupaciones();
+            OcupacionMadre();
         }
 
+        public int Bandera = 0;
+        public int DocumentoID;
         private void AddNewStudent_Load(object sender, EventArgs e)
         {
-            dtpFechaNacimiento.EditValue = DateTime.Today;
+            
+        }
+
+        void CargarOcupaciones()
+        {
+            NOcupaciones n = new NOcupaciones();
+            List<EOcupaciones> listaOcupaciones = n.ListaOcupaciones();
+            cbmOcupacionPadre.DisplayMember = "Ocupacion";
+            cbmOcupacionPadre.ValueMember = "OcupacionId";
+            cbmOcupacionPadre.DataSource = listaOcupaciones;
+        }
+        void OcupacionMadre()
+        {
+            NOcupaciones n = new NOcupaciones();
+            List<EOcupaciones> listaOcupaciones = n.ListaOcupaciones();
+            cbmOcupacionMadre.DisplayMember = "Ocupacion";
+            cbmOcupacionMadre.ValueMember = "OcupacionId";
+            cbmOcupacionMadre.DataSource = listaOcupaciones;
+        }
+
+
+        void Limpiar()
+        {
+            txtApellidoAlumno.Clear();
+            txtcedulaMadre.Clear();
+            txtcedulaP.Clear();
+            txtCodigoMined.Clear();
+            txtdomicilio.Clear();
+            txtelPadre.Clear();
+            txtemailMadre.Clear();
+            txtemailPadre.Clear();
+            txtnombreAlumno.Clear();
+            txtnombreMadre.Clear();
+            txtnombrePadre.Clear();
+            txttelMadre.Clear();
+            txttutorName.Clear();
+            txttutorTelefono.Clear();
+            cbmOcupacionMadre.Text = "Seleccione una Ocupación";
+            cbmOcupacionPadre.Text = "Seleccione una Ocupación";
+            chkactivo.Visible = false;
+            chkcancelado.Visible = false;
+            chkcartaTraslado.Checked = false;
+            chkcertificadoNotas.Checked = false;
+            chkCertificadoSalud.Checked = false;
+            chkpartidaNacimiento.Checked = false;
+            chktarjetaVacunas.Checked = false;
+            pictureEdit1.Image = Presentacion.Properties.Resources.user1;
+            dtpFechaNacimiento.Value = DateTime.Today;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -44,13 +97,15 @@ namespace Presentacion.Student
             if (checkBox1.Checked)
             {
                 txttutorName.Text = txtnombrePadre.Text;
-                txttutorTelefono.Text = txtelPadre.Text;    
+                txttutorTelefono.Text = txtelPadre.Text;
+                checkBox2.Checked = false;
             }
             else
             {
                 txttutorName.Clear();
                 txttutorTelefono.Clear();
             }
+
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -59,6 +114,7 @@ namespace Presentacion.Student
             {
                 txttutorName.Text = txtnombreMadre.Text;
                 txttutorTelefono.Text = txttelMadre.Text;
+                checkBox1.Checked = false;
             }
             else
             {
@@ -93,53 +149,121 @@ namespace Presentacion.Student
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void btningresar_Click(object sender, EventArgs e)
+        {
             try
             {
                 //Alumno
-                EAlumnos alumno = new EAlumnos();
-                alumno.Nombres = txtnombreAlumno.Text;
-                alumno.Apellidos = txtApellidoAlumno.Text;
-                alumno.Sexo = rbtnMasculino.Checked ? "M" : "F";
-                alumno.FechaNacimiento = Convert.ToDateTime(dtpFechaNacimiento.EditValue);
-                alumno.Direccion = txtdomicilio.Text;
-                alumno.CodigoMined = Convert.ToInt32(txtCodigoMined.Text);
-                //Padres
-                EPadres_Tutor padres = new EPadres_Tutor();
-                padres.NOMBRE_PADRE = txtnombrePadre.Text;
-                padres.CEDULA_PADRE = txtcedulaP.Text;
-                padres.TELEFONO_PADRE = txtelPadre.Text;
-                padres.EMAIL_PADRE = txtemailPadre.Text;
-                padres.OCUPACION_PADRE = txtocupacionPadre.Text;
-                padres.NOMBRE_MADRE = txtnombreMadre.Text;
-                padres.CEDULA_MADRE = txtcedulaMadre.Text;
-                padres.TELEFONO_MADRE = txttelMadre.Text;
-                padres.EMAIL_MADRE = txtemailMadre.Text;
-                padres.OCUPACION_MADRE = txtOcupacionMadre.Text;
-                padres.NOMBRE_TUTOR = txttutorName.Text;
-                padres.TELEFONO_TUTOR = txttutorTelefono.Text;
-                //Documentos
-                EDocuemntosAlumnos documentos = new EDocuemntosAlumnos();
-                documentos.PARTIDA_DE_NACIMINETO = chkpartidaNacimiento.Checked ? "SI" : "NO";
-                documentos.CERTIFICADO_NOTAS = chkcertificadoNotas.Checked ? "SI": "NO";
-                documentos.TARJETA_VACUNA = chktarjetaVacunas.Checked ? "SI" : "NO";
-                documentos.CARTA_TRASLADO = chkcartaTraslado.Checked ? "SI" : "NO";
-                documentos.CERTIFICADO_DE_SALUD = chkCertificadoSalud.Checked ? "SI" : "NO";
-                //convertir foto
-                MemoryStream ms = new MemoryStream();
-                pictureEdit1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-                byte[] foto = ms.GetBuffer();
-                documentos.FOTO = foto;
-                NAlumno n = new NAlumno();
-                n.IngresarAlumno(alumno,padres,documentos);
-                 MessageBox.Show("Alumno Guardado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //Limpiar
+                if (Bandera == 0)
+                {
+                    EAlumnos alumno = new EAlumnos();
+                    alumno.Nombres = txtnombreAlumno.Text;
+                    alumno.Apellidos = txtApellidoAlumno.Text;
+                    alumno.Sexo = rbtnMasculino.Checked ? "M" : "F";
+                    alumno.FechaNacimiento = Convert.ToDateTime(dtpFechaNacimiento.Value);
+                    alumno.Direccion = txtdomicilio.Text;
+                    alumno.CodigoMined = Convert.ToInt32(txtCodigoMined.Text);
+                    //Padres
+                    EPadres_Tutor padres = new EPadres_Tutor();
+                    padres.NOMBRE_PADRE = txtnombrePadre.Text;
+                    padres.CEDULA_PADRE = txtcedulaP.Text;
+                    padres.TELEFONO_PADRE = txtelPadre.Text;
+                    padres.EMAIL_PADRE = txtemailPadre.Text;
+                    padres.OCUPACION_PADRE = cbmOcupacionPadre.Text;
+                    padres.NOMBRE_MADRE = txtnombreMadre.Text;
+                    padres.CEDULA_MADRE = txtcedulaMadre.Text;
+                    padres.TELEFONO_MADRE = txttelMadre.Text;
+                    padres.EMAIL_MADRE = txtemailMadre.Text;
+                    padres.OCUPACION_MADRE = cbmOcupacionMadre.Text;
+                    padres.NOMBRE_TUTOR = txttutorName.Text;
+                    padres.TELEFONO_TUTOR = txttutorTelefono.Text;
+                    //Documentos
+                    EDocuemntosAlumnos documentos = new EDocuemntosAlumnos();
+                    documentos.PARTIDA_DE_NACIMINETO = chkpartidaNacimiento.Checked ? "SI" : "NO";
+                    documentos.CERTIFICADO_NOTAS = chkcertificadoNotas.Checked ? "SI" : "NO";
+                    documentos.TARJETA_VACUNA = chktarjetaVacunas.Checked ? "SI" : "NO";
+                    documentos.CARTA_TRASLADO = chkcartaTraslado.Checked ? "SI" : "NO";
+                    documentos.CERTIFICADO_DE_SALUD = chkCertificadoSalud.Checked ? "SI" : "NO";
+                    //convertir foto
+                    MemoryStream ms = new MemoryStream();
+                    pictureEdit1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    byte[] foto = ms.GetBuffer();
+                    documentos.FOTO = foto;
+                    NAlumno n = new NAlumno();
+                    n.IngresarAlumno(alumno, padres, documentos);
+                    MessageBox.Show("Alumno Guardado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //Limpiar
+                    Limpiar();
+                }
+                if (Bandera == 1)
+                {
+                    EAlumnos alumno = new EAlumnos();
+                    alumno.AlumnoId = Convert.ToInt32(txtnombreAlumno.Tag);
+                    alumno.Nombres = txtnombreAlumno.Text;
+                    alumno.Apellidos = txtApellidoAlumno.Text;
+                    alumno.Sexo = rbtnMasculino.Checked ? "M" : "F";
+                    alumno.FechaNacimiento = Convert.ToDateTime(dtpFechaNacimiento.Value);
+                    alumno.Direccion = txtdomicilio.Text;
+                    alumno.CodigoMined = Convert.ToInt32(txtCodigoMined.Text);
+                    alumno.Activo = Convert.ToBoolean(chkactivo.Checked ? 1 : 0);
+                    //Padres
+                    EPadres_Tutor padres = new EPadres_Tutor();
+                    padres.NOMBRE_PADRE = txtnombrePadre.Text;
+                    padres.CEDULA_PADRE = txtcedulaP.Text;
+                    padres.TELEFONO_PADRE = txtelPadre.Text;
+                    padres.EMAIL_PADRE = txtemailPadre.Text;
+                    padres.OCUPACION_PADRE = cbmOcupacionPadre.Text;
+                    padres.NOMBRE_MADRE = txtnombreMadre.Text;
+                    padres.CEDULA_MADRE = txtcedulaMadre.Text;
+                    padres.TELEFONO_MADRE = txttelMadre.Text;
+                    padres.EMAIL_MADRE = txtemailMadre.Text;
+                    padres.OCUPACION_MADRE = cbmOcupacionMadre.Text;
+                    padres.NOMBRE_TUTOR = txttutorName.Text;
+                    padres.TELEFONO_TUTOR = txttutorTelefono.Text;
+                    //Documentos
+                    EDocuemntosAlumnos documentos = new EDocuemntosAlumnos();
+                    documentos.PARTIDA_DE_NACIMINETO = chkpartidaNacimiento.Checked ? "SI" : "NO";
+                    documentos.CERTIFICADO_NOTAS = chkcertificadoNotas.Checked ? "SI" : "NO";
+                    documentos.TARJETA_VACUNA = chktarjetaVacunas.Checked ? "SI" : "NO";
+                    documentos.CARTA_TRASLADO = chkcartaTraslado.Checked ? "SI" : "NO";
+                    documentos.CERTIFICADO_DE_SALUD = chkCertificadoSalud.Checked ? "SI" : "NO";
+                    //convertir foto
+                    MemoryStream ms = new MemoryStream();
+                    pictureEdit1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    byte[] foto = ms.GetBuffer();
+                    documentos.FOTO = foto;
+                    NAlumno n = new NAlumno();
+                    n.ModificarAlumno(alumno, padres, documentos);
+                    MessageBox.Show("Alumno Modificado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                }
 
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message,"SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            if (txtnombreAlumno.Text != "")
+            {
+                DialogResult mensaje = MessageBox.Show("¿Estas seguro de cancelar la edicion de este registro?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (mensaje == DialogResult.OK)
+                {
+                    Limpiar();
+                }
+            }
+        }
+
+        private void AddNewStudent_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
         }
     }
 }

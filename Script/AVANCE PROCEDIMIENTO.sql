@@ -603,6 +603,96 @@ select @ID
 		Rollback tran
 end
 go
+create proc ModificarEstudiante
+(
+--Alumnos
+@AlumnoID int,
+@Nombres nvarchar(30),
+@Apellidos nvarchar(30),
+@Sexo CHAR(1),
+@FechaNacimiento DATE,
+@Direccion nvarchar(200),
+@CodigoMined int,
+@Activo bit,
+--Padres
+@NombresPadres nvarchar(200),
+@CedulaPadre NVARCHAR(18),
+@TelefonoPadre nvarchar(15),
+@EmailPadre NVARCHAR(100),
+@OcupacionPadre NVARCHAR(150),
+@NombresMadres nvarchar(200),
+@CedulaMadre NVARCHAR(18),
+@TelefonoMadre nvarchar(15),
+@EmailMadre NVARCHAR(100),
+@OcupacionMadre NVARCHAR(150),
+@NombreTutor NVARCHAR(150),
+@TelefonoTutor NVARCHAR(15),
+--Documentos Alumnos
+@PartidaNaciminto CHAR(2),
+@CertificadoNotas CHAR(2),
+@TarjetaVacuna CHAR(2),
+@CartaTraslado CHAR(2),
+@CertificadoSalud CHAR(2),
+@Foto IMAGE
+)
+as
+begin 
+		Begin Tran 
+			update Alumnos set
+			Nombres = @Nombres,
+			Apellidos = @Apellidos,
+			Sexo = @Sexo,
+			FechaNacimiento = @FechaNacimiento,
+			Direccion = @Direccion,
+			CodigoMined = @CodigoMined,
+			Activo = @Activo
+			where AlumnoId = @AlumnoID
+				if @AlumnoID is not null
+				begin
+				update PadresTutorAlumno set
+					NombresPadres = @NombresPadres,
+					CedulaPadre = @CedulaPadre,
+					TelefonoPadre = @TelefonoPadre,
+					EmailPadre = @EmailPadre,
+					OcupacionPadre = @OcupacionPadre,
+					NombresMadres = @NombresMadres,
+					CedulaMadre = @CedulaMadre,
+					TelefonoMadre = @TelefonoMadre,
+					EmailMadre = @EmailMadre,
+					OcupacionMadre= @OcupacionMadre,
+					NombreTutor = @NombreTutor ,
+					TelefonoTutor= @TelefonoTutor
+					where AlumnoId = @AlumnoID
+				update DocumentosAlumnos set
+				PartidaNaciminto = @PartidaNaciminto,
+				CertificadoNotas = @CertificadoNotas,
+				TarjetaVacuna = @TarjetaVacuna,
+				CartaTraslado = @CartaTraslado,
+				CertificadoSalud = @CertificadoSalud,
+				Foto = @Foto
+				where AlumnoId = @AlumnoID
+				end
+		commit
+		if @@TRANCOUNT> 1
+		Rollback tran
+end
+go
+
+create proc ListarAlumno
+(
+@AlumnoId int
+)
+as
+begin
+select a.AlumnoId,Nombres,Apellidos,Sexo,FechaNacimiento,Direccion,CodigoMined,Activo,DocumentoId,PartidaNaciminto,CertificadoNotas,TarjetaVacuna,
+CartaTraslado,CertificadoSalud,Foto,PadresTutorId,NombresPadres,CedulaPadre,TelefonoPadre,EmailPadre,OcupacionPadre,NombresMadres,CedulaMadre,
+TelefonoMadre,EmailMadre,OcupacionMadre,NombreTutor,TelefonoTutor
+ from Alumnos a
+inner join DocumentosAlumnos d on a.AlumnoId=d.AlumnoId
+inner join PadresTutorAlumno p on a.AlumnoId=p.AlumnoId
+where foto is not null and a.AlumnoId = @AlumnoId  
+end
+go
 
 -------------faltan
 --------------------------------------------Procedimientos No creados------------------------------------------------

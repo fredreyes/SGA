@@ -27,5 +27,5 @@ namespace Entidades
             Alumno = new EAlumnos();
         }
 
-       }
+    }
 }

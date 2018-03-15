@@ -15,5 +15,29 @@ namespace Entidades
         public string Direccion { get; set; }
         public int CodigoMined { get; set; }
         public bool Activo { get; set; }
+        //Documenotos
+        public int DOCUMENTO_ALUMNO_ID { get; set; }
+        public string PARTIDA_DE_NACIMINETO { get; set; }
+        public string CERTIFICADO_NOTAS { get; set; }
+        public string TARJETA_VACUNA { get; set; }
+        public string CARTA_TRASLADO { get; set; }
+        public string CERTIFICADO_DE_SALUD { get; set; }
+        public byte[] FOTO { get; set; }
+        //Padres Alumnos
+        public int ID_PARENTEZCO { get; set; }
+        public string NOMBRE_PADRE { get; set; }
+        public string CEDULA_PADRE { get; set; }
+        public string TELEFONO_PADRE { get; set; }
+        public string EMAIL_PADRE { get; set; }
+        public string OCUPACION_PADRE { get; set; }
+        public string NOMBRE_MADRE { get; set; }
+        public string CEDULA_MADRE { get; set; }
+        public string TELEFONO_MADRE { get; set; }
+        public string EMAIL_MADRE { get; set; }
+        public string OCUPACION_MADRE { get; set; }
+        public string NOMBRE_TUTOR { get; set; }
+        public string TELEFONO_TUTOR { get; set; }
+        
+
     }
 }
