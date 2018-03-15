@@ -179,7 +179,12 @@ CREATE TABLE MateriaDocente
 (
 MateriaDocenteId INT NOT NULL,
 FuncionarioId INT NOT NULL, 
-AsignaturaId INT
+AsignaturaId INT,
+Mañana bit,
+Tarde bit,
+Noche bit,
+Sabado bit,
+Domingo bit
 CONSTRAINT PK_MATERIADOCENTE PRIMARY KEY(MateriaDocenteId)
 CONSTRAINT FK_MATE_FUNCIONARIO FOREIGN KEY(FuncionarioId) REFERENCES FUNCIONARIOS(FuncionarioId),
 CONSTRAINT FK_MATE_ASIGNATURA FOREIGN KEY(AsignaturaId) REFERENCES ASIGNATURAS(AsignaturaId)

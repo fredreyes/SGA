@@ -67,5 +67,12 @@ namespace Presentacion.Funcionarios
                 throw ex;
             }
         }
+
+       
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Guardado");
+        }
     }
 }

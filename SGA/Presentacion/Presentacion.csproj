@@ -253,6 +253,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icons\add-label-button.png" />
     <Content Include="icons\businessmen.png" />
     <Content Include="icons\cycle.png" />
     <Content Include="icons\delete.png" />
