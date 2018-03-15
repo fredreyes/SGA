@@ -112,13 +112,12 @@ Cargo nvarchar(40) ,
 OcupacionId INT,
 Email nvarchar(100),
 Foto Image,
-Activo Bit
+Activo Bit,
+IsDocente bit
 constraint PK_Funcionario primary key(FuncionarioId),
 constraint FK_Funcionario_Ocupacion foreign key(OcupacionId) references ProfesionOcupacion(OcupacionId)
 )
 go
-
-
 --TABLA ALUMNO
 create table Alumnos
 (
@@ -173,6 +172,21 @@ CONSTRAINT FK_DOCUMENTOS_ALUMNOS FOREIGN KEY(AlumnoId) REFERENCES ALUMNOS(Alumno
 )
 GO
 
+
+
+--MATERIA_DOCENTES
+CREATE TABLE MateriaDocente
+(
+MateriaDocenteId INT NOT NULL,
+FuncionarioId INT NOT NULL, 
+AsignaturaId INT
+CONSTRAINT PK_MATERIADOCENTE PRIMARY KEY(MateriaDocenteId)
+CONSTRAINT FK_MATE_FUNCIONARIO FOREIGN KEY(FuncionarioId) REFERENCES FUNCIONARIOS(FuncionarioId),
+CONSTRAINT FK_MATE_ASIGNATURA FOREIGN KEY(AsignaturaId) REFERENCES ASIGNATURAS(AsignaturaId)
+)
+GO
+
+
 ---------------------------------------------------
 
 
@@ -190,43 +204,6 @@ CONSTRAINT FK_USUARIO_FUNCIONARIO FOREIGN KEY(FuncionarioId) REFERENCES FUNCIONA
 )
 GO
 
---TABLA DOCUMENTO ALUMNO
-CREATE TABLE DocumentosAlumnos
-(
-DocumentoId INT NOT NULL,
-AlumnoId NVARCHAR(10) NOT NULL,-- REFERENCE ALUMNO
-PartidaNaciminto CHAR(2), -- SI,NO
-CertificadoNotas CHAR(2),
-TarjetaVacuna CHAR(2),
-CartaTraslado CHAR(2),
-CertificadoSalud CHAR(2),
-Foto IMAGE
-CONSTRAINT PK_DOCUMENTOS PRIMARY KEY(DocumentoId),
-CONSTRAINT FK_DOCUMENTOS_ALUMNOS FOREIGN KEY(AlumnoId) REFERENCES ALUMNOS(AlumnoId)
-)
-GO
-
---TABLA PARENTEZCO ALUMNO
-create table PadresTutor
-(
-PadresTutorId INT not null,
-AlumnoId NVARCHAR(10) not null,
-NombresPadres nvarchar(200),
-CedulaPadre NVARCHAR(18),
-TelefonoPadre nvarchar(15),
-EmailPadre NVARCHAR(100),
-OcupacionPadre NVARCHAR(150),
-NombresMadres nvarchar(200),
-CedulaMadre NVARCHAR(18),
-TelefonoMadre nvarchar(15),
-EmailMadre NVARCHAR(100),
-OcupacionMadre NVARCHAR(150),
-NombreTutor NVARCHAR(150) Not null,
-TelefonoTutor NVARCHAR(15)
-CONSTRAINT PK_PADRE PRIMARY KEY(PadresTutorId),
-CONSTRAINT FK_PADRES_ALUMNOS FOREIGN KEY(AlumnoId) REFERENCES Alumnos(AlumnoId)
-)
-GO
 
 --TABLA USUARIOS
 CREATE TABLE UsuariosFuncionarios
@@ -254,18 +231,6 @@ CONSTRAINT FK_USUARIO_ALUMNOS FOREIGN KEY(AlumnoId) REFERENCES ALUMNOS(AlumnoId)
 
 
 
-
---MATERIA_DOCENTES
-CREATE TABLE MateriaDocente
-(
-MateriaDocenteId INT NOT NULL,
-FuncionarioId INT NOT NULL, 
-AsignaturaId INT
-CONSTRAINT PK_MATERIADOCENTE PRIMARY KEY(MateriaDocenteId)
-CONSTRAINT FK_MATE_FUNCIONARIO FOREIGN KEY(FuncionarioId) REFERENCES FUNCIONARIOS(FuncionarioId),
-CONSTRAINT FK_MATE_ASIGNATURA FOREIGN KEY(AsignaturaId) REFERENCES ASIGNATURAS(AsignaturaId)
-)
-GO
 
 
 

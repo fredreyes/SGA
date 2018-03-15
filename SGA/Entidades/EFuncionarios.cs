@@ -20,6 +20,7 @@ namespace Entidades
         public string Email { get; set; }
         public byte[] Foto { get; set; }
         public bool Activo { get; set; }
+        public bool IsDocenet { get; set; }
 
         public EFuncionarios()
         {

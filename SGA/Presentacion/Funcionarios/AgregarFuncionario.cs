@@ -49,6 +49,7 @@ namespace Presentacion.Funcionarios
             chkactivo.Checked = false;
             chkactivo.Visible = false;
             chkcancelar.Visible = false;
+            chkisDocente.Checked = false;
         }
 
         void CargarOcupaciones()
@@ -89,7 +90,8 @@ namespace Presentacion.Funcionarios
                     funcionario.Cargo = txtcargo.Text;
                     funcionario.Ocupacion.OcupacionId = Convert.ToInt32(cbmOcupacion.SelectedValue.ToString());
                     funcionario.Email = txtemail.Text;
-                    funcionario.Foto = picture;  
+                    funcionario.Foto = picture;
+                    funcionario.IsDocenet = Convert.ToBoolean(chkisDocente.Checked ? 1 : 0);
                     n.IngresarFuncionario(funcionario);
                     MessageBox.Show("Funcionario ingresado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
@@ -108,6 +110,7 @@ namespace Presentacion.Funcionarios
                     funcionario.Email = txtemail.Text;
                     funcionario.Foto = picture;
                     funcionario.Activo = Convert.ToBoolean(chkactivo.Checked ? 1 : 0);
+                    funcionario.IsDocenet = Convert.ToBoolean(chkisDocente.Checked ? 1 : 0);
                     n.ModificarFuncionario(funcionario);
                     MessageBox.Show("Funcionario Modificado con exito","SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();

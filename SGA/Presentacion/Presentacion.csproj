@@ -96,6 +96,12 @@
     <Compile Include="Funcionarios\AgregarFuncionario.Designer.cs">
       <DependentUpon>AgregarFuncionario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Funcionarios\docenteAsignatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionarios\docenteAsignatura.Designer.cs">
+      <DependentUpon>docenteAsignatura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Funcionarios\Funcionarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     <EmbeddedResource Include="Funcionarios\AgregarFuncionario.resx">
       <DependentUpon>AgregarFuncionario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Funcionarios\docenteAsignatura.resx">
+      <DependentUpon>docenteAsignatura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Funcionarios\Funcionarios.resx">
       <DependentUpon>Funcionarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +253,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icons\businessmen.png" />
     <Content Include="icons\cycle.png" />
     <Content Include="icons\delete.png" />
     <Content Include="icons\error %281%29.png" />

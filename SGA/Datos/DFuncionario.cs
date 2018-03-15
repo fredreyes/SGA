@@ -17,7 +17,7 @@ namespace Datos
             try
             {
                 comando = new SqlCommand
-               ("select FuncionarioId,Nombres,Apellidos,Cedula,Sexo,FechaNacimiento,Telefono,Cargo,F.OcupacionId,Ocupacion,Email,Foto,Activo \n"+
+               ("select FuncionarioId,Nombres,Apellidos,Cedula,Sexo,FechaNacimiento,Telefono,Cargo,F.OcupacionId,Ocupacion,Email,Foto,Activo,isDocente \n"+
                "from funcionarios f inner join ProfesionOcupacion po on f.OcupacionId = po.OcupacionId",conexion);
                 comando.CommandType = CommandType.Text;
                 comando.Connection = conexion;
@@ -40,6 +40,7 @@ namespace Datos
                     f.Email = leer[10].ToString();
                     f.Foto = (byte[])leer[11];
                     f.Activo = (bool)leer[12];
+                    f.IsDocenet = (bool)leer[13];
                     lista.Add(f);
                 }
                 leer.Close();
@@ -68,6 +69,7 @@ namespace Datos
                 comando.Parameters.AddWithValue("@OcupacionId", f.Ocupacion.OcupacionId);
                 comando.Parameters.AddWithValue("@Email", f.Email);
                 comando.Parameters.AddWithValue("@Foto", f.Foto);
+                comando.Parameters.AddWithValue("@IsDocente", f.IsDocenet);
                 conexion.Open();
                 comando.ExecuteNonQuery();
                 conexion.Close();
@@ -96,6 +98,7 @@ namespace Datos
                 comando.Parameters.AddWithValue("@Email", f.Email);
                 comando.Parameters.AddWithValue("@Foto", f.Foto);
                 comando.Parameters.AddWithValue("@activo", f.Activo);
+                comando.Parameters.AddWithValue("@IsDocente", f.IsDocenet);
                 comando.Parameters.AddWithValue("@FuncionarioId", f.FuncionarioId);
                 conexion.Open();
                 comando.ExecuteNonQuery();

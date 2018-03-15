@@ -37,12 +37,13 @@
             this.txttelefono = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtcargo = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtemail = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.btncancelar = new System.Windows.Forms.Button();
-            this.btningresar = new System.Windows.Forms.Button();
-            this.pictureFoto = new DevExpress.XtraEditors.PictureEdit();
             this.cbmOcupacion = new System.Windows.Forms.ComboBox();
             this.chkactivo = new MaterialSkin.Controls.MaterialCheckBox();
             this.chkcancelar = new MaterialSkin.Controls.MaterialCheckBox();
+            this.pictureFoto = new DevExpress.XtraEditors.PictureEdit();
+            this.btncancelar = new System.Windows.Forms.Button();
+            this.btningresar = new System.Windows.Forms.Button();
+            this.chkisDocente = new MaterialSkin.Controls.MaterialCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaNac.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaNac.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFoto.Properties)).BeginInit();
@@ -82,7 +83,7 @@
             // 
             this.rbtnMasculino.AutoSize = true;
             this.rbtnMasculino.Depth = 0;
-            this.rbtnMasculino.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbtnMasculino.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.rbtnMasculino.Location = new System.Drawing.Point(12, 200);
             this.rbtnMasculino.Margin = new System.Windows.Forms.Padding(0);
             this.rbtnMasculino.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -99,7 +100,7 @@
             // 
             this.rbtnFemenino.AutoSize = true;
             this.rbtnFemenino.Depth = 0;
-            this.rbtnFemenino.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbtnFemenino.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.rbtnFemenino.Location = new System.Drawing.Point(151, 200);
             this.rbtnFemenino.Margin = new System.Windows.Forms.Padding(0);
             this.rbtnFemenino.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -178,6 +179,62 @@
             this.txtemail.TabIndex = 10;
             this.txtemail.UseSystemPasswordChar = false;
             // 
+            // cbmOcupacion
+            // 
+            this.cbmOcupacion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbmOcupacion.FormattingEnabled = true;
+            this.cbmOcupacion.Location = new System.Drawing.Point(12, 386);
+            this.cbmOcupacion.Name = "cbmOcupacion";
+            this.cbmOcupacion.Size = new System.Drawing.Size(272, 23);
+            this.cbmOcupacion.TabIndex = 43;
+            this.cbmOcupacion.Text = "Seleccione una Profesión u Ocupación";
+            // 
+            // chkactivo
+            // 
+            this.chkactivo.AutoSize = true;
+            this.chkactivo.Depth = 0;
+            this.chkactivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.chkactivo.Location = new System.Drawing.Point(361, 78);
+            this.chkactivo.Margin = new System.Windows.Forms.Padding(0);
+            this.chkactivo.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkactivo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkactivo.Name = "chkactivo";
+            this.chkactivo.Ripple = true;
+            this.chkactivo.Size = new System.Drawing.Size(69, 30);
+            this.chkactivo.TabIndex = 46;
+            this.chkactivo.Text = "Activo";
+            this.chkactivo.UseVisualStyleBackColor = true;
+            this.chkactivo.CheckedChanged += new System.EventHandler(this.chkactivo_CheckedChanged);
+            // 
+            // chkcancelar
+            // 
+            this.chkcancelar.AutoSize = true;
+            this.chkcancelar.Depth = 0;
+            this.chkcancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.chkcancelar.Location = new System.Drawing.Point(476, 78);
+            this.chkcancelar.Margin = new System.Windows.Forms.Padding(0);
+            this.chkcancelar.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkcancelar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkcancelar.Name = "chkcancelar";
+            this.chkcancelar.Ripple = true;
+            this.chkcancelar.Size = new System.Drawing.Size(95, 30);
+            this.chkcancelar.TabIndex = 47;
+            this.chkcancelar.Text = "Cancelado";
+            this.chkcancelar.UseVisualStyleBackColor = true;
+            this.chkcancelar.CheckedChanged += new System.EventHandler(this.chkcancelar_CheckedChanged);
+            // 
+            // pictureFoto
+            // 
+            this.pictureFoto.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureFoto.EditValue = global::Presentacion.Properties.Resources.student;
+            this.pictureFoto.Location = new System.Drawing.Point(387, 120);
+            this.pictureFoto.Name = "pictureFoto";
+            this.pictureFoto.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureFoto.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.pictureFoto.Properties.ZoomAccelerationFactor = 1D;
+            this.pictureFoto.Size = new System.Drawing.Size(147, 151);
+            this.pictureFoto.TabIndex = 42;
+            // 
             // btncancelar
             // 
             this.btncancelar.BackColor = System.Drawing.Color.Firebrick;
@@ -188,7 +245,7 @@
             this.btncancelar.ForeColor = System.Drawing.Color.White;
             this.btncancelar.Image = global::Presentacion.Properties.Resources.delete;
             this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncancelar.Location = new System.Drawing.Point(495, 311);
+            this.btncancelar.Location = new System.Drawing.Point(485, 375);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(103, 38);
             this.btncancelar.TabIndex = 41;
@@ -207,7 +264,7 @@
             this.btningresar.ForeColor = System.Drawing.Color.White;
             this.btningresar.Image = global::Presentacion.Properties.Resources.save;
             this.btningresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btningresar.Location = new System.Drawing.Point(338, 311);
+            this.btningresar.Location = new System.Drawing.Point(346, 375);
             this.btningresar.Name = "btningresar";
             this.btningresar.Size = new System.Drawing.Size(103, 38);
             this.btningresar.TabIndex = 40;
@@ -216,67 +273,28 @@
             this.btningresar.UseVisualStyleBackColor = false;
             this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
             // 
-            // pictureFoto
+            // chkisDocente
             // 
-            this.pictureFoto.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureFoto.EditValue = global::Presentacion.Properties.Resources.student;
-            this.pictureFoto.Location = new System.Drawing.Point(387, 120);
-            this.pictureFoto.Name = "pictureFoto";
-            this.pictureFoto.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureFoto.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.pictureFoto.Properties.ZoomAccelerationFactor = 1D;
-            this.pictureFoto.Size = new System.Drawing.Size(147, 151);
-            this.pictureFoto.TabIndex = 42;
-            // 
-            // cbmOcupacion
-            // 
-            this.cbmOcupacion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbmOcupacion.FormattingEnabled = true;
-            this.cbmOcupacion.Location = new System.Drawing.Point(12, 386);
-            this.cbmOcupacion.Name = "cbmOcupacion";
-            this.cbmOcupacion.Size = new System.Drawing.Size(272, 23);
-            this.cbmOcupacion.TabIndex = 43;
-            this.cbmOcupacion.Text = "Seleccione una Profesión u Ocupación";
-            // 
-            // chkactivo
-            // 
-            this.chkactivo.AutoSize = true;
-            this.chkactivo.Depth = 0;
-            this.chkactivo.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkactivo.Location = new System.Drawing.Point(361, 78);
-            this.chkactivo.Margin = new System.Windows.Forms.Padding(0);
-            this.chkactivo.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkactivo.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkactivo.Name = "chkactivo";
-            this.chkactivo.Ripple = true;
-            this.chkactivo.Size = new System.Drawing.Size(69, 30);
-            this.chkactivo.TabIndex = 46;
-            this.chkactivo.Text = "Activo";
-            this.chkactivo.UseVisualStyleBackColor = true;
-            this.chkactivo.CheckedChanged += new System.EventHandler(this.chkactivo_CheckedChanged);
-            // 
-            // chkcancelar
-            // 
-            this.chkcancelar.AutoSize = true;
-            this.chkcancelar.Depth = 0;
-            this.chkcancelar.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkcancelar.Location = new System.Drawing.Point(476, 78);
-            this.chkcancelar.Margin = new System.Windows.Forms.Padding(0);
-            this.chkcancelar.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkcancelar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkcancelar.Name = "chkcancelar";
-            this.chkcancelar.Ripple = true;
-            this.chkcancelar.Size = new System.Drawing.Size(95, 30);
-            this.chkcancelar.TabIndex = 47;
-            this.chkcancelar.Text = "Cancelado";
-            this.chkcancelar.UseVisualStyleBackColor = true;
-            this.chkcancelar.CheckedChanged += new System.EventHandler(this.chkcancelar_CheckedChanged);
+            this.chkisDocente.AutoSize = true;
+            this.chkisDocente.Depth = 0;
+            this.chkisDocente.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chkisDocente.Location = new System.Drawing.Point(424, 304);
+            this.chkisDocente.Margin = new System.Windows.Forms.Padding(0);
+            this.chkisDocente.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkisDocente.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkisDocente.Name = "chkisDocente";
+            this.chkisDocente.Ripple = true;
+            this.chkisDocente.Size = new System.Drawing.Size(81, 30);
+            this.chkisDocente.TabIndex = 48;
+            this.chkisDocente.Text = "Docente";
+            this.chkisDocente.UseVisualStyleBackColor = true;
             // 
             // AgregarFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 425);
+            this.Controls.Add(this.chkisDocente);
             this.Controls.Add(this.chkcancelar);
             this.Controls.Add(this.chkactivo);
             this.Controls.Add(this.cbmOcupacion);
@@ -322,5 +340,6 @@
         public System.Windows.Forms.ComboBox cbmOcupacion;
         public MaterialSkin.Controls.MaterialCheckBox chkactivo;
         public MaterialSkin.Controls.MaterialCheckBox chkcancelar;
+        public MaterialSkin.Controls.MaterialCheckBox chkisDocente;
     }
 }

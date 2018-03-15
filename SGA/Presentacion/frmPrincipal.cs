@@ -50,5 +50,22 @@ namespace Presentacion
             Student.Buscar buscar = new Student.Buscar();
             buscar.ShowDialog();
         }
+
+        private void funcionariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void docentesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Funcionarios.docenteAsignatura docenteAsignatura = new Funcionarios.docenteAsignatura();
+            docenteAsignatura.ShowDialog();
+        }
+
+        private void gestiónFuncionariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Funcionarios.Funcionarios funcionario = new Funcionarios.Funcionarios();
+            funcionario.ShowDialog();
+        }
     }
 }

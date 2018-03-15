@@ -443,7 +443,7 @@ end
 go
 
 --FUNCIONARIOS
-CREATE PROC IngresarFuncioarios
+create PROC IngresarFuncioarios
 (
 @Nombres nvarchar(100),
 @Apellidos nvarchar(100),
@@ -454,7 +454,8 @@ CREATE PROC IngresarFuncioarios
 @Cargo nvarchar(40) ,
 @OcupacionId INT,
 @Email nvarchar(100),
-@Foto Image
+@Foto Image,
+@IsDocente bit 
 )
 AS
 BEGIN
@@ -472,12 +473,14 @@ BEGIN
 		@OcupacionId,
 		@Email,
 		@Foto,
-		@activo
+		@activo,
+		@IsDocente
 		)
 END
 GO
 
-CREATE PROC ModificarFuncioarios
+
+create PROC ModificarFuncioarios
 (
 @FuncionarioId int,
 @Nombres nvarchar(100),
@@ -490,7 +493,8 @@ CREATE PROC ModificarFuncioarios
 @OcupacionId INT,
 @Email nvarchar(100),
 @Foto Image,
-@activo bit
+@activo bit,
+@IsDocente bit 
 )
 AS
 BEGIN
@@ -505,7 +509,8 @@ BEGIN
 		OcupacionId = @OcupacionId,
 		 Email =@Email,
 		Foto = @Foto,
-		Activo = @activo
+		Activo = @activo,
+		isDocente = @IsDocente 
 		where FuncionarioId = @FuncionarioId
 END
 GO
