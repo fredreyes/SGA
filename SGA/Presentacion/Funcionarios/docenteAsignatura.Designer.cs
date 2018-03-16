@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -40,11 +41,15 @@
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.MateriaDocente = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.eDITARToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            this.MateriaDocente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +61,7 @@
             this.gridControl1.Location = new System.Drawing.Point(12, 84);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(402, 180);
+            this.gridControl1.Size = new System.Drawing.Size(540, 180);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -182,7 +187,7 @@
             this.btnIngresar.ForeColor = System.Drawing.Color.White;
             this.btnIngresar.Image = global::Presentacion.Properties.Resources.save;
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresar.Location = new System.Drawing.Point(350, 320);
+            this.btnIngresar.Location = new System.Drawing.Point(379, 298);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(103, 38);
             this.btnIngresar.TabIndex = 47;
@@ -201,26 +206,53 @@
             this.btncancelar.ForeColor = System.Drawing.Color.White;
             this.btncancelar.Image = global::Presentacion.Properties.Resources.delete;
             this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncancelar.Location = new System.Drawing.Point(350, 382);
+            this.btncancelar.Location = new System.Drawing.Point(379, 369);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(103, 38);
             this.btncancelar.TabIndex = 48;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btncancelar.UseVisualStyleBackColor = false;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // gridControl2
             // 
+            this.gridControl2.ContextMenuStrip = this.MateriaDocente;
             this.gridControl2.EmbeddedNavigator.Appearance.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridControl2.EmbeddedNavigator.Appearance.Options.UseFont = true;
             this.gridControl2.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridControl2.Location = new System.Drawing.Point(420, 84);
+            this.gridControl2.Location = new System.Drawing.Point(558, 84);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(456, 180);
+            this.gridControl2.Size = new System.Drawing.Size(539, 180);
             this.gridControl2.TabIndex = 49;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            // 
+            // MateriaDocente
+            // 
+            this.MateriaDocente.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MateriaDocente.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eDITARToolStripMenuItem1,
+            this.eliminarToolStripMenuItem});
+            this.MateriaDocente.Name = "contextMenuStrip1";
+            this.MateriaDocente.Size = new System.Drawing.Size(123, 48);
+            // 
+            // eDITARToolStripMenuItem1
+            // 
+            this.eDITARToolStripMenuItem1.Image = global::Presentacion.Properties.Resources.edit;
+            this.eDITARToolStripMenuItem1.Name = "eDITARToolStripMenuItem1";
+            this.eDITARToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
+            this.eDITARToolStripMenuItem1.Text = "Editar";
+            this.eDITARToolStripMenuItem1.Click += new System.EventHandler(this.eDITARToolStripMenuItem1_Click);
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Image = global::Presentacion.Properties.Resources.delete__1_;
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click_1);
             // 
             // gridView2
             // 
@@ -232,7 +264,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 459);
+            this.ClientSize = new System.Drawing.Size(1109, 459);
             this.Controls.Add(this.gridControl2);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnIngresar);
@@ -250,6 +282,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            this.MateriaDocente.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
 
@@ -269,5 +302,8 @@
         private System.Windows.Forms.Button btncancelar;
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private System.Windows.Forms.ContextMenuStrip MateriaDocente;
+        private System.Windows.Forms.ToolStripMenuItem eDITARToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
     }
 }

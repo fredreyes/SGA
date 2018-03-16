@@ -256,7 +256,9 @@
     <Content Include="icons\add-label-button.png" />
     <Content Include="icons\businessmen.png" />
     <Content Include="icons\cycle.png" />
+    <Content Include="icons\delete %281%29.png" />
     <Content Include="icons\delete.png" />
+    <Content Include="icons\edit.png" />
     <Content Include="icons\error %281%29.png" />
     <Content Include="icons\evaluation.png" />
     <Content Include="icons\grades.png" />

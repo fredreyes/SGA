@@ -50,7 +50,7 @@ go
 --COLEGIO
 create proc IngresarColegio
 (
-f@Colegio nvarchar(100),
+@Colegio nvarchar(100),
 @Telefono nvarchar(20),
 @DepartamentoId int
 )
@@ -699,6 +699,79 @@ where foto is not null and a.AlumnoId = @AlumnoId
 end
 go
 
+
+--Materia Docente 
+create proc IngresarMateriaDocente
+(
+@FuncionarioId INT, 
+@AsignaturaId INT,
+@Mañana bit,
+@Tarde bit,
+@Noche bit,
+@Sabado bit,
+@Domingo bit
+)
+as
+begin
+		begin try
+		declare @MateriaDocenteId INT 
+		select @MateriaDocenteId = ISNULL(max(MateriaDocenteId),0)+ 1 from MateriaDocente
+		insert into MateriaDocente values
+		(
+			@MateriaDocenteId,
+			@FuncionarioId, 
+			@AsignaturaId,
+			@Mañana,
+			@Tarde,
+			@Noche,
+			@Sabado,
+			@Domingo
+		)
+		end try
+		begin catch
+			if @@TRANCOUNT > 0
+				rollback
+		end catch
+end
+go
+create proc ModificarMateriaDocente
+(
+@MateriaDocenteId INT,
+@AsignaturaId INT,
+@Mañana bit,
+@Tarde bit,
+@Noche bit,
+@Sabado bit,
+@Domingo bit
+)
+as
+begin
+		begin try
+		update MateriaDocente set		
+			AsignaturaId = @AsignaturaId,
+			Mañana = @Mañana,
+			Tarde = @Tarde,
+			Noche = @Noche,
+			Sabado = @Sabado,
+			Domingo = @Domingo
+		where MateriaDocenteId = @MateriaDocenteId
+		end try
+		begin catch
+			if @@TRANCOUNT > 0
+				rollback
+		end catch
+end
+go
+
+create proc EliminarMateriaDocente
+(
+@MateriaDocenteID int
+)
+as
+begin
+	delete MateriaDocente where MateriaDocenteId = @MateriaDocenteID
+end
+go
 -------------faltan
 --------------------------------------------Procedimientos No creados------------------------------------------------
 

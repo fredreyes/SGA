@@ -49,6 +49,7 @@
     <Compile Include="NEvaluacion.cs" />
     <Compile Include="NFuncionario.cs" />
     <Compile Include="NGrado.cs" />
+    <Compile Include="NMateriaDocenteID.cs" />
     <Compile Include="NOcupaciones.cs" />
     <Compile Include="NTurnos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

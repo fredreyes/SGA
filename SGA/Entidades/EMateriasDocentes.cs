@@ -8,9 +8,18 @@ namespace Entidades
 {
     public class EMateriasDocentes
     {
-        public int CODIGO_MATERIA_DOCENTE { get; set; }
-        public int ID_FUNCIONARIO { get; set; } 
-        public int CODIGO_ASIGNATURA { get; set; }
-
+        public int MateriaDocenteId { get; set; }
+        public  EFuncionarios Funcionario { get; set; } 
+        public EAsignatura Asignatura { get; set; }
+        public bool mañana { get; set; }
+        public bool tarde { get; set; }
+        public bool noche { get; set; }
+        public bool sabado { get; set; }
+        public bool domingo { get; set; }
+        public EMateriasDocentes()
+        {
+            Funcionario = new EFuncionarios();
+            Asignatura = new EAsignatura();
+        }
     }
 }
