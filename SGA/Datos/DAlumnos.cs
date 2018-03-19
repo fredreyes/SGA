@@ -89,8 +89,6 @@ namespace Datos
                 comando.Parameters.AddWithValue("@TelefonoMadre", p.TELEFONO_MADRE);
                 comando.Parameters.AddWithValue("@EmailMadre", p.EMAIL_MADRE);
                 comando.Parameters.AddWithValue("@OcupacionMadre", p.OCUPACION_MADRE);
-                comando.Parameters.AddWithValue("@NombreTutor", p.NOMBRE_TUTOR);
-                comando.Parameters.AddWithValue("@TelefonoTutor", p.TELEFONO_TUTOR);
                 //Documentos Alumnos
                 comando.Parameters.AddWithValue("@PartidaNaciminto", d.PARTIDA_DE_NACIMINETO);
                 comando.Parameters.AddWithValue("@CertificadoNotas", d.CERTIFICADO_NOTAS);
@@ -98,6 +96,12 @@ namespace Datos
                 comando.Parameters.AddWithValue("@CartaTraslado", d.CARTA_TRASLADO);
                 comando.Parameters.AddWithValue("@CertificadoSalud", d.CERTIFICADO_DE_SALUD);
                 comando.Parameters.AddWithValue("@Foto", d.FOTO);
+                //Tutor Alumno
+                //Tutor Alumno
+                comando.Parameters.AddWithValue("@NombreTutor", a.NombreTutor);
+                comando.Parameters.AddWithValue("@CedulaTutor", a.CedulaTutor);
+                comando.Parameters.AddWithValue("@TelefonoTutor", a.TelefonoTutor);
+                comando.Parameters.AddWithValue("@ParentezcoAlumno", a.ParentezcoAlumno);
                 comando.Connection = conexion;
                 conexion.Open();
                 comando.ExecuteNonQuery();
@@ -135,8 +139,6 @@ namespace Datos
                 comando.Parameters.AddWithValue("@TelefonoMadre", p.TELEFONO_MADRE);
                 comando.Parameters.AddWithValue("@EmailMadre", p.EMAIL_MADRE);
                 comando.Parameters.AddWithValue("@OcupacionMadre", p.OCUPACION_MADRE);
-                comando.Parameters.AddWithValue("@NombreTutor", p.NOMBRE_TUTOR);
-                comando.Parameters.AddWithValue("@TelefonoTutor", p.TELEFONO_TUTOR);
                 //Documentos Alumnos
                 comando.Parameters.AddWithValue("@PartidaNaciminto", d.PARTIDA_DE_NACIMINETO);
                 comando.Parameters.AddWithValue("@CertificadoNotas", d.CERTIFICADO_NOTAS);
@@ -144,7 +146,11 @@ namespace Datos
                 comando.Parameters.AddWithValue("@CartaTraslado", d.CARTA_TRASLADO);
                 comando.Parameters.AddWithValue("@CertificadoSalud", d.CERTIFICADO_DE_SALUD);
                 comando.Parameters.AddWithValue("@Foto", d.FOTO);
-                comando.Parameters.AddWithValue("@AlumnoID", a.AlumnoId);
+                //Tutor Alumno
+                comando.Parameters.AddWithValue("@NombreTutor", a.NombreTutor);
+                comando.Parameters.AddWithValue("@CedulaTutor", a.CedulaTutor);
+                comando.Parameters.AddWithValue("@TelefonoTutor", a.TelefonoTutor);
+                comando.Parameters.AddWithValue("@ParentezcoAlumno", a.ParentezcoAlumno);
                 comando.Connection = conexion;
                 conexion.Open();
                 comando.ExecuteNonQuery();

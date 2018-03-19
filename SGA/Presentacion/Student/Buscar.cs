@@ -29,8 +29,7 @@ namespace Presentacion.Student
 
         private void btnNuevoFuncionario_Click(object sender, EventArgs e)
         {
-            AddNewStudent a = new AddNewStudent();
-            a.ShowDialog();
+            
         }
 
         private void txtbuscaralumno_TextChanged(object sender, EventArgs e)
@@ -181,8 +180,8 @@ namespace Presentacion.Student
                     estudiante.checkBox2.Checked = true;
                 else
                 {
-                    estudiante.txttutorName.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[26].Value.ToString();
-                    estudiante.txttutorTelefono.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[27].Value.ToString();
+                    estudiante.txtxTutorName.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[26].Value.ToString();
+                    estudiante.txttelefonoTutor.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[27].Value.ToString();
                 }
                 estudiante.Bandera = 1;
                 estudiante.chkactivo.Visible = true;
@@ -201,6 +200,12 @@ namespace Presentacion.Student
         {
             txtbuscaralumno.Text = "";
             dataGridView1.Rows.Clear();
+        }
+
+        private void btningresar_Click_1(object sender, EventArgs e)
+        {
+            AddNewStudent a = new AddNewStudent();
+            a.ShowDialog();
         }
     }
 }

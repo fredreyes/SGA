@@ -41,8 +41,7 @@ namespace Presentacion
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-            Notas.Evaluaciones evaluaciones = new Notas.Evaluaciones();
-            evaluaciones.ShowDialog();
+           
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -66,6 +65,24 @@ namespace Presentacion
         {
             Funcionarios.Funcionarios funcionario = new Funcionarios.Funcionarios();
             funcionario.ShowDialog();
+        }
+
+        private void evaluacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Notas.Evaluaciones evaluaciones = new Notas.Evaluaciones();
+            evaluaciones.ShowDialog();
+        }
+
+        private void calificacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Notas.Calificaciones calificaciones = new Notas.Calificaciones();
+            calificaciones.ShowDialog();
+        }
+
+        private void planDeClasesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Notas.PlandeClase planclase = new Notas.PlandeClase();
+            planclase.ShowDialog();
         }
     }
 }

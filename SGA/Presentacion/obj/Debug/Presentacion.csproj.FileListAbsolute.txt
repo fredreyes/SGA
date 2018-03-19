@@ -883,3 +883,6 @@ C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\Presentacion.pd
 C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\Presentacion.frmAdministracion.resources
 C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\Presentacion.Student.Buscar.resources
 C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\Presentacion.Funcionarios.docenteAsignatura.resources
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\Presentacion.Notas.Calificaciones.resources
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\Presentacion.Notas.PlandeClase.resources
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\Presentacion.Notas.CargaDocente.resources

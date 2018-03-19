@@ -114,11 +114,29 @@
     <Compile Include="Funcionarios\Ocupaciones.Designer.cs">
       <DependentUpon>Ocupaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Notas\Calificaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notas\Calificaciones.Designer.cs">
+      <DependentUpon>Calificaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notas\CargaDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notas\CargaDocente.Designer.cs">
+      <DependentUpon>CargaDocente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Notas\Evaluaciones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Notas\Evaluaciones.Designer.cs">
       <DependentUpon>Evaluaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notas\PlandeClase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notas\PlandeClase.Designer.cs">
+      <DependentUpon>PlandeClase.cs</DependentUpon>
     </Compile>
     <Compile Include="Otros\AgregarAula.cs">
       <SubType>Form</SubType>
@@ -197,8 +215,17 @@
     <EmbeddedResource Include="Funcionarios\Ocupaciones.resx">
       <DependentUpon>Ocupaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Notas\Calificaciones.resx">
+      <DependentUpon>Calificaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notas\CargaDocente.resx">
+      <DependentUpon>CargaDocente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Notas\Evaluaciones.resx">
       <DependentUpon>Evaluaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notas\PlandeClase.resx">
+      <DependentUpon>PlandeClase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Otros\AgregarAula.resx">
       <DependentUpon>AgregarAula.cs</DependentUpon>
@@ -254,6 +281,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons\add-label-button.png" />
+    <Content Include="icons\add.png" />
     <Content Include="icons\businessmen.png" />
     <Content Include="icons\cycle.png" />
     <Content Include="icons\delete %281%29.png" />
@@ -271,6 +299,7 @@
     <Content Include="icons\save %281%29.png" />
     <Content Include="icons\save.png" />
     <Content Include="icons\school.png" />
+    <Content Include="icons\search.png" />
     <Content Include="icons\settings.png" />
     <Content Include="icons\student.png" />
     <Content Include="icons\university.png" />

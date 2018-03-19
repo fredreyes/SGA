@@ -536,8 +536,11 @@ create proc IngresarEstudiante
 @TelefonoMadre nvarchar(15),
 @EmailMadre NVARCHAR(100),
 @OcupacionMadre NVARCHAR(150),
+--AlumnosTutor
 @NombreTutor NVARCHAR(150),
+@CedulaTutor NVARCHAR(16),
 @TelefonoTutor NVARCHAR(15),
+@ParentezcoAlumno NVARCHAR(50),
 --Documentos Alumnos
 @PartidaNaciminto CHAR(2),
 @CertificadoNotas CHAR(2),
@@ -589,6 +592,19 @@ select @ID
 					@NombreTutor ,
 					@TelefonoTutor
 					)
+				--TUTOR
+				declare @TutorAlumnoID INT
+				select @TutorAlumnoID = ISNULL(max(TutorAlumnoID),0) +1 from AlumnosTutor
+				insert into AlumnosTutor values 
+				(
+				@TutorAlumnoID,
+				@ID,
+				@NombreTutor,
+				@CedulaTutor,
+				@TelefonoTutor,
+				@ParentezcoAlumno
+				)
+				--documentos
 				declare @DocumentoId INT
 				select @DocumentoId = ISNULL(max(DocumentoId),0) +1 from DocumentosAlumnos
 				insert into DocumentosAlumnos values
@@ -772,6 +788,115 @@ begin
 	delete MateriaDocente where MateriaDocenteId = @MateriaDocenteID
 end
 go
+
+
+--Calificaciones
+create proc IngresarCalificaciones
+(
+@AlumnoId int,
+@MateriaDocenteId INT,
+@Acumulado INT,
+@Examen INT,
+@Rescate int,
+@Observacion NVARCHAR(300)
+)
+as
+begin
+	begin try
+	declare @CalificacionesId INT
+	declare @EvaluacionId INT
+	set @EvaluacionId = (select EvaluacionId from Evaluaciones where Activo = 1)
+	select @CalificacionesId = ISNULL(max(CalificacionesId),0)+1 from Calificaciones 	
+		insert into Calificaciones
+		values
+		(
+		@CalificacionesId,
+		@AlumnoId,
+		@MateriaDocenteId,
+		@Acumulado,
+		@Examen,
+		@Rescate,
+		@EvaluacionId,
+		@Observacion
+		)
+	end try
+	begin catch
+		if @@TRANCOUNT > 0
+			rollback
+	end catch
+end
+go
+
+create Proc IngresarPlanClase
+(
+@AsignaturaId int,
+@GradoId int
+)
+as
+begin
+declare @PlanClase int
+select @PlanClase = ISNULL(max(PlanClaseID),0) +1 from PlanClase 
+declare @CicloEscolarID int
+select @CicloEscolarID = (select CicloEscolarId from CicloEscolar where Activo = 1)
+
+insert into PlanClase  values 
+(
+@PlanClase,
+@AsignaturaId,
+@GradoId,
+@CicloEscolarID
+)
+end
+go
+
+create proc BuscarAsignaturaPorGrados
+(
+@GradoId int
+)
+as
+begin
+SELECT PlanClaseID,PC.AsignaturaId,A.Asignatura,PC.GradoId,CicloEscolarID FROM PlanClase PC
+left join Grados G on PC.GradoId = G.GradoId
+left join Asignaturas A on PC.AsignaturaId = A.AsignaturaId
+where pc.GradoId = @GradoId
+end
+go
+
+
+create proc BuscarDocenePorAsignatura
+(
+@Asignatura int
+)
+as
+begin
+select Nombres,Apellidos,Asignatura,md.FuncionarioId from MateriaDocente md
+inner join Funcionarios f on md.FuncionarioId = f.FuncionarioId
+left join Asignaturas a on md.AsignaturaId = a.AsignaturaId
+WHERE md.AsignaturaId = @Asignatura
+end
+go
+
+--CargaAcademicaDocente
+create Proc InsertarCargaAcademicaDocente
+(
+@FuncionarioId int,
+@AsingaturaId int,
+@GradoId int,
+@CicloEscolarID int
+)
+as 
+begin
+insert into CargaAcademicaDocente
+values
+(
+@FuncionarioId,
+@AsingaturaId,
+@GradoId,
+@CicloEscolarID
+)
+end
+
+
 -------------faltan
 --------------------------------------------Procedimientos No creados------------------------------------------------
 

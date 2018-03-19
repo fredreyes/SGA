@@ -71,7 +71,6 @@ Activo bit
 CONSTRAINT PK_CICLO PRIMARY KEY(CicloEscolarId) 
 )
 GO
-
 --TABLA AULAS
 create table Aulas
 (
@@ -118,6 +117,16 @@ constraint PK_Funcionario primary key(FuncionarioId),
 constraint FK_Funcionario_Ocupacion foreign key(OcupacionId) references ProfesionOcupacion(OcupacionId)
 )
 go
+
+create table HistorialCargoFuncionaario
+(
+HistarialCargoID int identity(1,1),
+FuncionarioID int,
+Cargo nvarchar(40),
+FechadeCambio date,
+)
+go
+
 --TABLA ALUMNO
 create table Alumnos
 (
@@ -148,13 +157,20 @@ CedulaMadre NVARCHAR(18),
 TelefonoMadre nvarchar(15),
 EmailMadre NVARCHAR(100),
 OcupacionMadre NVARCHAR(150),
-NombreTutor NVARCHAR(150) Not null,
-TelefonoTutor NVARCHAR(15)
 CONSTRAINT PK_PADRE PRIMARY KEY(PadresTutorId),
 CONSTRAINT FK_PADRES_ALUMNOS FOREIGN KEY(AlumnoId) REFERENCES Alumnos(AlumnoId)
 )
 GO
 
+create table AlumnosTutor
+(
+TutorAlumnoID int,
+AlumnoId int,
+NombreTutor NVARCHAR(150),
+CedulaTutor NVARCHAR(16),
+TelefonoTutor NVARCHAR(15),
+ParentezcoAlumno NVARCHAR(50),
+)
 
 --TABLA DOCUMENTO ALUMNO
 CREATE TABLE DocumentosAlumnos
@@ -172,8 +188,6 @@ CONSTRAINT FK_DOCUMENTOS_ALUMNOS FOREIGN KEY(AlumnoId) REFERENCES ALUMNOS(Alumno
 )
 GO
 
-
-
 --MATERIA_DOCENTES
 CREATE TABLE MateriaDocente
 (
@@ -181,10 +195,7 @@ MateriaDocenteId INT NOT NULL,
 FuncionarioId INT NOT NULL, 
 AsignaturaId INT,
 Mañana bit,
-Tarde bit,
-Noche bit,
-Sabado bit,
-Domingo bit
+Tarde bit
 CONSTRAINT PK_MATERIADOCENTE PRIMARY KEY(MateriaDocenteId)
 CONSTRAINT FK_MATE_FUNCIONARIO FOREIGN KEY(FuncionarioId) REFERENCES FUNCIONARIOS(FuncionarioId),
 CONSTRAINT FK_MATE_ASIGNATURA FOREIGN KEY(AsignaturaId) REFERENCES ASIGNATURAS(AsignaturaId)
@@ -195,13 +206,13 @@ GO
 CREATE TABLE Calificaciones
 (
 CalificacionesId INT NOT NULL,
-AlumnoId NVARCHAR(10) NOT NULL,
+AlumnoId int NOT NULL,
 MateriaDocenteId INT NOT NULL,
 Acumulado INT NOT NULL,
 Examen INT NOT NULL,
 Rescate int,
 EvaluacionId INT NOT NULL,
-Onservacion NVARCHAR(300)
+Observacion NVARCHAR(300)
 CONSTRAINT PK_NOTAS PRIMARY KEY(CalificacionesId),
 CONSTRAINT FK_NOTAS_ALUMNOS FOREIGN KEY(AlumnoId) REFERENCES ALUMNOS(AlumnoId),
 CONSTRAINT FK_NOTAS_DOCENTEMATERIA FOREIGN KEY(MateriaDocenteId) REFERENCES MateriaDocente(MateriaDocenteId),
@@ -209,6 +220,24 @@ CONSTRAINT FK_NOTAS_EVALUCIONES FOREIGN KEY(EvaluacionId) REFERENCES EVALUACIONE
 )
 GO
 
+-- Plan Clase Grados
+create table  PlanClase
+(
+PlanClaseID int,
+AsignaturaId int,
+GradoId int,
+CicloEscolarID int
+)
+
+--Carga Academica Docente
+create table CargaAcademicaDocente
+(
+CargaId int primary key identity(1,1),
+FuncionarioId int,
+AsingaturaId int,
+GradoId int,
+CicloEscolarID int
+)
 
 
 ---------------------------------------------------

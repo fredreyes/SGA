@@ -8,13 +8,18 @@ namespace Entidades
 {
     public class ENotas
     {
-        public int ID_NOTAS { get; set; }
-        public string CODIGO_ALUMNO { get; set; }
-        public int CODIGO_MATERIA_DOCENTE { get; set; }
-        public int ACUMULADO { get; set; }
-        public int EXAMEN { get; set; }
-        public int ID_EVALUACION { get; set; }
-        public string OBSERVACION { get; set; }
-
+        public int CalificacionesId { get; set; }
+        public EAlumnos Alumno { get; set; }
+        public  EMateriasDocentes MateriaDocente { get; set; }
+        public int Acumulado { get; set; }
+        public int Examen { get; set; }
+        public int Rescate { get; set; }
+        public  EEvaluaciones Evaluacion { get; set; }
+        public string Observacion { get; set; }
+        public ENotas()
+        {
+            Alumno = new EAlumnos();
+            Evaluacion = new EEvaluaciones();
+        }
     }
 }

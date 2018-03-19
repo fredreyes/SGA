@@ -43,6 +43,7 @@
     <Compile Include="NAlumno.cs" />
     <Compile Include="NAsignatura.cs" />
     <Compile Include="NAulas.cs" />
+    <Compile Include="NCargaDocente.cs" />
     <Compile Include="Nciclo.cs" />
     <Compile Include="NColegio.cs" />
     <Compile Include="NDepartamento.cs" />
@@ -50,7 +51,9 @@
     <Compile Include="NFuncionario.cs" />
     <Compile Include="NGrado.cs" />
     <Compile Include="NMateriaDocenteID.cs" />
+    <Compile Include="NNotas.cs" />
     <Compile Include="NOcupaciones.cs" />
+    <Compile Include="NPlanClase.cs" />
     <Compile Include="NTurnos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Buscar));
             this.txtbuscaralumno = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.btnNuevoFuncionario = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btncancelar = new System.Windows.Forms.Button();
-            this.btningresar = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +59,9 @@
             this.Column26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btncancelar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btningresar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +69,7 @@
             // 
             this.txtbuscaralumno.Depth = 0;
             this.txtbuscaralumno.Hint = "Buscar Alumno";
-            this.txtbuscaralumno.Location = new System.Drawing.Point(196, 105);
+            this.txtbuscaralumno.Location = new System.Drawing.Point(196, 124);
             this.txtbuscaralumno.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtbuscaralumno.Name = "txtbuscaralumno";
             this.txtbuscaralumno.PasswordChar = '\0';
@@ -80,25 +81,11 @@
             this.txtbuscaralumno.UseSystemPasswordChar = false;
             this.txtbuscaralumno.TextChanged += new System.EventHandler(this.txtbuscaralumno_TextChanged);
             // 
-            // btnNuevoFuncionario
-            // 
-            this.btnNuevoFuncionario.Depth = 0;
-            this.btnNuevoFuncionario.Location = new System.Drawing.Point(12, 70);
-            this.btnNuevoFuncionario.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnNuevoFuncionario.Name = "btnNuevoFuncionario";
-            this.btnNuevoFuncionario.Primary = true;
-            this.btnNuevoFuncionario.Size = new System.Drawing.Size(156, 37);
-            this.btnNuevoFuncionario.TabIndex = 4;
-            this.btnNuevoFuncionario.Text = "Nuevo Alumno";
-            this.btnNuevoFuncionario.UseVisualStyleBackColor = true;
-            this.btnNuevoFuncionario.Click += new System.EventHandler(this.btnNuevoFuncionario_Click);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -136,44 +123,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(452, 150);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
-            // 
-            // btncancelar
-            // 
-            this.btncancelar.BackColor = System.Drawing.Color.Firebrick;
-            this.btncancelar.FlatAppearance.BorderSize = 0;
-            this.btncancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkRed;
-            this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancelar.ForeColor = System.Drawing.Color.White;
-            this.btncancelar.Image = global::Presentacion.Properties.Resources.delete;
-            this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncancelar.Location = new System.Drawing.Point(359, 164);
-            this.btncancelar.Name = "btncancelar";
-            this.btncancelar.Size = new System.Drawing.Size(103, 38);
-            this.btncancelar.TabIndex = 45;
-            this.btncancelar.Text = "Cancelar";
-            this.btncancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btncancelar.UseVisualStyleBackColor = false;
-            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
-            // 
-            // btningresar
-            // 
-            this.btningresar.BackColor = System.Drawing.Color.Blue;
-            this.btningresar.FlatAppearance.BorderSize = 0;
-            this.btningresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btningresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btningresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btningresar.ForeColor = System.Drawing.Color.White;
-            this.btningresar.Image = global::Presentacion.Properties.Resources.save;
-            this.btningresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btningresar.Location = new System.Drawing.Point(196, 164);
-            this.btningresar.Name = "btningresar";
-            this.btningresar.Size = new System.Drawing.Size(103, 38);
-            this.btningresar.TabIndex = 44;
-            this.btningresar.Text = "Guardar";
-            this.btningresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btningresar.UseVisualStyleBackColor = false;
-            this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
             // 
             // Column1
             // 
@@ -371,15 +320,72 @@
             this.Column28.ReadOnly = true;
             this.Column28.Width = 99;
             // 
+            // btncancelar
+            // 
+            this.btncancelar.BackColor = System.Drawing.Color.Firebrick;
+            this.btncancelar.FlatAppearance.BorderSize = 0;
+            this.btncancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkRed;
+            this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancelar.ForeColor = System.Drawing.Color.White;
+            this.btncancelar.Image = ((System.Drawing.Image)(resources.GetObject("btncancelar.Image")));
+            this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncancelar.Location = new System.Drawing.Point(359, 164);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Size = new System.Drawing.Size(103, 38);
+            this.btncancelar.TabIndex = 45;
+            this.btncancelar.Text = "Cancelar";
+            this.btncancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btncancelar.UseVisualStyleBackColor = false;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.Gold;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.Black;
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(196, 164);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(103, 38);
+            this.btnBuscar.TabIndex = 44;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btningresar_Click);
+            // 
+            // btningresar
+            // 
+            this.btningresar.BackColor = System.Drawing.Color.Blue;
+            this.btningresar.FlatAppearance.BorderSize = 0;
+            this.btningresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btningresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btningresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btningresar.ForeColor = System.Drawing.Color.White;
+            this.btningresar.Image = ((System.Drawing.Image)(resources.GetObject("btningresar.Image")));
+            this.btningresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btningresar.Location = new System.Drawing.Point(12, 69);
+            this.btningresar.Name = "btningresar";
+            this.btningresar.Size = new System.Drawing.Size(156, 39);
+            this.btningresar.TabIndex = 46;
+            this.btningresar.Text = "Nuevo Alumno";
+            this.btningresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btningresar.UseVisualStyleBackColor = false;
+            this.btningresar.Click += new System.EventHandler(this.btningresar_Click_1);
+            // 
             // Buscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 400);
-            this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btningresar);
+            this.Controls.Add(this.btncancelar);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnNuevoFuncionario);
             this.Controls.Add(this.txtbuscaralumno);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -394,10 +400,9 @@
 
         #endregion
         private MaterialSkin.Controls.MaterialSingleLineTextField txtbuscaralumno;
-        private MaterialSkin.Controls.MaterialRaisedButton btnNuevoFuncionario;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btncancelar;
-        private System.Windows.Forms.Button btningresar;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -426,5 +431,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column26;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column27;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column28;
+        private System.Windows.Forms.Button btningresar;
     }
 }

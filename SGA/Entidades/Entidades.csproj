@@ -57,7 +57,8 @@
     <Compile Include="EOcupaciones.cs" />
     <Compile Include="EPadres-Tutor.cs" />
     <Compile Include="EPago.cs" />
-    <Compile Include="EServicios.cs" />
+    <Compile Include="EplanClase.cs" />
+    <Compile Include="ECargaDocente.cs" />
     <Compile Include="ETurnos.cs" />
     <Compile Include="EUniforme.cs" />
     <Compile Include="EUsuarios.cs" />

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.Funcionarios = new MaterialSkin.Controls.MaterialContextMenuStrip();
@@ -39,16 +40,22 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Calificaciones = new MaterialSkin.Controls.MaterialContextMenuStrip();
+            this.calificacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.evaluacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.ToolTipMenu = new System.Windows.Forms.ToolTip(this.components);
+            this.planDeClasesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.Funcionarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Calificaciones.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -82,6 +89,7 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 16;
             this.pictureBox5.TabStop = false;
+            this.ToolTipMenu.SetToolTip(this.pictureBox5, "Funcionarios");
             // 
             // Funcionarios
             // 
@@ -92,7 +100,7 @@
             this.usuariosToolStripMenuItem});
             this.Funcionarios.MouseState = MaterialSkin.MouseState.HOVER;
             this.Funcionarios.Name = "materialContextMenuStrip1";
-            this.Funcionarios.Size = new System.Drawing.Size(153, 70);
+            this.Funcionarios.Size = new System.Drawing.Size(143, 48);
             // 
             // funcionariosToolStripMenuItem
             // 
@@ -100,7 +108,7 @@
             this.docentesToolStripMenuItem,
             this.gestiónFuncionariosToolStripMenuItem});
             this.funcionariosToolStripMenuItem.Name = "funcionariosToolStripMenuItem";
-            this.funcionariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.funcionariosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.funcionariosToolStripMenuItem.Text = "Funcionarios";
             this.funcionariosToolStripMenuItem.Click += new System.EventHandler(this.funcionariosToolStripMenuItem_Click);
             // 
@@ -121,7 +129,7 @@
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
             // materialLabel3
@@ -146,6 +154,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 14;
             this.pictureBox4.TabStop = false;
+            this.ToolTipMenu.SetToolTip(this.pictureBox4, "Alumnos");
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // materialLabel1
@@ -163,6 +172,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.ContextMenuStrip = this.Calificaciones;
             this.pictureBox1.Image = global::Presentacion.Properties.Resources.evaluation1;
             this.pictureBox1.Location = new System.Drawing.Point(45, 25);
             this.pictureBox1.Name = "pictureBox1";
@@ -170,7 +180,34 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            this.ToolTipMenu.SetToolTip(this.pictureBox1, "Calificaciones");
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            // 
+            // Calificaciones
+            // 
+            this.Calificaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Calificaciones.Depth = 0;
+            this.Calificaciones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.calificacionesToolStripMenuItem,
+            this.evaluacionesToolStripMenuItem,
+            this.planDeClasesToolStripMenuItem});
+            this.Calificaciones.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Calificaciones.Name = "Calificaciones";
+            this.Calificaciones.Size = new System.Drawing.Size(153, 92);
+            // 
+            // calificacionesToolStripMenuItem
+            // 
+            this.calificacionesToolStripMenuItem.Name = "calificacionesToolStripMenuItem";
+            this.calificacionesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.calificacionesToolStripMenuItem.Text = "Calificaciones";
+            this.calificacionesToolStripMenuItem.Click += new System.EventHandler(this.calificacionesToolStripMenuItem_Click);
+            // 
+            // evaluacionesToolStripMenuItem
+            // 
+            this.evaluacionesToolStripMenuItem.Name = "evaluacionesToolStripMenuItem";
+            this.evaluacionesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.evaluacionesToolStripMenuItem.Text = "Evaluaciones";
+            this.evaluacionesToolStripMenuItem.Click += new System.EventHandler(this.evaluacionesToolStripMenuItem_Click);
             // 
             // materialLabel5
             // 
@@ -217,6 +254,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
+            this.ToolTipMenu.SetToolTip(this.pictureBox3, "Mantenimiento");
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox2
@@ -229,6 +267,17 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
+            // 
+            // ToolTipMenu
+            // 
+            this.ToolTipMenu.IsBalloon = true;
+            // 
+            // planDeClasesToolStripMenuItem
+            // 
+            this.planDeClasesToolStripMenuItem.Name = "planDeClasesToolStripMenuItem";
+            this.planDeClasesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.planDeClasesToolStripMenuItem.Text = "Plan de Clases";
+            this.planDeClasesToolStripMenuItem.Click += new System.EventHandler(this.planDeClasesToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -249,6 +298,7 @@
             this.Funcionarios.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Calificaciones.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -275,5 +325,10 @@
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem docentesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestiónFuncionariosToolStripMenuItem;
+        private MaterialSkin.Controls.MaterialContextMenuStrip Calificaciones;
+        private System.Windows.Forms.ToolStripMenuItem calificacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem evaluacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolTip ToolTipMenu;
+        private System.Windows.Forms.ToolStripMenuItem planDeClasesToolStripMenuItem;
     }
 }

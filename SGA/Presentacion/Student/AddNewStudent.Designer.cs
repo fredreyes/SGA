@@ -32,6 +32,9 @@
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkcancelado = new MaterialSkin.Controls.MaterialCheckBox();
+            this.chkactivo = new MaterialSkin.Controls.MaterialCheckBox();
+            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.txtdomicilio = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtCodigoMined = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
@@ -40,48 +43,49 @@
             this.txtApellidoAlumno = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtnombreAlumno = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txttutorTelefono = new System.Windows.Forms.MaskedTextBox();
-            this.txttutorName = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txttelMadre = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.cbmOcupacionMadre = new System.Windows.Forms.ComboBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.txtcedulaMadre = new System.Windows.Forms.MaskedTextBox();
-            this.txttelMadre = new System.Windows.Forms.MaskedTextBox();
             this.txtemailMadre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtnombreMadre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ocupacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtelPadre = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.cbmOcupacionPadre = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txtcedulaP = new System.Windows.Forms.MaskedTextBox();
-            this.txtelPadre = new System.Windows.Forms.MaskedTextBox();
             this.txtemailPadre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtnombrePadre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.btncancelar = new System.Windows.Forms.Button();
+            this.btningresar = new System.Windows.Forms.Button();
             this.chkCertificadoSalud = new MaterialSkin.Controls.MaterialCheckBox();
             this.chkcartaTraslado = new MaterialSkin.Controls.MaterialCheckBox();
             this.chktarjetaVacunas = new MaterialSkin.Controls.MaterialCheckBox();
             this.chkcertificadoNotas = new MaterialSkin.Controls.MaterialCheckBox();
             this.chkpartidaNacimiento = new MaterialSkin.Controls.MaterialCheckBox();
-            this.btncancelar = new System.Windows.Forms.Button();
-            this.btningresar = new System.Windows.Forms.Button();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.chkactivo = new MaterialSkin.Controls.MaterialCheckBox();
-            this.chkcancelado = new MaterialSkin.Controls.MaterialCheckBox();
-            this.cbmOcupacionPadre = new System.Windows.Forms.ComboBox();
-            this.cbmOcupacionMadre = new System.Windows.Forms.ComboBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ocupacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabNavigationPage4 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.txttelefonoTutor = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtxTutorName = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtcedulaTutor = new System.Windows.Forms.MaskedTextBox();
+            this.cbmParentezco = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabNavigationPage2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.tabNavigationPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
+            this.tabNavigationPage4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPane1
@@ -89,12 +93,14 @@
             this.tabPane1.Controls.Add(this.tabNavigationPage1);
             this.tabPane1.Controls.Add(this.tabNavigationPage2);
             this.tabPane1.Controls.Add(this.tabNavigationPage3);
+            this.tabPane1.Controls.Add(this.tabNavigationPage4);
             this.tabPane1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPane1.Location = new System.Drawing.Point(-2, 65);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1,
             this.tabNavigationPage2,
+            this.tabNavigationPage4,
             this.tabNavigationPage3});
             this.tabPane1.RegularSize = new System.Drawing.Size(769, 420);
             this.tabPane1.SelectedPage = this.tabNavigationPage1;
@@ -132,6 +138,45 @@
             this.groupBox1.Text = "Datos Generales";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // chkcancelado
+            // 
+            this.chkcancelado.AutoSize = true;
+            this.chkcancelado.Depth = 0;
+            this.chkcancelado.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chkcancelado.Location = new System.Drawing.Point(384, 316);
+            this.chkcancelado.Margin = new System.Windows.Forms.Padding(0);
+            this.chkcancelado.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkcancelado.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkcancelado.Name = "chkcancelado";
+            this.chkcancelado.Ripple = true;
+            this.chkcancelado.Size = new System.Drawing.Size(79, 30);
+            this.chkcancelado.TabIndex = 12;
+            this.chkcancelado.Text = "Inactivo";
+            this.chkcancelado.UseVisualStyleBackColor = true;
+            // 
+            // chkactivo
+            // 
+            this.chkactivo.AutoSize = true;
+            this.chkactivo.Depth = 0;
+            this.chkactivo.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chkactivo.Location = new System.Drawing.Point(231, 316);
+            this.chkactivo.Margin = new System.Windows.Forms.Padding(0);
+            this.chkactivo.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkactivo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkactivo.Name = "chkactivo";
+            this.chkactivo.Ripple = true;
+            this.chkactivo.Size = new System.Drawing.Size(69, 30);
+            this.chkactivo.TabIndex = 11;
+            this.chkactivo.Text = "Activo";
+            this.chkactivo.UseVisualStyleBackColor = true;
+            // 
+            // dtpFechaNacimiento
+            // 
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(186, 252);
+            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(277, 24);
+            this.dtpFechaNacimiento.TabIndex = 10;
+            // 
             // txtdomicilio
             // 
             this.txtdomicilio.Depth = 0;
@@ -166,12 +211,12 @@
             // 
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(261, 215);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(128, 18);
+            this.materialLabel1.Size = new System.Drawing.Size(131, 19);
             this.materialLabel1.TabIndex = 7;
             this.materialLabel1.Text = "Fecha Nacimiento";
             // 
@@ -179,7 +224,7 @@
             // 
             this.rbtnFemenino.AutoSize = true;
             this.rbtnFemenino.Depth = 0;
-            this.rbtnFemenino.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rbtnFemenino.Font = new System.Drawing.Font("Roboto", 10F);
             this.rbtnFemenino.Location = new System.Drawing.Point(356, 155);
             this.rbtnFemenino.Margin = new System.Windows.Forms.Padding(0);
             this.rbtnFemenino.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -196,7 +241,7 @@
             // 
             this.rbtnMasculino.AutoSize = true;
             this.rbtnMasculino.Depth = 0;
-            this.rbtnMasculino.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rbtnMasculino.Font = new System.Drawing.Font("Roboto", 10F);
             this.rbtnMasculino.Location = new System.Drawing.Point(224, 155);
             this.rbtnMasculino.Margin = new System.Windows.Forms.Padding(0);
             this.rbtnMasculino.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -244,54 +289,18 @@
             this.tabNavigationPage2.Appearance.BackColor = System.Drawing.Color.White;
             this.tabNavigationPage2.Appearance.Options.UseBackColor = true;
             this.tabNavigationPage2.Caption = "Datos Padres";
-            this.tabNavigationPage2.Controls.Add(this.groupBox4);
             this.tabNavigationPage2.Controls.Add(this.groupBox3);
             this.tabNavigationPage2.Controls.Add(this.groupBox2);
             this.tabNavigationPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabNavigationPage2.Name = "tabNavigationPage2";
             this.tabNavigationPage2.Size = new System.Drawing.Size(751, 375);
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.txttutorTelefono);
-            this.groupBox4.Controls.Add(this.txttutorName);
-            this.groupBox4.Location = new System.Drawing.Point(15, 294);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(706, 66);
-            this.groupBox4.TabIndex = 11;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Tutor";
-            // 
-            // txttutorTelefono
-            // 
-            this.txttutorTelefono.BeepOnError = true;
-            this.txttutorTelefono.Location = new System.Drawing.Point(393, 30);
-            this.txttutorTelefono.Mask = "0000-0000";
-            this.txttutorTelefono.Name = "txttutorTelefono";
-            this.txttutorTelefono.Size = new System.Drawing.Size(279, 24);
-            this.txttutorTelefono.TabIndex = 14;
-            // 
-            // txttutorName
-            // 
-            this.txttutorName.Depth = 0;
-            this.txttutorName.Hint = "Nombres";
-            this.txttutorName.Location = new System.Drawing.Point(68, 31);
-            this.txttutorName.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txttutorName.Name = "txttutorName";
-            this.txttutorName.PasswordChar = '\0';
-            this.txttutorName.SelectedText = "";
-            this.txttutorName.SelectionLength = 0;
-            this.txttutorName.SelectionStart = 0;
-            this.txttutorName.Size = new System.Drawing.Size(279, 23);
-            this.txttutorName.TabIndex = 14;
-            this.txttutorName.UseSystemPasswordChar = false;
-            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txttelMadre);
             this.groupBox3.Controls.Add(this.cbmOcupacionMadre);
             this.groupBox3.Controls.Add(this.checkBox2);
             this.groupBox3.Controls.Add(this.txtcedulaMadre);
-            this.groupBox3.Controls.Add(this.txttelMadre);
             this.groupBox3.Controls.Add(this.txtemailMadre);
             this.groupBox3.Controls.Add(this.txtnombreMadre);
             this.groupBox3.Location = new System.Drawing.Point(418, 14);
@@ -300,6 +309,31 @@
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos Madre";
+            // 
+            // txttelMadre
+            // 
+            this.txttelMadre.Depth = 0;
+            this.txttelMadre.Hint = "Teléfono";
+            this.txttelMadre.Location = new System.Drawing.Point(7, 142);
+            this.txttelMadre.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txttelMadre.Name = "txttelMadre";
+            this.txttelMadre.PasswordChar = '\0';
+            this.txttelMadre.SelectedText = "";
+            this.txttelMadre.SelectionLength = 0;
+            this.txttelMadre.SelectionStart = 0;
+            this.txttelMadre.Size = new System.Drawing.Size(278, 23);
+            this.txttelMadre.TabIndex = 21;
+            this.txttelMadre.UseSystemPasswordChar = false;
+            this.txttelMadre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttelMadre_KeyPress);
+            // 
+            // cbmOcupacionMadre
+            // 
+            this.cbmOcupacionMadre.FormattingEnabled = true;
+            this.cbmOcupacionMadre.Location = new System.Drawing.Point(6, 95);
+            this.cbmOcupacionMadre.Name = "cbmOcupacionMadre";
+            this.cbmOcupacionMadre.Size = new System.Drawing.Size(279, 26);
+            this.cbmOcupacionMadre.TabIndex = 20;
+            this.cbmOcupacionMadre.Text = "Seleccione una Ocupación";
             // 
             // checkBox2
             // 
@@ -319,15 +353,6 @@
             this.txtcedulaMadre.Name = "txtcedulaMadre";
             this.txtcedulaMadre.Size = new System.Drawing.Size(279, 24);
             this.txtcedulaMadre.TabIndex = 14;
-            // 
-            // txttelMadre
-            // 
-            this.txttelMadre.BeepOnError = true;
-            this.txttelMadre.Location = new System.Drawing.Point(6, 143);
-            this.txttelMadre.Mask = "0000-0000";
-            this.txttelMadre.Name = "txttelMadre";
-            this.txttelMadre.Size = new System.Drawing.Size(279, 24);
-            this.txttelMadre.TabIndex = 13;
             // 
             // txtemailMadre
             // 
@@ -361,10 +386,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtelPadre);
             this.groupBox2.Controls.Add(this.cbmOcupacionPadre);
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.txtcedulaP);
-            this.groupBox2.Controls.Add(this.txtelPadre);
             this.groupBox2.Controls.Add(this.txtemailPadre);
             this.groupBox2.Controls.Add(this.txtnombrePadre);
             this.groupBox2.Location = new System.Drawing.Point(15, 13);
@@ -374,19 +399,30 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Padre";
             // 
-            // contextMenuStrip1
+            // txtelPadre
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ocupacionesToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(144, 26);
+            this.txtelPadre.Depth = 0;
+            this.txtelPadre.Hint = "Teléfono";
+            this.txtelPadre.Location = new System.Drawing.Point(21, 144);
+            this.txtelPadre.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtelPadre.Name = "txtelPadre";
+            this.txtelPadre.PasswordChar = '\0';
+            this.txtelPadre.SelectedText = "";
+            this.txtelPadre.SelectionLength = 0;
+            this.txtelPadre.SelectionStart = 0;
+            this.txtelPadre.Size = new System.Drawing.Size(279, 23);
+            this.txtelPadre.TabIndex = 20;
+            this.txtelPadre.UseSystemPasswordChar = false;
+            this.txtelPadre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtelPadre_KeyPress);
             // 
-            // ocupacionesToolStripMenuItem
+            // cbmOcupacionPadre
             // 
-            this.ocupacionesToolStripMenuItem.Name = "ocupacionesToolStripMenuItem";
-            this.ocupacionesToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.ocupacionesToolStripMenuItem.Text = "Ocupaciones";
-            this.ocupacionesToolStripMenuItem.Click += new System.EventHandler(this.ocupacionesToolStripMenuItem_Click);
+            this.cbmOcupacionPadre.FormattingEnabled = true;
+            this.cbmOcupacionPadre.Location = new System.Drawing.Point(21, 96);
+            this.cbmOcupacionPadre.Name = "cbmOcupacionPadre";
+            this.cbmOcupacionPadre.Size = new System.Drawing.Size(279, 26);
+            this.cbmOcupacionPadre.TabIndex = 19;
+            this.cbmOcupacionPadre.Text = "Seleccione una Ocupación";
             // 
             // checkBox1
             // 
@@ -406,15 +442,6 @@
             this.txtcedulaP.Name = "txtcedulaP";
             this.txtcedulaP.Size = new System.Drawing.Size(279, 24);
             this.txtcedulaP.TabIndex = 13;
-            // 
-            // txtelPadre
-            // 
-            this.txtelPadre.BeepOnError = true;
-            this.txtelPadre.Location = new System.Drawing.Point(21, 144);
-            this.txtelPadre.Mask = "0000-0000";
-            this.txtelPadre.Name = "txtelPadre";
-            this.txtelPadre.Size = new System.Drawing.Size(279, 24);
-            this.txtelPadre.TabIndex = 12;
             // 
             // txtemailPadre
             // 
@@ -463,86 +490,6 @@
             this.tabNavigationPage3.Name = "tabNavigationPage3";
             this.tabNavigationPage3.Size = new System.Drawing.Size(751, 375);
             // 
-            // chkCertificadoSalud
-            // 
-            this.chkCertificadoSalud.AutoSize = true;
-            this.chkCertificadoSalud.Depth = 0;
-            this.chkCertificadoSalud.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.chkCertificadoSalud.Location = new System.Drawing.Point(41, 251);
-            this.chkCertificadoSalud.Margin = new System.Windows.Forms.Padding(0);
-            this.chkCertificadoSalud.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkCertificadoSalud.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkCertificadoSalud.Name = "chkCertificadoSalud";
-            this.chkCertificadoSalud.Ripple = true;
-            this.chkCertificadoSalud.Size = new System.Drawing.Size(154, 30);
-            this.chkCertificadoSalud.TabIndex = 12;
-            this.chkCertificadoSalud.Text = "Certificado de Salud";
-            this.chkCertificadoSalud.UseVisualStyleBackColor = true;
-            // 
-            // chkcartaTraslado
-            // 
-            this.chkcartaTraslado.AutoSize = true;
-            this.chkcartaTraslado.Depth = 0;
-            this.chkcartaTraslado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.chkcartaTraslado.Location = new System.Drawing.Point(41, 206);
-            this.chkcartaTraslado.Margin = new System.Windows.Forms.Padding(0);
-            this.chkcartaTraslado.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkcartaTraslado.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkcartaTraslado.Name = "chkcartaTraslado";
-            this.chkcartaTraslado.Ripple = true;
-            this.chkcartaTraslado.Size = new System.Drawing.Size(139, 30);
-            this.chkcartaTraslado.TabIndex = 11;
-            this.chkcartaTraslado.Text = "Carta de Traslado";
-            this.chkcartaTraslado.UseVisualStyleBackColor = true;
-            // 
-            // chktarjetaVacunas
-            // 
-            this.chktarjetaVacunas.AutoSize = true;
-            this.chktarjetaVacunas.Depth = 0;
-            this.chktarjetaVacunas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.chktarjetaVacunas.Location = new System.Drawing.Point(41, 166);
-            this.chktarjetaVacunas.Margin = new System.Windows.Forms.Padding(0);
-            this.chktarjetaVacunas.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chktarjetaVacunas.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chktarjetaVacunas.Name = "chktarjetaVacunas";
-            this.chktarjetaVacunas.Ripple = true;
-            this.chktarjetaVacunas.Size = new System.Drawing.Size(141, 30);
-            this.chktarjetaVacunas.TabIndex = 10;
-            this.chktarjetaVacunas.Text = "Tarjeta de Vacuna";
-            this.chktarjetaVacunas.UseVisualStyleBackColor = true;
-            // 
-            // chkcertificadoNotas
-            // 
-            this.chkcertificadoNotas.AutoSize = true;
-            this.chkcertificadoNotas.Depth = 0;
-            this.chkcertificadoNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.chkcertificadoNotas.Location = new System.Drawing.Point(41, 121);
-            this.chkcertificadoNotas.Margin = new System.Windows.Forms.Padding(0);
-            this.chkcertificadoNotas.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkcertificadoNotas.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkcertificadoNotas.Name = "chkcertificadoNotas";
-            this.chkcertificadoNotas.Ripple = true;
-            this.chkcertificadoNotas.Size = new System.Drawing.Size(163, 30);
-            this.chkcertificadoNotas.TabIndex = 9;
-            this.chkcertificadoNotas.Text = "Certificados de Notas";
-            this.chkcertificadoNotas.UseVisualStyleBackColor = true;
-            // 
-            // chkpartidaNacimiento
-            // 
-            this.chkpartidaNacimiento.AutoSize = true;
-            this.chkpartidaNacimiento.Depth = 0;
-            this.chkpartidaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.chkpartidaNacimiento.Location = new System.Drawing.Point(41, 77);
-            this.chkpartidaNacimiento.Margin = new System.Windows.Forms.Padding(0);
-            this.chkpartidaNacimiento.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkpartidaNacimiento.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkpartidaNacimiento.Name = "chkpartidaNacimiento";
-            this.chkpartidaNacimiento.Ripple = true;
-            this.chkpartidaNacimiento.Size = new System.Drawing.Size(167, 30);
-            this.chkpartidaNacimiento.TabIndex = 8;
-            this.chkpartidaNacimiento.Text = "Partida de Nacimiento";
-            this.chkpartidaNacimiento.UseVisualStyleBackColor = true;
-            // 
             // btncancelar
             // 
             this.btncancelar.BackColor = System.Drawing.Color.Firebrick;
@@ -581,6 +528,86 @@
             this.btningresar.UseVisualStyleBackColor = false;
             this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
             // 
+            // chkCertificadoSalud
+            // 
+            this.chkCertificadoSalud.AutoSize = true;
+            this.chkCertificadoSalud.Depth = 0;
+            this.chkCertificadoSalud.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chkCertificadoSalud.Location = new System.Drawing.Point(41, 251);
+            this.chkCertificadoSalud.Margin = new System.Windows.Forms.Padding(0);
+            this.chkCertificadoSalud.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkCertificadoSalud.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkCertificadoSalud.Name = "chkCertificadoSalud";
+            this.chkCertificadoSalud.Ripple = true;
+            this.chkCertificadoSalud.Size = new System.Drawing.Size(154, 30);
+            this.chkCertificadoSalud.TabIndex = 12;
+            this.chkCertificadoSalud.Text = "Certificado de Salud";
+            this.chkCertificadoSalud.UseVisualStyleBackColor = true;
+            // 
+            // chkcartaTraslado
+            // 
+            this.chkcartaTraslado.AutoSize = true;
+            this.chkcartaTraslado.Depth = 0;
+            this.chkcartaTraslado.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chkcartaTraslado.Location = new System.Drawing.Point(41, 206);
+            this.chkcartaTraslado.Margin = new System.Windows.Forms.Padding(0);
+            this.chkcartaTraslado.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkcartaTraslado.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkcartaTraslado.Name = "chkcartaTraslado";
+            this.chkcartaTraslado.Ripple = true;
+            this.chkcartaTraslado.Size = new System.Drawing.Size(139, 30);
+            this.chkcartaTraslado.TabIndex = 11;
+            this.chkcartaTraslado.Text = "Carta de Traslado";
+            this.chkcartaTraslado.UseVisualStyleBackColor = true;
+            // 
+            // chktarjetaVacunas
+            // 
+            this.chktarjetaVacunas.AutoSize = true;
+            this.chktarjetaVacunas.Depth = 0;
+            this.chktarjetaVacunas.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chktarjetaVacunas.Location = new System.Drawing.Point(41, 166);
+            this.chktarjetaVacunas.Margin = new System.Windows.Forms.Padding(0);
+            this.chktarjetaVacunas.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chktarjetaVacunas.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chktarjetaVacunas.Name = "chktarjetaVacunas";
+            this.chktarjetaVacunas.Ripple = true;
+            this.chktarjetaVacunas.Size = new System.Drawing.Size(141, 30);
+            this.chktarjetaVacunas.TabIndex = 10;
+            this.chktarjetaVacunas.Text = "Tarjeta de Vacuna";
+            this.chktarjetaVacunas.UseVisualStyleBackColor = true;
+            // 
+            // chkcertificadoNotas
+            // 
+            this.chkcertificadoNotas.AutoSize = true;
+            this.chkcertificadoNotas.Depth = 0;
+            this.chkcertificadoNotas.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chkcertificadoNotas.Location = new System.Drawing.Point(41, 121);
+            this.chkcertificadoNotas.Margin = new System.Windows.Forms.Padding(0);
+            this.chkcertificadoNotas.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkcertificadoNotas.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkcertificadoNotas.Name = "chkcertificadoNotas";
+            this.chkcertificadoNotas.Ripple = true;
+            this.chkcertificadoNotas.Size = new System.Drawing.Size(163, 30);
+            this.chkcertificadoNotas.TabIndex = 9;
+            this.chkcertificadoNotas.Text = "Certificados de Notas";
+            this.chkcertificadoNotas.UseVisualStyleBackColor = true;
+            // 
+            // chkpartidaNacimiento
+            // 
+            this.chkpartidaNacimiento.AutoSize = true;
+            this.chkpartidaNacimiento.Depth = 0;
+            this.chkpartidaNacimiento.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chkpartidaNacimiento.Location = new System.Drawing.Point(41, 77);
+            this.chkpartidaNacimiento.Margin = new System.Windows.Forms.Padding(0);
+            this.chkpartidaNacimiento.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkpartidaNacimiento.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkpartidaNacimiento.Name = "chkpartidaNacimiento";
+            this.chkpartidaNacimiento.Ripple = true;
+            this.chkpartidaNacimiento.Size = new System.Drawing.Size(167, 30);
+            this.chkpartidaNacimiento.TabIndex = 8;
+            this.chkpartidaNacimiento.Text = "Partida de Nacimiento";
+            this.chkpartidaNacimiento.UseVisualStyleBackColor = true;
+            // 
             // pictureEdit1
             // 
             this.pictureEdit1.Cursor = System.Windows.Forms.Cursors.Default;
@@ -594,60 +621,95 @@
             this.pictureEdit1.Size = new System.Drawing.Size(170, 161);
             this.pictureEdit1.TabIndex = 7;
             // 
-            // dtpFechaNacimiento
+            // contextMenuStrip1
             // 
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(186, 252);
-            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(277, 24);
-            this.dtpFechaNacimiento.TabIndex = 10;
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ocupacionesToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(144, 26);
             // 
-            // chkactivo
+            // ocupacionesToolStripMenuItem
             // 
-            this.chkactivo.AutoSize = true;
-            this.chkactivo.Depth = 0;
-            this.chkactivo.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkactivo.Location = new System.Drawing.Point(231, 316);
-            this.chkactivo.Margin = new System.Windows.Forms.Padding(0);
-            this.chkactivo.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkactivo.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkactivo.Name = "chkactivo";
-            this.chkactivo.Ripple = true;
-            this.chkactivo.Size = new System.Drawing.Size(69, 30);
-            this.chkactivo.TabIndex = 11;
-            this.chkactivo.Text = "Activo";
-            this.chkactivo.UseVisualStyleBackColor = true;
+            this.ocupacionesToolStripMenuItem.Name = "ocupacionesToolStripMenuItem";
+            this.ocupacionesToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.ocupacionesToolStripMenuItem.Text = "Ocupaciones";
+            this.ocupacionesToolStripMenuItem.Click += new System.EventHandler(this.ocupacionesToolStripMenuItem_Click);
             // 
-            // chkcancelado
+            // tabNavigationPage4
             // 
-            this.chkcancelado.AutoSize = true;
-            this.chkcancelado.Depth = 0;
-            this.chkcancelado.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkcancelado.Location = new System.Drawing.Point(384, 316);
-            this.chkcancelado.Margin = new System.Windows.Forms.Padding(0);
-            this.chkcancelado.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkcancelado.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkcancelado.Name = "chkcancelado";
-            this.chkcancelado.Ripple = true;
-            this.chkcancelado.Size = new System.Drawing.Size(79, 30);
-            this.chkcancelado.TabIndex = 12;
-            this.chkcancelado.Text = "Inactivo";
-            this.chkcancelado.UseVisualStyleBackColor = true;
+            this.tabNavigationPage4.Caption = "Alumno Tutor";
+            this.tabNavigationPage4.Controls.Add(this.groupBox5);
+            this.tabNavigationPage4.Name = "tabNavigationPage4";
+            this.tabNavigationPage4.Size = new System.Drawing.Size(751, 375);
             // 
-            // cbmOcupacionPadre
+            // groupBox5
             // 
-            this.cbmOcupacionPadre.FormattingEnabled = true;
-            this.cbmOcupacionPadre.Location = new System.Drawing.Point(21, 96);
-            this.cbmOcupacionPadre.Name = "cbmOcupacionPadre";
-            this.cbmOcupacionPadre.Size = new System.Drawing.Size(279, 26);
-            this.cbmOcupacionPadre.TabIndex = 19;
+            this.groupBox5.Controls.Add(this.cbmParentezco);
+            this.groupBox5.Controls.Add(this.txtcedulaTutor);
+            this.groupBox5.Controls.Add(this.txttelefonoTutor);
+            this.groupBox5.Controls.Add(this.txtxTutorName);
+            this.groupBox5.Location = new System.Drawing.Point(188, 27);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(326, 282);
+            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Datos Tutor";
             // 
-            // cbmOcupacionMadre
+            // txttelefonoTutor
             // 
-            this.cbmOcupacionMadre.FormattingEnabled = true;
-            this.cbmOcupacionMadre.Location = new System.Drawing.Point(6, 95);
-            this.cbmOcupacionMadre.Name = "cbmOcupacionMadre";
-            this.cbmOcupacionMadre.Size = new System.Drawing.Size(279, 26);
-            this.cbmOcupacionMadre.TabIndex = 20;
+            this.txttelefonoTutor.Depth = 0;
+            this.txttelefonoTutor.Hint = "Teléfono";
+            this.txttelefonoTutor.Location = new System.Drawing.Point(21, 137);
+            this.txttelefonoTutor.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txttelefonoTutor.Name = "txttelefonoTutor";
+            this.txttelefonoTutor.PasswordChar = '\0';
+            this.txttelefonoTutor.SelectedText = "";
+            this.txttelefonoTutor.SelectionLength = 0;
+            this.txttelefonoTutor.SelectionStart = 0;
+            this.txttelefonoTutor.Size = new System.Drawing.Size(279, 23);
+            this.txttelefonoTutor.TabIndex = 20;
+            this.txttelefonoTutor.UseSystemPasswordChar = false;
+            // 
+            // txtxTutorName
+            // 
+            this.txtxTutorName.Depth = 0;
+            this.txtxTutorName.Hint = "Nombres";
+            this.txtxTutorName.Location = new System.Drawing.Point(21, 38);
+            this.txtxTutorName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtxTutorName.Name = "txtxTutorName";
+            this.txtxTutorName.PasswordChar = '\0';
+            this.txtxTutorName.SelectedText = "";
+            this.txtxTutorName.SelectionLength = 0;
+            this.txtxTutorName.SelectionStart = 0;
+            this.txtxTutorName.Size = new System.Drawing.Size(279, 23);
+            this.txtxTutorName.TabIndex = 1;
+            this.txtxTutorName.UseSystemPasswordChar = false;
+            // 
+            // txtcedulaTutor
+            // 
+            this.txtcedulaTutor.Location = new System.Drawing.Point(21, 84);
+            this.txtcedulaTutor.Mask = ">###-######-####L";
+            this.txtcedulaTutor.Name = "txtcedulaTutor";
+            this.txtcedulaTutor.Size = new System.Drawing.Size(279, 22);
+            this.txtcedulaTutor.TabIndex = 21;
+            // 
+            // cbmParentezco
+            // 
+            this.cbmParentezco.FormattingEnabled = true;
+            this.cbmParentezco.Items.AddRange(new object[] {
+            "Padre",
+            "Madre",
+            "Hermano(a)",
+            "Tio(a)",
+            "Abuelo(a)",
+            "Primo(a)",
+            "Padrino",
+            "Madrina"});
+            this.cbmParentezco.Location = new System.Drawing.Point(21, 202);
+            this.cbmParentezco.Name = "cbmParentezco";
+            this.cbmParentezco.Size = new System.Drawing.Size(279, 24);
+            this.cbmParentezco.TabIndex = 22;
+            this.cbmParentezco.Text = "Seleccione un Parentezco";
             // 
             // AddNewStudent
             // 
@@ -668,16 +730,17 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabNavigationPage2.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.tabNavigationPage3.ResumeLayout(false);
             this.tabNavigationPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.tabNavigationPage4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -692,7 +755,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ocupacionesToolStripMenuItem;
         public MaterialSkin.Controls.MaterialSingleLineTextField txtnombreAlumno;
@@ -705,12 +767,8 @@
         public MaterialSkin.Controls.MaterialSingleLineTextField txtemailPadre;
         public MaterialSkin.Controls.MaterialSingleLineTextField txtemailMadre;
         public MaterialSkin.Controls.MaterialSingleLineTextField txtnombreMadre;
-        public System.Windows.Forms.MaskedTextBox txtelPadre;
-        public System.Windows.Forms.MaskedTextBox txttelMadre;
         public System.Windows.Forms.MaskedTextBox txtcedulaP;
         public System.Windows.Forms.MaskedTextBox txtcedulaMadre;
-        public System.Windows.Forms.MaskedTextBox txttutorTelefono;
-        public MaterialSkin.Controls.MaterialSingleLineTextField txttutorName;
         public System.Windows.Forms.CheckBox checkBox2;
         public System.Windows.Forms.CheckBox checkBox1;
         public DevExpress.XtraEditors.PictureEdit pictureEdit1;
@@ -726,5 +784,13 @@
         public MaterialSkin.Controls.MaterialCheckBox chkactivo;
         public System.Windows.Forms.ComboBox cbmOcupacionPadre;
         public System.Windows.Forms.ComboBox cbmOcupacionMadre;
+        public MaterialSkin.Controls.MaterialSingleLineTextField txtelPadre;
+        public MaterialSkin.Controls.MaterialSingleLineTextField txttelMadre;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage4;
+        private System.Windows.Forms.GroupBox groupBox5;
+        public MaterialSkin.Controls.MaterialSingleLineTextField txttelefonoTutor;
+        public MaterialSkin.Controls.MaterialSingleLineTextField txtxTutorName;
+        public System.Windows.Forms.MaskedTextBox txtcedulaTutor;
+        public System.Windows.Forms.ComboBox cbmParentezco;
     }
 }

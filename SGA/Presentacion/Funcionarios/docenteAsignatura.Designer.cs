@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(docenteAsignatura));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -45,6 +46,9 @@
             this.eDITARToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.rbtnPrimaria = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rbtnSecundaria = new MaterialSkin.Controls.MaterialRadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -185,9 +189,9 @@
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.Color.White;
-            this.btnIngresar.Image = global::Presentacion.Properties.Resources.save;
+            this.btnIngresar.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresar.Image")));
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresar.Location = new System.Drawing.Point(379, 298);
+            this.btnIngresar.Location = new System.Drawing.Point(538, 298);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(103, 38);
             this.btnIngresar.TabIndex = 47;
@@ -204,9 +208,9 @@
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancelar.ForeColor = System.Drawing.Color.White;
-            this.btncancelar.Image = global::Presentacion.Properties.Resources.delete;
+            this.btncancelar.Image = ((System.Drawing.Image)(resources.GetObject("btncancelar.Image")));
             this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncancelar.Location = new System.Drawing.Point(379, 369);
+            this.btncancelar.Location = new System.Drawing.Point(538, 358);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(103, 38);
             this.btncancelar.TabIndex = 48;
@@ -226,6 +230,7 @@
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.Size = new System.Drawing.Size(539, 180);
             this.gridControl2.TabIndex = 49;
+            this.toolTip1.SetToolTip(this.gridControl2, "Click derecho +Opciones");
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
@@ -260,11 +265,51 @@
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
+            // toolTip1
+            // 
+            this.toolTip1.IsBalloon = true;
+            // 
+            // rbtnPrimaria
+            // 
+            this.rbtnPrimaria.AutoSize = true;
+            this.rbtnPrimaria.Depth = 0;
+            this.rbtnPrimaria.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbtnPrimaria.Location = new System.Drawing.Point(351, 297);
+            this.rbtnPrimaria.Margin = new System.Windows.Forms.Padding(0);
+            this.rbtnPrimaria.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbtnPrimaria.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbtnPrimaria.Name = "rbtnPrimaria";
+            this.rbtnPrimaria.Ripple = true;
+            this.rbtnPrimaria.Size = new System.Drawing.Size(81, 30);
+            this.rbtnPrimaria.TabIndex = 50;
+            this.rbtnPrimaria.TabStop = true;
+            this.rbtnPrimaria.Text = "Primaria";
+            this.rbtnPrimaria.UseVisualStyleBackColor = true;
+            // 
+            // rbtnSecundaria
+            // 
+            this.rbtnSecundaria.AutoSize = true;
+            this.rbtnSecundaria.Depth = 0;
+            this.rbtnSecundaria.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbtnSecundaria.Location = new System.Drawing.Point(351, 348);
+            this.rbtnSecundaria.Margin = new System.Windows.Forms.Padding(0);
+            this.rbtnSecundaria.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbtnSecundaria.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbtnSecundaria.Name = "rbtnSecundaria";
+            this.rbtnSecundaria.Ripple = true;
+            this.rbtnSecundaria.Size = new System.Drawing.Size(98, 30);
+            this.rbtnSecundaria.TabIndex = 51;
+            this.rbtnSecundaria.TabStop = true;
+            this.rbtnSecundaria.Text = "Secundaria";
+            this.rbtnSecundaria.UseVisualStyleBackColor = true;
+            // 
             // docenteAsignatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1109, 459);
+            this.Controls.Add(this.rbtnSecundaria);
+            this.Controls.Add(this.rbtnPrimaria);
             this.Controls.Add(this.gridControl2);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnIngresar);
@@ -285,6 +330,7 @@
             this.MateriaDocente.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -305,5 +351,8 @@
         private System.Windows.Forms.ContextMenuStrip MateriaDocente;
         private System.Windows.Forms.ToolStripMenuItem eDITARToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private MaterialSkin.Controls.MaterialRadioButton rbtnPrimaria;
+        private MaterialSkin.Controls.MaterialRadioButton rbtnSecundaria;
     }
 }

@@ -20,8 +20,6 @@ namespace Entidades
         public string CEDULA_PADRE { get; set; }
         public string TELEFONO_PADRE { get; set; }
         public string EMAIL_PADRE { get; set; }
-        public string NOMBRE_TUTOR { get; set; }
-        public string TELEFONO_TUTOR { get; set; }
         public EPadres_Tutor()
         {
             Alumno = new EAlumnos();

@@ -34,6 +34,7 @@ namespace Presentacion.Student
         private void AddNewStudent_Load(object sender, EventArgs e)
         {
             
+            
         }
 
         void CargarOcupaciones()
@@ -68,8 +69,10 @@ namespace Presentacion.Student
             txtnombreMadre.Clear();
             txtnombrePadre.Clear();
             txttelMadre.Clear();
-            txttutorName.Clear();
-            txttutorTelefono.Clear();
+            txttelefonoTutor.Clear();
+            txtxTutorName.Clear();
+            txtcedulaTutor.Clear();
+            cbmParentezco.Text = "Seleccione un Parentezco";
             cbmOcupacionMadre.Text = "Seleccione una Ocupación";
             cbmOcupacionPadre.Text = "Seleccione una Ocupación";
             chkactivo.Visible = false;
@@ -96,14 +99,18 @@ namespace Presentacion.Student
         {
             if (checkBox1.Checked)
             {
-                txttutorName.Text = txtnombrePadre.Text;
-                txttutorTelefono.Text = txtelPadre.Text;
+                txtxTutorName.Text = txtnombrePadre.Text;
+                txtcedulaTutor.Text = txtcedulaP.Text;
+                txttelefonoTutor.Text = txtelPadre.Text;
+                cbmParentezco.Text = "Padre";
                 checkBox2.Checked = false;
             }
             else
             {
-                txttutorName.Clear();
-                txttutorTelefono.Clear();
+                txtcedulaP.Clear();
+                txttelefonoTutor.Clear();
+                txtxTutorName.Clear();
+                cbmParentezco.Text = "Seleccione un Parentezco";
             }
 
         }
@@ -112,14 +119,19 @@ namespace Presentacion.Student
         {
             if (checkBox2.Checked)
             {
-                txttutorName.Text = txtnombreMadre.Text;
-                txttutorTelefono.Text = txttelMadre.Text;
+                txtxTutorName.Text = txtnombreMadre.Text;
+                txtcedulaTutor.Text = txtcedulaMadre.Text;
+                txttelefonoTutor.Text = txttelMadre.Text;
+                cbmParentezco.Text = "Madre";
+                checkBox2.Checked = false;
                 checkBox1.Checked = false;
             }
             else
             {
-                txttutorName.Clear();
-                txttutorTelefono.Clear();
+                txtcedulaP.Clear();
+                txttelefonoTutor.Clear();
+                txtxTutorName.Clear();
+                cbmParentezco.Text = "Seleccione un Parentezco";
             }
         }
 
@@ -166,6 +178,11 @@ namespace Presentacion.Student
                     alumno.FechaNacimiento = Convert.ToDateTime(dtpFechaNacimiento.Value);
                     alumno.Direccion = txtdomicilio.Text;
                     alumno.CodigoMined = Convert.ToInt32(txtCodigoMined.Text);
+                    //Parentezco
+                    alumno.NombreTutor = txtxTutorName.Text;
+                    alumno.CedulaTutor = txtcedulaTutor.Text;
+                    alumno.TelefonoTutor = txttelefonoTutor.Text;
+                    alumno.ParentezcoAlumno = cbmParentezco.Text;
                     //Padres
                     EPadres_Tutor padres = new EPadres_Tutor();
                     padres.NOMBRE_PADRE = txtnombrePadre.Text;
@@ -178,8 +195,6 @@ namespace Presentacion.Student
                     padres.TELEFONO_MADRE = txttelMadre.Text;
                     padres.EMAIL_MADRE = txtemailMadre.Text;
                     padres.OCUPACION_MADRE = cbmOcupacionMadre.Text;
-                    padres.NOMBRE_TUTOR = txttutorName.Text;
-                    padres.TELEFONO_TUTOR = txttutorTelefono.Text;
                     //Documentos
                     EDocuemntosAlumnos documentos = new EDocuemntosAlumnos();
                     documentos.PARTIDA_DE_NACIMINETO = chkpartidaNacimiento.Checked ? "SI" : "NO";
@@ -221,8 +236,6 @@ namespace Presentacion.Student
                     padres.TELEFONO_MADRE = txttelMadre.Text;
                     padres.EMAIL_MADRE = txtemailMadre.Text;
                     padres.OCUPACION_MADRE = cbmOcupacionMadre.Text;
-                    padres.NOMBRE_TUTOR = txttutorName.Text;
-                    padres.TELEFONO_TUTOR = txttutorTelefono.Text;
                     //Documentos
                     EDocuemntosAlumnos documentos = new EDocuemntosAlumnos();
                     documentos.PARTIDA_DE_NACIMINETO = chkpartidaNacimiento.Checked ? "SI" : "NO";
@@ -264,6 +277,46 @@ namespace Presentacion.Student
         private void AddNewStudent_FormClosed(object sender, FormClosedEventArgs e)
         {
             
+        }
+
+        private void txtelPadre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txttelMadre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }
