@@ -46,10 +46,18 @@ namespace Presentacion.Otros
             {
                 NAsignatura n = new NAsignatura();
                 List<EAsignatura> l = n.ListaAsignatura();
-                gridControl1.DataSource = l;
-                gridView1.Columns[0].Visible = false;
-                gridView1.BestFitColumns();
+                dataGridView1.DataSource = l;
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    if (Convert.ToBoolean(dataGridView1.Rows[i].Cells["Activo"].Value.ToString()) == false)
+                    {
+                        dataGridView1.Rows[i].DefaultCellStyle.ForeColor = Color.Red;
+                    }
+                    else
+                        dataGridView1.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
 
+                }
+                dataGridView1.Columns[0].Visible = false;
             }
             catch (Exception ex)
             {
@@ -60,32 +68,7 @@ namespace Presentacion.Otros
 
         
 
-        private void gridControl1_DoubleClick(object sender, EventArgs e)
-        {
-             try
-            {
-                if (gridView1.RowCount > 0)
-                {
-                    txtasignatura.Tag = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "AsignaturaId"));
-                    txtasignatura.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Asignatura").ToString();
-                    if (Convert.ToBoolean(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Activo")) == true)
-                        rbtnactivo.Checked = true;
-                    else
-                        rbtnCancelar.Checked = true;
-                    Bandera = 1;
-                    chkEditar.Checked = true;
-                    rbtnactivo.Visible = true;
-                    rbtnCancelar.Visible = true;
-                }
-                else
-                    MessageBox.Show("No hay datos que seleccionar", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+      
 
         private void btningresar_Click(object sender, EventArgs e)
         {
@@ -102,6 +85,7 @@ namespace Presentacion.Otros
                     CargarLista();
                     MessageBox.Show("Asignatura Ingresado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtasignatura.Focus();
+                    chkEditar.Visible = false;
                 }
                 if (Bandera == 1)
                 {
@@ -119,6 +103,7 @@ namespace Presentacion.Otros
                     MessageBox.Show("Asignatura Modificada con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Bandera = 0;
                     txtasignatura.Focus();
+                    chkEditar.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -152,17 +137,53 @@ namespace Presentacion.Otros
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EAsignatura a = new EAsignatura();
-            NAsignatura n = new NAsignatura();
-
-            a.AsignaturaId = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "AsignaturaId"));
-            var As = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Asignatura").ToString();
-            DialogResult o = MessageBox.Show("¿Realmente deseas elliminar la asignatura " + As +" ?","SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (o == DialogResult.OK)
+            try
             {
-                n.Eliminarsignatura(a);
-                MessageBox.Show("¿Asignatura eliminada con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CargarLista();
+                EAsignatura a = new EAsignatura();
+                NAsignatura n = new NAsignatura();
+                a.AsignaturaId = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["AsignaturaId"].Value.ToString());
+                var As = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Asignatura"].Value.ToString();
+                DialogResult o = MessageBox.Show("¿Realmente deseas elliminar la asignatura " + As + " ?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (o == DialogResult.OK)
+                {
+                    n.Eliminarsignatura(a);
+                    MessageBox.Show("Asignatura eliminada con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarLista();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.RowCount > 0)
+                {
+
+                    txtasignatura.Tag = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["AsignaturaId"].Value.ToString());
+                    txtasignatura.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Asignatura"].Value.ToString();
+                    if (Convert.ToBoolean(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Activo"].Value.ToString()) == true)
+                        rbtnactivo.Checked = true;
+                    else
+                        rbtnCancelar.Checked = true;
+                    Bandera = 1;
+                    chkEditar.Checked = true;
+                    rbtnactivo.Visible = true;
+                    rbtnCancelar.Visible = true;
+                    chkEditar.Visible = true;
+                }
+                else
+                    MessageBox.Show("No hay datos que seleccionar", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

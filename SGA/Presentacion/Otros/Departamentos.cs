@@ -18,9 +18,11 @@ namespace Presentacion.Otros
         public Departamentos()
         {
             InitializeComponent();
+            //Aplicar Estilo
             EstiloMenu e = new EstiloMenu();
             e.AplicarEstilo(this);
         }
+        //Controlar si edita o guardar
         public int Bandera = 0;
         private void Departamentos_Load(object sender, EventArgs e)
         {
@@ -37,15 +39,15 @@ namespace Presentacion.Otros
             }
         }
 
+        //Cargar Lista de Departamento
         void CargarDepartamento()
         {
             try
             {
                 NDepartamento n = new NDepartamento();
                 List<EDepartamentos> d = n.ListaDepartamento();
-                gridControl1.DataSource = d;
-                gridView1.Columns[0].Visible = false;
-                gridView1.BestFitColumns();
+                dataGridView1.DataSource = d;
+                dataGridView1.Columns[0].Visible = false;
             }
             catch (Exception ex)
             {
@@ -53,6 +55,7 @@ namespace Presentacion.Otros
                 throw ex;
             }
         }
+        //Limpiar Controles
         void Limpiar()
         {
             try
@@ -74,7 +77,7 @@ namespace Presentacion.Otros
         {
             try
             {
-               
+               //Veerificamos si guarda o Moficica si la Bandera = 0 Guarda, si es 1 Modifica
                 if (Bandera == 0)
                 {
                     EDepartamentos d = new EDepartamentos();
@@ -109,38 +112,14 @@ namespace Presentacion.Otros
             }
         }
 
-        private void gridControl1_DoubleClick(object sender, EventArgs e)
-        {
-            try
-            {
-                if (gridView1.RowCount > 0)
-                {
-                    txtdepartamento.Tag = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "DepartamentoID"));
-                    txtdepartamento.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Departamento").ToString();
-                    Bandera = 1;
-                    chkeditar.Visible = true;
-                    chkeditar.Checked = true;
-                }
-                else
-                {
-                    MessageBox.Show("No hay registros que seleccionar", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message,"SGA", MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
-        }
-
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
                 EDepartamentos d = new EDepartamentos();
                 NDepartamento n = new NDepartamento();
-                d.DepartamentoID = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "DepartamentoID"));
-                var Departamento = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Departamento").ToString();
+                d.DepartamentoID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["DepartamentoID"].Value.ToString());
+                var Departamento = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Departamento"].Value.ToString();
                 DialogResult o = MessageBox.Show("¿Eliminar el Departamento" + Departamento + "?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (o == DialogResult.OK)
                 {
@@ -155,6 +134,30 @@ namespace Presentacion.Otros
                 MessageBox.Show(ex.Message,"Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.RowCount > 0)
+                {
+                    txtdepartamento.Tag = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["DepartamentoID"].Value.ToString();
+                    txtdepartamento.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Departamento"].Value.ToString();
+                    Bandera = 1;
+                    chkeditar.Visible = true;
+                    chkeditar.Checked = true;
+                }
+                else
+                {
+                    MessageBox.Show("No hay registros que seleccionar", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

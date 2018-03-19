@@ -44,8 +44,8 @@ namespace Presentacion.Otros
             try
             {
                 txtciclo.Clear();
-                datefin.EditValue = "";
-                dateinicio.EditValue = "";
+                dateInicio.Value = DateTime.Today;
+                dateFin.Value = DateTime.Today;
                 rbtnactivo.Visible = false;
                 rbrncancelar.Visible = false;
                 chkEditar.Visible = false;
@@ -63,9 +63,18 @@ namespace Presentacion.Otros
             {
                 Nciclo n = new Nciclo();
                 List<Entidades.CicloEscolar> l = n.ListaCicloEscolar();
-                gridControl1.DataSource = l;
-                gridView1.Columns[0].Visible = false;
-                gridView1.BestFitColumns();
+                dataGridView1.DataSource = l;
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    if (Convert.ToBoolean(dataGridView1.Rows[i].Cells["Activo"].Value.ToString()) == false)
+                    {
+                        dataGridView1.Rows[i].DefaultCellStyle.ForeColor = Color.Red;
+                    }
+                    else
+                        dataGridView1.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
+                }
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[4].Visible = false;
             }
             catch (Exception ex)
             {
@@ -83,8 +92,8 @@ namespace Presentacion.Otros
                     Entidades.CicloEscolar c = new Entidades.CicloEscolar();
                     Nciclo n = new Nciclo();
                     c.ciclo = Convert.ToInt32(txtciclo.Text);
-                    c.FechaInicio = Convert.ToDateTime(dateinicio.EditValue);
-                    c.FechaFin = Convert.ToDateTime(datefin.EditValue);
+                    c.FechaInicio = Convert.ToDateTime(dateInicio.Value);
+                    c.FechaFin = Convert.ToDateTime(dateFin.Value);
                     n.IngresarCicloEscolar(c);
                     MessageBox.Show("Ciclo Ingresado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
@@ -96,8 +105,8 @@ namespace Presentacion.Otros
                     Nciclo n = new Nciclo();
                     c.CicloEscolarId = Convert.ToInt32(txtciclo.Tag);
                     c.ciclo = Convert.ToInt32(txtciclo.Text);
-                    c.FechaInicio = Convert.ToDateTime(dateinicio.EditValue);
-                    c.FechaFin = Convert.ToDateTime(datefin.EditValue);
+                    c.FechaInicio = Convert.ToDateTime(dateInicio.Value);
+                    c.FechaFin = Convert.ToDateTime(dateFin.Value);
                     c.Activo = Convert.ToBoolean(rbtnactivo.Checked ? 1 : 0);
                     n.ModificarCicloEscolar(c);
                     MessageBox.Show("Ciclo Modificado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -126,35 +135,7 @@ namespace Presentacion.Otros
                 Limpiar();
         }
 
-        private void gridControl1_DoubleClick(object sender, EventArgs e)
-        {
-            try
-            {
-                if (gridView1.RowCount > 0)
-                {
-                    txtciclo.Tag = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "CicloEscolarId").ToString());
-                    txtciclo.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ciclo").ToString();
-                    dateinicio.EditValue = Convert.ToDateTime(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "FechaInicio").ToString());
-                    datefin.EditValue = Convert.ToDateTime(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "FechaFin").ToString());
-                    if (Convert.ToBoolean(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Activo").ToString()) == true)
-                        rbtnactivo.Checked = true;
-                    else
-                        rbrncancelar.Checked = true;
-                    Bandera = 1;
-                    rbtnactivo.Visible = true;
-                    rbrncancelar.Visible = true;
-                    chkEditar.Visible = true;
-                    chkEditar.Checked = true;
-                }
-                else
-                    MessageBox.Show("No hay registros que seleccionar", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show( ex.Message,"SGA", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
-            }
-        }
+       
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
@@ -163,17 +144,64 @@ namespace Presentacion.Otros
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Entidades.CicloEscolar c = new Entidades.CicloEscolar();
-            Nciclo n = new Nciclo();
-            c.CicloEscolarId = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "CicloEscolarId").ToString());
-           var ciclo = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ciclo").ToString();
-            DialogResult o = MessageBox.Show("¿Estas seguro de eliminar El ciclo " + ciclo + " ?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (o == DialogResult.OK)
+            try
             {
-                n.EliminarCicloEscolar(c);
-                MessageBox.Show("Registro Eliminado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                Limpiar();
-                CargarCiclo();
+                Entidades.CicloEscolar c = new Entidades.CicloEscolar();
+                Nciclo n = new Nciclo();
+                c.CicloEscolarId = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["CicloEscolarId"].Value.ToString());
+                var ciclo = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["ciclo"].Value.ToString();
+                DialogResult o = MessageBox.Show("¿Estas seguro de eliminar El ciclo " + ciclo + " ?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (o == DialogResult.OK)
+                {
+                    n.EliminarCicloEscolar(c);
+                    MessageBox.Show("Registro Eliminado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    Limpiar();
+                    CargarCiclo();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                try
+                {
+                    if (dataGridView1.RowCount > 0)
+                    {
+                        
+                        txtciclo.Tag = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["CicloEscolarId"].Value.ToString());
+                        txtciclo.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["ciclo"].Value.ToString();
+                        dateInicio.Value = Convert.ToDateTime(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["FechaInicio"].Value.ToString());
+                        dateFin.Value = Convert.ToDateTime(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["FechaFin"].Value.ToString());
+                        if (Convert.ToBoolean(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Activo"].Value.ToString()) == true)
+                            rbtnactivo.Checked = true;
+                        else
+                            rbrncancelar.Checked = true;
+                        Bandera = 1;
+                        rbtnactivo.Visible = true;
+                        rbrncancelar.Visible = true;
+                        chkEditar.Visible = true;
+                        chkEditar.Checked = true;
+                    }
+                    else
+                        MessageBox.Show("No hay registros que seleccionar", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
     }

@@ -60,9 +60,19 @@ namespace Presentacion.Otros
             try
             {
                 NGrado n = new NGrado();
-                List<EGrados> L = n.ListaGrados();
-                gridControl1.DataSource = L;
-                gridView1.BestFitColumns();
+                List<EGrados> Lista = n.ListaGrados();
+                dataGridView1.DataSource = Lista;
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    if (Convert.ToBoolean(dataGridView1.Rows[i].Cells["Activo"].Value.ToString()) == false)
+                    {
+                        dataGridView1.Rows[i].DefaultCellStyle.ForeColor = Color.Red;
+                    }
+                    else
+                        dataGridView1.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
+                }
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[2].Visible = false;
             }
             catch (Exception ex)
             {
@@ -145,21 +155,47 @@ namespace Presentacion.Otros
             }
         }
 
-        private void gridControl1_DoubleClick_1(object sender, EventArgs e)
+    
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
-                if (gridView1.RowCount > 0)
+                EGrados gr = new EGrados();
+                NGrado n = new NGrado();
+                
+                gr.GradoId = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["GradoId"].Value.ToString());
+                var g = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Grado"].Value.ToString();
+                DialogResult o = MessageBox.Show("¿Estas seguro de eliminar el grado " + g + "?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (o == DialogResult.OK)
                 {
-                    txtxgrado.Tag = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "GradoId"));
-                    txtxgrado.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Grado").ToString();
-                    if (Convert.ToChar(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Tipo").ToString()) == 'I')
+                    n.EliminarGrado(gr);
+                    LimpiaContorles();
+                    MessageBox.Show("Grado eliminado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                } 
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.RowCount > 0)
+                {
+                    txtxgrado.Tag = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["GradoId"].Value.ToString());
+                    txtxgrado.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Grado"].Value.ToString();
+                    if (Convert.ToChar(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Tipo"].Value.ToString()) == 'I')
                         chk1.Checked = true;
-                    else if (Convert.ToChar(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Tipo").ToString()) == 'P')
+                    else if (Convert.ToChar(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Tipo"].Value.ToString()) == 'P')
                         chk2.Checked = true;
                     else
                         chk3.Checked = true;
-                    if (Convert.ToBoolean(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Activo").ToString()) == true)
+                    if (Convert.ToBoolean(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Activo"].Value.ToString()) == true)
                         rbtnactivo.Checked = true;
                     else
                         rbtncancelar.Checked = true;
@@ -176,29 +212,6 @@ namespace Presentacion.Otros
             {
 
                 MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                EGrados gr = new EGrados();
-                NGrado n = new NGrado();
-                gr.GradoId = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "GradoId"));
-                var g = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Grado").ToString();
-                DialogResult o = MessageBox.Show("¿Estas seguro de eliminar el grado " + g + "?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (o == DialogResult.OK)
-                {
-                    n.EliminarGrado(gr);
-                    LimpiaContorles();
-                    MessageBox.Show("Grado eliminado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                } 
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
             }
         }
     }

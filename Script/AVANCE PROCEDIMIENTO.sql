@@ -5,17 +5,11 @@ create proc IngresarDepartamento
 )
 as
 begin
-	begin try
 		insert into Departamentos
 		values
 		(
 			@Departamento
 		)
-	end try
-	begin catch
-		if @@TRANCOUNT > 0
-			rollback
-	end catch
 end
 go
 create proc ModificarDepartamento
@@ -37,6 +31,7 @@ begin
 	end catch
 end
 go
+
 create proc EliminarDepartamento
 (
 @DepartamentoID int
@@ -56,18 +51,12 @@ create proc IngresarColegio
 )
 as
 begin
-		begin try
 		insert into Colegio values
 		(
 			@Colegio,
 			@Telefono,
 			@DepartamentoId
 		)
-		end try
-		begin catch
-			if @@TRANCOUNT > 0
-				rollback
-		end catch
 end
 go
 create proc ModificarColegio
@@ -357,7 +346,8 @@ create proc IngresarAula
 @Aula nvarchar(30),
 @capacidad int,
 @Vacantes int,
-@GradoId int
+@GradoId int,
+@Turno nvarchar(50)
 )
 as
 begin
@@ -369,6 +359,7 @@ begin
 		@capacidad,
 		@Vacantes,
 		@GradoId,
+		@Turno,
 		@activo
 		)
 end
@@ -382,6 +373,7 @@ create proc ModificarAula
 @capacidad int,
 @Vacantes int,
 @GradoId int,
+@Turno nvarchar(50),
 @activo bit
 )
 as
@@ -391,6 +383,7 @@ begin
 		Capacidad = @capacidad,
 		Vacantes = @Vacantes,
 		GradoId = @GradoId,
+		Turno = @Turno,
 		Activo = @activo
 		where AulaId = @AulaId
 end

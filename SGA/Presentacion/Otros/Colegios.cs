@@ -51,11 +51,11 @@ namespace Presentacion.Otros
             try
             {
                 NColegio n = new NColegio();
-                List<EColegios> l = n.ListaColegios();
-                gridControl1.DataSource = l;
+                List<EColegios> lista = n.ListaColegios();
+                dataGridView1.DataSource = lista;
                 CargarDepartamento();
-                gridView1.Columns[0].Visible = false;
-                gridView1.Columns[3].Visible = false;
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[3].Visible = false;
             }
             catch (Exception ex)
             {
@@ -113,16 +113,6 @@ namespace Presentacion.Otros
             }
         }
 
-        private void gridControl1_DoubleClick(object sender, EventArgs e)
-        {
-            txtcolegio.Tag = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ColegioId").ToString());
-            txtcolegio.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Colegio").ToString();
-            txttelefono.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Telefono").ToString();
-            cbmDepartmento.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Departamento").ToString();
-            Bandera = 1;
-            chkeditar.Visible = true;
-            chkeditar.Checked = true;
-        }
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -130,8 +120,8 @@ namespace Presentacion.Otros
             {
                 EColegios c = new EColegios();
                 NColegio n = new NColegio();
-                c.ColegioId = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ColegioId");
-                var colegio = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Colegio").ToString();
+                c.ColegioId = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["ColegioId"].Value.ToString());
+                var colegio = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Colegio"].Value.ToString();
                 DialogResult o = MessageBox.Show("¿Eliminar el Departamento " + colegio + "?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (o == DialogResult.OK)
                 {
@@ -161,6 +151,18 @@ namespace Presentacion.Otros
             else
                 limpiar();
             
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Colegio"].Value.ToString();
+            txtcolegio.Tag = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["ColegioId"].Value.ToString());
+            txtcolegio.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Colegio"].Value.ToString();
+            txttelefono.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Telefono"].Value.ToString();
+            cbmDepartmento.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Departamento"].Value.ToString();
+            Bandera = 1;
+            chkeditar.Visible = true;
+            chkeditar.Checked = true;
         }
     }
 }

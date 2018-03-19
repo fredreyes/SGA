@@ -35,37 +35,32 @@
             this.rbtnactivo = new MaterialSkin.Controls.MaterialRadioButton();
             this.btncancelar = new System.Windows.Forms.Button();
             this.btningresar = new System.Windows.Forms.Button();
-            this.datefin = new DevExpress.XtraEditors.DateEdit();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.dateinicio = new DevExpress.XtraEditors.DateEdit();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.txtciclo = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.dateInicio = new System.Windows.Forms.DateTimePicker();
+            this.dateFin = new System.Windows.Forms.DateTimePicker();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datefin.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datefin.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateinicio.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateinicio.Properties)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dateFin);
+            this.groupBox1.Controls.Add(this.dateInicio);
             this.groupBox1.Controls.Add(this.chkEditar);
             this.groupBox1.Controls.Add(this.rbrncancelar);
             this.groupBox1.Controls.Add(this.rbtnactivo);
             this.groupBox1.Controls.Add(this.btncancelar);
             this.groupBox1.Controls.Add(this.btningresar);
-            this.groupBox1.Controls.Add(this.datefin);
             this.groupBox1.Controls.Add(this.materialLabel2);
-            this.groupBox1.Controls.Add(this.dateinicio);
             this.groupBox1.Controls.Add(this.materialLabel1);
             this.groupBox1.Controls.Add(this.txtciclo);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -92,6 +87,7 @@
             this.chkEditar.TabIndex = 41;
             this.chkEditar.Text = "Editar";
             this.chkEditar.UseVisualStyleBackColor = true;
+            this.chkEditar.Visible = false;
             // 
             // rbrncancelar
             // 
@@ -165,20 +161,6 @@
             this.btningresar.UseVisualStyleBackColor = false;
             this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
             // 
-            // datefin
-            // 
-            this.datefin.EditValue = null;
-            this.datefin.Location = new System.Drawing.Point(26, 132);
-            this.datefin.Name = "datefin";
-            this.datefin.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datefin.Properties.Appearance.Options.UseFont = true;
-            this.datefin.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.datefin.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.datefin.Size = new System.Drawing.Size(167, 22);
-            this.datefin.TabIndex = 4;
-            // 
             // materialLabel2
             // 
             this.materialLabel2.AutoSize = true;
@@ -191,20 +173,6 @@
             this.materialLabel2.Size = new System.Drawing.Size(73, 19);
             this.materialLabel2.TabIndex = 3;
             this.materialLabel2.Text = "Fecha Fin";
-            // 
-            // dateinicio
-            // 
-            this.dateinicio.EditValue = null;
-            this.dateinicio.Location = new System.Drawing.Point(26, 84);
-            this.dateinicio.Name = "dateinicio";
-            this.dateinicio.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateinicio.Properties.Appearance.Options.UseFont = true;
-            this.dateinicio.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateinicio.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateinicio.Size = new System.Drawing.Size(167, 22);
-            this.dateinicio.TabIndex = 2;
             // 
             // materialLabel1
             // 
@@ -236,7 +204,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.gridControl1);
+            this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(13, 268);
             this.groupBox2.Name = "groupBox2";
@@ -245,40 +213,60 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Registros";
             // 
-            // gridControl1
-            // 
-            this.gridControl1.ContextMenuStrip = this.contextMenuStrip1;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(3, 18);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(315, 131);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
-            // 
             // contextMenuStrip1
             // 
-            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editarToolStripMenuItem,
             this.eliminarToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // eliminarToolStripMenuItem
             // 
+            this.eliminarToolStripMenuItem.Image = global::Presentacion.Properties.Resources.delete__1_;
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
             this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
-            // gridView1
+            // dateInicio
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.dateInicio.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateInicio.Location = new System.Drawing.Point(26, 84);
+            this.dateInicio.Name = "dateInicio";
+            this.dateInicio.Size = new System.Drawing.Size(167, 22);
+            this.dateInicio.TabIndex = 42;
+            // 
+            // dateFin
+            // 
+            this.dateFin.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateFin.Location = new System.Drawing.Point(26, 131);
+            this.dateFin.Name = "dateFin";
+            this.dateFin.Size = new System.Drawing.Size(167, 22);
+            this.dateFin.TabIndex = 43;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 21);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(309, 125);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Image = global::Presentacion.Properties.Resources.edit;
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // CicloEscolar
             // 
@@ -295,14 +283,9 @@
             this.Load += new System.EventHandler(this.CicloEscolar_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datefin.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datefin.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateinicio.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateinicio.Properties)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -311,11 +294,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.DateEdit datefin;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private DevExpress.XtraEditors.DateEdit dateinicio;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtciclo;
         private System.Windows.Forms.Button btningresar;
@@ -325,5 +304,9 @@
         private MaterialSkin.Controls.MaterialCheckBox chkEditar;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.DateTimePicker dateFin;
+        private System.Windows.Forms.DateTimePicker dateInicio;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
     }
 }

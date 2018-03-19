@@ -42,14 +42,17 @@ namespace Presentacion.Otros
         {
             NTurnos n = new NTurnos();
             List<ETurnos> Lista = n.ListaTurnos();
-            gridControl1.DataSource = Lista;
-            gridView1.Columns[0].Visible = false;
-            gridView1.BestFitColumns();
-            gridView1.RowCellStyle += (sender, e) => {
-                GridView view = sender as GridView;
-                bool _mark = (bool)view.GetRowCellValue(e.RowHandle, "Activo");
-                    e.Appearance.ForeColor = _mark ? Color.Black : Color.Red;
-            };
+            dataGridView1.DataSource = Lista;
+            dataGridView1.Columns[0].Visible = false;
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if (Convert.ToBoolean(dataGridView1.Rows[i].Cells["Activo"].Value.ToString()) == false)
+                {
+                    dataGridView1.Rows[i].DefaultCellStyle.ForeColor = Color.Red;
+                }
+                else
+                    dataGridView1.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
+            }
         }
                 void OcultarControles()
                     {
@@ -80,8 +83,9 @@ namespace Presentacion.Otros
             {
                 ETurnos t = new ETurnos();
                 NTurnos n = new NTurnos();
-                t.TurnoId = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "TurnoId").ToString());
-                var tu = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Turno").ToString();
+                
+                t.TurnoId = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["TurnoId"].Value.ToString());
+                var tu = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Turno"].Value.ToString(); 
                 DialogResult o = MessageBox.Show("¿Realmente deseas eliminar el turno " + tu + "?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (o == DialogResult.OK)
                 {
@@ -142,16 +146,24 @@ namespace Presentacion.Otros
             LimpiarControles();
         }
 
-        private void gridControl1_DoubleClick_1(object sender, EventArgs e)
+      
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
-                if (gridView1.RowCount > 0)
+                if (dataGridView1.RowCount > 0)
                 {
-                    txtTurno.Tag = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "TurnoId").ToString());
-                    txtTurno.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Turno").ToString();
-                    txtObservacion.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Descripcion").ToString();
-                    if (Convert.ToBoolean(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Activo").ToString()) == true)
+
+                    txtTurno.Tag = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["TurnoId"].Value.ToString());
+                    txtTurno.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Turno"].Value.ToString();
+                    txtObservacion.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Descripcion"].Value.ToString();
+                    if (Convert.ToBoolean(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Activo"].Value.ToString()) == true)
                         rbtnActivo.Checked = true;
                     else
                         rbtncancelar.Checked = true;
@@ -167,11 +179,6 @@ namespace Presentacion.Otros
 
                 MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
         }
     }
 }

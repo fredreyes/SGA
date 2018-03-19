@@ -19,15 +19,10 @@ namespace Presentacion.Funcionarios
         public Ocupaciones()
         {
             InitializeComponent();
-            MaterialSkinManager m = MaterialSkinManager.Instance;
-            m.AddFormToManage(this);
-            m.Theme = MaterialSkinManager.Themes.LIGHT;
-            m.ColorScheme = new ColorScheme(Primary.Blue900, Primary.Blue600, Primary.Blue500, Accent.LightBlue700, TextShade.WHITE);
+            EstiloMenu x = new EstiloMenu();
+            x.AplicarEstilo(this);
         }
-
-       
         public int bandera = 0;
-
         private void Ocupaciones_Load(object sender, EventArgs e)
         {
             try
@@ -47,10 +42,9 @@ namespace Presentacion.Funcionarios
             {
                 NOcupaciones n = new NOcupaciones();
                 List<EOcupaciones> lista = n.ListaOcupaciones();
-                gridControl1.DataSource = lista;
-                gridView1.Columns[0].Visible = false;
-                gridView1.Columns[1].Caption = "LISTA OCUPACION";
-                
+                dataGridView1.DataSource = lista;
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[1].HeaderText = "LISTA OCUPACION";
             }
             catch (Exception ex)
             {
@@ -59,29 +53,7 @@ namespace Presentacion.Funcionarios
             }
         }
 
-        private void gridControl1_DoubleClick(object sender, EventArgs e)
-        {
-            if (gridView1.RowCount>0)
-            {
-                try
-                {
-                    txtprofesion.Tag = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "OcupacionId").ToString());
-                    txtprofesion.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Ocupacion").ToString();
-                    bandera = 1;
-                    chkeditar.Checked = true;
-                    chkeditar.Visible = true;
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            else
-            {
-                MessageBox.Show("No hay registros que seleccionar","SGA",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            }
-        }
+     
 
         private void btncancelar_Click(object sender, EventArgs e)
         {
@@ -145,8 +117,8 @@ namespace Presentacion.Funcionarios
             try
             {
                 EOcupaciones o = new EOcupaciones();
-                o.OcupacionId = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "OcupacionId"));
-                var i = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Ocupacion").ToString();
+                o.OcupacionId = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["OcupacionId"].Value.ToString());
+                var i = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Ocupacion"].Value.ToString();
                 DialogResult d = MessageBox.Show("¿Realmente desea Eliminar la ocupacion " + i + "?", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 if (d == DialogResult.OK)
                 {
@@ -160,6 +132,30 @@ namespace Presentacion.Funcionarios
             {
 
                 MessageBox.Show(ex.Message,"SGA",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.RowCount > 0)
+            {
+                try
+                {
+                    txtprofesion.Tag = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["OcupacionId"].Value.ToString());
+                    txtprofesion.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Ocupacion"].Value.ToString();
+                    bandera = 1;
+                    chkeditar.Checked = true;
+                    chkeditar.Visible = true;
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay registros que seleccionar", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

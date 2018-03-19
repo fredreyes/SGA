@@ -35,16 +35,15 @@
             this.chk2 = new MaterialSkin.Controls.MaterialCheckBox();
             this.chk1 = new MaterialSkin.Controls.MaterialCheckBox();
             this.chkmodificar = new MaterialSkin.Controls.MaterialCheckBox();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtxgrado = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.rbtnactivo = new MaterialSkin.Controls.MaterialRadioButton();
             this.rbtncancelar = new MaterialSkin.Controls.MaterialRadioButton();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btncancelar
@@ -137,6 +136,7 @@
             // 
             this.chkmodificar.AutoSize = true;
             this.chkmodificar.Depth = 0;
+            this.chkmodificar.Enabled = false;
             this.chkmodificar.Font = new System.Drawing.Font("Roboto", 10F);
             this.chkmodificar.Location = new System.Drawing.Point(240, 112);
             this.chkmodificar.Margin = new System.Windows.Forms.Padding(0);
@@ -149,23 +149,22 @@
             this.chkmodificar.Text = "Editar";
             this.chkmodificar.UseVisualStyleBackColor = true;
             // 
-            // gridControl1
+            // contextMenuStrip1
             // 
-            this.gridControl1.ContextMenuStrip = this.contextMenuStrip1;
-            this.gridControl1.Location = new System.Drawing.Point(21, 300);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(310, 150);
-            this.gridControl1.TabIndex = 29;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick_1);
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editarToolStripMenuItem,
+            this.eliminarToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(123, 48);
             // 
-            // gridView1
+            // eliminarToolStripMenuItem
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.eliminarToolStripMenuItem.Image = global::Presentacion.Properties.Resources.delete__1_;
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // txtxgrado
             // 
@@ -216,26 +215,32 @@
             this.rbtncancelar.Text = "Cancelado";
             this.rbtncancelar.UseVisualStyleBackColor = true;
             // 
-            // contextMenuStrip1
+            // dataGridView1
             // 
-            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.eliminarToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 300);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(319, 150);
+            this.dataGridView1.TabIndex = 38;
             // 
-            // eliminarToolStripMenuItem
+            // editarToolStripMenuItem
             // 
-            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.eliminarToolStripMenuItem.Text = "Eliminar";
-            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
+            this.editarToolStripMenuItem.Image = global::Presentacion.Properties.Resources.edit;
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // AgregarGrado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(343, 462);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.rbtncancelar);
             this.Controls.Add(this.rbtnactivo);
             this.Controls.Add(this.btncancelar);
@@ -244,7 +249,6 @@
             this.Controls.Add(this.chk2);
             this.Controls.Add(this.chk1);
             this.Controls.Add(this.chkmodificar);
-            this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.txtxgrado);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -253,9 +257,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grados";
             this.Load += new System.EventHandler(this.AgregarGrado_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,12 +272,12 @@
         private MaterialSkin.Controls.MaterialCheckBox chk2;
         private MaterialSkin.Controls.MaterialCheckBox chk1;
         private MaterialSkin.Controls.MaterialCheckBox chkmodificar;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtxgrado;
         private MaterialSkin.Controls.MaterialRadioButton rbtnactivo;
         private MaterialSkin.Controls.MaterialRadioButton rbtncancelar;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
     }
 }

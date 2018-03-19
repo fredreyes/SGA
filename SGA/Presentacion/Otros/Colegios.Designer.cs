@@ -29,53 +29,36 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txtcolegio = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.cbmDepartmento = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.chkeditar = new MaterialSkin.Controls.MaterialCheckBox();
             this.txttelefono = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.brncancelar = new MaterialSkin.Controls.MaterialRaisedButton();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.ContextMenuStrip = this.contextMenuStrip1;
-            this.gridControl1.Location = new System.Drawing.Point(27, 230);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(332, 162);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.eliminarToolStripMenuItem});
+            this.eliminarToolStripMenuItem,
+            this.editarToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(119, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(119, 48);
             // 
             // eliminarToolStripMenuItem
             // 
+            this.eliminarToolStripMenuItem.Image = global::Presentacion.Properties.Resources.delete__1_;
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // txtcolegio
             // 
@@ -120,6 +103,7 @@
             // 
             this.chkeditar.AutoSize = true;
             this.chkeditar.Depth = 0;
+            this.chkeditar.Enabled = false;
             this.chkeditar.Font = new System.Drawing.Font("Roboto", 10F);
             this.chkeditar.Location = new System.Drawing.Point(313, 164);
             this.chkeditar.Margin = new System.Windows.Forms.Padding(0);
@@ -160,35 +144,53 @@
             this.brncancelar.UseVisualStyleBackColor = true;
             this.brncancelar.Click += new System.EventHandler(this.brncancelar_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.Location = new System.Drawing.Point(25, 230);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(341, 150);
+            this.dataGridView1.TabIndex = 7;
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Image = global::Presentacion.Properties.Resources.edit;
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
+            // 
             // Colegios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 404);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.brncancelar);
             this.Controls.Add(this.txttelefono);
             this.Controls.Add(this.chkeditar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.cbmDepartmento);
             this.Controls.Add(this.txtcolegio);
-            this.Controls.Add(this.gridControl1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Colegios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colegios";
             this.Load += new System.EventHandler(this.Colegios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtcolegio;
         private System.Windows.Forms.ComboBox cbmDepartmento;
         private MaterialSkin.Controls.MaterialRaisedButton btnGuardar;
@@ -197,5 +199,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private MaterialSkin.Controls.MaterialRaisedButton brncancelar;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
     }
 }

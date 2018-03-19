@@ -11,8 +11,10 @@ namespace Datos
 {
   public  class DDepartamentos
     {
+        //Conexion
         SqlCommand comando;
         SqlConnection conexion = new SqlConnection(Properties.Settings.Default.CadenaConexion);
+        //Lista de Departamentos
         public List<EDepartamentos> ListaDepartmento()
         {
             try
@@ -41,6 +43,7 @@ namespace Datos
                 throw ex;
             }
         }
+        //Ingresar Departamento
         public void IngresarDepartamento(EDepartamentos d)
         {
             try
@@ -60,6 +63,7 @@ namespace Datos
                 throw ex;
             }
         }
+        //Modificar Departamento
         public void ModificarDepartamento(EDepartamentos d)
         {
             try
@@ -80,6 +84,7 @@ namespace Datos
                 throw ex;
             }
         }
+        //Eliminar Departamento, siempre y cuando el registro este recientemente ingresado (NO FOREIGNK KEY)
         public void EliminarDepartamento(EDepartamentos d)
         {
             try

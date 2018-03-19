@@ -7,7 +7,7 @@ go
 CREATE TABLE Departamentos
 (
 DepartamentoID int identity(1,1),
-Departamento Nvarchar(150),
+Departamento Nvarchar(150) unique,
 constraint pk_DepartamentoId Primary key (DepartamentoID)
 )
 GO
@@ -22,6 +22,7 @@ constraint PK_Colegio primary key(ColegioId),
 constraint fk_Departamento foreign key(DepartamentoId) references Departamentos(DepartamentoID)
 )
 go
+
 --TABLA PROFESION_OCUPACION
 create table ProfesionOcupacion
 (
@@ -35,7 +36,7 @@ go
 create table Turnos
 (
 TurnoId int NOT NULL identity(1,1),
-Turno nvarchar(20) NOT NULL,
+Turno nvarchar(20) NOT NULL unique,
 Descripcion nvarchar(200),
 Activo bit
 CONSTRAINT PK_TURNOS PRIMARY KEY(TurnoId)
@@ -79,6 +80,7 @@ Aula NVARCHAR(30) NOT NULL,
 Capacidad INT NOT NULL CHECK(CAPACIDAD >= 0),
 Vacantes INT NOT NULL CHECK(VACANTES >= 0),
 GradoId INT NOT NULL,
+Turno nvarchar(50),
 Activo bit
 CONSTRAINT PK_AULAS PRIMARY KEY(AulaId),
 CONSTRAINT FK_AULAS_GRADOS FOREIGN KEY(GradoId) REFERENCES Grados(GradoId)
@@ -105,7 +107,7 @@ Nombres nvarchar(100) not null,
 Apellidos nvarchar(100) not null,
 Cedula nvarchar(18) ,
 Sexo char (1),--F,M
-FechaNacimiento DATE,
+FechaNacimiento DATE check (FechaNacimiento <= Getdate()),
 Telefono nvarchar(15),
 Cargo nvarchar(40) ,
 OcupacionId INT,
@@ -238,6 +240,32 @@ AsingaturaId int,
 GradoId int,
 CicloEscolarID int
 )
+
+
+
+--TABLA MATRICULA
+--CREATE TABLE Matricula
+--( 
+--MatriculaId INT NOT NULL,
+--CicloEscolarId INT,
+--AlumnoId int NOT NULL, 
+--GradoId INT NOT NULL, 
+--FechaMatricula DATE NOT NULL check(FechaMatricula >= Getdate()),
+--Repitente CHAR(2) NOT NULL, --SI,NO
+--TurnoId INT NOT NULL,
+--ColegioId INT,
+--UsuarioId INT NOT NULL
+--CONSTRAINT PK_MATRICULA PRIMARY KEY(MatriculaId),
+--CONSTRAINT FK_MATRI_ALMNO FOREIGN KEY(AlumnoId) REFERENCES ALUMNOS(AlumnoId),
+--CONSTRAINT FK_MATRI_GRADO FOREIGN KEY(GradoId) REFERENCES GRADOS(GradoId),
+--CONSTRAINT FK_MATRI_TURNO FOREIGN KEY(TurnoId) REFERENCES TURNOS(TurnoId),
+--CONSTRAINT FK_MATRI_USUARIO FOREIGN KEY(UsuarioId) REFERENCES UsuariosFuncionarios(UsuarioId),
+--CONSTRAINT FK_MATRICULACICLO FOREIGN KEY(CicloEscolarId) REFERENCES CicloEscolar(CicloEscolarId),
+--CONSTRAINT FK_MATRICULACOLEGIO FOREIGN KEY(ColegioId) REFERENCES Colegio(ColegioId)
+--)
+--GO
+
+
 
 
 ---------------------------------------------------

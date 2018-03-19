@@ -17,7 +17,7 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("select AulaId,Aula,Capacidad,Vacantes,A.GradoId,Grado,A.activo from Aulas A inner join GRADOS G ON A.GradoId = G.GradoId", conexion);
+                comando = new SqlCommand("select AulaId,Aula,Capacidad,Vacantes,A.GradoId,Grado,A.activo,Turno from Aulas A inner join GRADOS G ON A.GradoId = G.GradoId", conexion);
                 comando.CommandType = CommandType.Text;
                 comando.Connection = conexion;
                 conexion.Open();
@@ -33,6 +33,7 @@ namespace Datos
                     a.GradoId = (int)leer[4];
                     a.Grado = leer[5].ToString();
                     a.Activo = (bool)leer[6];
+                    a.Turno = leer[7].ToString();
                     lista.Add(a);
                 }
                 leer.Close();
@@ -56,6 +57,7 @@ namespace Datos
                 comando.Parameters.AddWithValue("@capacidad", A.Capacidad);
                 comando.Parameters.AddWithValue("@Vacantes", A.Vacantes);
                 comando.Parameters.AddWithValue("@GradoId", A.GradoId);
+                comando.Parameters.AddWithValue("@Turno", A.Turno);
                 conexion.Open();
                 comando.ExecuteNonQuery();
                 conexion.Close();
@@ -77,6 +79,7 @@ namespace Datos
                 comando.Parameters.AddWithValue("@capacidad", A.Capacidad);
                 comando.Parameters.AddWithValue("@Vacantes", A.Vacantes);
                 comando.Parameters.AddWithValue("@GradoId", A.GradoId);
+                comando.Parameters.AddWithValue("@Turno", A.Turno);
                 comando.Parameters.AddWithValue("@activo", A.Activo);
                 comando.Parameters.AddWithValue("@AulaId", A.AulaId);
                 comando.Connection = conexion;

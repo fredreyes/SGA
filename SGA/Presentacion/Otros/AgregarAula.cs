@@ -46,11 +46,22 @@ namespace Presentacion.Otros
             {
                 NAulas n = new NAulas();
                 List<EAulas> L = n.ListaAulas();
-                gridControl1.DataSource = L;
+                var NuevaLista = (from i in L
+                                  select new
+                                  {
+                                      i.AulaId,
+                                      i.Aula,
+                                      i.Capacidad,
+                                      i.Vacantes,
+                                      i.Turno,
+                                      i.GradoId,
+                                      i.Grado
+                                  }).ToList();
+                gridControl1.DataSource = NuevaLista;
+                gridView1.BestFitColumns();
                 gridView1.Columns[0].Visible = false;
                 gridView1.Columns[5].Visible = false;
-                gridView1.Columns[7].Visible = false;
-                gridView1.BestFitColumns();
+                gridView1.Columns[6].Group();
             }
             catch (Exception ex)
             {
@@ -119,6 +130,7 @@ namespace Presentacion.Otros
                     a.Capacidad = int.Parse(txtcpacidad.Text);
                     a.Vacantes = int.Parse(txtcpacidad.Text);
                     a.GradoId = Convert.ToInt32(LbxGrado.SelectedValue.ToString());
+                    a.Turno = rbtnMatutino.Checked ? "Matutino" : "Vespertino";
                     n.IngresaAulas(a);
                     MessageBox.Show("Aula Ingresada con Exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
@@ -132,6 +144,7 @@ namespace Presentacion.Otros
                     a.Capacidad = int.Parse(txtcpacidad.Text);
                     a.Vacantes = int.Parse(txtcpacidad.Text);
                     a.GradoId = Convert.ToInt32(LbxGrado.SelectedValue.ToString());
+                    a.Turno = rbtnMatutino.Checked ? "Matutino" : "Vespertino";
                     a.Activo = Convert.ToBoolean(rbtnactivo.Checked ? 1 : 0);
                     n.ModificarAulas(a);
                     MessageBox.Show("Aula Modificada con Exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -149,6 +162,36 @@ namespace Presentacion.Otros
        
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EAulas A = new EAulas();
+                NAulas n = new NAulas(); 
+               A.AulaId = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "AulaId").ToString());
+               var Aula =  gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Aula").ToString();
+                DialogResult o = MessageBox.Show("¿Realmente deseas eliminar la Aula " + Aula + " ?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (o == DialogResult.OK)
+                {
+                    n.EliminarAulas(A);
+                    MessageBox.Show("Aula Eliminada con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                    CargarGrados();
+                    CargarLista();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -172,32 +215,7 @@ namespace Presentacion.Otros
                     Bandera = 1;
                 }
                 else
-                    MessageBox.Show("No hay registros que seleccionar","SGA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error); 
-            }
-        }
-
-        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                EAulas A = new EAulas();
-                NAulas n = new NAulas(); 
-               A.AulaId = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "AulaId").ToString());
-               var Aula =  gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Aula").ToString();
-                DialogResult o = MessageBox.Show("¿Realmente deseas eliminar la Aula " + Aula + " ?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (o == DialogResult.OK)
-                {
-                    n.EliminarAulas(A);
-                    MessageBox.Show("Aula Eliminada con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar();
-                    CargarGrados();
-                    CargarLista();
-                }
+                    MessageBox.Show("No hay registros que seleccionar", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
