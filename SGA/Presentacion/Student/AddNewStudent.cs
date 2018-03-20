@@ -123,7 +123,6 @@ namespace Presentacion.Student
                 txtcedulaTutor.Text = txtcedulaMadre.Text;
                 txttelefonoTutor.Text = txttelMadre.Text;
                 cbmParentezco.Text = "Madre";
-                checkBox2.Checked = false;
                 checkBox1.Checked = false;
             }
             else
@@ -224,6 +223,11 @@ namespace Presentacion.Student
                     alumno.Direccion = txtdomicilio.Text;
                     alumno.CodigoMined = Convert.ToInt32(txtCodigoMined.Text);
                     alumno.Activo = Convert.ToBoolean(chkactivo.Checked ? 1 : 0);
+                    //Parentezco
+                    alumno.NombreTutor = txtxTutorName.Text;
+                    alumno.CedulaTutor = txtcedulaTutor.Text;
+                    alumno.TelefonoTutor = txttelefonoTutor.Text;
+                    alumno.ParentezcoAlumno = cbmParentezco.Text;
                     //Padres
                     EPadres_Tutor padres = new EPadres_Tutor();
                     padres.NOMBRE_PADRE = txtnombrePadre.Text;

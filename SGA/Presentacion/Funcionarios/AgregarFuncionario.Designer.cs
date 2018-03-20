@@ -32,7 +32,6 @@
             this.txtapellido = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.rbtnMasculino = new MaterialSkin.Controls.MaterialRadioButton();
             this.rbtnFemenino = new MaterialSkin.Controls.MaterialRadioButton();
-            this.dateFechaNac = new DevExpress.XtraEditors.DateEdit();
             this.txtcedula = new System.Windows.Forms.MaskedTextBox();
             this.txttelefono = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtcargo = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -40,12 +39,11 @@
             this.cbmOcupacion = new System.Windows.Forms.ComboBox();
             this.chkactivo = new MaterialSkin.Controls.MaterialCheckBox();
             this.chkcancelar = new MaterialSkin.Controls.MaterialCheckBox();
+            this.chkisDocente = new MaterialSkin.Controls.MaterialCheckBox();
+            this.dateFechaNac = new System.Windows.Forms.DateTimePicker();
             this.pictureFoto = new DevExpress.XtraEditors.PictureEdit();
             this.btncancelar = new System.Windows.Forms.Button();
             this.btningresar = new System.Windows.Forms.Button();
-            this.chkisDocente = new MaterialSkin.Controls.MaterialCheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dateFechaNac.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateFechaNac.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFoto.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,25 +111,14 @@
             this.rbtnFemenino.Text = "Femenino";
             this.rbtnFemenino.UseVisualStyleBackColor = true;
             // 
-            // dateFechaNac
-            // 
-            this.dateFechaNac.EditValue = null;
-            this.dateFechaNac.Location = new System.Drawing.Point(42, 246);
-            this.dateFechaNac.Name = "dateFechaNac";
-            this.dateFechaNac.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateFechaNac.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateFechaNac.Size = new System.Drawing.Size(170, 20);
-            this.dateFechaNac.TabIndex = 4;
-            // 
             // txtcedula
             // 
             this.txtcedula.BackColor = System.Drawing.Color.White;
+            this.txtcedula.Font = new System.Drawing.Font("Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.txtcedula.Location = new System.Drawing.Point(12, 161);
             this.txtcedula.Mask = ">000-000000-0000L";
             this.txtcedula.Name = "txtcedula";
-            this.txtcedula.Size = new System.Drawing.Size(272, 20);
+            this.txtcedula.Size = new System.Drawing.Size(272, 23);
             this.txtcedula.TabIndex = 5;
             // 
             // txttelefono
@@ -181,11 +168,11 @@
             // 
             // cbmOcupacion
             // 
-            this.cbmOcupacion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbmOcupacion.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbmOcupacion.FormattingEnabled = true;
             this.cbmOcupacion.Location = new System.Drawing.Point(12, 386);
             this.cbmOcupacion.Name = "cbmOcupacion";
-            this.cbmOcupacion.Size = new System.Drawing.Size(272, 23);
+            this.cbmOcupacion.Size = new System.Drawing.Size(272, 24);
             this.cbmOcupacion.TabIndex = 43;
             this.cbmOcupacion.Text = "Seleccione una Profesión u Ocupación";
             // 
@@ -223,10 +210,34 @@
             this.chkcancelar.UseVisualStyleBackColor = true;
             this.chkcancelar.CheckedChanged += new System.EventHandler(this.chkcancelar_CheckedChanged);
             // 
+            // chkisDocente
+            // 
+            this.chkisDocente.AutoSize = true;
+            this.chkisDocente.Depth = 0;
+            this.chkisDocente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.chkisDocente.Location = new System.Drawing.Point(424, 304);
+            this.chkisDocente.Margin = new System.Windows.Forms.Padding(0);
+            this.chkisDocente.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkisDocente.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkisDocente.Name = "chkisDocente";
+            this.chkisDocente.Ripple = true;
+            this.chkisDocente.Size = new System.Drawing.Size(81, 30);
+            this.chkisDocente.TabIndex = 48;
+            this.chkisDocente.Text = "Docente";
+            this.chkisDocente.UseVisualStyleBackColor = true;
+            // 
+            // dateFechaNac
+            // 
+            this.dateFechaNac.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateFechaNac.Location = new System.Drawing.Point(13, 250);
+            this.dateFechaNac.Name = "dateFechaNac";
+            this.dateFechaNac.Size = new System.Drawing.Size(271, 23);
+            this.dateFechaNac.TabIndex = 49;
+            // 
             // pictureFoto
             // 
             this.pictureFoto.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureFoto.EditValue = global::Presentacion.Properties.Resources.student;
+            this.pictureFoto.EditValue = global::Presentacion.Properties.Resources.users;
             this.pictureFoto.Location = new System.Drawing.Point(387, 120);
             this.pictureFoto.Name = "pictureFoto";
             this.pictureFoto.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
@@ -273,27 +284,12 @@
             this.btningresar.UseVisualStyleBackColor = false;
             this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
             // 
-            // chkisDocente
-            // 
-            this.chkisDocente.AutoSize = true;
-            this.chkisDocente.Depth = 0;
-            this.chkisDocente.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkisDocente.Location = new System.Drawing.Point(424, 304);
-            this.chkisDocente.Margin = new System.Windows.Forms.Padding(0);
-            this.chkisDocente.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkisDocente.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkisDocente.Name = "chkisDocente";
-            this.chkisDocente.Ripple = true;
-            this.chkisDocente.Size = new System.Drawing.Size(81, 30);
-            this.chkisDocente.TabIndex = 48;
-            this.chkisDocente.Text = "Docente";
-            this.chkisDocente.UseVisualStyleBackColor = true;
-            // 
             // AgregarFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 425);
+            this.Controls.Add(this.dateFechaNac);
             this.Controls.Add(this.chkisDocente);
             this.Controls.Add(this.chkcancelar);
             this.Controls.Add(this.chkactivo);
@@ -305,7 +301,6 @@
             this.Controls.Add(this.txtcargo);
             this.Controls.Add(this.txttelefono);
             this.Controls.Add(this.txtcedula);
-            this.Controls.Add(this.dateFechaNac);
             this.Controls.Add(this.rbtnFemenino);
             this.Controls.Add(this.rbtnMasculino);
             this.Controls.Add(this.txtapellido);
@@ -316,8 +311,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Funcionario";
             this.Load += new System.EventHandler(this.AgregarFuncionario_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dateFechaNac.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateFechaNac.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFoto.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -331,7 +324,6 @@
         public MaterialSkin.Controls.MaterialSingleLineTextField txtapellido;
         public MaterialSkin.Controls.MaterialRadioButton rbtnMasculino;
         public MaterialSkin.Controls.MaterialRadioButton rbtnFemenino;
-        public DevExpress.XtraEditors.DateEdit dateFechaNac;
         public System.Windows.Forms.MaskedTextBox txtcedula;
         public MaterialSkin.Controls.MaterialSingleLineTextField txttelefono;
         public MaterialSkin.Controls.MaterialSingleLineTextField txtcargo;
@@ -341,5 +333,6 @@
         public MaterialSkin.Controls.MaterialCheckBox chkactivo;
         public MaterialSkin.Controls.MaterialCheckBox chkcancelar;
         public MaterialSkin.Controls.MaterialCheckBox chkisDocente;
+        public System.Windows.Forms.DateTimePicker dateFechaNac;
     }
 }

@@ -507,6 +507,34 @@ BEGIN
 		where FuncionarioId = @FuncionarioId
 END
 GO
+--Crear Historial de cargo de Docente
+create trigger InsertarHistorialCargoDocente
+on Funcionarios after update,insert
+as
+begin
+declare @FuncionarioId int = (select FuncionarioId from inserted)
+declare @Cargo nvarchar(100) = (select Cargo from Funcionarios where FuncionarioId = @FuncionarioId)
+declare  @Fecha date = getdate()
+		if @FuncionarioId is null
+		begin
+				insert into HistorialCargoFuncionaario values
+				(
+				@FuncionarioId,
+				@Cargo,
+				@Fecha
+				)
+		end
+		else
+		begin
+		insert into HistorialCargoFuncionaario values
+				(
+				@FuncionarioId,
+				@Cargo,
+				@Fecha
+				)
+		end
+end
+go
 
 --Estudiantes
 create proc IngresarEstudiante
@@ -581,9 +609,7 @@ select @ID
 					@CedulaMadre,
 					@TelefonoMadre,
 					@EmailMadre,
-					@OcupacionMadre,
-					@NombreTutor ,
-					@TelefonoTutor
+					@OcupacionMadre
 					)
 				--TUTOR
 				declare @TutorAlumnoID INT
@@ -617,6 +643,7 @@ select @ID
 		Rollback tran
 end
 go
+
 create proc ModificarEstudiante
 (
 --Alumnos
@@ -639,8 +666,11 @@ create proc ModificarEstudiante
 @TelefonoMadre nvarchar(15),
 @EmailMadre NVARCHAR(100),
 @OcupacionMadre NVARCHAR(150),
+--AlumnosTutor
 @NombreTutor NVARCHAR(150),
+@CedulaTutor NVARCHAR(16),
 @TelefonoTutor NVARCHAR(15),
+@ParentezcoAlumno NVARCHAR(50),
 --Documentos Alumnos
 @PartidaNaciminto CHAR(2),
 @CertificadoNotas CHAR(2),
@@ -673,10 +703,17 @@ begin
 					CedulaMadre = @CedulaMadre,
 					TelefonoMadre = @TelefonoMadre,
 					EmailMadre = @EmailMadre,
-					OcupacionMadre= @OcupacionMadre,
-					NombreTutor = @NombreTutor ,
-					TelefonoTutor= @TelefonoTutor
+					OcupacionMadre= @OcupacionMadre
 					where AlumnoId = @AlumnoID
+
+			--TUTOR
+			update AlumnosTutor set
+				NombreTutor = @NombreTutor,
+				CedulaTutor = @CedulaTutor,
+				TelefonoTutor = @TelefonoTutor,
+				ParentezcoAlumno = @ParentezcoAlumno
+				where AlumnoId = @AlumnoID
+			--DOCUMENTOS	
 				update DocumentosAlumnos set
 				PartidaNaciminto = @PartidaNaciminto,
 				CertificadoNotas = @CertificadoNotas,
@@ -700,13 +737,16 @@ as
 begin
 select a.AlumnoId,Nombres,Apellidos,Sexo,FechaNacimiento,Direccion,CodigoMined,Activo,DocumentoId,PartidaNaciminto,CertificadoNotas,TarjetaVacuna,
 CartaTraslado,CertificadoSalud,Foto,PadresTutorId,NombresPadres,CedulaPadre,TelefonoPadre,EmailPadre,OcupacionPadre,NombresMadres,CedulaMadre,
-TelefonoMadre,EmailMadre,OcupacionMadre,NombreTutor,TelefonoTutor
+TelefonoMadre,EmailMadre,OcupacionMadre,TutorAlumnoID,NombreTutor,CedulaTutor,TelefonoTutor,ParentezcoAlumno
  from Alumnos a
 inner join DocumentosAlumnos d on a.AlumnoId=d.AlumnoId
 inner join PadresTutorAlumno p on a.AlumnoId=p.AlumnoId
+inner join AlumnosTutor ATU on a.AlumnoId = ATU.AlumnoId
 where foto is not null and a.AlumnoId = @AlumnoId  
 end
 go
+
+select * from AlumnosTutor
 
 
 --Materia Docente 

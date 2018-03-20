@@ -59,7 +59,7 @@ namespace Presentacion.Student
             dataGridView1.Columns[3].Visible = false;
             dataGridView1.Columns[4].Visible = false;
             dataGridView1.Columns[5].Visible = false;
-            //dataGridView1.Columns[6].Visible = false;
+            //dataGridView1.Columns[6].Visible = false
             dataGridView1.Columns[7].Visible = false;
             dataGridView1.Columns[8].Visible = false;
             dataGridView1.Columns[9].Visible = false;
@@ -81,8 +81,6 @@ namespace Presentacion.Student
             dataGridView1.Columns[25].Visible = false;
             dataGridView1.Columns[26].Visible = false;
             dataGridView1.Columns[27].Visible = false;
-
-
         }
 
       
@@ -103,7 +101,7 @@ namespace Presentacion.Student
                         alumno.CERTIFICADO_NOTAS, alumno.TARJETA_VACUNA, alumno.CARTA_TRASLADO, alumno.CERTIFICADO_DE_SALUD, alumno.FOTO,
                         alumno.ID_PARENTEZCO, alumno.NOMBRE_PADRE, alumno.CEDULA_PADRE, alumno.TELEFONO_PADRE, alumno.EMAIL_PADRE,
                         alumno.OCUPACION_PADRE, alumno.NOMBRE_MADRE, alumno.CEDULA_MADRE, alumno.TELEFONO_MADRE, alumno.EMAIL_MADRE,
-                        alumno.OCUPACION_MADRE, alumno.NOMBRE_TUTOR, alumno.TELEFONO_TUTOR);
+                        alumno.OCUPACION_MADRE, alumno.NombreTutor,alumno.CedulaTutor,alumno.TelefonoTutor,alumno.ParentezcoAlumno);
                     }
                     else
                     {
@@ -181,8 +179,10 @@ namespace Presentacion.Student
                 else
                 {
                     estudiante.txtxTutorName.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[26].Value.ToString();
-                    estudiante.txttelefonoTutor.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[27].Value.ToString();
-                }
+                    estudiante.txtcedulaTutor.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[27].Value.ToString();
+                    estudiante.txttelefonoTutor.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[28].Value.ToString();
+                    estudiante.cbmParentezco.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[29].Value.ToString();
+                }                
                 estudiante.Bandera = 1;
                 estudiante.chkactivo.Visible = true;
                 estudiante.chkcancelado.Visible = true;

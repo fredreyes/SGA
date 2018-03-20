@@ -43,13 +43,14 @@ namespace Presentacion.Funcionarios
             cbmOcupacion.Text = "Seleccione una Ocupación";
             rbtnFemenino.Checked = false;
             rbtnMasculino.Checked = false;
-            pictureFoto.Image = Properties.Resources.student;
+            pictureFoto.Image = Properties.Resources.users;
             CargarOcupaciones();
             chkcancelar.Checked = false;
             chkactivo.Checked = false;
             chkactivo.Visible = false;
             chkcancelar.Visible = false;
             chkisDocente.Checked = false;
+            dateFechaNac.Value = DateTime.Today;
         }
 
         void CargarOcupaciones()
@@ -85,7 +86,7 @@ namespace Presentacion.Funcionarios
                     funcionario.Apellidos = txtapellido.Text;
                     funcionario.Cedula = txtcedula.Text;
                     funcionario.Sexo = rbtnMasculino.Checked ? "M" : "F";
-                    funcionario.FechaNacimiento = Convert.ToDateTime(dateFechaNac.EditValue);
+                    funcionario.FechaNacimiento = Convert.ToDateTime(dateFechaNac.Value);
                     funcionario.Telefono = txttelefono.Text;
                     funcionario.Cargo = txtcargo.Text;
                     funcionario.Ocupacion.OcupacionId = Convert.ToInt32(cbmOcupacion.SelectedValue.ToString());
@@ -95,6 +96,13 @@ namespace Presentacion.Funcionarios
                     n.IngresarFuncionario(funcionario);
                     MessageBox.Show("Funcionario ingresado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
+                    DialogResult mensaje = MessageBox.Show("¿Desea Ingresar otro Registro?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (mensaje == DialogResult.Cancel)
+                    {
+                        this.Close();
+                        Funcionarios x = new Funcionarios();
+                        x.Show();
+                    }
                 }
                 if (Bandera == 1)
                 {
@@ -103,7 +111,7 @@ namespace Presentacion.Funcionarios
                     funcionario.Apellidos = txtapellido.Text;
                     funcionario.Cedula = txtcedula.Text;
                     funcionario.Sexo = rbtnMasculino.Checked ? "M" : "F";
-                    funcionario.FechaNacimiento = Convert.ToDateTime(dateFechaNac.EditValue);
+                    funcionario.FechaNacimiento = Convert.ToDateTime(dateFechaNac.Value);
                     funcionario.Telefono = txttelefono.Text;
                     funcionario.Cargo = txtcargo.Text;
                     funcionario.Ocupacion.OcupacionId = Convert.ToInt32(cbmOcupacion.SelectedValue.ToString());

@@ -52,8 +52,11 @@ namespace Datos
                     a.TELEFONO_MADRE = leer[23].ToString();
                     a.EMAIL_MADRE = leer[24].ToString();
                     a.OCUPACION_MADRE = leer[25].ToString();
-                    a.NOMBRE_TUTOR = leer[26].ToString();
-                    a.TELEFONO_TUTOR = leer[27].ToString();
+                    a.TutorAlumnoID = (int)leer[26];
+                    a.NombreTutor = leer[27].ToString();
+                    a.CedulaTutor = leer[28].ToString();
+                    a.TelefonoTutor = leer[29].ToString();
+                    a.ParentezcoAlumno = leer[30].ToString();
                 }
                 leer.Close();
                 conexion.Close();
@@ -151,6 +154,7 @@ namespace Datos
                 comando.Parameters.AddWithValue("@CedulaTutor", a.CedulaTutor);
                 comando.Parameters.AddWithValue("@TelefonoTutor", a.TelefonoTutor);
                 comando.Parameters.AddWithValue("@ParentezcoAlumno", a.ParentezcoAlumno);
+                comando.Parameters.AddWithValue("@AlumnoID", a.AlumnoId);
                 comando.Connection = conexion;
                 conexion.Open();
                 comando.ExecuteNonQuery();

@@ -35,9 +35,6 @@ namespace Entidades
         public string TELEFONO_MADRE { get; set; }
         public string EMAIL_MADRE { get; set; }
         public string OCUPACION_MADRE { get; set; }
-        public string NOMBRE_TUTOR { get; set; }
-        public string TELEFONO_TUTOR { get; set; }
-
         //aLUMNO tuTOR
 
         public int TutorAlumnoID { get; set; }

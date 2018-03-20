@@ -60,6 +60,7 @@ namespace Presentacion.Funcionarios
         private void btnNuevoFuncionario_Click(object sender, EventArgs e)
         {
             AgregarFuncionario a = new AgregarFuncionario();
+            this.Hide();
             a.ShowDialog();
            
         }
@@ -84,7 +85,8 @@ namespace Presentacion.Funcionarios
                                  i.Foto,
                                  i.Sexo,
                                  i.Activo,
-                                 i.Email
+                                 i.Email,
+                                 i.IsDocenet
                              }
                              ).ToList();
                 gridControl1.DataSource = lista;
@@ -95,6 +97,7 @@ namespace Presentacion.Funcionarios
                 gridView1.Columns[8].Visible = false;
                 gridView1.Columns[9].Visible = false;
                 gridView1.Columns[12].Visible = false;
+                gridView1.Columns[13].Visible = false;
             }
             catch (Exception ex)
             {
@@ -105,6 +108,11 @@ namespace Presentacion.Funcionarios
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
         {
+            
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             AgregarFuncionario agregarFuncionaroio = new AgregarFuncionario();
             agregarFuncionaroio.txtnombres.Tag = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "FuncionarioId").ToString());
             agregarFuncionaroio.txtnombres.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Nombres").ToString();
@@ -112,18 +120,28 @@ namespace Presentacion.Funcionarios
             agregarFuncionaroio.txtcedula.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Cedula").ToString();
             agregarFuncionaroio.txttelefono.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Telefono").ToString();
             agregarFuncionaroio.txtcargo.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Cargo").ToString();
-            agregarFuncionaroio.dateFechaNac.EditValue = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "FechaNacimiento").ToString();
+            agregarFuncionaroio.dateFechaNac.Value = Convert.ToDateTime(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "FechaNacimiento").ToString());
             agregarFuncionaroio.txtemail.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Email").ToString();
             agregarFuncionaroio.cbmOcupacion.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Ocupacion").ToString();
             //Sexo
             if (gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Sexo").ToString() == "M")
             {
                 agregarFuncionaroio.rbtnMasculino.Checked = true;
-            }            
+            }
             else
             {
                 agregarFuncionaroio.rbtnFemenino.Checked = true;
             }
+            //Docente
+            if (Convert.ToBoolean(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IsDocenet").ToString()) == true)
+            {
+                agregarFuncionaroio.chkisDocente.Checked = true;
+            }
+            else
+            {
+                agregarFuncionaroio.chkisDocente.Checked = false;
+            }
+
 
             //Activo o Cancelado
             if (Convert.ToBoolean(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Activo").ToString()) == true)

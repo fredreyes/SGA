@@ -305,6 +305,7 @@
     <Content Include="icons\university.png" />
     <Content Include="icons\user.png" />
     <Content Include="icons\wall-calendar.png" />
+    <Content Include="icons\users.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
