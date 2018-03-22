@@ -746,8 +746,6 @@ where foto is not null and a.AlumnoId = @AlumnoId
 end
 go
 
-select * from AlumnosTutor
-
 
 --Materia Docente 
 create proc IngresarMateriaDocente
@@ -756,9 +754,8 @@ create proc IngresarMateriaDocente
 @AsignaturaId INT,
 @Mañana bit,
 @Tarde bit,
-@Noche bit,
-@Sabado bit,
-@Domingo bit
+@Primaria bit,
+@secundaria bit
 )
 as
 begin
@@ -772,9 +769,8 @@ begin
 			@AsignaturaId,
 			@Mañana,
 			@Tarde,
-			@Noche,
-			@Sabado,
-			@Domingo
+			@Primaria,
+			@secundaria
 		)
 		end try
 		begin catch
@@ -789,9 +785,8 @@ create proc ModificarMateriaDocente
 @AsignaturaId INT,
 @Mañana bit,
 @Tarde bit,
-@Noche bit,
-@Sabado bit,
-@Domingo bit
+@Primaria BIT,
+@secundaria BIT
 )
 as
 begin
@@ -800,9 +795,8 @@ begin
 			AsignaturaId = @AsignaturaId,
 			Mañana = @Mañana,
 			Tarde = @Tarde,
-			Noche = @Noche,
-			Sabado = @Sabado,
-			Domingo = @Domingo
+			Primaria = @Primaria,
+			Secundaria = @secundaria
 		where MateriaDocenteId = @MateriaDocenteId
 		end try
 		begin catch
@@ -823,43 +817,7 @@ end
 go
 
 
---Calificaciones
-create proc IngresarCalificaciones
-(
-@AlumnoId int,
-@MateriaDocenteId INT,
-@Acumulado INT,
-@Examen INT,
-@Rescate int,
-@Observacion NVARCHAR(300)
-)
-as
-begin
-	begin try
-	declare @CalificacionesId INT
-	declare @EvaluacionId INT
-	set @EvaluacionId = (select EvaluacionId from Evaluaciones where Activo = 1)
-	select @CalificacionesId = ISNULL(max(CalificacionesId),0)+1 from Calificaciones 	
-		insert into Calificaciones
-		values
-		(
-		@CalificacionesId,
-		@AlumnoId,
-		@MateriaDocenteId,
-		@Acumulado,
-		@Examen,
-		@Rescate,
-		@EvaluacionId,
-		@Observacion
-		)
-	end try
-	begin catch
-		if @@TRANCOUNT > 0
-			rollback
-	end catch
-end
-go
-
+--Plan clase
 create Proc IngresarPlanClase
 (
 @AsignaturaId int,
@@ -928,7 +886,46 @@ values
 @CicloEscolarID
 )
 end
+go
 
+
+
+--Calificaciones
+create proc IngresarCalificaciones
+(
+@AlumnoId int,
+@MateriaDocenteId INT,
+@Acumulado INT,
+@Examen INT,
+@Rescate int,
+@Observacion NVARCHAR(300)
+)
+as
+begin
+	begin try
+	declare @CalificacionesId INT
+	declare @EvaluacionId INT
+	set @EvaluacionId = (select EvaluacionId from Evaluaciones where Activo = 1)
+	select @CalificacionesId = ISNULL(max(CalificacionesId),0)+1 from Calificaciones 	
+		insert into Calificaciones
+		values
+		(
+		@CalificacionesId,
+		@AlumnoId,
+		@MateriaDocenteId,
+		@Acumulado,
+		@Examen,
+		@Rescate,
+		@EvaluacionId,
+		@Observacion
+		)
+	end try
+	begin catch
+		if @@TRANCOUNT > 0
+			rollback
+	end catch
+end
+go
 
 -------------faltan
 --------------------------------------------Procedimientos No creados------------------------------------------------

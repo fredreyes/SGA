@@ -91,17 +91,22 @@ namespace Presentacion.Notas
         {
             try
             {
-               
-                EplanClase pc = new EplanClase();
-                foreach (DataGridViewRow datos in dataGridView1.Rows)
+
+                if (dataGridView1.RowCount >0)
                 {
-                    pc.Asignatura.AsignaturaId = Convert.ToInt32(datos.Cells[0].Value);
-                    pc.Grado.GradoId = Convert.ToInt32(datos.Cells[2].Value);
-                    NPlanClase n = new NPlanClase();
-                    n.IngresarPlanClase(pc);
+                    EplanClase pc = new EplanClase();
+                    foreach (DataGridViewRow datos in dataGridView1.Rows)
+                    {
+                        pc.Asignatura.AsignaturaId = Convert.ToInt32(datos.Cells[0].Value);
+                        pc.Grado.GradoId = Convert.ToInt32(datos.Cells[2].Value);
+                        NPlanClase n = new NPlanClase();
+                        n.IngresarPlanClase(pc);
+                    }
+                    MessageBox.Show("Plan de Clase Ingresado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
                 }
-                MessageBox.Show("Plan de Clase Ingresado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Limpiar();
+                else
+                    MessageBox.Show("No hay registro que guardar", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {

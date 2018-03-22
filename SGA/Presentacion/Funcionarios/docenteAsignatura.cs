@@ -85,9 +85,8 @@ namespace Presentacion.Funcionarios
                                       i.Asignatura.Asignatura,
                                       i.mañana,
                                       i.tarde,
-                                      i.noche,
-                                      i.sabado,
-                                      i.domingo
+                                      i.Primaria,
+                                      i.Secundaria
                                   }).ToList();
                 gridControl2.DataSource = NuevaLista;
                 gridView2.BestFitColumns();
@@ -104,11 +103,10 @@ namespace Presentacion.Funcionarios
         void Limpiar()
         {
             listBox1.ClearSelected();
-            chkdomingo.Checked = false;
             chkmañana.Checked = false;
-            chknocturno.Checked = false;
-            chksabado.Checked = false;
             chktarde.Checked = false;
+            rbtnSecundaria.Checked = false;
+            rbtnPrimaria.Checked = false;
             Bandera = false;
         }
 
@@ -127,9 +125,8 @@ namespace Presentacion.Funcionarios
                     md.Asignatura.AsignaturaId = AsignaturaID;
                     md.mañana = Convert.ToBoolean(chkmañana.Checked ? 1 : 0);
                     md.tarde = Convert.ToBoolean(chktarde.Checked ? 1 : 0);
-                    md.noche = Convert.ToBoolean(chknocturno.Checked ? 1 : 0);
-                    md.sabado = Convert.ToBoolean(chksabado.Checked ? 1 : 0);
-                    md.domingo = Convert.ToBoolean(chkdomingo.Checked ? 1 : 0);
+                    md.Primaria = Convert.ToBoolean(rbtnPrimaria.Checked ? 1 : 0);
+                    md.Secundaria = Convert.ToBoolean(rbtnSecundaria.Checked ? 1 : 0);
                     n.IngresarMateriaDocente(md);
                     MessageBox.Show("Carga Academica Docente fue guardada con exito","SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
@@ -145,9 +142,8 @@ namespace Presentacion.Funcionarios
                     md.Asignatura.AsignaturaId = AsignaturaID;
                     md.mañana = Convert.ToBoolean(chkmañana.Checked ? 1 : 0);
                     md.tarde = Convert.ToBoolean(chktarde.Checked ? 1 : 0);
-                    md.noche = Convert.ToBoolean(chknocturno.Checked ? 1 : 0);
-                    md.sabado = Convert.ToBoolean(chksabado.Checked ? 1 : 0);
-                    md.domingo = Convert.ToBoolean(chkdomingo.Checked ? 1 : 0);
+                    md.Primaria = Convert.ToBoolean(rbtnPrimaria.Checked ? 1 : 0);
+                    md.Secundaria = Convert.ToBoolean(rbtnSecundaria.Checked ? 1 : 0);
                     n.ModificarMateriaDocente(md);
                     MessageBox.Show("Carga Academica Docente fue modificada con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
@@ -163,7 +159,7 @@ namespace Presentacion.Funcionarios
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void eliminarToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -203,19 +199,14 @@ namespace Presentacion.Funcionarios
                     chktarde.Checked = true;
                 else
                     chktarde.Checked = false;
-                if (Convert.ToBoolean(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "noche").ToString()) == true)
-                    chknocturno.Checked = true;
+                if (Convert.ToBoolean(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "Primaria").ToString()) == true)
+                    rbtnPrimaria.Checked = true;
                 else
-                    chknocturno.Checked = false;
-                if (Convert.ToBoolean(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "sabado").ToString()) == true)
-                    chksabado.Checked = true;
+                    rbtnPrimaria.Checked = false;
+                if (Convert.ToBoolean(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "Secundaria").ToString()) == true)
+                    rbtnSecundaria.Checked = true;
                 else
-                    chksabado.Checked = false;
-                if (Convert.ToBoolean(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "domingo").ToString()) == true)
-                    chkdomingo.Checked = true;
-                else
-                    chkdomingo.Checked = false;
-
+                    rbtnSecundaria.Checked = false;
                 this.Bandera = true;
             }
             catch (Exception ex)

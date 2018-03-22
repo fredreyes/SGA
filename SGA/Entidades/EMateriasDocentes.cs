@@ -13,9 +13,10 @@ namespace Entidades
         public EAsignatura Asignatura { get; set; }
         public bool mañana { get; set; }
         public bool tarde { get; set; }
-        public bool noche { get; set; }
-        public bool sabado { get; set; }
-        public bool domingo { get; set; }
+        public bool Primaria { get; set; }
+        public bool Secundaria { get; set; }
+
+
         public EMateriasDocentes()
         {
             Funcionario = new EFuncionarios();

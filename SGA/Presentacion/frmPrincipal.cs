@@ -84,5 +84,11 @@ namespace Presentacion
             Notas.PlandeClase planclase = new Notas.PlandeClase();
             planclase.ShowDialog();
         }
+
+        private void cargaAcademicaDocentesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Notas.CargaDocente cardaD = new Notas.CargaDocente();
+            cardaD.ShowDialog();
+        }
     }
 }

@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using Datos;
+using System.Windows.Forms;
+
 namespace Negocio
 {
     public class NPlanClase
@@ -22,20 +24,20 @@ namespace Negocio
                 throw ex;
             }
         }
-        public List<EplanClase> BuscarAsignaturaGrado(int  GradoId)
+  
+        public void CargarAsignaturaPorGrado(int id, ListBox cbm)
         {
             try
             {
                 DPlanClase d = new DPlanClase();
-                List<EplanClase> lista = d.BuscarListaAsignaturaGrado(GradoId);
-                return lista;
+                d.BuscarListaAsignaturaGrado(id, cbm);
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
+
 
         public List<EMateriasDocentes> BuscarDocentePorAsignatura(int AsignaturaId)
         {

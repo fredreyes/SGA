@@ -197,28 +197,12 @@ MateriaDocenteId INT NOT NULL,
 FuncionarioId INT NOT NULL, 
 AsignaturaId INT,
 Mañana bit,
-Tarde bit
+Tarde bit,
+Primaria bit,
+Secundaria bit
 CONSTRAINT PK_MATERIADOCENTE PRIMARY KEY(MateriaDocenteId)
 CONSTRAINT FK_MATE_FUNCIONARIO FOREIGN KEY(FuncionarioId) REFERENCES FUNCIONARIOS(FuncionarioId),
 CONSTRAINT FK_MATE_ASIGNATURA FOREIGN KEY(AsignaturaId) REFERENCES ASIGNATURAS(AsignaturaId)
-)
-GO
-
---Calificaciones
-CREATE TABLE Calificaciones
-(
-CalificacionesId INT NOT NULL,
-AlumnoId int NOT NULL,
-MateriaDocenteId INT NOT NULL,
-Acumulado INT NOT NULL,
-Examen INT NOT NULL,
-Rescate int,
-EvaluacionId INT NOT NULL,
-Observacion NVARCHAR(300)
-CONSTRAINT PK_NOTAS PRIMARY KEY(CalificacionesId),
-CONSTRAINT FK_NOTAS_ALUMNOS FOREIGN KEY(AlumnoId) REFERENCES ALUMNOS(AlumnoId),
-CONSTRAINT FK_NOTAS_DOCENTEMATERIA FOREIGN KEY(MateriaDocenteId) REFERENCES MateriaDocente(MateriaDocenteId),
-CONSTRAINT FK_NOTAS_EVALUCIONES FOREIGN KEY(EvaluacionId) REFERENCES EVALUACIONES(EvaluacionId)
 )
 GO
 
@@ -241,7 +225,23 @@ GradoId int,
 CicloEscolarID int
 )
 
-
+--Calificaciones
+CREATE TABLE Calificaciones
+(
+CalificacionesId INT NOT NULL,
+AlumnoId int NOT NULL,
+MateriaDocenteId INT NOT NULL,
+Acumulado INT NOT NULL,
+Examen INT NOT NULL,
+Rescate int,
+EvaluacionId INT NOT NULL,
+Observacion NVARCHAR(300)
+CONSTRAINT PK_NOTAS PRIMARY KEY(CalificacionesId),
+CONSTRAINT FK_NOTAS_ALUMNOS FOREIGN KEY(AlumnoId) REFERENCES ALUMNOS(AlumnoId),
+CONSTRAINT FK_NOTAS_DOCENTEMATERIA FOREIGN KEY(MateriaDocenteId) REFERENCES MateriaDocente(MateriaDocenteId),
+CONSTRAINT FK_NOTAS_EVALUCIONES FOREIGN KEY(EvaluacionId) REFERENCES EVALUACIONES(EvaluacionId)
+)
+GO
 
 --TABLA MATRICULA
 --CREATE TABLE Matricula

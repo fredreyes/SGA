@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Entidades;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 namespace Datos
 {
  public   class DCargaDocente

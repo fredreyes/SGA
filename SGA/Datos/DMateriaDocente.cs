@@ -17,7 +17,7 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("select MateriaDocenteId,MD.FuncionarioId, CONCAT(Nombres, ' ',Apellidos) AS Docente, MD.AsignaturaId, Asignatura,Mañana,Tarde,Noche,Sabado,Domingo from MateriaDocente MD inner join Funcionarios F on MD.FuncionarioId = F.FuncionarioId inner join Asignaturas A on MD.AsignaturaId = A.AsignaturaId",conexion);
+                comando = new SqlCommand("select MateriaDocenteId,MD.FuncionarioId, CONCAT(Nombres, ' ',Apellidos) AS Docente, MD.AsignaturaId, Asignatura,Mañana,Tarde,Primaria,Secundaria from MateriaDocente MD inner join Funcionarios F on MD.FuncionarioId = F.FuncionarioId inner join Asignaturas A on MD.AsignaturaId = A.AsignaturaId",conexion);
                 comando.CommandType = CommandType.Text;
                 conexion.Open();
                 List<EMateriasDocentes> lista = new List<EMateriasDocentes>();
@@ -32,9 +32,8 @@ namespace Datos
                     md.Asignatura.Asignatura = leer[4].ToString();
                     md.mañana = (bool)leer[5];
                     md.tarde = (bool)leer[6];
-                    md.noche = (bool)leer[7];
-                    md.sabado = (bool)leer[8];
-                    md.domingo = (bool)leer[9];
+                    md.Primaria = (bool)leer[7];
+                    md.Secundaria = (bool)leer[8];
                     lista.Add(md);
                 }
                 leer.Close();
@@ -59,9 +58,8 @@ namespace Datos
                 comando.Parameters.AddWithValue("@AsignaturaId", md.Asignatura.AsignaturaId);
                 comando.Parameters.AddWithValue("@Mañana", md.mañana);
                 comando.Parameters.AddWithValue("@Tarde", md.tarde);
-                comando.Parameters.AddWithValue("@Noche", md.noche);
-                comando.Parameters.AddWithValue("@Sabado", md.sabado);
-                comando.Parameters.AddWithValue("@Domingo", md.domingo);
+                comando.Parameters.AddWithValue("@Primaria", md.Primaria);
+                comando.Parameters.AddWithValue("@Secundaria", md.Secundaria);
                 comando.Connection = conexion;
                 conexion.Open();
                 comando.ExecuteNonQuery();
@@ -84,9 +82,8 @@ namespace Datos
                 comando.Parameters.AddWithValue("@AsignaturaId", md.Asignatura.AsignaturaId);
                 comando.Parameters.AddWithValue("@Mañana", md.mañana);
                 comando.Parameters.AddWithValue("@Tarde", md.tarde);
-                comando.Parameters.AddWithValue("@Noche", md.noche);
-                comando.Parameters.AddWithValue("@Sabado", md.sabado);
-                comando.Parameters.AddWithValue("@Domingo", md.domingo);
+                comando.Parameters.AddWithValue("@Primaria", md.Primaria);
+                comando.Parameters.AddWithValue("@Secundaria", md.Secundaria);
                 comando.Parameters.AddWithValue("@MateriaDocenteId", md.MateriaDocenteId);
                 comando.Connection = conexion;
                 conexion.Open();

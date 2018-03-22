@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlandeClase));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btningresar = new System.Windows.Forms.Button();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btningresar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -90,36 +92,33 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.MintCream;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column3,
             this.Column1,
             this.Column4,
             this.Column2});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(284, 100);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(322, 284);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // btningresar
-            // 
-            this.btningresar.BackColor = System.Drawing.Color.Blue;
-            this.btningresar.FlatAppearance.BorderSize = 0;
-            this.btningresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btningresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btningresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btningresar.ForeColor = System.Drawing.Color.White;
-            this.btningresar.Image = ((System.Drawing.Image)(resources.GetObject("btningresar.Image")));
-            this.btningresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btningresar.Location = new System.Drawing.Point(411, 390);
-            this.btningresar.Name = "btningresar";
-            this.btningresar.Size = new System.Drawing.Size(103, 38);
-            this.btningresar.TabIndex = 47;
-            this.btningresar.Text = "Guardar";
-            this.btningresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btningresar.UseVisualStyleBackColor = false;
-            this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
             // 
             // Column3
             // 
@@ -144,6 +143,25 @@
             this.Column2.HeaderText = "Grados";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            // 
+            // btningresar
+            // 
+            this.btningresar.BackColor = System.Drawing.Color.Blue;
+            this.btningresar.FlatAppearance.BorderSize = 0;
+            this.btningresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btningresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btningresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btningresar.ForeColor = System.Drawing.Color.White;
+            this.btningresar.Image = ((System.Drawing.Image)(resources.GetObject("btningresar.Image")));
+            this.btningresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btningresar.Location = new System.Drawing.Point(411, 390);
+            this.btningresar.Name = "btningresar";
+            this.btningresar.Size = new System.Drawing.Size(103, 38);
+            this.btningresar.TabIndex = 47;
+            this.btningresar.Text = "Guardar";
+            this.btningresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btningresar.UseVisualStyleBackColor = false;
+            this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
             // 
             // PlandeClase
             // 

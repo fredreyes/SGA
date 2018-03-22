@@ -56,6 +56,7 @@ namespace Presentacion.Student
 
         private void Buscar_Load(object sender, EventArgs e)
         {
+
             dataGridView1.Columns[3].Visible = false;
             dataGridView1.Columns[4].Visible = false;
             dataGridView1.Columns[5].Visible = false;
@@ -118,6 +119,23 @@ namespace Presentacion.Student
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            txtbuscaralumno.Text = "";
+            dataGridView1.Rows.Clear();
+        }
+
+        private void btningresar_Click_1(object sender, EventArgs e)
+        {
+            AddNewStudent a = new AddNewStudent();
+            a.ShowDialog();
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             try
             {
                 AddNewStudent estudiante = new AddNewStudent();
@@ -140,7 +158,7 @@ namespace Presentacion.Student
                     estudiante.chkcancelado.Checked = true;
 
                 // DOcumentoID
-              //  estudiante.DocumentoID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[8].Value.ToString());
+                //  estudiante.DocumentoID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[8].Value.ToString());
                 //Chekbos Documentos
                 if (dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[9].Value.ToString() == "SI")
                     estudiante.chkpartidaNacimiento.Checked = true;
@@ -182,30 +200,18 @@ namespace Presentacion.Student
                     estudiante.txtcedulaTutor.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[27].Value.ToString();
                     estudiante.txttelefonoTutor.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[28].Value.ToString();
                     estudiante.cbmParentezco.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[29].Value.ToString();
-                }                
+                }
                 estudiante.Bandera = 1;
                 estudiante.chkactivo.Visible = true;
                 estudiante.chkcancelado.Visible = true;
                 estudiante.ShowDialog();
-                
+
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btncancelar_Click(object sender, EventArgs e)
-        {
-            txtbuscaralumno.Text = "";
-            dataGridView1.Rows.Clear();
-        }
-
-        private void btningresar_Click_1(object sender, EventArgs e)
-        {
-            AddNewStudent a = new AddNewStudent();
-            a.ShowDialog();
         }
     }
 }

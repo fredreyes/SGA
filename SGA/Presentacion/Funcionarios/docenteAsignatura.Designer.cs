@@ -35,9 +35,6 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.chkmañana = new MaterialSkin.Controls.MaterialCheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.chkdomingo = new MaterialSkin.Controls.MaterialCheckBox();
-            this.chksabado = new MaterialSkin.Controls.MaterialCheckBox();
-            this.chknocturno = new MaterialSkin.Controls.MaterialCheckBox();
             this.chktarde = new MaterialSkin.Controls.MaterialCheckBox();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
@@ -47,14 +44,16 @@
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.rbtnPrimaria = new MaterialSkin.Controls.MaterialRadioButton();
-            this.rbtnSecundaria = new MaterialSkin.Controls.MaterialRadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbtnSecundaria = new MaterialSkin.Controls.MaterialCheckBox();
+            this.rbtnPrimaria = new MaterialSkin.Controls.MaterialCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             this.MateriaDocente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -104,9 +103,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.chkdomingo);
-            this.groupBox1.Controls.Add(this.chksabado);
-            this.groupBox1.Controls.Add(this.chknocturno);
             this.groupBox1.Controls.Add(this.chktarde);
             this.groupBox1.Controls.Add(this.chkmañana);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -116,54 +112,6 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Disponibilidad";
-            // 
-            // chkdomingo
-            // 
-            this.chkdomingo.AutoSize = true;
-            this.chkdomingo.Depth = 0;
-            this.chkdomingo.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkdomingo.Location = new System.Drawing.Point(21, 150);
-            this.chkdomingo.Margin = new System.Windows.Forms.Padding(0);
-            this.chkdomingo.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkdomingo.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkdomingo.Name = "chkdomingo";
-            this.chkdomingo.Ripple = true;
-            this.chkdomingo.Size = new System.Drawing.Size(85, 30);
-            this.chkdomingo.TabIndex = 9;
-            this.chkdomingo.Text = "Domingo";
-            this.chkdomingo.UseVisualStyleBackColor = true;
-            // 
-            // chksabado
-            // 
-            this.chksabado.AutoSize = true;
-            this.chksabado.Depth = 0;
-            this.chksabado.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chksabado.Location = new System.Drawing.Point(21, 120);
-            this.chksabado.Margin = new System.Windows.Forms.Padding(0);
-            this.chksabado.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chksabado.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chksabado.Name = "chksabado";
-            this.chksabado.Ripple = true;
-            this.chksabado.Size = new System.Drawing.Size(76, 30);
-            this.chksabado.TabIndex = 8;
-            this.chksabado.Text = "Sábado";
-            this.chksabado.UseVisualStyleBackColor = true;
-            // 
-            // chknocturno
-            // 
-            this.chknocturno.AutoSize = true;
-            this.chknocturno.Depth = 0;
-            this.chknocturno.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chknocturno.Location = new System.Drawing.Point(21, 90);
-            this.chknocturno.Margin = new System.Windows.Forms.Padding(0);
-            this.chknocturno.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chknocturno.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chknocturno.Name = "chknocturno";
-            this.chknocturno.Ripple = true;
-            this.chknocturno.Size = new System.Drawing.Size(87, 30);
-            this.chknocturno.TabIndex = 7;
-            this.chknocturno.Text = "Nocturno";
-            this.chknocturno.UseVisualStyleBackColor = true;
             // 
             // chktarde
             // 
@@ -269,47 +217,56 @@
             // 
             this.toolTip1.IsBalloon = true;
             // 
-            // rbtnPrimaria
+            // groupBox2
             // 
-            this.rbtnPrimaria.AutoSize = true;
-            this.rbtnPrimaria.Depth = 0;
-            this.rbtnPrimaria.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbtnPrimaria.Location = new System.Drawing.Point(351, 297);
-            this.rbtnPrimaria.Margin = new System.Windows.Forms.Padding(0);
-            this.rbtnPrimaria.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rbtnPrimaria.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rbtnPrimaria.Name = "rbtnPrimaria";
-            this.rbtnPrimaria.Ripple = true;
-            this.rbtnPrimaria.Size = new System.Drawing.Size(81, 30);
-            this.rbtnPrimaria.TabIndex = 50;
-            this.rbtnPrimaria.TabStop = true;
-            this.rbtnPrimaria.Text = "Primaria";
-            this.rbtnPrimaria.UseVisualStyleBackColor = true;
+            this.groupBox2.Controls.Add(this.rbtnSecundaria);
+            this.groupBox2.Controls.Add(this.rbtnPrimaria);
+            this.groupBox2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(359, 267);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(150, 188);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Tipo";
             // 
             // rbtnSecundaria
             // 
             this.rbtnSecundaria.AutoSize = true;
             this.rbtnSecundaria.Depth = 0;
             this.rbtnSecundaria.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbtnSecundaria.Location = new System.Drawing.Point(351, 348);
+            this.rbtnSecundaria.Location = new System.Drawing.Point(21, 60);
             this.rbtnSecundaria.Margin = new System.Windows.Forms.Padding(0);
             this.rbtnSecundaria.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rbtnSecundaria.MouseState = MaterialSkin.MouseState.HOVER;
             this.rbtnSecundaria.Name = "rbtnSecundaria";
             this.rbtnSecundaria.Ripple = true;
-            this.rbtnSecundaria.Size = new System.Drawing.Size(98, 30);
-            this.rbtnSecundaria.TabIndex = 51;
-            this.rbtnSecundaria.TabStop = true;
+            this.rbtnSecundaria.Size = new System.Drawing.Size(99, 30);
+            this.rbtnSecundaria.TabIndex = 6;
             this.rbtnSecundaria.Text = "Secundaria";
             this.rbtnSecundaria.UseVisualStyleBackColor = true;
+            // 
+            // rbtnPrimaria
+            // 
+            this.rbtnPrimaria.AutoSize = true;
+            this.rbtnPrimaria.Depth = 0;
+            this.rbtnPrimaria.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbtnPrimaria.Location = new System.Drawing.Point(21, 30);
+            this.rbtnPrimaria.Margin = new System.Windows.Forms.Padding(0);
+            this.rbtnPrimaria.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbtnPrimaria.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbtnPrimaria.Name = "rbtnPrimaria";
+            this.rbtnPrimaria.Ripple = true;
+            this.rbtnPrimaria.Size = new System.Drawing.Size(82, 30);
+            this.rbtnPrimaria.TabIndex = 5;
+            this.rbtnPrimaria.Text = "Primaria";
+            this.rbtnPrimaria.UseVisualStyleBackColor = true;
             // 
             // docenteAsignatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1109, 459);
-            this.Controls.Add(this.rbtnSecundaria);
-            this.Controls.Add(this.rbtnPrimaria);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gridControl2);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnIngresar);
@@ -320,7 +277,7 @@
             this.MinimizeBox = false;
             this.Name = "docenteAsignatura";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Docente Asignatura";
+            this.Text = "Docente Asignatura a Impartir ";
             this.Load += new System.EventHandler(this.docenteAsignatura_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -329,8 +286,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             this.MateriaDocente.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -341,9 +299,6 @@
         private MaterialSkin.Controls.MaterialCheckBox chkmañana;
         private System.Windows.Forms.GroupBox groupBox1;
         private MaterialSkin.Controls.MaterialCheckBox chktarde;
-        private MaterialSkin.Controls.MaterialCheckBox chknocturno;
-        private MaterialSkin.Controls.MaterialCheckBox chkdomingo;
-        private MaterialSkin.Controls.MaterialCheckBox chksabado;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Button btncancelar;
         private DevExpress.XtraGrid.GridControl gridControl2;
@@ -352,7 +307,8 @@
         private System.Windows.Forms.ToolStripMenuItem eDITARToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip1;
-        private MaterialSkin.Controls.MaterialRadioButton rbtnPrimaria;
-        private MaterialSkin.Controls.MaterialRadioButton rbtnSecundaria;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private MaterialSkin.Controls.MaterialCheckBox rbtnSecundaria;
+        private MaterialSkin.Controls.MaterialCheckBox rbtnPrimaria;
     }
 }

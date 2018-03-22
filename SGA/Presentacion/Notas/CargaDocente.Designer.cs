@@ -28,22 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.chkPrimero = new MaterialSkin.Controls.MaterialCheckBox();
             this.GrupoPrimaria = new System.Windows.Forms.GroupBox();
-            this.materialCheckBox5 = new MaterialSkin.Controls.MaterialCheckBox();
-            this.chkCuartoGrado = new MaterialSkin.Controls.MaterialCheckBox();
-            this.materialCheckBox3 = new MaterialSkin.Controls.MaterialCheckBox();
-            this.chkSegundo = new MaterialSkin.Controls.MaterialCheckBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.rbtnSecundaria = new MaterialSkin.Controls.MaterialRadioButton();
             this.rbtnPrimaria = new MaterialSkin.Controls.MaterialRadioButton();
             this.GrupoSencudaria = new System.Windows.Forms.GroupBox();
-            this.materialCheckBox1 = new MaterialSkin.Controls.MaterialCheckBox();
-            this.materialCheckBox2 = new MaterialSkin.Controls.MaterialCheckBox();
-            this.materialCheckBox4 = new MaterialSkin.Controls.MaterialCheckBox();
-            this.materialCheckBox6 = new MaterialSkin.Controls.MaterialCheckBox();
-            this.materialCheckBox7 = new MaterialSkin.Controls.MaterialCheckBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.listBox2 = new System.Windows.Forms.ListBox();
@@ -52,6 +42,8 @@
             this.btningresar = new System.Windows.Forms.Button();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.cbmGrados = new System.Windows.Forms.ComboBox();
+            this.cbmAnio = new System.Windows.Forms.ComboBox();
             this.GrupoPrimaria.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.GrupoSencudaria.SuspendLayout();
@@ -59,105 +51,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // chkPrimero
-            // 
-            this.chkPrimero.AutoSize = true;
-            this.chkPrimero.Depth = 0;
-            this.chkPrimero.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkPrimero.Location = new System.Drawing.Point(15, 34);
-            this.chkPrimero.Margin = new System.Windows.Forms.Padding(0);
-            this.chkPrimero.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkPrimero.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkPrimero.Name = "chkPrimero";
-            this.chkPrimero.Ripple = true;
-            this.chkPrimero.Size = new System.Drawing.Size(112, 30);
-            this.chkPrimero.TabIndex = 0;
-            this.chkPrimero.Text = "Primer Grado";
-            this.chkPrimero.UseVisualStyleBackColor = true;
-            this.chkPrimero.CheckedChanged += new System.EventHandler(this.chkPrimero_CheckedChanged);
-            // 
             // GrupoPrimaria
             // 
-            this.GrupoPrimaria.Controls.Add(this.materialCheckBox5);
-            this.GrupoPrimaria.Controls.Add(this.chkCuartoGrado);
-            this.GrupoPrimaria.Controls.Add(this.materialCheckBox3);
-            this.GrupoPrimaria.Controls.Add(this.chkSegundo);
-            this.GrupoPrimaria.Controls.Add(this.chkPrimero);
+            this.GrupoPrimaria.Controls.Add(this.cbmGrados);
             this.GrupoPrimaria.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GrupoPrimaria.Location = new System.Drawing.Point(13, 119);
+            this.GrupoPrimaria.Location = new System.Drawing.Point(12, 133);
             this.GrupoPrimaria.Name = "GrupoPrimaria";
-            this.GrupoPrimaria.Size = new System.Drawing.Size(252, 295);
+            this.GrupoPrimaria.Size = new System.Drawing.Size(252, 93);
             this.GrupoPrimaria.TabIndex = 1;
             this.GrupoPrimaria.TabStop = false;
             this.GrupoPrimaria.Text = "Grados";
             this.GrupoPrimaria.Visible = false;
-            // 
-            // materialCheckBox5
-            // 
-            this.materialCheckBox5.AutoSize = true;
-            this.materialCheckBox5.Depth = 0;
-            this.materialCheckBox5.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialCheckBox5.Location = new System.Drawing.Point(15, 247);
-            this.materialCheckBox5.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckBox5.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckBox5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckBox5.Name = "materialCheckBox5";
-            this.materialCheckBox5.Ripple = true;
-            this.materialCheckBox5.Size = new System.Drawing.Size(111, 30);
-            this.materialCheckBox5.TabIndex = 4;
-            this.materialCheckBox5.Text = "Quinto Grado";
-            this.materialCheckBox5.UseVisualStyleBackColor = true;
-            // 
-            // chkCuartoGrado
-            // 
-            this.chkCuartoGrado.AutoSize = true;
-            this.chkCuartoGrado.Depth = 0;
-            this.chkCuartoGrado.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkCuartoGrado.Location = new System.Drawing.Point(15, 194);
-            this.chkCuartoGrado.Margin = new System.Windows.Forms.Padding(0);
-            this.chkCuartoGrado.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkCuartoGrado.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkCuartoGrado.Name = "chkCuartoGrado";
-            this.chkCuartoGrado.Ripple = true;
-            this.chkCuartoGrado.Size = new System.Drawing.Size(112, 30);
-            this.chkCuartoGrado.TabIndex = 3;
-            this.chkCuartoGrado.Text = "Cuarto Grado";
-            this.chkCuartoGrado.UseVisualStyleBackColor = true;
-            this.chkCuartoGrado.CheckedChanged += new System.EventHandler(this.materialCheckBox4_CheckedChanged);
-            // 
-            // materialCheckBox3
-            // 
-            this.materialCheckBox3.AutoSize = true;
-            this.materialCheckBox3.Depth = 0;
-            this.materialCheckBox3.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialCheckBox3.Location = new System.Drawing.Point(15, 144);
-            this.materialCheckBox3.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckBox3.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckBox3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckBox3.Name = "materialCheckBox3";
-            this.materialCheckBox3.Ripple = true;
-            this.materialCheckBox3.Size = new System.Drawing.Size(110, 30);
-            this.materialCheckBox3.TabIndex = 2;
-            this.materialCheckBox3.Text = "Tercer Grado";
-            this.materialCheckBox3.UseVisualStyleBackColor = true;
-            this.materialCheckBox3.CheckedChanged += new System.EventHandler(this.materialCheckBox3_CheckedChanged);
-            // 
-            // chkSegundo
-            // 
-            this.chkSegundo.AutoSize = true;
-            this.chkSegundo.Depth = 0;
-            this.chkSegundo.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkSegundo.Location = new System.Drawing.Point(15, 86);
-            this.chkSegundo.Margin = new System.Windows.Forms.Padding(0);
-            this.chkSegundo.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkSegundo.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkSegundo.Name = "chkSegundo";
-            this.chkSegundo.Ripple = true;
-            this.chkSegundo.Size = new System.Drawing.Size(125, 30);
-            this.chkSegundo.TabIndex = 1;
-            this.chkSegundo.Text = "Segundo Grado";
-            this.chkSegundo.UseVisualStyleBackColor = true;
-            this.chkSegundo.CheckedChanged += new System.EventHandler(this.chkSegundo_CheckedChanged);
             // 
             // listBox1
             // 
@@ -221,99 +125,15 @@
             // 
             // GrupoSencudaria
             // 
-            this.GrupoSencudaria.Controls.Add(this.materialCheckBox1);
-            this.GrupoSencudaria.Controls.Add(this.materialCheckBox2);
-            this.GrupoSencudaria.Controls.Add(this.materialCheckBox4);
-            this.GrupoSencudaria.Controls.Add(this.materialCheckBox6);
-            this.GrupoSencudaria.Controls.Add(this.materialCheckBox7);
+            this.GrupoSencudaria.Controls.Add(this.cbmAnio);
             this.GrupoSencudaria.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GrupoSencudaria.Location = new System.Drawing.Point(271, 209);
+            this.GrupoSencudaria.Location = new System.Drawing.Point(13, 242);
             this.GrupoSencudaria.Name = "GrupoSencudaria";
-            this.GrupoSencudaria.Size = new System.Drawing.Size(225, 264);
+            this.GrupoSencudaria.Size = new System.Drawing.Size(251, 95);
             this.GrupoSencudaria.TabIndex = 5;
             this.GrupoSencudaria.TabStop = false;
             this.GrupoSencudaria.Text = "Años";
             this.GrupoSencudaria.Visible = false;
-            // 
-            // materialCheckBox1
-            // 
-            this.materialCheckBox1.AutoSize = true;
-            this.materialCheckBox1.Depth = 0;
-            this.materialCheckBox1.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialCheckBox1.Location = new System.Drawing.Point(15, 247);
-            this.materialCheckBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckBox1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckBox1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckBox1.Name = "materialCheckBox1";
-            this.materialCheckBox1.Ripple = true;
-            this.materialCheckBox1.Size = new System.Drawing.Size(99, 30);
-            this.materialCheckBox1.TabIndex = 4;
-            this.materialCheckBox1.Text = "Quinto Año";
-            this.materialCheckBox1.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckBox2
-            // 
-            this.materialCheckBox2.AutoSize = true;
-            this.materialCheckBox2.Depth = 0;
-            this.materialCheckBox2.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialCheckBox2.Location = new System.Drawing.Point(15, 194);
-            this.materialCheckBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckBox2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckBox2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckBox2.Name = "materialCheckBox2";
-            this.materialCheckBox2.Ripple = true;
-            this.materialCheckBox2.Size = new System.Drawing.Size(99, 30);
-            this.materialCheckBox2.TabIndex = 3;
-            this.materialCheckBox2.Text = "Cuarto Año";
-            this.materialCheckBox2.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckBox4
-            // 
-            this.materialCheckBox4.AutoSize = true;
-            this.materialCheckBox4.Depth = 0;
-            this.materialCheckBox4.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialCheckBox4.Location = new System.Drawing.Point(15, 144);
-            this.materialCheckBox4.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckBox4.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckBox4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckBox4.Name = "materialCheckBox4";
-            this.materialCheckBox4.Ripple = true;
-            this.materialCheckBox4.Size = new System.Drawing.Size(98, 30);
-            this.materialCheckBox4.TabIndex = 2;
-            this.materialCheckBox4.Text = "Tercer Año";
-            this.materialCheckBox4.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckBox6
-            // 
-            this.materialCheckBox6.AutoSize = true;
-            this.materialCheckBox6.Depth = 0;
-            this.materialCheckBox6.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialCheckBox6.Location = new System.Drawing.Point(15, 86);
-            this.materialCheckBox6.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckBox6.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckBox6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckBox6.Name = "materialCheckBox6";
-            this.materialCheckBox6.Ripple = true;
-            this.materialCheckBox6.Size = new System.Drawing.Size(112, 30);
-            this.materialCheckBox6.TabIndex = 1;
-            this.materialCheckBox6.Text = "Segundo Año";
-            this.materialCheckBox6.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckBox7
-            // 
-            this.materialCheckBox7.AutoSize = true;
-            this.materialCheckBox7.Depth = 0;
-            this.materialCheckBox7.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialCheckBox7.Location = new System.Drawing.Point(15, 34);
-            this.materialCheckBox7.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckBox7.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckBox7.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckBox7.Name = "materialCheckBox7";
-            this.materialCheckBox7.Ripple = true;
-            this.materialCheckBox7.Size = new System.Drawing.Size(103, 30);
-            this.materialCheckBox7.TabIndex = 0;
-            this.materialCheckBox7.Text = " Primer Año";
-            this.materialCheckBox7.UseVisualStyleBackColor = true;
             // 
             // materialLabel1
             // 
@@ -407,6 +227,25 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
+            // cbmGrados
+            // 
+            this.cbmGrados.FormattingEnabled = true;
+            this.cbmGrados.Location = new System.Drawing.Point(15, 36);
+            this.cbmGrados.Name = "cbmGrados";
+            this.cbmGrados.Size = new System.Drawing.Size(231, 26);
+            this.cbmGrados.TabIndex = 49;
+            this.cbmGrados.SelectedIndexChanged += new System.EventHandler(this.cbmGrados_SelectedIndexChanged);
+            this.cbmGrados.SelectedValueChanged += new System.EventHandler(this.cbmGrados_SelectedValueChanged);
+            this.cbmGrados.TextChanged += new System.EventHandler(this.cbmGrados_TextChanged);
+            // 
+            // cbmAnio
+            // 
+            this.cbmAnio.FormattingEnabled = true;
+            this.cbmAnio.Location = new System.Drawing.Point(14, 38);
+            this.cbmAnio.Name = "cbmAnio";
+            this.cbmAnio.Size = new System.Drawing.Size(231, 26);
+            this.cbmAnio.TabIndex = 50;
+            // 
             // CargaDocente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -428,11 +267,9 @@
             this.Text = "CargaDocente";
             this.Load += new System.EventHandler(this.CargaDocente_Load);
             this.GrupoPrimaria.ResumeLayout(false);
-            this.GrupoPrimaria.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.GrupoSencudaria.ResumeLayout(false);
-            this.GrupoSencudaria.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
@@ -441,23 +278,12 @@
         }
 
         #endregion
-
-        private MaterialSkin.Controls.MaterialCheckBox chkPrimero;
         private System.Windows.Forms.GroupBox GrupoPrimaria;
-        private MaterialSkin.Controls.MaterialCheckBox materialCheckBox5;
-        private MaterialSkin.Controls.MaterialCheckBox chkCuartoGrado;
-        private MaterialSkin.Controls.MaterialCheckBox materialCheckBox3;
-        private MaterialSkin.Controls.MaterialCheckBox chkSegundo;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private MaterialSkin.Controls.MaterialRadioButton rbtnSecundaria;
         private MaterialSkin.Controls.MaterialRadioButton rbtnPrimaria;
         private System.Windows.Forms.GroupBox GrupoSencudaria;
-        private MaterialSkin.Controls.MaterialCheckBox materialCheckBox1;
-        private MaterialSkin.Controls.MaterialCheckBox materialCheckBox2;
-        private MaterialSkin.Controls.MaterialCheckBox materialCheckBox4;
-        private MaterialSkin.Controls.MaterialCheckBox materialCheckBox6;
-        private MaterialSkin.Controls.MaterialCheckBox materialCheckBox7;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private System.Windows.Forms.ListBox listBox2;
@@ -466,5 +292,7 @@
         private System.Windows.Forms.Button btningresar;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.ComboBox cbmGrados;
+        private System.Windows.Forms.ComboBox cbmAnio;
     }
 }
