@@ -301,8 +301,10 @@
     <Content Include="icons\add-label-button.png" />
     <Content Include="icons\add.png" />
     <Content Include="icons\businessmen.png" />
+    <None Include="Resources\curriculum.png" />
     <None Include="Resources\ordenador.png" />
     <None Include="icons\calendar.png" />
+    <Content Include="icons\curriculum.png" />
     <Content Include="icons\cycle.png" />
     <Content Include="icons\delete %281%29.png" />
     <Content Include="icons\delete.png" />

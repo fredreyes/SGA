@@ -22,6 +22,12 @@ namespace Presentacion.Student
             EstiloMenu x = new EstiloMenu();
             x.AplicarEstilo(this);
         }
+        public int id;
+        public string nombre;
+        public string sexo;
+        public string apellido;
+        public string direccion;
+
 
         private void ListAlumno_Load(object sender, EventArgs e)
         {
@@ -65,6 +71,27 @@ namespace Presentacion.Student
             }
             catch (Exception ex)
             {
+                throw ex;
+            }
+        }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                id = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "AlumnoId").ToString());
+                nombre = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Nombres").ToString();
+                apellido = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Apellidos").ToString();
+                direccion = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Direccion").ToString();
+                if (gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Sexo").ToString() == "M")
+                    sexo = "M";
+                else
+                    sexo = "F";
+                DialogResult = DialogResult.OK;
+            }
+            catch (Exception ex)
+            {
+
                 throw ex;
             }
         }

@@ -46,14 +46,16 @@
             this.groupBoxColegio = new System.Windows.Forms.GroupBox();
             this.cbmColegio = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.chkvespertino = new MaterialSkin.Controls.MaterialCheckBox();
-            this.chkMatutino = new MaterialSkin.Controls.MaterialCheckBox();
+            this.cbmTurnos = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lblCapacidad = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.cbmGrados = new System.Windows.Forms.ComboBox();
+            this.chkvespertino = new MaterialSkin.Controls.MaterialCheckBox();
+            this.chkMatutino = new MaterialSkin.Controls.MaterialCheckBox();
             this.btningresar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBoxColegio.SuspendLayout();
@@ -219,6 +221,8 @@
             // txtNombre
             // 
             this.txtNombre.Depth = 0;
+            this.txtNombre.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.ForeColor = System.Drawing.Color.Blue;
             this.txtNombre.Hint = "";
             this.txtNombre.Location = new System.Drawing.Point(6, 57);
             this.txtNombre.MouseState = MaterialSkin.MouseState.HOVER;
@@ -300,8 +304,8 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.chkvespertino);
-            this.groupBox4.Controls.Add(this.chkMatutino);
+            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Controls.Add(this.cbmTurnos);
             this.groupBox4.Location = new System.Drawing.Point(230, 16);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(165, 112);
@@ -309,39 +313,14 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Turno";
             // 
-            // chkvespertino
+            // cbmTurnos
             // 
-            this.chkvespertino.AutoSize = true;
-            this.chkvespertino.Depth = 0;
-            this.chkvespertino.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkvespertino.Location = new System.Drawing.Point(12, 63);
-            this.chkvespertino.Margin = new System.Windows.Forms.Padding(0);
-            this.chkvespertino.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkvespertino.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkvespertino.Name = "chkvespertino";
-            this.chkvespertino.Ripple = true;
-            this.chkvespertino.Size = new System.Drawing.Size(97, 30);
-            this.chkvespertino.TabIndex = 1;
-            this.chkvespertino.Text = "Vespertino";
-            this.chkvespertino.UseVisualStyleBackColor = true;
-            this.chkvespertino.CheckedChanged += new System.EventHandler(this.chkvespertino_CheckedChanged);
-            // 
-            // chkMatutino
-            // 
-            this.chkMatutino.AutoSize = true;
-            this.chkMatutino.Depth = 0;
-            this.chkMatutino.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkMatutino.Location = new System.Drawing.Point(12, 19);
-            this.chkMatutino.Margin = new System.Windows.Forms.Padding(0);
-            this.chkMatutino.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkMatutino.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkMatutino.Name = "chkMatutino";
-            this.chkMatutino.Ripple = true;
-            this.chkMatutino.Size = new System.Drawing.Size(85, 30);
-            this.chkMatutino.TabIndex = 0;
-            this.chkMatutino.Text = "Matutino";
-            this.chkMatutino.UseVisualStyleBackColor = true;
-            this.chkMatutino.CheckedChanged += new System.EventHandler(this.chkMatutino_CheckedChanged);
+            this.cbmTurnos.FormattingEnabled = true;
+            this.cbmTurnos.Location = new System.Drawing.Point(11, 22);
+            this.cbmTurnos.Name = "cbmTurnos";
+            this.cbmTurnos.Size = new System.Drawing.Size(148, 24);
+            this.cbmTurnos.TabIndex = 48;
+            this.cbmTurnos.Text = "Seleccione un Turno";
             // 
             // groupBox3
             // 
@@ -400,6 +379,40 @@
             this.cbmGrados.TabIndex = 0;
             this.cbmGrados.Text = "Seleccione un Grado";
             // 
+            // chkvespertino
+            // 
+            this.chkvespertino.AutoSize = true;
+            this.chkvespertino.Depth = 0;
+            this.chkvespertino.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chkvespertino.Location = new System.Drawing.Point(267, 329);
+            this.chkvespertino.Margin = new System.Windows.Forms.Padding(0);
+            this.chkvespertino.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkvespertino.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkvespertino.Name = "chkvespertino";
+            this.chkvespertino.Ripple = true;
+            this.chkvespertino.Size = new System.Drawing.Size(97, 30);
+            this.chkvespertino.TabIndex = 1;
+            this.chkvespertino.Text = "Vespertino";
+            this.chkvespertino.UseVisualStyleBackColor = true;
+            this.chkvespertino.CheckedChanged += new System.EventHandler(this.chkvespertino_CheckedChanged);
+            // 
+            // chkMatutino
+            // 
+            this.chkMatutino.AutoSize = true;
+            this.chkMatutino.Depth = 0;
+            this.chkMatutino.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chkMatutino.Location = new System.Drawing.Point(267, 285);
+            this.chkMatutino.Margin = new System.Windows.Forms.Padding(0);
+            this.chkMatutino.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkMatutino.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkMatutino.Name = "chkMatutino";
+            this.chkMatutino.Ripple = true;
+            this.chkMatutino.Size = new System.Drawing.Size(85, 30);
+            this.chkMatutino.TabIndex = 0;
+            this.chkMatutino.Text = "Matutino";
+            this.chkMatutino.UseVisualStyleBackColor = true;
+            this.chkMatutino.CheckedChanged += new System.EventHandler(this.chkMatutino_CheckedChanged);
+            // 
             // btningresar
             // 
             this.btningresar.BackColor = System.Drawing.Color.Blue;
@@ -417,13 +430,35 @@
             this.btningresar.Text = "Matricular";
             this.btningresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btningresar.UseVisualStyleBackColor = false;
+            this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Gold;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(33, 57);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 38);
+            this.button1.TabIndex = 46;
+            this.button1.Text = "Buscar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Matricula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 396);
+            this.Controls.Add(this.chkvespertino);
             this.Controls.Add(this.btningresar);
+            this.Controls.Add(this.chkMatutino);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
@@ -438,10 +473,10 @@
             this.groupBox2.PerformLayout();
             this.groupBoxColegio.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -472,5 +507,7 @@
         private System.Windows.Forms.Button btningresar;
         private MaterialSkin.Controls.MaterialCheckBox chkPrimerIngreso;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbmTurnos;
+        private System.Windows.Forms.Button button1;
     }
 }

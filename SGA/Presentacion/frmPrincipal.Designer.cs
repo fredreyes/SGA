@@ -30,6 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.Matricula = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.nuevaMatriculaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verMatriculadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.Funcionarios = new MaterialSkin.Controls.MaterialContextMenuStrip();
             this.funcionariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.docentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,7 +43,9 @@
             this.cargaAcademicaDocentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Calificaciones = new MaterialSkin.Controls.MaterialContextMenuStrip();
             this.calificacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.evaluacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,28 +53,20 @@
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.ToolTipMenu = new System.Windows.Forms.ToolTip(this.components);
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.Matricula = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.nuevaMatriculaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verMatriculadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolTipMenu = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.Funcionarios.SuspendLayout();
-            this.Calificaciones.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.Matricula.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.Funcionarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Calificaciones.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.Matricula.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -88,6 +88,66 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1218, 92);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.ContextMenuStrip = this.Matricula;
+            this.pictureBox6.Image = global::Presentacion.Properties.Resources.ordenador;
+            this.pictureBox6.Location = new System.Drawing.Point(45, 25);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 18;
+            this.pictureBox6.TabStop = false;
+            this.ToolTipMenu.SetToolTip(this.pictureBox6, "Matricula");
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
+            // Matricula
+            // 
+            this.Matricula.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Matricula.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevaMatriculaToolStripMenuItem,
+            this.verMatriculadosToolStripMenuItem});
+            this.Matricula.Name = "Matricula";
+            this.Matricula.Size = new System.Drawing.Size(173, 48);
+            // 
+            // nuevaMatriculaToolStripMenuItem
+            // 
+            this.nuevaMatriculaToolStripMenuItem.Name = "nuevaMatriculaToolStripMenuItem";
+            this.nuevaMatriculaToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.nuevaMatriculaToolStripMenuItem.Text = "Nueva Matricula";
+            this.nuevaMatriculaToolStripMenuItem.Click += new System.EventHandler(this.nuevaMatriculaToolStripMenuItem_Click);
+            // 
+            // verMatriculadosToolStripMenuItem
+            // 
+            this.verMatriculadosToolStripMenuItem.Name = "verMatriculadosToolStripMenuItem";
+            this.verMatriculadosToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.verMatriculadosToolStripMenuItem.Text = "Ver Matriculados";
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.Location = new System.Drawing.Point(41, 0);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(72, 19);
+            this.materialLabel4.TabIndex = 19;
+            this.materialLabel4.Text = "Matricula";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.ContextMenuStrip = this.Funcionarios;
+            this.pictureBox5.Image = global::Presentacion.Properties.Resources.businessmen;
+            this.pictureBox5.Location = new System.Drawing.Point(351, 25);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 16;
+            this.pictureBox5.TabStop = false;
+            this.ToolTipMenu.SetToolTip(this.pictureBox5, "Funcionarios");
             // 
             // Funcionarios
             // 
@@ -142,27 +202,52 @@
             // 
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel3.Location = new System.Drawing.Point(332, 3);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(94, 18);
+            this.materialLabel3.Size = new System.Drawing.Size(96, 19);
             this.materialLabel3.TabIndex = 17;
             this.materialLabel3.Text = "Funcionarios";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Presentacion.Properties.Resources.reading;
+            this.pictureBox4.Location = new System.Drawing.Point(208, 25);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 14;
+            this.pictureBox4.TabStop = false;
+            this.ToolTipMenu.SetToolTip(this.pictureBox4, "Alumnos");
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // materialLabel1
             // 
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(204, 3);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(66, 18);
+            this.materialLabel1.Size = new System.Drawing.Size(69, 19);
             this.materialLabel1.TabIndex = 15;
             this.materialLabel1.Text = "Alumnos";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ContextMenuStrip = this.Calificaciones;
+            this.pictureBox1.Image = global::Presentacion.Properties.Resources.evaluation1;
+            this.pictureBox1.Location = new System.Drawing.Point(517, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            this.ToolTipMenu.SetToolTip(this.pictureBox1, "Calificaciones");
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // Calificaciones
             // 
@@ -201,12 +286,12 @@
             // 
             this.materialLabel5.AutoSize = true;
             this.materialLabel5.Depth = 0;
-            this.materialLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel5.Location = new System.Drawing.Point(493, 3);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(100, 18);
+            this.materialLabel5.Size = new System.Drawing.Size(105, 19);
             this.materialLabel5.TabIndex = 13;
             this.materialLabel5.Text = "Calificaciones";
             // 
@@ -224,92 +309,14 @@
             // 
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel2.Location = new System.Drawing.Point(17, 0);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(105, 18);
+            this.materialLabel2.Size = new System.Drawing.Size(111, 19);
             this.materialLabel2.TabIndex = 5;
             this.materialLabel2.Text = "Administración";
-            // 
-            // ToolTipMenu
-            // 
-            this.ToolTipMenu.IsBalloon = true;
-            // 
-            // materialLabel4
-            // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(41, 0);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(68, 18);
-            this.materialLabel4.TabIndex = 19;
-            this.materialLabel4.Text = "Matricula";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::Presentacion.Properties.Resources.university;
-            this.pictureBox2.Location = new System.Drawing.Point(210, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(53, 47);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.ContextMenuStrip = this.Matricula;
-            this.pictureBox6.Image = global::Presentacion.Properties.Resources.ordenador;
-            this.pictureBox6.Location = new System.Drawing.Point(45, 25);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(59, 58);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 18;
-            this.pictureBox6.TabStop = false;
-            this.ToolTipMenu.SetToolTip(this.pictureBox6, "Funcionarios");
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.ContextMenuStrip = this.Funcionarios;
-            this.pictureBox5.Image = global::Presentacion.Properties.Resources.businessmen;
-            this.pictureBox5.Location = new System.Drawing.Point(351, 25);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(59, 58);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 16;
-            this.pictureBox5.TabStop = false;
-            this.ToolTipMenu.SetToolTip(this.pictureBox5, "Funcionarios");
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Presentacion.Properties.Resources.reading;
-            this.pictureBox4.Location = new System.Drawing.Point(208, 25);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(59, 58);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 14;
-            this.pictureBox4.TabStop = false;
-            this.ToolTipMenu.SetToolTip(this.pictureBox4, "Alumnos");
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ContextMenuStrip = this.Calificaciones;
-            this.pictureBox1.Image = global::Presentacion.Properties.Resources.evaluation1;
-            this.pictureBox1.Location = new System.Drawing.Point(517, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(59, 58);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            this.ToolTipMenu.SetToolTip(this.pictureBox1, "Calificaciones");
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // pictureBox3
             // 
@@ -323,27 +330,20 @@
             this.ToolTipMenu.SetToolTip(this.pictureBox3, "Mantenimiento");
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
-            // Matricula
+            // ToolTipMenu
             // 
-            this.Matricula.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Matricula.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevaMatriculaToolStripMenuItem,
-            this.verMatriculadosToolStripMenuItem});
-            this.Matricula.Name = "Matricula";
-            this.Matricula.Size = new System.Drawing.Size(173, 48);
+            this.ToolTipMenu.IsBalloon = true;
             // 
-            // nuevaMatriculaToolStripMenuItem
+            // pictureBox2
             // 
-            this.nuevaMatriculaToolStripMenuItem.Name = "nuevaMatriculaToolStripMenuItem";
-            this.nuevaMatriculaToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.nuevaMatriculaToolStripMenuItem.Text = "Nueva Matricula";
-            this.nuevaMatriculaToolStripMenuItem.Click += new System.EventHandler(this.nuevaMatriculaToolStripMenuItem_Click);
-            // 
-            // verMatriculadosToolStripMenuItem
-            // 
-            this.verMatriculadosToolStripMenuItem.Name = "verMatriculadosToolStripMenuItem";
-            this.verMatriculadosToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.verMatriculadosToolStripMenuItem.Text = "Ver Matriculados";
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::Presentacion.Properties.Resources.university;
+            this.pictureBox2.Location = new System.Drawing.Point(210, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(53, 47);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // frmPrincipal
             // 
@@ -360,17 +360,17 @@
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.Matricula.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.Funcionarios.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Calificaciones.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.Matricula.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

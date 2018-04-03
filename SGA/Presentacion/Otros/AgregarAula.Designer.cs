@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.LbxGrado = new System.Windows.Forms.ListBox();
@@ -42,9 +43,7 @@
             this.rbtnactivo = new MaterialSkin.Controls.MaterialRadioButton();
             this.btncancelar = new System.Windows.Forms.Button();
             this.btningresar = new System.Windows.Forms.Button();
-            this.rbtnMatutino = new MaterialSkin.Controls.MaterialRadioButton();
-            this.rbtnVespertino = new MaterialSkin.Controls.MaterialRadioButton();
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cbmTurno = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -71,11 +70,19 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(123, 48);
             // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Image = global::Presentacion.Properties.Resources.edit;
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
+            // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Image = global::Presentacion.Properties.Resources.delete__1_;
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
@@ -231,55 +238,21 @@
             this.btningresar.UseVisualStyleBackColor = false;
             this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
             // 
-            // rbtnMatutino
+            // cbmTurno
             // 
-            this.rbtnMatutino.AutoSize = true;
-            this.rbtnMatutino.Depth = 0;
-            this.rbtnMatutino.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbtnMatutino.Location = new System.Drawing.Point(13, 195);
-            this.rbtnMatutino.Margin = new System.Windows.Forms.Padding(0);
-            this.rbtnMatutino.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rbtnMatutino.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rbtnMatutino.Name = "rbtnMatutino";
-            this.rbtnMatutino.Ripple = true;
-            this.rbtnMatutino.Size = new System.Drawing.Size(84, 30);
-            this.rbtnMatutino.TabIndex = 47;
-            this.rbtnMatutino.TabStop = true;
-            this.rbtnMatutino.Text = "Matutino";
-            this.rbtnMatutino.UseVisualStyleBackColor = true;
-            // 
-            // rbtnVespertino
-            // 
-            this.rbtnVespertino.AutoSize = true;
-            this.rbtnVespertino.Depth = 0;
-            this.rbtnVespertino.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbtnVespertino.Location = new System.Drawing.Point(133, 195);
-            this.rbtnVespertino.Margin = new System.Windows.Forms.Padding(0);
-            this.rbtnVespertino.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rbtnVespertino.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rbtnVespertino.Name = "rbtnVespertino";
-            this.rbtnVespertino.Ripple = true;
-            this.rbtnVespertino.Size = new System.Drawing.Size(96, 30);
-            this.rbtnVespertino.TabIndex = 48;
-            this.rbtnVespertino.TabStop = true;
-            this.rbtnVespertino.Text = "Vespertino";
-            this.rbtnVespertino.UseVisualStyleBackColor = true;
-            // 
-            // editarToolStripMenuItem
-            // 
-            this.editarToolStripMenuItem.Image = global::Presentacion.Properties.Resources.edit;
-            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.editarToolStripMenuItem.Text = "Editar";
-            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
+            this.cbmTurno.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbmTurno.FormattingEnabled = true;
+            this.cbmTurno.Location = new System.Drawing.Point(12, 204);
+            this.cbmTurno.Name = "cbmTurno";
+            this.cbmTurno.Size = new System.Drawing.Size(217, 24);
+            this.cbmTurno.TabIndex = 47;
             // 
             // AgregarAula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 444);
-            this.Controls.Add(this.rbtnVespertino);
-            this.Controls.Add(this.rbtnMatutino);
+            this.Controls.Add(this.cbmTurno);
             this.Controls.Add(this.chkEditar);
             this.Controls.Add(this.rbrncancelar);
             this.Controls.Add(this.rbtnactivo);
@@ -320,8 +293,7 @@
         private System.Windows.Forms.Button btningresar;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
-        private MaterialSkin.Controls.MaterialRadioButton rbtnMatutino;
-        private MaterialSkin.Controls.MaterialRadioButton rbtnVespertino;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private System.Windows.Forms.ComboBox cbmTurno;
     }
 }

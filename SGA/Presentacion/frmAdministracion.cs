@@ -82,5 +82,13 @@ namespace Presentacion
             departamento.ShowDialog();
             lblDepartamento.ForeColor = Color.Black;
         }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            lblocupacion.ForeColor = Color.DarkBlue;
+            Funcionarios.Ocupaciones ocupaciones = new Funcionarios.Ocupaciones();
+            ocupaciones.ShowDialog();
+            lblocupacion.ForeColor = Color.Black;
+        }
     }
 }

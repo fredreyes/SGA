@@ -10,13 +10,26 @@ namespace Negocio
 {
    public class NMatricula
     {
-            public List<EAulas> MostraVacantesLibres( string turno, int id)
+            public List<EAulas> MostraVacantesLibres( int turno, int id)
         {
             try
             {
                 DMatricula d = new DMatricula();
                 List<EAulas> lista = d.MostrarVacantesAulas(turno, id);
                 return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void IngresarMatricula(EMatricula matricula)
+        {
+            try
+            {
+                DMatricula d = new DMatricula();
+                d.IngresarMatricula(matricula);
             }
             catch (Exception ex)
             {

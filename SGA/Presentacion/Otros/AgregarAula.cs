@@ -20,6 +20,7 @@ namespace Presentacion.Otros
             InitializeComponent();
             EstiloMenu x = new EstiloMenu();
             x.AplicarEstilo(this);
+            CargarTurno();
         }
         public int Bandera = 0;
         EAulas a = new EAulas();
@@ -62,6 +63,23 @@ namespace Presentacion.Otros
                 gridView1.Columns[0].Visible = false;
                 gridView1.Columns[5].Visible = false;
                 gridView1.Columns[6].Group();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        void CargarTurno()
+        {
+            try
+            {
+                NTurnos n = new NTurnos();
+                List<ETurnos> turno = n.ListaTurnos();
+                cbmTurno.DataSource = turno;
+                cbmTurno.DisplayMember = "Turno";
+                cbmTurno.ValueMember = "TurnoId";
             }
             catch (Exception ex)
             {
@@ -130,7 +148,7 @@ namespace Presentacion.Otros
                     a.Capacidad = int.Parse(txtcpacidad.Text);
                     a.Vacantes = int.Parse(txtcpacidad.Text);
                     a.GradoId = Convert.ToInt32(LbxGrado.SelectedValue.ToString());
-                    a.Turno = rbtnMatutino.Checked ? "Matutino" : "Vespertino";
+                    a.Turno = Convert.ToInt32(cbmTurno.SelectedValue.ToString());
                     n.IngresaAulas(a);
                     MessageBox.Show("Aula Ingresada con Exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
@@ -144,7 +162,7 @@ namespace Presentacion.Otros
                     a.Capacidad = int.Parse(txtcpacidad.Text);
                     a.Vacantes = int.Parse(txtcpacidad.Text);
                     a.GradoId = Convert.ToInt32(LbxGrado.SelectedValue.ToString());
-                    a.Turno = rbtnMatutino.Checked ? "Matutino" : "Vespertino";
+                    a.Turno = Convert.ToInt32(cbmTurno.SelectedValue.ToString());
                     a.Activo = Convert.ToBoolean(rbtnactivo.Checked ? 1 : 0);
                     n.ModificarAulas(a);
                     MessageBox.Show("Aula Modificada con Exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -204,6 +222,7 @@ namespace Presentacion.Otros
                     txtaula.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Aula").ToString();
                     txtcpacidad.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Capacidad").ToString();
                     txtvacantes.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Vacantes").ToString();
+                    cbmTurno.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Turno").ToString();
                     rbtnactivo.Visible = true;
                     rbrncancelar.Visible = true;
                     chkEditar.Visible = true;

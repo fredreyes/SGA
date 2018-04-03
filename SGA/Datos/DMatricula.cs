@@ -13,16 +13,15 @@ namespace Datos
     {
         SqlCommand comando;
         SqlConnection conexion = new SqlConnection(Properties.Settings.Default.CadenaConexion);
-        public void IngresarTurno(EMatricula m)
+        public void IngresarMatricula(EMatricula m)
         {
             try
             {
                 comando = new SqlCommand("IngresarMatricula", conexion);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@CicloEscolarId", m.Ciclo.CicloEscolarId);
                 comando.Parameters.AddWithValue("@AlumnoId", m.Alumnos.AlumnoId);
                 comando.Parameters.AddWithValue("@GradoId", m.Grados.GradoId);
-                comando.Parameters.AddWithValue("@FechaMatricula", m.FechaMatricula);
+                comando.Parameters.AddWithValue("@Seccion", m.seccion);
                 comando.Parameters.AddWithValue("@Repitente", m.Repitente);
                 comando.Parameters.AddWithValue("@TurnoId", m.Turno.TurnoId);
                 comando.Parameters.AddWithValue("@ColegioId", m.Colegio.ColegioId);
@@ -38,12 +37,12 @@ namespace Datos
             }
         }
 
-        public List<EAulas> MostrarVacantesAulas( string turno, int id)
+        public List<EAulas> MostrarVacantesAulas( int turnoid, int id)
         {
             comando = new SqlCommand("mostrarVacantesAula", conexion);
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@Gradoid", id);
-            comando.Parameters.AddWithValue("@Turno", turno);
+            comando.Parameters.AddWithValue("@Turno", turnoid);
             conexion.Open();
             SqlDataReader leer = comando.ExecuteReader();
             List<EAulas> lista = new List<EAulas>();

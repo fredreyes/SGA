@@ -80,10 +80,11 @@ Aula NVARCHAR(30) NOT NULL,
 Capacidad INT NOT NULL CHECK(CAPACIDAD >= 0),
 Vacantes INT NOT NULL CHECK(VACANTES >= 0),
 GradoId INT NOT NULL,
-Turno nvarchar(50),
+TurnoId int not null,
 Activo bit
 CONSTRAINT PK_AULAS PRIMARY KEY(AulaId),
 CONSTRAINT FK_AULAS_GRADOS FOREIGN KEY(GradoId) REFERENCES Grados(GradoId)
+CONSTRAINT FK_AULAS_TURNOS FOREIGN KEY(TurnoId) REFERENCES Turnos(TurnoId)
 )
 go
 --TABLA EVALUACIONES
@@ -229,7 +230,7 @@ MatriculaId INT NOT NULL,
 CicloEscolarId INT,
 AlumnoId int NOT NULL, 
 GradoId INT NOT NULL, 
-FechaMatricula DATE NOT NULL check(FechaMatricula >= Getdate()),
+FechaMatricula DATE NOT NULL,
 Repitente CHAR(2) NOT NULL, --SI,NO
 TurnoId INT NOT NULL,
 ColegioId INT
@@ -303,10 +304,6 @@ AlumnoId NVARCHAR(10)
 CONSTRAINT PK_USUARIO_ALUMNO PRIMARY KEY(UsuarioAlumno),
 CONSTRAINT FK_USUARIO_ALUMNOS FOREIGN KEY(AlumnoId) REFERENCES ALUMNOS(AlumnoId)
 )
-
-
-
-
 
 
 

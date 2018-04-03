@@ -43,6 +43,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblDepartamento = new MaterialSkin.Controls.MaterialLabel();
+            this.lblocupacion = new MaterialSkin.Controls.MaterialLabel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -50,6 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // lblasignatura
@@ -235,12 +238,38 @@
             this.lblDepartamento.TabIndex = 16;
             this.lblDepartamento.Text = "Departamentos";
             // 
+            // lblocupacion
+            // 
+            this.lblocupacion.AutoSize = true;
+            this.lblocupacion.Depth = 0;
+            this.lblocupacion.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblocupacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblocupacion.Location = new System.Drawing.Point(1029, 383);
+            this.lblocupacion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblocupacion.Name = "lblocupacion";
+            this.lblocupacion.Size = new System.Drawing.Size(96, 19);
+            this.lblocupacion.TabIndex = 18;
+            this.lblocupacion.Text = "Ocupaciones";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::Presentacion.Properties.Resources.curriculum;
+            this.pictureBox6.Location = new System.Drawing.Point(1033, 413);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(76, 76);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 17;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
             // frmAdministracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1127, 544);
+            this.Controls.Add(this.lblocupacion);
+            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.lblDepartamento);
             this.Controls.Add(this.materialLabel7);
             this.Controls.Add(this.pictureBox7);
@@ -269,6 +298,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,5 +321,7 @@
         private MaterialSkin.Controls.MaterialLabel lblcolegio;
         private System.Windows.Forms.PictureBox pictureBox8;
         private MaterialSkin.Controls.MaterialLabel lblDepartamento;
+        private MaterialSkin.Controls.MaterialLabel lblocupacion;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }
