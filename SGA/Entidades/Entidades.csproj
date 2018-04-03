@@ -60,7 +60,6 @@
     <Compile Include="EplanClase.cs" />
     <Compile Include="ECargaDocente.cs" />
     <Compile Include="ETurnos.cs" />
-    <Compile Include="EUniforme.cs" />
     <Compile Include="EUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

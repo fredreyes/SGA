@@ -50,35 +50,6 @@ namespace Datos
             //dt.Rows.InsertAt(fila, 0);
             cbm.DataSource = dt;
         }
-        //public List<EplanClase> BuscarListaAsignaturaGrado(int GradoID)
-        //{
-        //    try
-        //    {
-        //        comando = new SqlCommand("",conexion);
-        //        comando.CommandType = CommandType.StoredProcedure;
-        //        comando.Parameters.AddWithValue("@", GradoID);
-        //        conexion.Open();
-        //        SqlDataReader leer = comando.ExecuteReader();
-        //        List<EplanClase> lista = new List<EplanClase>();
-        //        while (leer.Read())
-        //        {
-        //            EplanClase pc = new EplanClase();
-        //            pc.PlanClaseID = (int)leer[0];
-        //            pc.Asignatura.AsignaturaId = (int)leer[1];
-        //            pc.Asignatura.Asignatura = leer[2].ToString();
-        //            pc.Grado.GradoId = (int)leer[3];
-        //            pc.CicloEscolar.ciclo = (int)leer[4];
-        //            lista.Add(pc);
-        //        }
-        //        leer.Close();
-        //        conexion.Close();
-        //        return lista;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
 
         public List<EMateriasDocentes> BuscarDocenteAsignatura(int AsignaturaID)
         {

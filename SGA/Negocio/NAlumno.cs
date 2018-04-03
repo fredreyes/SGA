@@ -23,6 +23,22 @@ namespace Negocio
                 throw ex;
             }
         }
+
+        public List<EAlumnos> ListaAlumnoMatricula()
+        {
+            try
+            {
+                DAlumnos d = new DAlumnos();
+                List<EAlumnos> lista = d.ListaAlumno();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
         public void IngresarAlumno(EAlumnos alumno,EPadres_Tutor padres, EDocuemntosAlumnos documentos)
         {
             try

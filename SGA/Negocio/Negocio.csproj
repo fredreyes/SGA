@@ -52,6 +52,7 @@
     <Compile Include="NFuncionario.cs" />
     <Compile Include="NGrado.cs" />
     <Compile Include="NMateriaDocenteID.cs" />
+    <Compile Include="NMatricula.cs" />
     <Compile Include="NNotas.cs" />
     <Compile Include="NOcupaciones.cs" />
     <Compile Include="NPlanClase.cs" />

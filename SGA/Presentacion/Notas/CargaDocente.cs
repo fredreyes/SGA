@@ -20,7 +20,6 @@ namespace Presentacion.Notas
             CargarCicloEscolar();
         }
         
-        public int GRADOID;
         public int AsignaturaID;
         
         private void materialRadioButton2_CheckedChanged(object sender, EventArgs e)
@@ -28,8 +27,6 @@ namespace Presentacion.Notas
             GrupoPrimaria.Visible = false;
             GrupoSencudaria.Visible = true;
         }
-
-     
 
         private void rbtnPrimaria_CheckedChanged(object sender, EventArgs e)
         {
@@ -49,6 +46,11 @@ namespace Presentacion.Notas
             cbmGrados.DisplayMember = "Grado";
             cbmGrados.ValueMember = "GradoId";
             cbmGrados.DataSource = lista;
+            NGrado nGrado = new NGrado();
+            List<EGrados> listaSecundaria = n.ListaGrados().Where(x => x.Tipo == "S").ToList();
+            cbmAnio.DisplayMember = "Grado";
+            cbmAnio.ValueMember = "GradoId";
+            cbmAnio.DataSource = listaSecundaria;
         }
 
         void CargarCicloEscolar()
@@ -122,7 +124,10 @@ namespace Presentacion.Notas
                 cd.AsingaturaId = AsignaturaID;
                 cd.CicloEscolarID = Convert.ToInt32(comboBox1.SelectedValue.ToString());
                 cd.FuncionarioId = Convert.ToInt32(listBox2.SelectedValue.ToString());
-                cd.GradoId = GRADOID;
+                if (rbtnPrimaria.Checked)
+                    cd.GradoId = Convert.ToInt32(cbmGrados.SelectedValue.ToString());
+                if (rbtnSecundaria.Checked)
+                    cd.GradoId = Convert.ToInt32(cbmAnio.SelectedValue.ToString());
                 n.IngresarCargaDocente(cd);
                 MessageBox.Show("Guardado");
             }

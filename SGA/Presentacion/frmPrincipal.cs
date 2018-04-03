@@ -90,5 +90,16 @@ namespace Presentacion
             Notas.CargaDocente cardaD = new Notas.CargaDocente();
             cardaD.ShowDialog();
         }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nuevaMatriculaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Presentacion.Matricula.Matricula matricula = new Presentacion.Matricula.Matricula();
+            matricula.ShowDialog();
+        }
     }
 }

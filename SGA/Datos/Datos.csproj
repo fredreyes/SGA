@@ -52,6 +52,7 @@
     <Compile Include="DFuncionario.cs" />
     <Compile Include="DGrados.cs" />
     <Compile Include="DMateriaDocente.cs" />
+    <Compile Include="DMatricula.cs" />
     <Compile Include="DNotas.cs" />
     <Compile Include="DOcupaciones.cs" />
     <Compile Include="DColegios.cs" />
