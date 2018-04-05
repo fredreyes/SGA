@@ -59,6 +59,7 @@
     <Compile Include="EPago.cs" />
     <Compile Include="EplanClase.cs" />
     <Compile Include="ECargaDocente.cs" />
+    <Compile Include="ERol.cs" />
     <Compile Include="ETurnos.cs" />
     <Compile Include="EUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

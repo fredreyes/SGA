@@ -46,16 +46,14 @@
             this.groupBoxColegio = new System.Windows.Forms.GroupBox();
             this.cbmColegio = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.cbmTurnos = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lblCapacidad = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.cbmGrados = new System.Windows.Forms.ComboBox();
-            this.chkvespertino = new MaterialSkin.Controls.MaterialCheckBox();
-            this.chkMatutino = new MaterialSkin.Controls.MaterialCheckBox();
             this.btningresar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBoxColegio.SuspendLayout();
@@ -313,6 +311,25 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Turno";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LightGreen;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(6, 67);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(153, 38);
+            this.button1.TabIndex = 46;
+            this.button1.Text = "Mostrar Capacidad";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // cbmTurnos
             // 
             this.cbmTurnos.FormattingEnabled = true;
@@ -334,16 +351,14 @@
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Grados";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 87);
+            this.comboBox1.Location = new System.Drawing.Point(37, 92);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 4;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // lblCapacidad
             // 
@@ -361,14 +376,14 @@
             // 
             this.materialLabel5.AutoSize = true;
             this.materialLabel5.Depth = 0;
-            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(44, 49);
+            this.materialLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel5.Location = new System.Drawing.Point(34, 69);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(114, 19);
+            this.materialLabel5.Size = new System.Drawing.Size(128, 15);
             this.materialLabel5.TabIndex = 46;
-            this.materialLabel5.Text = "Cap. Disponible";
+            this.materialLabel5.Text = "Capacidad Disponible";
             // 
             // cbmGrados
             // 
@@ -378,40 +393,6 @@
             this.cbmGrados.Size = new System.Drawing.Size(163, 24);
             this.cbmGrados.TabIndex = 0;
             this.cbmGrados.Text = "Seleccione un Grado";
-            // 
-            // chkvespertino
-            // 
-            this.chkvespertino.AutoSize = true;
-            this.chkvespertino.Depth = 0;
-            this.chkvespertino.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkvespertino.Location = new System.Drawing.Point(267, 329);
-            this.chkvespertino.Margin = new System.Windows.Forms.Padding(0);
-            this.chkvespertino.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkvespertino.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkvespertino.Name = "chkvespertino";
-            this.chkvespertino.Ripple = true;
-            this.chkvespertino.Size = new System.Drawing.Size(97, 30);
-            this.chkvespertino.TabIndex = 1;
-            this.chkvespertino.Text = "Vespertino";
-            this.chkvespertino.UseVisualStyleBackColor = true;
-            this.chkvespertino.CheckedChanged += new System.EventHandler(this.chkvespertino_CheckedChanged);
-            // 
-            // chkMatutino
-            // 
-            this.chkMatutino.AutoSize = true;
-            this.chkMatutino.Depth = 0;
-            this.chkMatutino.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkMatutino.Location = new System.Drawing.Point(267, 285);
-            this.chkMatutino.Margin = new System.Windows.Forms.Padding(0);
-            this.chkMatutino.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkMatutino.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkMatutino.Name = "chkMatutino";
-            this.chkMatutino.Ripple = true;
-            this.chkMatutino.Size = new System.Drawing.Size(85, 30);
-            this.chkMatutino.TabIndex = 0;
-            this.chkMatutino.Text = "Matutino";
-            this.chkMatutino.UseVisualStyleBackColor = true;
-            this.chkMatutino.CheckedChanged += new System.EventHandler(this.chkMatutino_CheckedChanged);
             // 
             // btningresar
             // 
@@ -432,33 +413,12 @@
             this.btningresar.UseVisualStyleBackColor = false;
             this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Gold;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(33, 57);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 38);
-            this.button1.TabIndex = 46;
-            this.button1.Text = "Buscar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Matricula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 396);
-            this.Controls.Add(this.chkvespertino);
             this.Controls.Add(this.btningresar);
-            this.Controls.Add(this.chkMatutino);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
@@ -476,7 +436,6 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -496,8 +455,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox cbmGrados;
         private System.Windows.Forms.GroupBox groupBox4;
-        private MaterialSkin.Controls.MaterialCheckBox chkvespertino;
-        private MaterialSkin.Controls.MaterialCheckBox chkMatutino;
         private MaterialSkin.Controls.MaterialCheckBox chkrepitente;
         private System.Windows.Forms.GroupBox groupBoxColegio;
         private System.Windows.Forms.ComboBox cbmColegio;

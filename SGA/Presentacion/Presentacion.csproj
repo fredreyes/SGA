@@ -114,6 +114,12 @@
     <Compile Include="Funcionarios\Ocupaciones.Designer.cs">
       <DependentUpon>Ocupaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Funcionarios\Roles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionarios\Roles.Designer.cs">
+      <DependentUpon>Roles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Matricula\Matricula.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Funcionarios\Ocupaciones.resx">
       <DependentUpon>Ocupaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionarios\Roles.resx">
+      <DependentUpon>Roles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Matricula\Matricula.resx">
       <DependentUpon>Matricula.cs</DependentUpon>

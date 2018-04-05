@@ -101,5 +101,11 @@ namespace Presentacion
             Presentacion.Matricula.Matricula matricula = new Presentacion.Matricula.Matricula();
             matricula.ShowDialog();
         }
+
+        private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Presentacion.Funcionarios.Roles rol = new Presentacion.Funcionarios.Roles();
+            rol.ShowDialog();
+        }
     }
 }

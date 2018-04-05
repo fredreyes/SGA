@@ -56,6 +56,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.ToolTipMenu = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.rolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.Matricula.SuspendLayout();
@@ -158,7 +159,7 @@
             this.usuariosToolStripMenuItem});
             this.Funcionarios.MouseState = MaterialSkin.MouseState.HOVER;
             this.Funcionarios.Name = "materialContextMenuStrip1";
-            this.Funcionarios.Size = new System.Drawing.Size(143, 48);
+            this.Funcionarios.Size = new System.Drawing.Size(153, 70);
             // 
             // funcionariosToolStripMenuItem
             // 
@@ -167,7 +168,7 @@
             this.gestiónFuncionariosToolStripMenuItem,
             this.cargaAcademicaDocentesToolStripMenuItem});
             this.funcionariosToolStripMenuItem.Name = "funcionariosToolStripMenuItem";
-            this.funcionariosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.funcionariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.funcionariosToolStripMenuItem.Text = "Funcionarios";
             this.funcionariosToolStripMenuItem.Click += new System.EventHandler(this.funcionariosToolStripMenuItem_Click);
             // 
@@ -194,8 +195,10 @@
             // 
             // usuariosToolStripMenuItem
             // 
+            this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rolesToolStripMenuItem});
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
             // materialLabel3
@@ -345,6 +348,13 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
+            // rolesToolStripMenuItem
+            // 
+            this.rolesToolStripMenuItem.Name = "rolesToolStripMenuItem";
+            this.rolesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.rolesToolStripMenuItem.Text = "Roles";
+            this.rolesToolStripMenuItem.Click += new System.EventHandler(this.rolesToolStripMenuItem_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -404,5 +414,6 @@
         private System.Windows.Forms.ContextMenuStrip Matricula;
         private System.Windows.Forms.ToolStripMenuItem nuevaMatriculaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verMatriculadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rolesToolStripMenuItem;
     }
 }

@@ -116,66 +116,7 @@ namespace Presentacion.Matricula
 
         }
 
-        private void chkMatutino_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                var turno = 1;
-                int GradoId = Convert.ToInt32(cbmGrados.SelectedValue.ToString());
-                NMatricula m = new NMatricula();
-                List<EAulas> lista = m.MostraVacantesLibres(turno, GradoId);
-                if (lista.Count > 0)
-                {
-                    comboBox1.DataSource = lista;
-                    comboBox1.DisplayMember = "Capacidad";
-                    comboBox1.ValueMember = "Aula";                    
-                }
-                else
-                {
-                    this.chkMatutino.Checked = false;
-                }
-                    
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chkvespertino_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                var turno = chkvespertino.Text;
-                int GradoId = Convert.ToInt32(cbmGrados.SelectedValue.ToString());
-                NMatricula m = new NMatricula();
-                List<EAulas> lista = m.MostraVacantesLibres(2, GradoId);
-                if (lista.Count > 0)
-                {
-                    comboBox1.DataSource = lista;
-                    comboBox1.DisplayMember = "Capacidad";
-                    comboBox1.ValueMember = "Aula";
-                }
-                else
-                {
-                    this.chkMatutino.Checked = false;   
-                }
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
+        
 
         private void btningresar_Click(object sender, EventArgs e)
         {
@@ -193,6 +134,7 @@ namespace Presentacion.Matricula
                     NMatricula n = new NMatricula();
                     n.IngresarMatricula(matricula);
                     MessageBox.Show("Matricula ingresada con exito","SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //Limpiar
                 }
                 if (modificar == 1)
                 {
