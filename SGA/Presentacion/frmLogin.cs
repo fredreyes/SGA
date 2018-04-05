@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
+using Entidades;
+using Negocio;
 
 namespace Presentacion
 {
@@ -30,9 +32,30 @@ namespace Presentacion
 
         private void btningresar_Click(object sender, EventArgs e)
         {
-            frmPrincipal f = new frmPrincipal();
-            f.Show();
-            this.Hide();
+            try
+            {
+                NUsuario negocioUsuario = new NUsuario();
+                EUsuarios user = new EUsuarios();
+                user.Usuario = txtusuario.Text;
+                user.Password = txtpasword.Text;
+                EUsuarios Usuario = negocioUsuario.Login(user);
+                if (Usuario != null)
+                {
+                    Global.Users = Usuario;
+                    frmPrincipal menu = new frmPrincipal();
+                    menu.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrecta");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

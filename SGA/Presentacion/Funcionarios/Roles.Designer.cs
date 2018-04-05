@@ -38,6 +38,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btningresar = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
+            this.txtdescripcion = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -50,7 +51,7 @@
             this.groupBox1.Controls.Add(this.chkadministrador);
             this.groupBox1.Controls.Add(this.chkmatricula);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 76);
+            this.groupBox1.Location = new System.Drawing.Point(19, 102);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(557, 82);
             this.groupBox1.TabIndex = 0;
@@ -125,7 +126,7 @@
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 222);
+            this.groupBox2.Location = new System.Drawing.Point(12, 246);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(557, 166);
             this.groupBox2.TabIndex = 4;
@@ -154,7 +155,7 @@
             this.btningresar.ForeColor = System.Drawing.Color.White;
             this.btningresar.Image = global::Presentacion.Properties.Resources.save;
             this.btningresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btningresar.Location = new System.Drawing.Point(151, 177);
+            this.btningresar.Location = new System.Drawing.Point(151, 202);
             this.btningresar.Name = "btningresar";
             this.btningresar.Size = new System.Drawing.Size(124, 39);
             this.btningresar.TabIndex = 49;
@@ -173,7 +174,7 @@
             this.btncancelar.ForeColor = System.Drawing.Color.White;
             this.btncancelar.Image = ((System.Drawing.Image)(resources.GetObject("btncancelar.Image")));
             this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncancelar.Location = new System.Drawing.Point(301, 177);
+            this.btncancelar.Location = new System.Drawing.Point(301, 202);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(103, 38);
             this.btncancelar.TabIndex = 50;
@@ -182,11 +183,27 @@
             this.btncancelar.UseVisualStyleBackColor = false;
             this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
+            // txtdescripcion
+            // 
+            this.txtdescripcion.Depth = 0;
+            this.txtdescripcion.Hint = "Descripción de Rol";
+            this.txtdescripcion.Location = new System.Drawing.Point(159, 73);
+            this.txtdescripcion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtdescripcion.Name = "txtdescripcion";
+            this.txtdescripcion.PasswordChar = '\0';
+            this.txtdescripcion.SelectedText = "";
+            this.txtdescripcion.SelectionLength = 0;
+            this.txtdescripcion.SelectionStart = 0;
+            this.txtdescripcion.Size = new System.Drawing.Size(245, 23);
+            this.txtdescripcion.TabIndex = 51;
+            this.txtdescripcion.UseSystemPasswordChar = false;
+            // 
             // Roles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 417);
+            this.ClientSize = new System.Drawing.Size(581, 431);
+            this.Controls.Add(this.txtdescripcion);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btningresar);
             this.Controls.Add(this.groupBox2);
@@ -194,7 +211,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Roles";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Roles";
             this.Load += new System.EventHandler(this.Roles_Load);
             this.groupBox1.ResumeLayout(false);
@@ -210,11 +227,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private MaterialSkin.Controls.MaterialCheckBox chkcalificaciones;
         private MaterialSkin.Controls.MaterialCheckBox chkFuncionarios;
-        private MaterialSkin.Controls.MaterialCheckBox chkadministrador;
-        private MaterialSkin.Controls.MaterialCheckBox chkmatricula;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btningresar;
         private System.Windows.Forms.Button btncancelar;
+        public MaterialSkin.Controls.MaterialCheckBox chkmatricula;
+        public MaterialSkin.Controls.MaterialCheckBox chkadministrador;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtdescripcion;
     }
 }

@@ -24,6 +24,21 @@ namespace Negocio
                 throw ex;
             }
         }
+
+        public List<EFuncionarios> ListaFuncionariosSinUsuario()
+        {
+            try
+            {
+                DFuncionario D = new DFuncionario();
+                List<EFuncionarios> l = D.ListaFuncionariosSinUsuario();
+                return l;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
         public void IngresarFuncionario(EFuncionarios f)
         {
             try

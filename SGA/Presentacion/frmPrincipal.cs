@@ -23,7 +23,18 @@ namespace Presentacion
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
+            try
+            {
+                btnAlumnos.Visible = Global.Users.Rol.Matricula;
+                btnCalificaciones.Visible = Global.Users.Rol.Calificaciones;
+                btnFuncionarios.Visible = Global.Users.Rol.Funcionarios;
+                btnMatricula.Visible = Global.Users.Rol.Matricula;
+            }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

@@ -56,6 +56,7 @@ namespace Presentacion.Funcionarios
             chkcalificaciones.Checked = false;
             chkFuncionarios.Checked = false;
             chkmatricula.Checked = false;
+            txtdescripcion.Clear();
         }
 
         private void btningresar_Click(object sender, EventArgs e)
@@ -67,6 +68,7 @@ namespace Presentacion.Funcionarios
                     //Guardar
                     ERol rol = new ERol();
                     NRol n = new NRol();
+                    rol.Descripcion = txtdescripcion.Text;
                     rol.Matricula = Convert.ToBoolean(chkmatricula.Checked ? 1 : 0);
                     rol.Administracion = Convert.ToBoolean(chkadministrador.Checked ? 1 : 0);
                     rol.Calificaciones = Convert.ToBoolean(chkcalificaciones.Checked ? 1 : 0);
@@ -82,6 +84,7 @@ namespace Presentacion.Funcionarios
                     ERol rol = new ERol();
                     NRol n = new NRol();
                     rol.RolId = Rolid;
+                    rol.Descripcion = txtdescripcion.Text;
                     rol.Matricula = Convert.ToBoolean(chkmatricula.Checked ? 1 : 0);
                     rol.Administracion = Convert.ToBoolean(chkadministrador.Checked ? 1 : 0);
                     rol.Calificaciones = Convert.ToBoolean(chkcalificaciones.Checked ? 1 : 0);
@@ -106,6 +109,7 @@ namespace Presentacion.Funcionarios
                 try
                 {
                     Rolid = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["RolId"].Value.ToString());
+                    txtdescripcion.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Descripcion"].Value.ToString();
                     if (Convert.ToBoolean(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Matricula"].Value.ToString()) == true)
                         chkmatricula.Checked = true;
                     else

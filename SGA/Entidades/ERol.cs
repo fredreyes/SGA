@@ -9,6 +9,7 @@ namespace Entidades
    public class ERol
     {
         public int RolId { get; set; }
+        public string Descripcion { get; set; }
         public bool Matricula { get; set; }
         public bool Administracion { get; set; }
         public bool Funcionarios { get; set; }

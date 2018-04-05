@@ -28,10 +28,11 @@ namespace Datos
                 {
                     ERol r = new ERol();
                     r.RolId = (int)leer[0];
-                    r.Matricula = Convert.ToBoolean(leer[1]);
-                    r.Administracion = Convert.ToBoolean(leer[2]);
-                    r.Funcionarios = Convert.ToBoolean(leer[3]);
-                    r.Calificaciones = Convert.ToBoolean(leer[4]);
+                    r.Descripcion = leer[1].ToString();
+                    r.Matricula = Convert.ToBoolean(leer[2]);
+                    r.Administracion = Convert.ToBoolean(leer[3]);
+                    r.Funcionarios = Convert.ToBoolean(leer[4]);
+                    r.Calificaciones = Convert.ToBoolean(leer[5]);
                     lista.Add(r);
                 }
                 leer.Close();
@@ -51,6 +52,7 @@ namespace Datos
             {
                 comando = new SqlCommand("IngresarRoles", conexion);
                 comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Descripcion", rol.Descripcion);
                 comando.Parameters.AddWithValue("@Matricula", rol.Matricula);
                 comando.Parameters.AddWithValue("@Administracion", rol.Administracion);
                 comando.Parameters.AddWithValue("@Funcionarios", rol.Funcionarios);
@@ -73,6 +75,7 @@ namespace Datos
             {
                 comando = new SqlCommand("ModificarRoles", conexion);
                 comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Descripcion", rol.Descripcion);
                 comando.Parameters.AddWithValue("@Matricula", rol.Matricula);
                 comando.Parameters.AddWithValue("@Administracion", rol.Administracion);
                 comando.Parameters.AddWithValue("@Funcionarios", rol.Funcionarios);

@@ -8,10 +8,18 @@ namespace Entidades
 {
     public class EUsuarios
     {
-        public int USUARIO_ID { get; set; }
-        public string USUARIO { get; set; }
-        public string CONTRASEÑA { get; set; }
-        public bool ESTADO { get; set; }
-        public int ID_FUNCIONARIO { get; set; }
+        public int UsuarioID { get; set; }
+        public string Usuario { get; set; }
+        public string Password { get; set; }
+        public int FuncionarioID { get; set; }
+        public string FuncionarioName { get; set; }
+        public string FuncionarioLastName { get; set; }
+        public DateTime FechaCreacion { get; set; }
+        public ERol Rol { get; set; }
+        public bool Activo { get; set; }
+        public EUsuarios()
+        {
+            Rol = new ERol();
+        }
     }
 }

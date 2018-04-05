@@ -53,6 +53,36 @@ namespace Datos
             }
         }
 
+        public List<EFuncionarios> ListaFuncionariosSinUsuario()
+        {
+            try
+            {
+                comando = new SqlCommand("select FuncionarioId,Nombres,Apellidos,Telefono,Cargo from Funcionarios where FuncionarioId not in (select FuncionarioID from Usuarios)", conexion);
+                comando.CommandType = CommandType.Text;
+                comando.Connection = conexion;
+                conexion.Open();
+                List<EFuncionarios> lista = new List<EFuncionarios>();
+                SqlDataReader leer = comando.ExecuteReader();
+                while (leer.Read())
+                {
+                    EFuncionarios f = new EFuncionarios();
+                    f.FuncionarioId = (int)leer[0];
+                    f.Nombres = leer[1].ToString();
+                    f.Apellidos = leer[2].ToString();
+                    f.Telefono = leer[3].ToString();
+                    f.Cargo = leer[4].ToString();
+                    lista.Add(f);
+                }
+                leer.Close();
+                conexion.Close();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void IngresarFuncionario(EFuncionarios f)
         {
             try

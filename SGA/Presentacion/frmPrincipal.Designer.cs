@@ -30,22 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.btnMatricula = new System.Windows.Forms.PictureBox();
             this.Matricula = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.nuevaMatriculaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verMatriculadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.btnFuncionarios = new System.Windows.Forms.PictureBox();
             this.Funcionarios = new MaterialSkin.Controls.MaterialContextMenuStrip();
             this.funcionariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.docentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónFuncionariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargaAcademicaDocentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btnAlumnos = new System.Windows.Forms.PictureBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCalificaciones = new System.Windows.Forms.PictureBox();
             this.Calificaciones = new MaterialSkin.Controls.MaterialContextMenuStrip();
             this.calificacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.evaluacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,14 +57,13 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.ToolTipMenu = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.rolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMatricula)).BeginInit();
             this.Matricula.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFuncionarios)).BeginInit();
             this.Funcionarios.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAlumnos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCalificaciones)).BeginInit();
             this.Calificaciones.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -76,13 +76,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.pictureBox6);
+            this.panel1.Controls.Add(this.btnMatricula);
             this.panel1.Controls.Add(this.materialLabel4);
-            this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Controls.Add(this.btnFuncionarios);
             this.panel1.Controls.Add(this.materialLabel3);
-            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.btnAlumnos);
             this.panel1.Controls.Add(this.materialLabel1);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.btnCalificaciones);
             this.panel1.Controls.Add(this.materialLabel5);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(0, 64);
@@ -90,18 +90,18 @@
             this.panel1.Size = new System.Drawing.Size(1218, 92);
             this.panel1.TabIndex = 0;
             // 
-            // pictureBox6
+            // btnMatricula
             // 
-            this.pictureBox6.ContextMenuStrip = this.Matricula;
-            this.pictureBox6.Image = global::Presentacion.Properties.Resources.ordenador;
-            this.pictureBox6.Location = new System.Drawing.Point(45, 25);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(59, 58);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 18;
-            this.pictureBox6.TabStop = false;
-            this.ToolTipMenu.SetToolTip(this.pictureBox6, "Matricula");
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.btnMatricula.ContextMenuStrip = this.Matricula;
+            this.btnMatricula.Image = global::Presentacion.Properties.Resources.ordenador;
+            this.btnMatricula.Location = new System.Drawing.Point(45, 25);
+            this.btnMatricula.Name = "btnMatricula";
+            this.btnMatricula.Size = new System.Drawing.Size(59, 58);
+            this.btnMatricula.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMatricula.TabIndex = 18;
+            this.btnMatricula.TabStop = false;
+            this.ToolTipMenu.SetToolTip(this.btnMatricula, "Matricula");
+            this.btnMatricula.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // Matricula
             // 
@@ -138,17 +138,17 @@
             this.materialLabel4.TabIndex = 19;
             this.materialLabel4.Text = "Matricula";
             // 
-            // pictureBox5
+            // btnFuncionarios
             // 
-            this.pictureBox5.ContextMenuStrip = this.Funcionarios;
-            this.pictureBox5.Image = global::Presentacion.Properties.Resources.businessmen;
-            this.pictureBox5.Location = new System.Drawing.Point(351, 25);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(59, 58);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 16;
-            this.pictureBox5.TabStop = false;
-            this.ToolTipMenu.SetToolTip(this.pictureBox5, "Funcionarios");
+            this.btnFuncionarios.ContextMenuStrip = this.Funcionarios;
+            this.btnFuncionarios.Image = global::Presentacion.Properties.Resources.businessmen;
+            this.btnFuncionarios.Location = new System.Drawing.Point(351, 25);
+            this.btnFuncionarios.Name = "btnFuncionarios";
+            this.btnFuncionarios.Size = new System.Drawing.Size(59, 58);
+            this.btnFuncionarios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnFuncionarios.TabIndex = 16;
+            this.btnFuncionarios.TabStop = false;
+            this.ToolTipMenu.SetToolTip(this.btnFuncionarios, "Funcionarios");
             // 
             // Funcionarios
             // 
@@ -159,7 +159,7 @@
             this.usuariosToolStripMenuItem});
             this.Funcionarios.MouseState = MaterialSkin.MouseState.HOVER;
             this.Funcionarios.Name = "materialContextMenuStrip1";
-            this.Funcionarios.Size = new System.Drawing.Size(153, 70);
+            this.Funcionarios.Size = new System.Drawing.Size(143, 48);
             // 
             // funcionariosToolStripMenuItem
             // 
@@ -168,7 +168,7 @@
             this.gestiónFuncionariosToolStripMenuItem,
             this.cargaAcademicaDocentesToolStripMenuItem});
             this.funcionariosToolStripMenuItem.Name = "funcionariosToolStripMenuItem";
-            this.funcionariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.funcionariosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.funcionariosToolStripMenuItem.Text = "Funcionarios";
             this.funcionariosToolStripMenuItem.Click += new System.EventHandler(this.funcionariosToolStripMenuItem_Click);
             // 
@@ -198,8 +198,15 @@
             this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.rolesToolStripMenuItem});
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
+            // 
+            // rolesToolStripMenuItem
+            // 
+            this.rolesToolStripMenuItem.Name = "rolesToolStripMenuItem";
+            this.rolesToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.rolesToolStripMenuItem.Text = "Roles";
+            this.rolesToolStripMenuItem.Click += new System.EventHandler(this.rolesToolStripMenuItem_Click);
             // 
             // materialLabel3
             // 
@@ -214,17 +221,17 @@
             this.materialLabel3.TabIndex = 17;
             this.materialLabel3.Text = "Funcionarios";
             // 
-            // pictureBox4
+            // btnAlumnos
             // 
-            this.pictureBox4.Image = global::Presentacion.Properties.Resources.reading;
-            this.pictureBox4.Location = new System.Drawing.Point(208, 25);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(59, 58);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 14;
-            this.pictureBox4.TabStop = false;
-            this.ToolTipMenu.SetToolTip(this.pictureBox4, "Alumnos");
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.btnAlumnos.Image = global::Presentacion.Properties.Resources.reading;
+            this.btnAlumnos.Location = new System.Drawing.Point(208, 25);
+            this.btnAlumnos.Name = "btnAlumnos";
+            this.btnAlumnos.Size = new System.Drawing.Size(59, 58);
+            this.btnAlumnos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAlumnos.TabIndex = 14;
+            this.btnAlumnos.TabStop = false;
+            this.ToolTipMenu.SetToolTip(this.btnAlumnos, "Alumnos");
+            this.btnAlumnos.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // materialLabel1
             // 
@@ -239,18 +246,18 @@
             this.materialLabel1.TabIndex = 15;
             this.materialLabel1.Text = "Alumnos";
             // 
-            // pictureBox1
+            // btnCalificaciones
             // 
-            this.pictureBox1.ContextMenuStrip = this.Calificaciones;
-            this.pictureBox1.Image = global::Presentacion.Properties.Resources.evaluation1;
-            this.pictureBox1.Location = new System.Drawing.Point(517, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(59, 58);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            this.ToolTipMenu.SetToolTip(this.pictureBox1, "Calificaciones");
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            this.btnCalificaciones.ContextMenuStrip = this.Calificaciones;
+            this.btnCalificaciones.Image = global::Presentacion.Properties.Resources.evaluation1;
+            this.btnCalificaciones.Location = new System.Drawing.Point(517, 25);
+            this.btnCalificaciones.Name = "btnCalificaciones";
+            this.btnCalificaciones.Size = new System.Drawing.Size(59, 58);
+            this.btnCalificaciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCalificaciones.TabIndex = 6;
+            this.btnCalificaciones.TabStop = false;
+            this.ToolTipMenu.SetToolTip(this.btnCalificaciones, "Calificaciones");
+            this.btnCalificaciones.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // Calificaciones
             // 
@@ -348,13 +355,6 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // rolesToolStripMenuItem
-            // 
-            this.rolesToolStripMenuItem.Name = "rolesToolStripMenuItem";
-            this.rolesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.rolesToolStripMenuItem.Text = "Roles";
-            this.rolesToolStripMenuItem.Click += new System.EventHandler(this.rolesToolStripMenuItem_Click);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -370,12 +370,12 @@
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMatricula)).EndInit();
             this.Matricula.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFuncionarios)).EndInit();
             this.Funcionarios.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAlumnos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCalificaciones)).EndInit();
             this.Calificaciones.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -392,11 +392,11 @@
         private System.Windows.Forms.Panel panel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox btnCalificaciones;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox btnAlumnos;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox btnFuncionarios;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialContextMenuStrip Funcionarios;
         private System.Windows.Forms.ToolStripMenuItem funcionariosToolStripMenuItem;
@@ -409,7 +409,7 @@
         private System.Windows.Forms.ToolTip ToolTipMenu;
         private System.Windows.Forms.ToolStripMenuItem planDeClasesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cargaAcademicaDocentesToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox btnMatricula;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private System.Windows.Forms.ContextMenuStrip Matricula;
         private System.Windows.Forms.ToolStripMenuItem nuevaMatriculaToolStripMenuItem;

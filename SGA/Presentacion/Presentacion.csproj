@@ -108,6 +108,12 @@
     <Compile Include="Funcionarios\Funcionarios.Designer.cs">
       <DependentUpon>Funcionarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Funcionarios\FuncionariosSinUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionarios\FuncionariosSinUsuario.Designer.cs">
+      <DependentUpon>FuncionariosSinUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Funcionarios\Ocupaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,13 @@
     <Compile Include="Funcionarios\Roles.Designer.cs">
       <DependentUpon>Roles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Funcionarios\Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionarios\Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="Matricula\Matricula.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,11 +243,17 @@
     <EmbeddedResource Include="Funcionarios\Funcionarios.resx">
       <DependentUpon>Funcionarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Funcionarios\FuncionariosSinUsuario.resx">
+      <DependentUpon>FuncionariosSinUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Funcionarios\Ocupaciones.resx">
       <DependentUpon>Ocupaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Funcionarios\Roles.resx">
       <DependentUpon>Roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionarios\Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Matricula\Matricula.resx">
       <DependentUpon>Matricula.cs</DependentUpon>

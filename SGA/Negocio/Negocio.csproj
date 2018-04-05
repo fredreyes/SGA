@@ -58,6 +58,7 @@
     <Compile Include="NPlanClase.cs" />
     <Compile Include="NRol.cs" />
     <Compile Include="NTurnos.cs" />
+    <Compile Include="NUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
