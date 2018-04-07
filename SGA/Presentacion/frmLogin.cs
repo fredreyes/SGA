@@ -19,15 +19,18 @@ namespace Presentacion
         public frmLogin()
         {
             InitializeComponent();
-            MaterialSkinManager m = MaterialSkinManager.Instance;
-            m.AddFormToManage(this);
-            m.Theme = MaterialSkinManager.Themes.DARK;
-            m.ColorScheme = new ColorScheme(Primary.Green400, Primary.Green900,Primary.Green800,Accent.DeepPurple200,TextShade.WHITE);
+            //MaterialSkinManager m = MaterialSkinManager.Instance;
+            //m.AddFormToManage(this);
+            //m.Theme = MaterialSkinManager.Themes.DARK;
+            //m.ColorScheme = new ColorScheme(Primary.Green400, Primary.Green900,Primary.Green800,Accent.DeepPurple200,TextShade.WHITE);
+            EstiloMenu x = new EstiloMenu();
+            x.AplicarEstilo(this);
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btningresar_Click(object sender, EventArgs e)
@@ -56,6 +59,11 @@ namespace Presentacion
 
                 throw ex;
             }
+        }
+
+        private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

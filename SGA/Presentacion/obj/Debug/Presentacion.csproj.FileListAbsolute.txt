@@ -891,3 +891,10 @@ C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\Presentacion.St
 C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\Presentacion.Funcionarios.Roles.resources
 C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\Presentacion.Funcionarios.Users.resources
 C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\Presentacion.Funcionarios.FuncionariosSinUsuario.resources
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\Presentacion.Funcionarios.VerListaUsuarios.resources
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\RdlCompile.cache
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\RdlCompile.compiled
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\Presentacion.Matricula.BoletaMatricula.resources
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\Presentacion.Matricula.VerListaMatriculados.resources

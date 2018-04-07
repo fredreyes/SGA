@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -51,6 +52,7 @@
     <Compile Include="EEvaluaciones.cs" />
     <Compile Include="EFuncionarios.cs" />
     <Compile Include="EGrados.cs" />
+    <Compile Include="ELogin.cs" />
     <Compile Include="EMateriasDocentes.cs" />
     <Compile Include="EMatricula.cs" />
     <Compile Include="ENotas.cs" />

@@ -18,9 +18,16 @@ textarea {
     max-width: 280px;
 }
 
-#LoginDiv{
+#Login-Div {
     position: absolute;
-    left: 40%;
+    left : 40%;
     top: 40%;
+    border : 2px solid #ccc;
+    border-radius: 10px;
+    padding : 20px 20px;
 }
 
+
+.field-validation-error {
+    color: red;
+}

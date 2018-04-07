@@ -107,7 +107,7 @@ namespace Presentacion.Student
             }
             else
             {
-                txtcedulaP.Clear();
+                txtcedulaTutor.Clear();
                 txttelefonoTutor.Clear();
                 txtxTutorName.Clear();
                 cbmParentezco.Text = "Seleccione un Parentezco";
@@ -127,42 +127,13 @@ namespace Presentacion.Student
             }
             else
             {
-                txtcedulaP.Clear();
+                txtcedulaTutor.Clear();
                 txttelefonoTutor.Clear();
                 txtxTutorName.Clear();
                 cbmParentezco.Text = "Seleccione un Parentezco";
             }
         }
-
-        private void btnCapturar_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void ocupacionesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Funcionarios.Ocupaciones o = new Funcionarios.Ocupaciones();
-            if (o.ShowDialog() == DialogResult.OK)
-            {
-             //   txtocupacionPadre.Text = o.ocupacion;
-            }
-        }
-
-        private void txtocupacionPadre_MouseHover(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void txtocupacionPadre_MouseLeave(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-           
-        }
-
+        
         private void btningresar_Click(object sender, EventArgs e)
         {
             try

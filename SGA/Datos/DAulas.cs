@@ -17,7 +17,7 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("select AulaId,Aula,Capacidad,Vacantes,A.GradoId,Grado,A.activo,TurnoId from Aulas A inner join GRADOS G ON A.GradoId = G.GradoId", conexion);
+                comando = new SqlCommand("select AulaId,Aula,Capacidad,Vacantes,A.GradoId,Grado,A.activo,A.TurnoId, Turno from Aulas A inner join GRADOS G ON A.GradoId = G.GradoId inner join Turnos T on A.TurnoId = T.TurnoId", conexion);
                 comando.CommandType = CommandType.Text;
                 comando.Connection = conexion;
                 conexion.Open();
@@ -34,6 +34,7 @@ namespace Datos
                     a.Grado = leer[5].ToString();
                     a.Activo = (bool)leer[6];
                     a.Turno = Convert.ToInt32(leer[7].ToString());
+                    a.TurnoName = leer[8].ToString();
                     lista.Add(a);
                 }
                 leer.Close();

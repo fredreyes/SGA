@@ -55,10 +55,13 @@
     <Reference Include="MetroFramework">
       <HintPath>..\..\..\Documents\Visual Studio 2015\Projects\Svuelo.0.1\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -132,12 +135,35 @@
     <Compile Include="Funcionarios\Users.Designer.cs">
       <DependentUpon>Users.cs</DependentUpon>
     </Compile>
+    <Compile Include="Funcionarios\VerListaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionarios\VerListaUsuarios.Designer.cs">
+      <DependentUpon>VerListaUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="Matricula\BoletaMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Matricula\BoletaMatricula.Designer.cs">
+      <DependentUpon>BoletaMatricula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Matricula\DatosBoletaMatricula.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosBoletaMatricula.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Matricula\Matricula.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Matricula\Matricula.Designer.cs">
       <DependentUpon>Matricula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Matricula\VerListaMatriculados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Matricula\VerListaMatriculados.Designer.cs">
+      <DependentUpon>VerListaMatriculados.cs</DependentUpon>
     </Compile>
     <Compile Include="Notas\Calificaciones.cs">
       <SubType>Form</SubType>
@@ -255,8 +281,18 @@
     <EmbeddedResource Include="Funcionarios\Users.resx">
       <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Funcionarios\VerListaUsuarios.resx">
+      <DependentUpon>VerListaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Matricula\BoletadeMatricula.rdlc" />
+    <EmbeddedResource Include="Matricula\BoletaMatricula.resx">
+      <DependentUpon>BoletaMatricula.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Matricula\Matricula.resx">
       <DependentUpon>Matricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Matricula\VerListaMatriculados.resx">
+      <DependentUpon>VerListaMatriculados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Notas\Calificaciones.resx">
       <DependentUpon>Calificaciones.cs</DependentUpon>
@@ -311,6 +347,17 @@
     <EmbeddedResource Include="Student\ListAlumno.resx">
       <DependentUpon>ListAlumno.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Matricula\DatosBoletaMatricula.xsc">
+      <DependentUpon>DatosBoletaMatricula.xsd</DependentUpon>
+    </None>
+    <None Include="Matricula\DatosBoletaMatricula.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosBoletaMatricula.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Matricula\DatosBoletaMatricula.xss">
+      <DependentUpon>DatosBoletaMatricula.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

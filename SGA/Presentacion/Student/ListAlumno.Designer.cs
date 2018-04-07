@@ -57,6 +57,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(640, 293);
             this.Controls.Add(this.gridControl1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ListAlumno";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista Alumno";

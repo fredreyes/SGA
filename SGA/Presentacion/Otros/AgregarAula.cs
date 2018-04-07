@@ -55,14 +55,17 @@ namespace Presentacion.Otros
                                       i.Capacidad,
                                       i.Vacantes,
                                       i.Turno,
+                                      i.TurnoName,
                                       i.GradoId,
-                                      i.Grado
+                                      i.Grado,
+                                      i.Activo
                                   }).ToList();
                 gridControl1.DataSource = NuevaLista;
                 gridView1.BestFitColumns();
                 gridView1.Columns[0].Visible = false;
-                gridView1.Columns[5].Visible = false;
-                gridView1.Columns[6].Group();
+                gridView1.Columns[4].Visible = false;
+                gridView1.Columns[6].Visible = false;
+                gridView1.Columns[7].Group();
             }
             catch (Exception ex)
             {
@@ -167,7 +170,9 @@ namespace Presentacion.Otros
                     n.ModificarAulas(a);
                     MessageBox.Show("Aula Modificada con Exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
-               }
+                    CargarGrados();
+                    CargarLista();
+                }
         }
             catch (Exception ex)
             {
@@ -222,7 +227,7 @@ namespace Presentacion.Otros
                     txtaula.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Aula").ToString();
                     txtcpacidad.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Capacidad").ToString();
                     txtvacantes.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Vacantes").ToString();
-                    cbmTurno.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Turno").ToString();
+                    cbmTurno.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "TurnoName").ToString();
                     rbtnactivo.Visible = true;
                     rbrncancelar.Visible = true;
                     chkEditar.Visible = true;

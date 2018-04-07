@@ -633,7 +633,6 @@
             this.ocupacionesToolStripMenuItem.Name = "ocupacionesToolStripMenuItem";
             this.ocupacionesToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.ocupacionesToolStripMenuItem.Text = "Ocupaciones";
-            this.ocupacionesToolStripMenuItem.Click += new System.EventHandler(this.ocupacionesToolStripMenuItem_Click);
             // 
             // tabNavigationPage4
             // 

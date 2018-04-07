@@ -85,7 +85,7 @@ namespace Presentacion.Otros
                     C.Telefono = txttelefono.Text;
                     C.DepartamentoID = Convert.ToInt32(cbmDepartmento.SelectedValue.ToString());
                     n.IngresarColegio(C);
-                    MessageBox.Show("Colegio ingresado correctamente", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Colegio ingresado correctamente", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     limpiar();
                     CargarColegios();
                 }

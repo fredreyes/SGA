@@ -34,7 +34,7 @@ namespace Negocio
                     throw new ArgumentException("Ingrese un Nombre de Ocupación");
                 List<EOcupaciones> l = ListaOcupaciones().Where(x => x.Ocupacion == o.Ocupacion).ToList();
                 if (l.Count > 0)
-                    throw new ArgumentException(o.Ocupacion + "ya existe");
+                    throw new ArgumentException(o.Ocupacion + " " +" ya existe");
 
                 DOcupaciones D = new DOcupaciones();
                 D.IngresarOcupaciones(o);

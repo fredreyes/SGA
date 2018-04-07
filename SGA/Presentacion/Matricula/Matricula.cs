@@ -116,7 +116,16 @@ namespace Presentacion.Matricula
 
         }
 
-        
+        void Limpiar()
+        {
+            txtApellido.Clear();
+            txtdireccion.Clear();
+            txtNombre.Clear();
+            chkPrimerIngreso.Checked = false;
+            chkrepitente.Checked = false;
+            rbtnFememino.Checked = false;
+            rbtnMasculino.Checked = false;
+        }
 
         private void btningresar_Click(object sender, EventArgs e)
         {
@@ -124,17 +133,25 @@ namespace Presentacion.Matricula
             {
                 if (modificar == 0)
                 {
-                    EMatricula matricula = new EMatricula();
-                    matricula.Alumnos.AlumnoId = Convert.ToInt32(txtNombre.Tag);
-                    matricula.Grados.GradoId = Convert.ToInt32(cbmGrados.SelectedValue.ToString());
-                    matricula.seccion = comboBox1.SelectedValue.ToString();
-                    matricula.Repitente = chkrepitente.Checked ? "SI" : "NO";
-                    matricula.Turno.TurnoId = Convert.ToInt32(cbmTurnos.SelectedValue.ToString());
-                    matricula.Colegio.ColegioId = Convert.ToInt32(cbmColegio.SelectedValue.ToString());
-                    NMatricula n = new NMatricula();
-                    n.IngresarMatricula(matricula);
-                    MessageBox.Show("Matricula ingresada con exito","SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //Limpiar
+                    if (txtNombre.Text != "" || txtApellido.Text != "" )
+                    {
+                        DialogResult mensaje = MessageBox.Show("¿Estas seguro de Matricular a  " + txtNombre.Text + " en el " + cbmGrados.Text, " SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        if (mensaje == DialogResult.OK)
+                        {
+                            EMatricula matricula = new EMatricula();
+                            matricula.Alumnos.AlumnoId = Convert.ToInt32(txtNombre.Tag);
+                            matricula.Grados.GradoId = Convert.ToInt32(cbmGrados.SelectedValue.ToString());
+                            matricula.seccion = comboBox1.SelectedValue.ToString();
+                            matricula.Repitente = chkrepitente.Checked ? "SI" : "NO";
+                            matricula.Turno.TurnoId = Convert.ToInt32(cbmTurnos.SelectedValue.ToString());
+                            NMatricula n = new NMatricula();
+                            n.IngresarMatricula(matricula);
+                            MessageBox.Show("Matricula ingresada con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Limpiar();
+                        }
+                    }
+                    else
+                        MessageBox.Show("No hay registro que guardar", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 if (modificar == 1)
                 {

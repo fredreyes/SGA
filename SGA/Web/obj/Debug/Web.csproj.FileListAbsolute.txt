@@ -50,3 +50,9 @@ C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Web\bin\es\System.Web.Mvc.resources.dl
 C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
 C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Web\obj\Debug\Web.dll
 C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Web\obj\Debug\Web.pdb
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Web\bin\Entidades.dll
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Web\bin\EntityFramework.dll
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Web\bin\EntityFramework.SqlServer.dll
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Web\bin\Entidades.pdb
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Web\bin\EntityFramework.xml
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Web\bin\EntityFramework.SqlServer.xml

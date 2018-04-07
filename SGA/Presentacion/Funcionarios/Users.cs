@@ -27,7 +27,7 @@ namespace Presentacion.Funcionarios
 
         private void Users_Load(object sender, EventArgs e)
         {
-
+            chkEditar.Visible = false;
         }
 
         void cargarRol()
@@ -83,13 +83,41 @@ namespace Presentacion.Funcionarios
                 }
                 if (Bandera == 1)
                 {
-
+                    EUsuarios user = new EUsuarios();
+                    NUsuario n = new NUsuario();
+                    user.UsuarioID = Convert.ToInt32(txtusuario.Tag);
+                    user.Usuario = txtusuario.Text;
+                    user.Password = (txtcontrasenia.Text == string.Empty ? "" : txtcontrasenia.Text);
+                    user.Rol.RolId = Convert.ToInt32(cbmRol.SelectedValue.ToString());
+                    n.ModificarsUsuario(user);
+                    MessageBox.Show("Usuario Modificado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
                 }
             }
             catch (Exception ex)
             {
 
                 throw ex;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            VerListaUsuarios listaU = new VerListaUsuarios();
+            if (listaU.ShowDialog() == DialogResult.OK)
+            {
+                txtusuario.Tag = listaU.usuarioId;
+                txtusuario.Text = listaU.Usuario;
+                txtFuncionario.Text = listaU.Nombres;
+                cbmRol.Text = listaU.Descripcion;
+                chkEditar.Checked = true;
+                if (listaU.activo == true)
+                {
+                    chkactivo.Checked = true;
+                }
+                else
+                    chkCancelado.Checked = false;
+                Bandera =   listaU.editar;
             }
         }
     }

@@ -86,7 +86,7 @@ namespace Presentacion.Funcionarios
                 {
                     o.Ocupacion = txtprofesion.Text;
                     n.IngresarOcupacion(o);
-                    MessageBox.Show("Ocupación ingresada con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Ocupación ingresada con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
                     Cargar();
                 }

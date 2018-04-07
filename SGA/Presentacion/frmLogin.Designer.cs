@@ -38,7 +38,7 @@
             // txtusuario
             // 
             this.txtusuario.Depth = 0;
-            this.txtusuario.Hint = "";
+            this.txtusuario.Hint = "UserName";
             this.txtusuario.Location = new System.Drawing.Point(36, 104);
             this.txtusuario.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtusuario.Name = "txtusuario";
@@ -53,7 +53,7 @@
             // txtpasword
             // 
             this.txtpasword.Depth = 0;
-            this.txtpasword.Hint = "";
+            this.txtpasword.Hint = "*******";
             this.txtpasword.Location = new System.Drawing.Point(36, 161);
             this.txtpasword.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtpasword.Name = "txtpasword";
@@ -118,6 +118,7 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmLogin_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

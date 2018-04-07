@@ -53,5 +53,20 @@ namespace Negocio
                 throw ex;
             }
         }
+
+        public List<EplanClase> ListaPlandeClase()
+        {
+            try
+            {
+                DPlanClase d = new DPlanClase();
+                List<EplanClase> lista = d.ListaPlanClase();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

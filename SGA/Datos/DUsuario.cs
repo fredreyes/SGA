@@ -54,6 +54,42 @@ namespace Datos
             }
         }
 
+        public List<EUsuarios> ListaUsuarios()
+        {
+            try
+            {
+                comando = new SqlCommand
+                ("select UsuarioID,Usuario,U.FuncionarioID,f.Nombres,f.Apellidos,u.RolId,r.Descripcion,u.Activo from Usuarios U inner join Funcionarios f on U.FuncionarioID = f.FuncionarioId inner join Rol r on U.RolId = r.RolId");
+                comando.CommandType = CommandType.Text;
+                comando.Connection = conexion;
+                conexion.Open();
+                List<EUsuarios> lista = new List<EUsuarios>();
+                SqlDataReader leer = comando.ExecuteReader();
+                while (leer.Read())
+                {
+                    EUsuarios u = new EUsuarios();
+                    u.UsuarioID = (int)leer[0];
+                    u.Usuario = leer[1].ToString();
+                    u.FuncionarioID = (int)leer[2];
+                    u.FuncionarioName = leer[3].ToString();
+                    u.FuncionarioLastName = leer[4].ToString();
+                    u.Rol.RolId = (int)leer[5];
+                    u.Rol.Descripcion = leer[6].ToString();
+                    u.Activo = (bool)leer[7];
+                    lista.Add(u);
+                }
+                leer.Close();
+                conexion.Close();
+                conexion.Dispose();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
 
         public void IngresarUsuario(EUsuarios u)
         {
@@ -65,6 +101,29 @@ namespace Datos
                 comando.Parameters.AddWithValue("@Password", u.Password);
                 comando.Parameters.AddWithValue("@FuncionarioID", u.FuncionarioID);
                 comando.Parameters.AddWithValue("@RolId", u.Rol.RolId);
+                conexion.Open();
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                conexion.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void ModificarUsuario(EUsuarios u)
+        {
+            try
+            {
+                comando = new SqlCommand("ModificarUsuario", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@UsuarioId", u.UsuarioID);
+                comando.Parameters.AddWithValue("@Usuario", u.Usuario);
+                comando.Parameters.AddWithValue("@Password", u.Password);
+                comando.Parameters.AddWithValue("@RolId", u.Rol.RolId);
+                comando.Parameters.AddWithValue("@Activo", u.Activo);
                 conexion.Open();
                 comando.ExecuteNonQuery();
                 conexion.Close();

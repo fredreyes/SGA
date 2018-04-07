@@ -58,6 +58,37 @@ namespace Datos
            conexion.Dispose();
            return lista;
         }
-           
+
+        public List<EMatricula> ListaMatriculas()
+        {
+            comando = new SqlCommand("ListaMatricula", conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+            SqlDataReader leer = comando.ExecuteReader();
+            List<EMatricula> lista = new List<EMatricula>();
+            while (leer.Read())
+            {
+                EMatricula a = new EMatricula();
+                a.MatriculaId = (int)leer[0];
+                a.FechaMatricula = (DateTime)leer[1];
+                a.Ciclo.CicloEscolarId = (int)leer[2];
+                a.Ciclo.ciclo = (int)leer[3];
+                a.Alumnos.AlumnoId = (int)leer[4];
+                a.Alumnos.Nombres = leer[5].ToString();
+                a.Grados.GradoId = (int)leer[6];
+                a.Grados.Grado = leer[7].ToString();
+                a.seccion = leer[8].ToString();
+                a.Turno.TurnoId = (int)leer[9];
+                a.Turno.Turno = leer[10].ToString();
+                a.Colegio.ColegioId = (int)leer[11];
+                a.Colegio.Colegio = leer[12].ToString();
+                a.Repitente = leer[13].ToString();
+                lista.Add(a);
+            }
+            leer.Close();
+            conexion.Close();
+            conexion.Dispose();
+            return lista;
+        }
     }
 }

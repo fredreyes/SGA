@@ -39,35 +39,44 @@ namespace Presentacion.Student
             {
                 NAlumno n = new NAlumno();
                 List<EAlumnos> lista = n.ListaAlumnoMatricula();
-                gridControl1.DataSource = lista;
-                gridView1.Columns[3].Visible = false;
-                gridView1.Columns[4].Visible = false;
-                gridView1.Columns[5].Visible = false;
-                //gridView1.Columns[6].Visible = false;
-                gridView1.Columns[7].Visible = false;
-                gridView1.Columns[8].Visible = false;
-                gridView1.Columns[9].Visible = false;
-                gridView1.Columns[10].Visible = false;
-                gridView1.Columns[11].Visible = false;
-                gridView1.Columns[12].Visible = false;
-                gridView1.Columns[13].Visible = false;
-                gridView1.Columns[14].Visible = false;
-                gridView1.Columns[15].Visible = false;
-                gridView1.Columns[16].Visible = false;
-                gridView1.Columns[17].Visible = false;
-                gridView1.Columns[18].Visible = false;
-                gridView1.Columns[19].Visible = false;
-                gridView1.Columns[20].Visible = false;
-                gridView1.Columns[21].Visible = false;
-                gridView1.Columns[22].Visible = false;
-                gridView1.Columns[23].Visible = false;
-                gridView1.Columns[24].Visible = false;
-                gridView1.Columns[25].Visible = false;
-                gridView1.Columns[26].Visible = false;
-                gridView1.Columns[27].Visible = false;
-                gridView1.Columns[28].Visible = false;
-                gridView1.Columns[29].Visible = false;
-                gridView1.Columns[30].Visible = false;
+                var newLista = (from i in lista
+                                select new
+                                {
+                                    i.AlumnoId,
+                                    i.Nombres,
+                                    i.Apellidos,
+                                    i.Sexo,
+                                    i.Direccion
+                                }).ToList();
+                gridControl1.DataSource = newLista;
+                //gridView1.Columns[3].Visible = false;
+                //gridView1.Columns[4].Visible = false;
+                //gridView1.Columns[5].Visible = false;
+                ////gridView1.Columns[6].Visible = false;
+                //gridView1.Columns[7].Visible = false;
+                //gridView1.Columns[8].Visible = false;
+                //gridView1.Columns[9].Visible = false;
+                //gridView1.Columns[10].Visible = false;
+                //gridView1.Columns[11].Visible = false;
+                //gridView1.Columns[12].Visible = false;
+                //gridView1.Columns[13].Visible = false;
+                //gridView1.Columns[14].Visible = false;
+                //gridView1.Columns[15].Visible = false;
+                //gridView1.Columns[16].Visible = false;
+                //gridView1.Columns[17].Visible = false;
+                //gridView1.Columns[18].Visible = false;
+                //gridView1.Columns[19].Visible = false;
+                //gridView1.Columns[20].Visible = false;
+                //gridView1.Columns[21].Visible = false;
+                //gridView1.Columns[22].Visible = false;
+                //gridView1.Columns[23].Visible = false;
+                //gridView1.Columns[24].Visible = false;
+                //gridView1.Columns[25].Visible = false;
+                //gridView1.Columns[26].Visible = false;
+                //gridView1.Columns[27].Visible = false;
+                //gridView1.Columns[28].Visible = false;
+                //gridView1.Columns[29].Visible = false;
+                //gridView1.Columns[30].Visible = false;
             }
             catch (Exception ex)
             {

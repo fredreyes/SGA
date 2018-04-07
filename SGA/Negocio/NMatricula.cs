@@ -23,7 +23,19 @@ namespace Negocio
                 throw ex;
             }
         }
-
+        public List<EMatricula> ListaMatriculas()
+        {
+            try
+            {
+                DMatricula d = new DMatricula();
+                List<EMatricula> lista = d.ListaMatriculas();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public void IngresarMatricula(EMatricula matricula)
         {
             try

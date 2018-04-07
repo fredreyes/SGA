@@ -25,8 +25,9 @@ namespace Presentacion
         {
             try
             {
-                btnAlumnos.Visible = Global.Users.Rol.Matricula;
+                btnAlumnos.Visible= Global.Users.Rol.Matricula;
                 btnCalificaciones.Visible = Global.Users.Rol.Calificaciones;
+                lblCalificaciones.Visible = Global.Users.Rol.Calificaciones;
                 btnFuncionarios.Visible = Global.Users.Rol.Funcionarios;
                 btnMatricula.Visible = Global.Users.Rol.Matricula;
             }
@@ -68,38 +69,32 @@ namespace Presentacion
 
         private void docentesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Funcionarios.docenteAsignatura docenteAsignatura = new Funcionarios.docenteAsignatura();
-            docenteAsignatura.ShowDialog();
+           
         }
 
         private void gestiónFuncionariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Funcionarios.Funcionarios funcionario = new Funcionarios.Funcionarios();
-            funcionario.ShowDialog();
+            
         }
 
         private void evaluacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Notas.Evaluaciones evaluaciones = new Notas.Evaluaciones();
-            evaluaciones.ShowDialog();
+           
         }
 
         private void calificacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Notas.Calificaciones calificaciones = new Notas.Calificaciones();
-            calificaciones.ShowDialog();
+            
         }
 
         private void planDeClasesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Notas.PlandeClase planclase = new Notas.PlandeClase();
-            planclase.ShowDialog();
+            
         }
 
         private void cargaAcademicaDocentesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Notas.CargaDocente cardaD = new Notas.CargaDocente();
-            cardaD.ShowDialog();
+            
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
@@ -115,8 +110,78 @@ namespace Presentacion
 
         private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void frmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            login.Show();
+        }
+
+        private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void verMatriculadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Matricula.VerListaMatriculados listam = new Matricula.VerListaMatriculados();
+            listam.ShowDialog();
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void calificacionesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Notas.Calificaciones calificaciones = new Notas.Calificaciones();
+            calificaciones.ShowDialog();
+        }
+
+        private void evaluacionesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Notas.Evaluaciones evaluaciones = new Notas.Evaluaciones();
+            evaluaciones.ShowDialog();
+        }
+
+        private void planDeClasesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Notas.PlandeClase planclase = new Notas.PlandeClase();
+            planclase.ShowDialog();
+        }
+
+        private void disponibilidadDocenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Funcionarios.docenteAsignatura docenteAsignatura = new Funcionarios.docenteAsignatura();
+            docenteAsignatura.ShowDialog();
+        }
+
+        private void gestionDocenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Funcionarios.Funcionarios funcionario = new Funcionarios.Funcionarios();
+            funcionario.ShowDialog();
+        }
+
+        private void cargaAcademicaDocenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Notas.CargaDocente cardaD = new Notas.CargaDocente();
+            cardaD.ShowDialog();
+        }
+
+        private void rolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             Presentacion.Funcionarios.Roles rol = new Presentacion.Funcionarios.Roles();
             rol.ShowDialog();
+        }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Presentacion.Funcionarios.Users users = new Presentacion.Funcionarios.Users();
+            users.ShowDialog();
         }
     }
 }

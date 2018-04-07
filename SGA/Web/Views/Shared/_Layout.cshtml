@@ -16,16 +16,16 @@
                 <div class="background">
                     <img src="~/Content/Iconos/pexels-photo-370799.jpeg" />
                 </div>
-                <a class="center" href="#!user"><img class="circle" src="https://scontent.fmga2-1.fna.fbcdn.net/v/t1.0-9/14650128_916983975074431_8095221480100740154_n.jpg?oh=beef72bc2b27211ec21fecb2e926eb64&oe=5B01EEC2"></a>
-                <a href="#!name"><span class="white-text name">Freddy Reyes</span></a>
-                <a href="#!email"><span class="white-text email">efredreyes9@gmail.com</span></a>
+                <a class="center" href="#!user"><img class="circle" src="~/Content/Iconos/student.png"></a>
+                <a href="#!name"><span class="white-text name">@Session["Name"].ToString()</span></a>
+                <a href="#!email"><span class="white-text email">@Session["MATRICULA"].ToString()</span></a>
             </div>
         </li>
         <li><a href="#!"><i class="material-icons">home</i>Inicio</a></li>
         <li><a href="@Url.Action("Historial","Calificaciones")"><i class="material-icons">class</i>Historial</a></li>
         <li><a href="@Url.Action("Index","Calificaciones")"><i class="material-icons">description</i>Calificaciones</a></li>
         <li><div class="divider"></div></li>
-        <li><a href="#!"><i class="material-icons">reply</i>Cerrar Sesión</a></li>
+        <li><a  href=@Url.Action("Salir","Login")><i class="material-icons">reply</i>Cerrar Sesión</a></li>
     </ul>
     <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
     <div class="container body-content">

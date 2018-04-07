@@ -14,6 +14,40 @@ namespace Datos
     {
         SqlCommand comando;
         SqlConnection conexion = new SqlConnection(Properties.Settings.Default.CadenaConexion);
+
+        public List<EplanClase> ListaPlanClase()
+        {
+            try
+            {
+                comando = new SqlCommand("ListaPlandeClase", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                conexion.Open();
+                List<EplanClase> lista = new List<EplanClase>();
+                SqlDataReader leer = comando.ExecuteReader();
+                while (leer.Read())
+                {
+                    EplanClase pc = new EplanClase();
+                    pc.PlanClaseID = (int)leer[0];
+                    pc.Asignatura.AsignaturaId = (int)leer[1];
+                    pc.Asignatura.Asignatura = leer[2].ToString();
+                    pc.Grado.GradoId = (int)leer[3];
+                    pc.Grado.Grado = leer[4].ToString();
+                    pc.CicloEscolar.CicloEscolarId = (int)leer[5];
+                    pc.CicloEscolar.ciclo = (int)leer[6];
+                    lista.Add(pc);
+                }
+                leer.Close();
+                conexion.Close();
+                conexion.Dispose();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public void IngresarPlanClase(EplanClase pc)
         {
             try

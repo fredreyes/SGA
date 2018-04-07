@@ -21,6 +21,7 @@ namespace Presentacion.Notas
             InitializeComponent();
             EstiloMenu x = new EstiloMenu();
             x.AplicarEstilo(this);
+            CargarPlanClase();
             CargarGrados();
             CargarAsignaturas();
         }
@@ -71,20 +72,61 @@ namespace Presentacion.Notas
             }
         }
 
+
+        void CargarPlanClase()
+        {
+            try
+            {
+                NPlanClase n = new NPlanClase();
+                List<EplanClase> listaPlan = n.ListaPlandeClase();
+                var newData = (from i in listaPlan
+                               select new
+                               {
+                                   i.PlanClaseID,
+                                   i.Asignatura.AsignaturaId,
+                                   i.Asignatura.Asignatura,
+                                   i.Grado.GradoId,
+                                   i.Grado.Grado,
+                                   i.CicloEscolar.CicloEscolarId,
+                                   i.CicloEscolar.ciclo
+                               }).ToList();
+
+                gridControl1.DataSource = newData;
+                gridView1.Columns[0].Visible = false;
+                gridView1.Columns[1].Visible = false;
+                gridView1.Columns[3].Visible = false;
+                gridView1.Columns[5].Visible = false;
+                gridView1.Columns[4].Group();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         private void listBox2_Click(object sender, EventArgs e)
         {
-            var Asignatura = listBox1.Text;
-            var AsignaturaId = listBox1.SelectedValue.ToString();
-            var GradoId = listBox2.SelectedValue.ToString();
-            var Grado = listBox2.Text;
+            try
+            {
+                var Asignatura = listBox1.Text;
+                var AsignaturaId = listBox1.SelectedValue.ToString();
+                var GradoId = listBox2.SelectedValue.ToString();
+                var Grado = listBox2.Text;
                 if (listBox2.SelectedItem != null)
                 {
-                    dataGridView1.Rows.Add(AsignaturaId,Asignatura, GradoId,Grado);
+                    dataGridView1.Rows.Add(AsignaturaId, Asignatura, GradoId, Grado);
                     Asignatura = "";
                     Grado = "";
                 }
                 else
                     MessageBox.Show("Seleccione un Grado", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+            }
          }
 
         private void btningresar_Click(object sender, EventArgs e)
@@ -94,16 +136,21 @@ namespace Presentacion.Notas
 
                 if (dataGridView1.RowCount >0)
                 {
-                    EplanClase pc = new EplanClase();
-                    foreach (DataGridViewRow datos in dataGridView1.Rows)
+                    DialogResult mensaje = MessageBox.Show("¿Ya ha revisado la informacion antes de Guardarla?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (mensaje == DialogResult.OK)
                     {
-                        pc.Asignatura.AsignaturaId = Convert.ToInt32(datos.Cells[0].Value);
-                        pc.Grado.GradoId = Convert.ToInt32(datos.Cells[2].Value);
-                        NPlanClase n = new NPlanClase();
-                        n.IngresarPlanClase(pc);
+                        EplanClase pc = new EplanClase();
+                        foreach (DataGridViewRow datos in dataGridView1.Rows)
+                        {
+                            pc.Asignatura.AsignaturaId = Convert.ToInt32(datos.Cells[0].Value);
+                            pc.Grado.GradoId = Convert.ToInt32(datos.Cells[2].Value);
+                            NPlanClase n = new NPlanClase();
+                            n.IngresarPlanClase(pc);
+                        }
+                        MessageBox.Show("Plan de Clase Ingresado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Limpiar();
+                        CargarPlanClase();
                     }
-                    MessageBox.Show("Plan de Clase Ingresado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar();
                 }
                 else
                     MessageBox.Show("No hay registro que guardar", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Warning);

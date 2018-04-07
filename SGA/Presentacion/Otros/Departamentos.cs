@@ -84,7 +84,7 @@ namespace Presentacion.Otros
                     NDepartamento n = new NDepartamento();
                     d.Departamento = txtdepartamento.Text;
                     n.IngresarDepartamento(d);
-                    MessageBox.Show("Departamento Ingresado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Departamento Ingresado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
                     CargarDepartamento();
                 }

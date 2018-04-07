@@ -23,12 +23,39 @@ namespace Negocio
             }
         }
 
+        public List<EUsuarios> ListaUsuarios() {
+            try
+            {
+                DUsuario d = new DUsuario();
+                List<EUsuarios> listaUsuarios = d.ListaUsuarios();
+                return listaUsuarios;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public void IngresarUsuario(EUsuarios usuario)
         {
             try
             {
                 DUsuario d = new DUsuario();
                 d.IngresarUsuario(usuario);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public void ModificarsUsuario(EUsuarios usuario)
+        {
+            try
+            {
+                DUsuario d = new DUsuario();
+                d.ModificarUsuario(usuario);
             }
             catch (Exception ex)
             {
