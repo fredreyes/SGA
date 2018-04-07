@@ -26,10 +26,13 @@ namespace Presentacion
             try
             {
                 btnAlumnos.Visible= Global.Users.Rol.Matricula;
+                labelAlumnos.Visible = Global.Users.Rol.Matricula;
                 btnCalificaciones.Visible = Global.Users.Rol.Calificaciones;
                 lblCalificaciones.Visible = Global.Users.Rol.Calificaciones;
                 btnFuncionarios.Visible = Global.Users.Rol.Funcionarios;
+                labelFuncionarios.Visible = Global.Users.Rol.Funcionarios;
                 btnMatricula.Visible = Global.Users.Rol.Matricula;
+                labelMatricula.Visible = Global.Users.Rol.Matricula;
             }
             catch (Exception ex)
             {
@@ -58,8 +61,7 @@ namespace Presentacion
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Student.Buscar buscar = new Student.Buscar();
-            buscar.ShowDialog();
+            
         }
 
         private void funcionariosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -182,6 +184,18 @@ namespace Presentacion
         {
             Presentacion.Funcionarios.Users users = new Presentacion.Funcionarios.Users();
             users.ShowDialog();
+        }
+
+        private void gestionAlumnoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Student.Buscar buscar = new Student.Buscar();
+            buscar.ShowDialog();
+        }
+
+        private void listaNoUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Student.VerListaUsers verlista = new Student.VerListaUsers();
+            verlista.ShowDialog();
         }
     }
 }

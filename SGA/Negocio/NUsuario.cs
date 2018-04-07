@@ -37,6 +37,21 @@ namespace Negocio
             }
         }
 
+        public List<EAlumnos> ListaUsers()
+        {
+            try
+            {
+                DUsers d = new DUsers();
+                List<EAlumnos> listaUsuarios = d.ListarUsers();
+                return listaUsuarios;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public void IngresarUsuario(EUsuarios usuario)
         {
             try
