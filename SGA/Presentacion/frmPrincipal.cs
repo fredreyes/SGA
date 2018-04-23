@@ -197,5 +197,11 @@ namespace Presentacion
             Student.VerListaUsers verlista = new Student.VerListaUsers();
             verlista.ShowDialog();
         }
+
+        private void verAlumnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Student.verListaAlumnos cerlista = new Student.verListaAlumnos();
+            cerlista.ShowDialog();
+        }
     }
 }

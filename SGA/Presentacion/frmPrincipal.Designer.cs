@@ -46,6 +46,10 @@
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelFuncionarios = new MaterialSkin.Controls.MaterialLabel();
             this.btnAlumnos = new System.Windows.Forms.PictureBox();
+            this.Alumno = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.gestionAlumnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaNoUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelAlumnos = new MaterialSkin.Controls.MaterialLabel();
             this.btnCalificaciones = new System.Windows.Forms.PictureBox();
             this.Calificacion = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -59,22 +63,19 @@
             this.ToolTipMenu = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Alumno = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.gestionAlumnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaNoUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verAlumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMatricula)).BeginInit();
             this.Matricula.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFuncionarios)).BeginInit();
             this.Trabajadores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAlumnos)).BeginInit();
+            this.Alumno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCalificaciones)).BeginInit();
             this.Calificacion.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.Alumno.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -230,9 +231,9 @@
             this.labelFuncionarios.Location = new System.Drawing.Point(332, 3);
             this.labelFuncionarios.MouseState = MaterialSkin.MouseState.HOVER;
             this.labelFuncionarios.Name = "labelFuncionarios";
-            this.labelFuncionarios.Size = new System.Drawing.Size(96, 19);
+            this.labelFuncionarios.Size = new System.Drawing.Size(84, 19);
             this.labelFuncionarios.TabIndex = 17;
-            this.labelFuncionarios.Text = "Funcionarios";
+            this.labelFuncionarios.Text = "Empleados";
             // 
             // btnAlumnos
             // 
@@ -246,6 +247,38 @@
             this.btnAlumnos.TabStop = false;
             this.ToolTipMenu.SetToolTip(this.btnAlumnos, "Alumnos");
             this.btnAlumnos.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // Alumno
+            // 
+            this.Alumno.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Alumno.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionAlumnoToolStripMenuItem,
+            this.usuariosToolStripMenuItem,
+            this.verAlumnosToolStripMenuItem});
+            this.Alumno.Name = "Alumno";
+            this.Alumno.Size = new System.Drawing.Size(166, 92);
+            // 
+            // gestionAlumnoToolStripMenuItem
+            // 
+            this.gestionAlumnoToolStripMenuItem.Name = "gestionAlumnoToolStripMenuItem";
+            this.gestionAlumnoToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.gestionAlumnoToolStripMenuItem.Text = "Gestion Alumno";
+            this.gestionAlumnoToolStripMenuItem.Click += new System.EventHandler(this.gestionAlumnoToolStripMenuItem_Click);
+            // 
+            // usuariosToolStripMenuItem
+            // 
+            this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listaNoUsuariosToolStripMenuItem});
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            // 
+            // listaNoUsuariosToolStripMenuItem
+            // 
+            this.listaNoUsuariosToolStripMenuItem.Name = "listaNoUsuariosToolStripMenuItem";
+            this.listaNoUsuariosToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.listaNoUsuariosToolStripMenuItem.Text = "Lista no Usuarios";
+            this.listaNoUsuariosToolStripMenuItem.Click += new System.EventHandler(this.listaNoUsuariosToolStripMenuItem_Click);
             // 
             // labelAlumnos
             // 
@@ -380,36 +413,12 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "SGA";
             // 
-            // Alumno
+            // verAlumnosToolStripMenuItem
             // 
-            this.Alumno.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Alumno.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionAlumnoToolStripMenuItem,
-            this.usuariosToolStripMenuItem});
-            this.Alumno.Name = "Alumno";
-            this.Alumno.Size = new System.Drawing.Size(166, 48);
-            // 
-            // gestionAlumnoToolStripMenuItem
-            // 
-            this.gestionAlumnoToolStripMenuItem.Name = "gestionAlumnoToolStripMenuItem";
-            this.gestionAlumnoToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.gestionAlumnoToolStripMenuItem.Text = "Gestion Alumno";
-            this.gestionAlumnoToolStripMenuItem.Click += new System.EventHandler(this.gestionAlumnoToolStripMenuItem_Click);
-            // 
-            // usuariosToolStripMenuItem
-            // 
-            this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listaNoUsuariosToolStripMenuItem});
-            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.usuariosToolStripMenuItem.Text = "Usuarios";
-            // 
-            // listaNoUsuariosToolStripMenuItem
-            // 
-            this.listaNoUsuariosToolStripMenuItem.Name = "listaNoUsuariosToolStripMenuItem";
-            this.listaNoUsuariosToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.listaNoUsuariosToolStripMenuItem.Text = "Lista no Usuarios";
-            this.listaNoUsuariosToolStripMenuItem.Click += new System.EventHandler(this.listaNoUsuariosToolStripMenuItem_Click);
+            this.verAlumnosToolStripMenuItem.Name = "verAlumnosToolStripMenuItem";
+            this.verAlumnosToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.verAlumnosToolStripMenuItem.Text = "Ver Alumnos";
+            this.verAlumnosToolStripMenuItem.Click += new System.EventHandler(this.verAlumnosToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -433,13 +442,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnFuncionarios)).EndInit();
             this.Trabajadores.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnAlumnos)).EndInit();
+            this.Alumno.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnCalificaciones)).EndInit();
             this.Calificacion.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.Alumno.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -481,5 +490,6 @@
         private System.Windows.Forms.ToolStripMenuItem gestionAlumnoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaNoUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verAlumnosToolStripMenuItem;
     }
 }

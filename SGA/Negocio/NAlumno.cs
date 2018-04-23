@@ -38,6 +38,20 @@ namespace Negocio
             }
         }
 
+        public List<EAlumnos> ListaTotalAlumnos()
+        {
+            try
+            {
+                DAlumnos d = new DAlumnos();
+                List<EAlumnos> lista = d.ListaTotalAlumnos();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
         public void IngresarAlumno(EAlumnos alumno,EPadres_Tutor padres, EDocuemntosAlumnos documentos)
         {

@@ -109,6 +109,10 @@ namespace Presentacion.Student
                         MessageBox.Show("Este Estudiante no existe","SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
+                else
+                {
+                    //Ver Usuarios
+                }
             }
             catch (Exception ex)
             {

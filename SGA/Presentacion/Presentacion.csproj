@@ -251,6 +251,12 @@
     <Compile Include="Student\ListAlumno.Designer.cs">
       <DependentUpon>ListAlumno.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student\verListaAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\verListaAlumnos.Designer.cs">
+      <DependentUpon>verListaAlumnos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student\VerListaUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -352,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Student\ListAlumno.resx">
       <DependentUpon>ListAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\verListaAlumnos.resx">
+      <DependentUpon>verListaAlumnos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student\VerListaUsers.resx">
       <DependentUpon>VerListaUsers.cs</DependentUpon>
