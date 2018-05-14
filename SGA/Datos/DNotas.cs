@@ -43,30 +43,30 @@ namespace Datos
         //    }
         //}
 
-        public void IngresarCalificacion(ENotas notas)
-        {
-            try
-            {
-                comando = new SqlCommand("IngresarCalificaciones");
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@AlumnoId", notas.Alumno.AlumnoId);
-                comando.Parameters.AddWithValue("@MateriaDocenteId", notas.MateriaDocente.MateriaDocenteId);
-                comando.Parameters.AddWithValue("@Acumulado", notas.Acumulado);
-                comando.Parameters.AddWithValue("@Examen", notas.Examen);
-                comando.Parameters.AddWithValue("@Rescate", notas.Rescate);
-                //comando.Parameters.AddWithValue("@EvaluacionId", notas.Evaluacion.EvaluacionId);
-                comando.Parameters.AddWithValue("@Observacion", notas.Observacion);
-                comando.Connection = conexion;
-                conexion.Open();
-                comando.ExecuteNonQuery();
-                conexion.Close();
-                conexion.Dispose();
-            }
-            catch (Exception ex)
-            {
+        //public void IngresarCalificacion(ENotas notas)
+        //{
+        //    try
+        //    {
+        //        comando = new SqlCommand("IngresarCalificaciones");
+        //        comando.CommandType = CommandType.StoredProcedure;
+        //        comando.Parameters.AddWithValue("@AlumnoId", notas.Alumno.AlumnoId);
+        //        comando.Parameters.AddWithValue("@MateriaDocenteId", notas.MateriaDocente.MateriaDocenteId);
+        //        comando.Parameters.AddWithValue("@Acumulado", notas.Acumulado);
+        //        comando.Parameters.AddWithValue("@Examen", notas.Examen);
+        //        comando.Parameters.AddWithValue("@Rescate", notas.Rescate);
+        //        //comando.Parameters.AddWithValue("@EvaluacionId", notas.Evaluacion.EvaluacionId);
+        //        comando.Parameters.AddWithValue("@Observacion", notas.Observacion);
+        //        comando.Connection = conexion;
+        //        conexion.Open();
+        //        comando.ExecuteNonQuery();
+        //        conexion.Close();
+        //        conexion.Dispose();
+        //    }
+        //    catch (Exception ex)
+        //    {
 
-                throw ex;
-            }
-        }
+        //        throw ex;
+        //    }
+        //}
     }
 }
