@@ -66,14 +66,14 @@
             this.chkcertificadoNotas = new MaterialSkin.Controls.MaterialCheckBox();
             this.chkpartidaNacimiento = new MaterialSkin.Controls.MaterialCheckBox();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ocupacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabNavigationPage4 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.cbmParentezco = new System.Windows.Forms.ComboBox();
+            this.txtcedulaTutor = new System.Windows.Forms.MaskedTextBox();
             this.txttelefonoTutor = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtxTutorName = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtcedulaTutor = new System.Windows.Forms.MaskedTextBox();
-            this.cbmParentezco = new System.Windows.Forms.ComboBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ocupacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -83,9 +83,9 @@
             this.groupBox2.SuspendLayout();
             this.tabNavigationPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.tabNavigationPage4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPane1
@@ -117,6 +117,7 @@
             this.tabNavigationPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabNavigationPage1.Name = "tabNavigationPage1";
             this.tabNavigationPage1.Size = new System.Drawing.Size(751, 375);
+            this.tabNavigationPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.tabNavigationPage1_Paint);
             // 
             // groupBox1
             // 
@@ -532,7 +533,7 @@
             // 
             this.chkCertificadoSalud.AutoSize = true;
             this.chkCertificadoSalud.Depth = 0;
-            this.chkCertificadoSalud.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chkCertificadoSalud.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.chkCertificadoSalud.Location = new System.Drawing.Point(41, 251);
             this.chkCertificadoSalud.Margin = new System.Windows.Forms.Padding(0);
             this.chkCertificadoSalud.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -548,7 +549,7 @@
             // 
             this.chkcartaTraslado.AutoSize = true;
             this.chkcartaTraslado.Depth = 0;
-            this.chkcartaTraslado.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chkcartaTraslado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.chkcartaTraslado.Location = new System.Drawing.Point(41, 206);
             this.chkcartaTraslado.Margin = new System.Windows.Forms.Padding(0);
             this.chkcartaTraslado.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -564,7 +565,7 @@
             // 
             this.chktarjetaVacunas.AutoSize = true;
             this.chktarjetaVacunas.Depth = 0;
-            this.chktarjetaVacunas.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chktarjetaVacunas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.chktarjetaVacunas.Location = new System.Drawing.Point(41, 166);
             this.chktarjetaVacunas.Margin = new System.Windows.Forms.Padding(0);
             this.chktarjetaVacunas.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -580,7 +581,7 @@
             // 
             this.chkcertificadoNotas.AutoSize = true;
             this.chkcertificadoNotas.Depth = 0;
-            this.chkcertificadoNotas.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chkcertificadoNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.chkcertificadoNotas.Location = new System.Drawing.Point(41, 121);
             this.chkcertificadoNotas.Margin = new System.Windows.Forms.Padding(0);
             this.chkcertificadoNotas.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -596,7 +597,7 @@
             // 
             this.chkpartidaNacimiento.AutoSize = true;
             this.chkpartidaNacimiento.Depth = 0;
-            this.chkpartidaNacimiento.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chkpartidaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.chkpartidaNacimiento.Location = new System.Drawing.Point(41, 77);
             this.chkpartidaNacimiento.Margin = new System.Windows.Forms.Padding(0);
             this.chkpartidaNacimiento.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -621,19 +622,6 @@
             this.pictureEdit1.Size = new System.Drawing.Size(170, 161);
             this.pictureEdit1.TabIndex = 7;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ocupacionesToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(144, 26);
-            // 
-            // ocupacionesToolStripMenuItem
-            // 
-            this.ocupacionesToolStripMenuItem.Name = "ocupacionesToolStripMenuItem";
-            this.ocupacionesToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.ocupacionesToolStripMenuItem.Text = "Ocupaciones";
-            // 
             // tabNavigationPage4
             // 
             this.tabNavigationPage4.Caption = "Alumno Tutor";
@@ -653,6 +641,32 @@
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Datos Tutor";
+            // 
+            // cbmParentezco
+            // 
+            this.cbmParentezco.FormattingEnabled = true;
+            this.cbmParentezco.Items.AddRange(new object[] {
+            "Padre",
+            "Madre",
+            "Hermano(a)",
+            "Tio(a)",
+            "Abuelo(a)",
+            "Primo(a)",
+            "Padrino",
+            "Madrina"});
+            this.cbmParentezco.Location = new System.Drawing.Point(21, 202);
+            this.cbmParentezco.Name = "cbmParentezco";
+            this.cbmParentezco.Size = new System.Drawing.Size(279, 24);
+            this.cbmParentezco.TabIndex = 22;
+            this.cbmParentezco.Text = "Seleccione un Parentezco";
+            // 
+            // txtcedulaTutor
+            // 
+            this.txtcedulaTutor.Location = new System.Drawing.Point(21, 84);
+            this.txtcedulaTutor.Mask = ">###-######-####L";
+            this.txtcedulaTutor.Name = "txtcedulaTutor";
+            this.txtcedulaTutor.Size = new System.Drawing.Size(279, 22);
+            this.txtcedulaTutor.TabIndex = 21;
             // 
             // txttelefonoTutor
             // 
@@ -684,31 +698,18 @@
             this.txtxTutorName.TabIndex = 1;
             this.txtxTutorName.UseSystemPasswordChar = false;
             // 
-            // txtcedulaTutor
+            // contextMenuStrip1
             // 
-            this.txtcedulaTutor.Location = new System.Drawing.Point(21, 84);
-            this.txtcedulaTutor.Mask = ">###-######-####L";
-            this.txtcedulaTutor.Name = "txtcedulaTutor";
-            this.txtcedulaTutor.Size = new System.Drawing.Size(279, 22);
-            this.txtcedulaTutor.TabIndex = 21;
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ocupacionesToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(144, 26);
             // 
-            // cbmParentezco
+            // ocupacionesToolStripMenuItem
             // 
-            this.cbmParentezco.FormattingEnabled = true;
-            this.cbmParentezco.Items.AddRange(new object[] {
-            "Padre",
-            "Madre",
-            "Hermano(a)",
-            "Tio(a)",
-            "Abuelo(a)",
-            "Primo(a)",
-            "Padrino",
-            "Madrina"});
-            this.cbmParentezco.Location = new System.Drawing.Point(21, 202);
-            this.cbmParentezco.Name = "cbmParentezco";
-            this.cbmParentezco.Size = new System.Drawing.Size(279, 24);
-            this.cbmParentezco.TabIndex = 22;
-            this.cbmParentezco.Text = "Seleccione un Parentezco";
+            this.ocupacionesToolStripMenuItem.Name = "ocupacionesToolStripMenuItem";
+            this.ocupacionesToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.ocupacionesToolStripMenuItem.Text = "Ocupaciones";
             // 
             // AddNewStudent
             // 
@@ -736,10 +737,10 @@
             this.tabNavigationPage3.ResumeLayout(false);
             this.tabNavigationPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.tabNavigationPage4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

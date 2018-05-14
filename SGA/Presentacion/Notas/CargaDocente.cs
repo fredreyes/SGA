@@ -18,22 +18,10 @@ namespace Presentacion.Notas
         {
             InitializeComponent();
             CargarCicloEscolar();
+            CargarTurno();
         }
         
         public int AsignaturaID;
-        
-        private void materialRadioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            GrupoPrimaria.Visible = false;
-            GrupoSencudaria.Visible = true;
-        }
-
-        private void rbtnPrimaria_CheckedChanged(object sender, EventArgs e)
-        {
-            GrupoPrimaria.Visible = true;
-            GrupoSencudaria.Visible = false;
-        }
-
         private void CargaDocente_Load(object sender, EventArgs e)
         {
             CargarGrado();
@@ -42,15 +30,18 @@ namespace Presentacion.Notas
         void CargarGrado()
         {
             NGrado n = new NGrado();
-            List<EGrados> lista = n.ListaGrados().Where(x => x.Tipo == "P").ToList();
+            List<EGrados> lista = n.ListaGrados();
             cbmGrados.DisplayMember = "Grado";
             cbmGrados.ValueMember = "GradoId";
             cbmGrados.DataSource = lista;
-            NGrado nGrado = new NGrado();
-            List<EGrados> listaSecundaria = n.ListaGrados().Where(x => x.Tipo == "S").ToList();
-            cbmAnio.DisplayMember = "Grado";
-            cbmAnio.ValueMember = "GradoId";
-            cbmAnio.DataSource = listaSecundaria;
+        }
+        void CargarTurno()
+        {
+            NTurnos n = new NTurnos();
+            List<ETurnos> lista = n.ListaTurnos();
+            cbmTurno.DisplayMember = "Turno";
+            cbmTurno.ValueMember = "TurnoID";
+            cbmTurno.DataSource = lista;
         }
 
         void CargarCicloEscolar()
@@ -124,10 +115,8 @@ namespace Presentacion.Notas
                 cd.AsingaturaId = AsignaturaID;
                 cd.CicloEscolarID = Convert.ToInt32(comboBox1.SelectedValue.ToString());
                 cd.FuncionarioId = Convert.ToInt32(listBox2.SelectedValue.ToString());
-                if (rbtnPrimaria.Checked)
-                    cd.GradoId = Convert.ToInt32(cbmGrados.SelectedValue.ToString());
-                if (rbtnSecundaria.Checked)
-                    cd.GradoId = Convert.ToInt32(cbmAnio.SelectedValue.ToString());
+                cd.GradoId = Convert.ToInt32(cbmGrados.SelectedValue.ToString());
+                cd.TurnoId = Convert.ToInt32(cbmTurno.SelectedValue.ToString());
                 n.IngresarCargaDocente(cd);
                 MessageBox.Show("Guardado");
             }
@@ -151,29 +140,8 @@ namespace Presentacion.Notas
                 int id = Convert.ToInt32(cbmGrados.SelectedValue.ToString());
                 NPlanClase nplan = new NPlanClase();
                 nplan.CargarAsignaturaPorGrado(id,listBox1);
-                //var NuevaLista = (from i in lista
-                //                  select new
-                //                  {
-                //                      i.Asignatura.AsignaturaId,
-                //                      i.Asignatura.Asignatura
-                //                  }).ToList();
-                ////listBox1.DataSource = NuevaLista;
                 listBox1.DisplayMember = "Asignatura";
                 listBox1.ValueMember = "AsignaturaId";
-                //if (cbmaereolinea.SelectedValue.ToString() != null)
-                //{
-                //    int id = Convert.ToInt32(cbmaereolinea.SelectedValue.ToString());
-                //    NVuelo nvuelos = new NVuelo();
-                //    nvuelos.CargarAvion(id, cbmavion);
-                //    cbmavion.DisplayMember = "modelo";
-                //    cbmavion.ValueMember = "id_avion";
-                //    NAereopuerto naereo = new NAereopuerto();
-                //    nvuelos.CargarAereopuertos(id, cbmdestino);
-                //    cbmdestino.DisplayMember = "Nombre_aereopuerto";
-                //    cbmdestino.ValueMember = "Id_aereopuerto";
-
-                //}
-
             }
         }
 

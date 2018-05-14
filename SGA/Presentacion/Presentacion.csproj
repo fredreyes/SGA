@@ -263,6 +263,12 @@
     <Compile Include="Student\VerListaUsers.Designer.cs">
       <DependentUpon>VerListaUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="WaitFormGlobal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitFormGlobal.Designer.cs">
+      <DependentUpon>WaitFormGlobal.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmAdministracion.resx">
       <DependentUpon>frmAdministracion.cs</DependentUpon>
     </EmbeddedResource>
@@ -365,6 +371,9 @@
     <EmbeddedResource Include="Student\VerListaUsers.resx">
       <DependentUpon>VerListaUsers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WaitFormGlobal.resx">
+      <DependentUpon>WaitFormGlobal.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Matricula\DatosBoletaMatricula.xsc">
       <DependentUpon>DatosBoletaMatricula.xsd</DependentUpon>
     </None>
@@ -394,6 +403,7 @@
     <Content Include="icons\add-label-button.png" />
     <Content Include="icons\add.png" />
     <Content Include="icons\businessmen.png" />
+    <None Include="Resources\userLogin.png" />
     <None Include="Resources\curriculum.png" />
     <None Include="Resources\ordenador.png" />
     <None Include="icons\calendar.png" />
@@ -419,6 +429,7 @@
     <Content Include="icons\student.png" />
     <Content Include="icons\university.png" />
     <Content Include="icons\user.png" />
+    <Content Include="icons\userLogin.png" />
     <Content Include="icons\wall-calendar.png" />
     <Content Include="icons\users.png" />
   </ItemGroup>

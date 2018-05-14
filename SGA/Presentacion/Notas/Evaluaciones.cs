@@ -21,12 +21,12 @@ namespace Presentacion.Notas
             InitializeComponent();
             EstiloMenu x = new EstiloMenu();
             x.AplicarEstilo(this);
-       
         }
-
+        
         public int Bandera = 0;
         private void Evaluaciones_Load(object sender, EventArgs e)
         {
+            new frmPrincipal().CloseScreen();
             CargarEvaluaciones();
             CargarCiclo();
         }

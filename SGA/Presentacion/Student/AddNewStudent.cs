@@ -28,12 +28,15 @@ namespace Presentacion.Student
             CargarOcupaciones();
             OcupacionMadre();
         }
-
+        Buscar buscarDocente = new Buscar();
         public int Bandera = 0;
         public int DocumentoID;
         private void AddNewStudent_Load(object sender, EventArgs e)
         {
-            
+            if (this.Text == "Editar Estudiante")
+            {
+                buscarDocente.CloseSplash();
+            }
             
         }
 
@@ -292,6 +295,11 @@ namespace Presentacion.Student
             {
                 e.Handled = true;
             }
+        }
+
+        private void tabNavigationPage1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

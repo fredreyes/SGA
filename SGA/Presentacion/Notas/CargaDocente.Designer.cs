@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             this.GrupoPrimaria = new System.Windows.Forms.GroupBox();
+            this.cbmGrados = new System.Windows.Forms.ComboBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rbtnSecundaria = new MaterialSkin.Controls.MaterialRadioButton();
-            this.rbtnPrimaria = new MaterialSkin.Controls.MaterialRadioButton();
-            this.GrupoSencudaria = new System.Windows.Forms.GroupBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.listBox2 = new System.Windows.Forms.ListBox();
@@ -42,26 +39,35 @@
             this.btningresar = new System.Windows.Forms.Button();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.cbmGrados = new System.Windows.Forms.ComboBox();
-            this.cbmAnio = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbmTurno = new System.Windows.Forms.ComboBox();
             this.GrupoPrimaria.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.GrupoSencudaria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // GrupoPrimaria
             // 
             this.GrupoPrimaria.Controls.Add(this.cbmGrados);
             this.GrupoPrimaria.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GrupoPrimaria.Location = new System.Drawing.Point(12, 133);
+            this.GrupoPrimaria.Location = new System.Drawing.Point(12, 13);
             this.GrupoPrimaria.Name = "GrupoPrimaria";
             this.GrupoPrimaria.Size = new System.Drawing.Size(252, 93);
             this.GrupoPrimaria.TabIndex = 1;
             this.GrupoPrimaria.TabStop = false;
             this.GrupoPrimaria.Text = "Grados";
-            this.GrupoPrimaria.Visible = false;
+            // 
+            // cbmGrados
+            // 
+            this.cbmGrados.FormattingEnabled = true;
+            this.cbmGrados.Location = new System.Drawing.Point(15, 36);
+            this.cbmGrados.Name = "cbmGrados";
+            this.cbmGrados.Size = new System.Drawing.Size(231, 26);
+            this.cbmGrados.TabIndex = 49;
+            this.cbmGrados.SelectedIndexChanged += new System.EventHandler(this.cbmGrados_SelectedIndexChanged);
+            this.cbmGrados.SelectedValueChanged += new System.EventHandler(this.cbmGrados_SelectedValueChanged);
+            this.cbmGrados.TextChanged += new System.EventHandler(this.cbmGrados_TextChanged);
             // 
             // listBox1
             // 
@@ -74,66 +80,6 @@
             this.listBox1.TabIndex = 2;
             this.listBox1.Click += new System.EventHandler(this.listBox1_Click);
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.rbtnSecundaria);
-            this.groupBox3.Controls.Add(this.rbtnPrimaria);
-            this.groupBox3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(13, 13);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(251, 100);
-            this.groupBox3.TabIndex = 6;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Agrupar Por:";
-            // 
-            // rbtnSecundaria
-            // 
-            this.rbtnSecundaria.AutoSize = true;
-            this.rbtnSecundaria.Depth = 0;
-            this.rbtnSecundaria.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbtnSecundaria.Location = new System.Drawing.Point(15, 61);
-            this.rbtnSecundaria.Margin = new System.Windows.Forms.Padding(0);
-            this.rbtnSecundaria.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rbtnSecundaria.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rbtnSecundaria.Name = "rbtnSecundaria";
-            this.rbtnSecundaria.Ripple = true;
-            this.rbtnSecundaria.Size = new System.Drawing.Size(98, 30);
-            this.rbtnSecundaria.TabIndex = 1;
-            this.rbtnSecundaria.TabStop = true;
-            this.rbtnSecundaria.Text = "Secundaria";
-            this.rbtnSecundaria.UseVisualStyleBackColor = true;
-            this.rbtnSecundaria.CheckedChanged += new System.EventHandler(this.materialRadioButton2_CheckedChanged);
-            // 
-            // rbtnPrimaria
-            // 
-            this.rbtnPrimaria.AutoSize = true;
-            this.rbtnPrimaria.Depth = 0;
-            this.rbtnPrimaria.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbtnPrimaria.Location = new System.Drawing.Point(15, 26);
-            this.rbtnPrimaria.Margin = new System.Windows.Forms.Padding(0);
-            this.rbtnPrimaria.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rbtnPrimaria.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rbtnPrimaria.Name = "rbtnPrimaria";
-            this.rbtnPrimaria.Ripple = true;
-            this.rbtnPrimaria.Size = new System.Drawing.Size(81, 30);
-            this.rbtnPrimaria.TabIndex = 0;
-            this.rbtnPrimaria.TabStop = true;
-            this.rbtnPrimaria.Text = "Primaria";
-            this.rbtnPrimaria.UseVisualStyleBackColor = true;
-            this.rbtnPrimaria.CheckedChanged += new System.EventHandler(this.rbtnPrimaria_CheckedChanged);
-            // 
-            // GrupoSencudaria
-            // 
-            this.GrupoSencudaria.Controls.Add(this.cbmAnio);
-            this.GrupoSencudaria.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GrupoSencudaria.Location = new System.Drawing.Point(13, 242);
-            this.GrupoSencudaria.Name = "GrupoSencudaria";
-            this.GrupoSencudaria.Size = new System.Drawing.Size(251, 95);
-            this.GrupoSencudaria.TabIndex = 5;
-            this.GrupoSencudaria.TabStop = false;
-            this.GrupoSencudaria.Text = "Años";
-            this.GrupoSencudaria.Visible = false;
             // 
             // materialLabel1
             // 
@@ -214,10 +160,10 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(502, 224);
+            this.gridControl1.Location = new System.Drawing.Point(34, 230);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(306, 262);
+            this.gridControl1.Size = new System.Drawing.Size(732, 262);
             this.gridControl1.TabIndex = 48;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -226,31 +172,33 @@
             // 
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // cbmGrados
+            // groupBox1
             // 
-            this.cbmGrados.FormattingEnabled = true;
-            this.cbmGrados.Location = new System.Drawing.Point(15, 36);
-            this.cbmGrados.Name = "cbmGrados";
-            this.cbmGrados.Size = new System.Drawing.Size(231, 26);
-            this.cbmGrados.TabIndex = 49;
-            this.cbmGrados.SelectedIndexChanged += new System.EventHandler(this.cbmGrados_SelectedIndexChanged);
-            this.cbmGrados.SelectedValueChanged += new System.EventHandler(this.cbmGrados_SelectedValueChanged);
-            this.cbmGrados.TextChanged += new System.EventHandler(this.cbmGrados_TextChanged);
+            this.groupBox1.Controls.Add(this.cbmTurno);
+            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 112);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(252, 93);
+            this.groupBox1.TabIndex = 50;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Turno";
             // 
-            // cbmAnio
+            // cbmTurno
             // 
-            this.cbmAnio.FormattingEnabled = true;
-            this.cbmAnio.Location = new System.Drawing.Point(14, 38);
-            this.cbmAnio.Name = "cbmAnio";
-            this.cbmAnio.Size = new System.Drawing.Size(231, 26);
-            this.cbmAnio.TabIndex = 50;
+            this.cbmTurno.FormattingEnabled = true;
+            this.cbmTurno.Location = new System.Drawing.Point(15, 36);
+            this.cbmTurno.Name = "cbmTurno";
+            this.cbmTurno.Size = new System.Drawing.Size(231, 26);
+            this.cbmTurno.TabIndex = 49;
             // 
             // CargaDocente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 504);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.btningresar);
             this.Controls.Add(this.materialLabel3);
@@ -258,8 +206,6 @@
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.GrupoSencudaria);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.GrupoPrimaria);
             this.Name = "CargaDocente";
@@ -267,11 +213,9 @@
             this.Text = "CargaDocente";
             this.Load += new System.EventHandler(this.CargaDocente_Load);
             this.GrupoPrimaria.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.GrupoSencudaria.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,10 +224,6 @@
         #endregion
         private System.Windows.Forms.GroupBox GrupoPrimaria;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private MaterialSkin.Controls.MaterialRadioButton rbtnSecundaria;
-        private MaterialSkin.Controls.MaterialRadioButton rbtnPrimaria;
-        private System.Windows.Forms.GroupBox GrupoSencudaria;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private System.Windows.Forms.ListBox listBox2;
@@ -293,6 +233,7 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.ComboBox cbmGrados;
-        private System.Windows.Forms.ComboBox cbmAnio;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox cbmTurno;
     }
 }

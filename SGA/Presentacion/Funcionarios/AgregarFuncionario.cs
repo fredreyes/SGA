@@ -30,7 +30,7 @@ namespace Presentacion.Funcionarios
         public int Bandera = 0;
         private void AgregarFuncionario_Load(object sender, EventArgs e)
         {
-            
+            new frmPrincipal().CloseScreen();
         }
         void Limpiar()
         {

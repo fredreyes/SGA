@@ -13,5 +13,6 @@ namespace Entidades
         public int AsingaturaId { get; set; }
         public int GradoId { get; set; }
         public int CicloEscolarID { get; set; }
+        public int TurnoId { get; set; }
     }
 }

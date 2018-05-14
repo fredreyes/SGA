@@ -11,6 +11,8 @@ using Entidades;
 using Negocio;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using System.Threading;
+
 namespace Presentacion.Otros
 {
     public partial class AgregarAula : MaterialForm
@@ -25,6 +27,7 @@ namespace Presentacion.Otros
         public int Bandera = 0;
         EAulas a = new EAulas();
         NAulas n = new NAulas();
+        frmAdministracion wx = new frmAdministracion();
         private void AgregarAula_Load(object sender, EventArgs e)
         {
             try
@@ -34,6 +37,7 @@ namespace Presentacion.Otros
                 rbtnactivo.Visible = false;
                 rbrncancelar.Visible = false;
                 chkEditar.Visible = false;
+                wx.CloseSplash();
             }
             catch (Exception ex)
             {

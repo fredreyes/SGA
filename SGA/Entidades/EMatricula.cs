@@ -16,14 +16,14 @@ namespace Entidades
         public DateTime FechaMatricula { get; set; }
         public string Repitente { get; set; }
         public ETurnos Turno{ get; set; }
-        public EColegios Colegio { get; set; }
+        public int? ColegioId { get; set; }
+        public string Colegio { get; set; }
         public EMatricula()
         {
             Ciclo = new CicloEscolar();
             Alumnos = new EAlumnos();
             Grados = new EGrados();
             Turno = new ETurnos();
-            Colegio = new EColegios();
         }
     }
 }

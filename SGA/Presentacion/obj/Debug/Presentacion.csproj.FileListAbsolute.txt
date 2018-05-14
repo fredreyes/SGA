@@ -900,3 +900,4 @@ C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\RdlCompile.cach
 C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\RdlCompile.compiled
 C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\Presentacion.exe
 C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\obj\Debug\Presentacion.WaitFormGlobal.resources

@@ -26,3 +26,4 @@ C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Entidades\bin\Debug\Entidades.dll
 C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Entidades\bin\Debug\Entidades.pdb
 C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Entidades\obj\Debug\Entidades.dll
 C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Entidades\obj\Debug\Entidades.pdb
+C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache

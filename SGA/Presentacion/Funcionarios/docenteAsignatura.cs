@@ -30,6 +30,7 @@ namespace Presentacion.Funcionarios
             CargaFuncionarios();
             CargarAsinaturas();
             CargarMateriaDocente();
+            new frmPrincipal().CloseScreen();
         }
 
         void CargaFuncionarios()

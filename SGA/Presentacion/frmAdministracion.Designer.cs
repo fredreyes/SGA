@@ -45,6 +45,7 @@
             this.lblDepartamento = new MaterialSkin.Controls.MaterialLabel();
             this.lblocupacion = new MaterialSkin.Controls.MaterialLabel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Presentacion.WaitFormGlobal), true, true);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -262,6 +263,10 @@
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
+            // splashScreenManager1
+            // 
+            this.splashScreenManager1.ClosingDelay = 500;
+            // 
             // frmAdministracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,5 +328,6 @@
         private MaterialSkin.Controls.MaterialLabel lblDepartamento;
         private MaterialSkin.Controls.MaterialLabel lblocupacion;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }

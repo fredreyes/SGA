@@ -1,10 +1,12 @@
-﻿using System;
+﻿using DevExpress.XtraSplashScreen;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -35,12 +37,12 @@ namespace Presentacion
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+            MostrarSplash();
             lblaula.ForeColor = Color.DarkBlue;
             Otros.AgregarAula Aula = new Otros.AgregarAula();
             Aula.ShowDialog();
             lblaula.ForeColor = Color.Black;
         }
-
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             lblciclo.ForeColor = Color.DarkBlue;
@@ -89,6 +91,14 @@ namespace Presentacion
             Funcionarios.Ocupaciones ocupaciones = new Funcionarios.Ocupaciones();
             ocupaciones.ShowDialog();
             lblocupacion.ForeColor = Color.Black;
+        }
+        public void CloseSplash()
+        {
+            SplashScreenManager.CloseForm();
+        }
+        public void MostrarSplash()
+        {
+            SplashScreenManager.ShowForm(typeof(WaitFormGlobal));
         }
     }
 }

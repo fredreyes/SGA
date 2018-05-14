@@ -81,7 +81,7 @@
             // 
             this.rbtnMasculino.AutoSize = true;
             this.rbtnMasculino.Depth = 0;
-            this.rbtnMasculino.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rbtnMasculino.Font = new System.Drawing.Font("Roboto", 10F);
             this.rbtnMasculino.Location = new System.Drawing.Point(12, 200);
             this.rbtnMasculino.Margin = new System.Windows.Forms.Padding(0);
             this.rbtnMasculino.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -98,7 +98,7 @@
             // 
             this.rbtnFemenino.AutoSize = true;
             this.rbtnFemenino.Depth = 0;
-            this.rbtnFemenino.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rbtnFemenino.Font = new System.Drawing.Font("Roboto", 10F);
             this.rbtnFemenino.Location = new System.Drawing.Point(151, 200);
             this.rbtnFemenino.Margin = new System.Windows.Forms.Padding(0);
             this.rbtnFemenino.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -114,7 +114,7 @@
             // txtcedula
             // 
             this.txtcedula.BackColor = System.Drawing.Color.White;
-            this.txtcedula.Font = new System.Drawing.Font("Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.txtcedula.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcedula.Location = new System.Drawing.Point(12, 161);
             this.txtcedula.Mask = ">000-000000-0000L";
             this.txtcedula.Name = "txtcedula";
@@ -180,7 +180,7 @@
             // 
             this.chkactivo.AutoSize = true;
             this.chkactivo.Depth = 0;
-            this.chkactivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.chkactivo.Font = new System.Drawing.Font("Roboto", 10F);
             this.chkactivo.Location = new System.Drawing.Point(361, 78);
             this.chkactivo.Margin = new System.Windows.Forms.Padding(0);
             this.chkactivo.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -197,7 +197,7 @@
             // 
             this.chkcancelar.AutoSize = true;
             this.chkcancelar.Depth = 0;
-            this.chkcancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.chkcancelar.Font = new System.Drawing.Font("Roboto", 10F);
             this.chkcancelar.Location = new System.Drawing.Point(476, 78);
             this.chkcancelar.Margin = new System.Windows.Forms.Padding(0);
             this.chkcancelar.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -214,7 +214,7 @@
             // 
             this.chkisDocente.AutoSize = true;
             this.chkisDocente.Depth = 0;
-            this.chkisDocente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.chkisDocente.Font = new System.Drawing.Font("Roboto", 10F);
             this.chkisDocente.Location = new System.Drawing.Point(424, 304);
             this.chkisDocente.Margin = new System.Windows.Forms.Padding(0);
             this.chkisDocente.MouseLocation = new System.Drawing.Point(-1, -1);

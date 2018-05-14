@@ -7,63 +7,67 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin.Controls;
-using MaterialSkin;
 using Entidades;
 using Negocio;
 
 namespace Presentacion
 {
-    public partial class frmLogin : MaterialForm
+    public partial class frmLogin : Form
     {
         public frmLogin()
         {
             InitializeComponent();
-            //MaterialSkinManager m = MaterialSkinManager.Instance;
-            //m.AddFormToManage(this);
-            //m.Theme = MaterialSkinManager.Themes.DARK;
-            //m.ColorScheme = new ColorScheme(Primary.Green400, Primary.Green900,Primary.Green800,Accent.DeepPurple200,TextShade.WHITE);
-            EstiloMenu x = new EstiloMenu();
-            x.AplicarEstilo(this);
-            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             
         }
-
-        private void btningresar_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-            try
+            ErrorProvider x = new ErrorProvider();
+            if (txtusuario.Text == "")
+                    x.SetError(txtusuario, "Ingrese el nombre de usuario");
+            else if (txtpasword.Text.Trim() == "")
             {
-                NUsuario negocioUsuario = new NUsuario();
-                EUsuarios user = new EUsuarios();
-                user.Usuario = txtusuario.Text;
-                user.Password = txtpasword.Text;
-                EUsuarios Usuario = negocioUsuario.Login(user);
-                if (Usuario != null)
-                {
-                    Global.Users = Usuario;
-                    frmPrincipal menu = new frmPrincipal();
-                    menu.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Usuario o contraseña incorrecta");
-                }
+                x.SetError(txtpasword, "Ingrese la contraseña");
             }
-            catch (Exception ex)
+            else
             {
+                try
+                {
+                    NUsuario negocioUsuario = new NUsuario();
+                    EUsuarios user = new EUsuarios();
+                    user.Usuario = txtusuario.Text;
+                    user.Password = txtpasword.Text;
+                    EUsuarios Usuario = negocioUsuario.Login(user);
+                    if (Usuario != null)
+                    {
+                        Global.Users = Usuario;
+                        frmPrincipal menu = new frmPrincipal();
+                        menu.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario o contraseña incorrecta");
+                        txtpasword.Clear();
+                        txtusuario.Focus();
+                    }
+                }
+                catch (Exception ex)
+                {
 
-                throw ex;
+                    throw ex;
+                }
             }
+            
         }
 
-        private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
     }
 }

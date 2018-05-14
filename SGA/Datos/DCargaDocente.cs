@@ -23,6 +23,7 @@ namespace Datos
                 comando.Parameters.AddWithValue("@AsingaturaId", cd.AsingaturaId);
                 comando.Parameters.AddWithValue("@GradoId", cd.GradoId);
                 comando.Parameters.AddWithValue("@CicloEscolarID", cd.CicloEscolarID);
+                comando.Parameters.AddWithValue("@TurnoID", cd.TurnoId);                
                 comando.Connection = conexion;
                 conexion.Open();
                 comando.ExecuteNonQuery();

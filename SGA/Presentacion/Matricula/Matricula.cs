@@ -144,6 +144,7 @@ namespace Presentacion.Matricula
                             matricula.seccion = comboBox1.SelectedValue.ToString();
                             matricula.Repitente = chkrepitente.Checked ? "SI" : "NO";
                             matricula.Turno.TurnoId = Convert.ToInt32(cbmTurnos.SelectedValue.ToString());
+                            matricula.ColegioId = chkPrimerIngreso.Checked ? Convert.ToInt32(cbmColegio.SelectedValue.ToString()) : 0;
                             NMatricula n = new NMatricula();
                             n.IngresarMatricula(matricula);
                             MessageBox.Show("Matricula ingresada con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);

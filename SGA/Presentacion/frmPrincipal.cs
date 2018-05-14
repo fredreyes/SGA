@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using DevExpress.XtraSplashScreen;
 
 namespace Presentacion
 {
@@ -146,8 +147,11 @@ namespace Presentacion
 
         private void evaluacionesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            ShowScreen();
             Notas.Evaluaciones evaluaciones = new Notas.Evaluaciones();
             evaluaciones.ShowDialog();
+            
+            
         }
 
         private void planDeClasesToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -158,14 +162,13 @@ namespace Presentacion
 
         private void disponibilidadDocenteToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ShowScreen();
             Funcionarios.docenteAsignatura docenteAsignatura = new Funcionarios.docenteAsignatura();
             docenteAsignatura.ShowDialog();
         }
 
         private void gestionDocenteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Funcionarios.Funcionarios funcionario = new Funcionarios.Funcionarios();
-            funcionario.ShowDialog();
         }
 
         private void cargaAcademicaDocenteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -202,6 +205,28 @@ namespace Presentacion
         {
             Student.verListaAlumnos cerlista = new Student.verListaAlumnos();
             cerlista.ShowDialog();
+        }
+
+        public void ShowScreen()
+        {
+            SplashScreenManager.ShowForm(typeof(WaitFormGlobal));
+        }
+        public void CloseScreen()
+        {
+            SplashScreenManager.CloseForm();
+        }
+
+        private void buscarDocenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Funcionarios.Funcionarios funcionario = new Funcionarios.Funcionarios();
+            funcionario.ShowDialog();
+        }
+
+        private void nuevoDocenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowScreen();
+            Funcionarios.AgregarFuncionario a = new Funcionarios.AgregarFuncionario();
+            a.ShowDialog();
         }
     }
 }

@@ -57,13 +57,6 @@ namespace Presentacion.Funcionarios
             }
         }
 
-        private void btnNuevoFuncionario_Click(object sender, EventArgs e)
-        {
-            AgregarFuncionario a = new AgregarFuncionario();
-            this.Hide();
-            a.ShowDialog();
-           
-        }
  public  void CargarFuncionarios()
         {
             try

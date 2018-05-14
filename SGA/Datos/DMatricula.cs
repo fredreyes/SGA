@@ -24,7 +24,7 @@ namespace Datos
                 comando.Parameters.AddWithValue("@Seccion", m.seccion);
                 comando.Parameters.AddWithValue("@Repitente", m.Repitente);
                 comando.Parameters.AddWithValue("@TurnoId", m.Turno.TurnoId);
-                comando.Parameters.AddWithValue("@ColegioId", m.Colegio.ColegioId);
+                comando.Parameters.AddWithValue("@ColegioId", m.ColegioId);
                 conexion.Open();
                 comando.ExecuteNonQuery();
                 conexion.Close();
@@ -80,8 +80,8 @@ namespace Datos
                 a.seccion = leer[8].ToString();
                 a.Turno.TurnoId = (int)leer[9];
                 a.Turno.Turno = leer[10].ToString();
-                a.Colegio.ColegioId = (int)leer[11];
-                a.Colegio.Colegio = leer[12].ToString();
+                a.ColegioId = (int)leer[11];
+                a.Colegio = leer[12].ToString();
                 a.Repitente = leer[13].ToString();
                 lista.Add(a);
             }
