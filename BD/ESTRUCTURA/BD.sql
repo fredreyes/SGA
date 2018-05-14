@@ -3,8 +3,24 @@ go
 use SGA
 go
 
+--esquema de administracion
+create schema dba
+go
+--esquema de Docentes
+create schema dbd
+go
+-----------------/**********esquema de Administracion*************************/--------------
+--Parametros
+CREATE TABLE dba.Parametros
+(
+ParametroID int identity(1,1),
+Descripcion nvarchar(200),
+Ciclo int,
+Activo bit
+)
+go
 --DEPARTAMENTOS
-CREATE TABLE Departamentos
+CREATE TABLE dba.Departamentos
 (
 DepartamentoID int identity(1,1),
 Departamento Nvarchar(150) unique,
@@ -12,7 +28,7 @@ constraint pk_DepartamentoId Primary key (DepartamentoID)
 )
 GO
 ---TABLA COLEGIO
-create table Colegio
+create table dba.Colegio
 (
 ColegioId int not null identity(1,1),
 Colegio nvarchar(100) not null,
@@ -23,17 +39,8 @@ constraint fk_Departamento foreign key(DepartamentoId) references Departamentos(
 )
 go
 
---TABLA PROFESION_OCUPACION
-create table ProfesionOcupacion
-(
-OcupacionId INT not null identity(1,1),
-Ocupacion nvarchar(150) not null
-constraint PK_Ocupacion primary key(OcupacionId)
-)
-go
-
 --TABLA TURNOS
-create table Turnos
+create table dba.Turnos
 (
 TurnoId int NOT NULL identity(1,1),
 Turno nvarchar(20) NOT NULL unique,
@@ -43,7 +50,7 @@ CONSTRAINT PK_TURNOS PRIMARY KEY(TurnoId)
 )
 GO
 --TABLA GRADO
-create table Grados
+create table dba.Grados
 (
 GradoId int NOT NULL identity(1,1),
 Grado nvarchar(20) NOT NULL,
@@ -53,7 +60,7 @@ CONSTRAINT PK_GRADO PRIMARY KEY(GradoId)
 )
 GO
 --TABLA ASIGNATURA
-create table Asignaturas
+create table dba.Asignaturas
 (
 AsignaturaId int  NOT NULL identity(1,1),
 Asignatura nvarchar(100) NOT NULL,
@@ -61,19 +68,9 @@ Activo bit
 CONSTRAINT PK_ASIGNATURA PRIMARY KEY(AsignaturaId)
 )
 go
---CICLO_ESCOLAR
-create table CicloEscolar
-( 
-CicloEscolarId INT NOT NULL identity(1,1),
-Ciclo INT NOT NULL,
-FechaInicio DATE NOT NULL,
-FechaFin DATE NOT NULL,
-Activo bit
-CONSTRAINT PK_CICLO PRIMARY KEY(CicloEscolarId) 
-)
-GO
+
 --TABLA AULAS
-create table Aulas
+create table dba.Aulas
 (
 AulaId INT NOT NULL identity(1,1),
 Aula NVARCHAR(30) NOT NULL,
@@ -87,21 +84,17 @@ CONSTRAINT FK_AULAS_GRADOS FOREIGN KEY(GradoId) REFERENCES Grados(GradoId),
 CONSTRAINT FK_AULAS_TURNOS FOREIGN KEY(TurnoId) REFERENCES Turnos(TurnoId)
 )
 go
---TABLA EVALUACIONES
-CREATE TABLE Evaluaciones
-(
-EvaluacionId INT NOT NULL identity(1,1),
-Mes NVARCHAR(20) NOT NULL,
-Pacial NVARCHAR(30) NOT NULL,
-Observaciones NVARCHAR(300),
-CicloEscolarId INT NOT NULL,
-Activo bit
-CONSTRAINT PK_EVALUACIONES PRIMARY KEY(EvaluacionId),
-CONSTRAINT FK_EVALU_CICLO FOREIGN KEY(CicloEscolarId) REFERENCES CicloEscolar(CicloEscolarId)
-)
-GO
 
-CREATE TABLE Funcionarios
+-----------------/**********esquema de Administracion*************************/--------------
+--TABLA PROFESION_OCUPACION
+create table dbd.ProfesionOcupacion
+(
+OcupacionId INT not null identity(1,1),
+Ocupacion nvarchar(150) not null
+constraint PK_Ocupacion primary key(OcupacionId)
+)
+go
+create table dbd.Funcionarios
 (
 FuncionarioId INT not null identity(1,1),
 Nombres nvarchar(100) not null,
@@ -120,8 +113,7 @@ constraint PK_Funcionario primary key(FuncionarioId),
 constraint FK_Funcionario_Ocupacion foreign key(OcupacionId) references ProfesionOcupacion(OcupacionId)
 )
 go
-
-create table HistorialCargoFuncionaario
+create table dbd.HistorialCargoFuncionaario
 (
 HistarialCargoID int identity(1,1),
 FuncionarioID int,
@@ -129,6 +121,60 @@ Cargo nvarchar(40),
 FechadeCambio date,
 )
 go
+
+--MATERIA_DOCENTES
+CREATE TABLE dbd.MateriaDocente
+(
+MateriaDocenteId INT NOT NULL,
+FuncionarioId INT NOT NULL, 
+AsignaturaId INT,
+Mañana bit,
+Tarde bit,
+Primaria bit,
+Secundaria bit
+CONSTRAINT PK_MATERIADOCENTE PRIMARY KEY(MateriaDocenteId)
+CONSTRAINT FK_MATE_FUNCIONARIO FOREIGN KEY(FuncionarioId) REFERENCES FUNCIONARIOS(FuncionarioId),
+CONSTRAINT FK_MATE_ASIGNATURA FOREIGN KEY(AsignaturaId) REFERENCES ASIGNATURAS(AsignaturaId)
+)
+GO
+
+--Carga Academica Docente
+create table dbd.CargaAcademicaDocente
+(
+CargaId int primary key identity(1,1),
+FuncionarioId int,
+AsingaturaId int,
+GradoId int,
+CicloEscolar int,
+TurnoID int
+)
+go
+--CICLO_ESCOLAR
+--create table CicloEscolar
+--( 
+--CicloEscolarId INT NOT NULL identity(1,1),
+--Ciclo INT NOT NULL,
+--FechaInicio DATE NOT NULL,
+--FechaFin DATE NOT NULL,
+--Activo bit
+--CONSTRAINT PK_CICLO PRIMARY KEY(CicloEscolarId) 
+--)
+--GO
+
+--TABLA EVALUACIONES
+CREATE TABLE Evaluaciones
+(
+EvaluacionId INT NOT NULL identity(1,1),
+Mes NVARCHAR(20) NOT NULL,
+Pacial NVARCHAR(30) NOT NULL,
+Observaciones NVARCHAR(300),
+CicloAcademico INT NOT NULL,
+Activo bit
+CONSTRAINT PK_EVALUACIONES PRIMARY KEY(EvaluacionId)
+)
+GO
+
+
 
 --TABLA ALUMNO
 create table Alumnos
@@ -191,47 +237,23 @@ CONSTRAINT FK_DOCUMENTOS_ALUMNOS FOREIGN KEY(AlumnoId) REFERENCES ALUMNOS(Alumno
 )
 GO
 
---MATERIA_DOCENTES
-CREATE TABLE MateriaDocente
-(
-MateriaDocenteId INT NOT NULL,
-FuncionarioId INT NOT NULL, 
-AsignaturaId INT,
-Mañana bit,
-Tarde bit,
-Primaria bit,
-Secundaria bit
-CONSTRAINT PK_MATERIADOCENTE PRIMARY KEY(MateriaDocenteId)
-CONSTRAINT FK_MATE_FUNCIONARIO FOREIGN KEY(FuncionarioId) REFERENCES FUNCIONARIOS(FuncionarioId),
-CONSTRAINT FK_MATE_ASIGNATURA FOREIGN KEY(AsignaturaId) REFERENCES ASIGNATURAS(AsignaturaId)
-)
-GO
+
 -- Plan Clase Grados
 create table  PlanClase
 (
 PlanClaseID int,
 AsignaturaId int,
 GradoId int,
-CicloEscolarID int
+CicloEscolar int
 )
 go
---Carga Academica Docente
-create table CargaAcademicaDocente
-(
-CargaId int primary key identity(1,1),
-FuncionarioId int,
-AsingaturaId int,
-GradoId int,
-CicloEscolarID int,
-TurnoID int
-)
-go
+
 
 --TABLA MATRICULA
 CREATE TABLE Matricula
 ( 
 MatriculaId INT NOT NULL,
-CicloEscolarId INT,
+CicloEscolar INT,
 AlumnoId int NOT NULL, 
 GradoId INT NOT NULL, 
 Seccion nvarchar(10),
@@ -242,8 +264,7 @@ ColegioId INT
 CONSTRAINT PK_MATRICULA PRIMARY KEY(MatriculaId),
 CONSTRAINT FK_MATRI_ALMNO FOREIGN KEY(AlumnoId) REFERENCES ALUMNOS(AlumnoId),
 CONSTRAINT FK_MATRI_GRADO FOREIGN KEY(GradoId) REFERENCES GRADOS(GradoId),
-CONSTRAINT FK_MATRI_TURNO FOREIGN KEY(TurnoId) REFERENCES TURNOS(TurnoId),
-CONSTRAINT FK_MATRICULACICLO FOREIGN KEY(CicloEscolarId) REFERENCES CicloEscolar(CicloEscolarId)
+CONSTRAINT FK_MATRI_TURNO FOREIGN KEY(TurnoId) REFERENCES TURNOS(TurnoId)
 )
 GO
 
@@ -306,55 +327,7 @@ CONSTRAINT FK_NOTAS_EVALUCIONES FOREIGN KEY(EvaluacionId) REFERENCES EVALUACIONE
 )
 GO
 
-
-
----------------------------------------------------
-
-
-
---USUARIOS
-CREATE TABLE UsuariosFuncionarios
-(
-Usuario NVARCHAR(50) NOT NULL,
-Password NVARCHAR(200) NOT NULL,
-FuncionarioId INT NOT NULL,
-Tipo char(5), --ADM - DCT, SCR
-Activo BIT,
-CONSTRAINT PK_USUARIO PRIMARY KEY(Usuario),
-CONSTRAINT FK_USUARIO_FUNCIONARIO FOREIGN KEY(FuncionarioId) REFERENCES FUNCIONARIOS(FuncionarioId)
-)
-GO
-
-
---TABLA USUARIOS
-CREATE TABLE UsuariosFuncionarios
-(
-UsuarioID INT NOT NULL,
-Usuario NVARCHAR(50) NOT NULL,
-Password NVARCHAR(200) NOT NULL,
-Activo BIT,
-FuncionarioId INT NOT NULL
-CONSTRAINT PK_USUARIO PRIMARY KEY(UsuarioID),
-CONSTRAINT FK_USUARIO_FUNCIONARIO FOREIGN KEY(FuncionarioId) REFERENCES FUNCIONARIOS(FuncionarioId)
-)
-GO
-
-CREATE TABLE UsuariosAlumnos
-(
-UsuarioAlumno INT NOT NULL,
-Usuario NVARCHAR(20) NOT NULL,
-Password NVARCHAR(200) NOT NULL,
-Estado BIT,
-AlumnoId NVARCHAR(10)
-CONSTRAINT PK_USUARIO_ALUMNO PRIMARY KEY(UsuarioAlumno),
-CONSTRAINT FK_USUARIO_ALUMNOS FOREIGN KEY(AlumnoId) REFERENCES ALUMNOS(AlumnoId)
-)
-
-
-
-
-
-----TABLA PAGO
+---TABLA PAGO
 --CREATE TABLE PAGO
 --(
 --ID_PAGO INT NOT NULL, 
