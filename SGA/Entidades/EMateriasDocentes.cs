@@ -11,6 +11,7 @@ namespace Entidades
         public int MateriaDocenteId { get; set; }
         public  EFuncionarios Funcionario { get; set; } 
         public EAsignatura Asignatura { get; set; }
+        public ETurnos turno { get; set; }
         public bool mañana { get; set; }
         public bool tarde { get; set; }
         public bool Primaria { get; set; }
@@ -21,6 +22,7 @@ namespace Entidades
         {
             Funcionario = new EFuncionarios();
             Asignatura = new EAsignatura();
+            turno = new ETurnos();
         }
     }
 }

@@ -3,8 +3,7 @@ create proc IngresarMateriaDocente
 (
 @FuncionarioId INT, 
 @AsignaturaId INT,
-@Mañana bit,
-@Tarde bit,
+@TurnoID int,
 @Primaria bit,
 @secundaria bit
 )
@@ -12,14 +11,13 @@ as
 begin
 		begin try
 		declare @MateriaDocenteId INT 
-		select @MateriaDocenteId = ISNULL(max(MateriaDocenteId),0)+ 1 from MateriaDocente
+		select @MateriaDocenteId = ISNULL(max(MateriaDocenteId),0)+ 1 from dbd.MateriaDocente
 		insert into dbd.MateriaDocente values
 		(
 			@MateriaDocenteId,
 			@FuncionarioId, 
 			@AsignaturaId,
-			@Mañana,
-			@Tarde,
+			@TurnoID,
 			@Primaria,
 			@secundaria
 		)
@@ -30,12 +28,12 @@ begin
 		end catch
 end
 go
+
 create proc ModificarMateriaDocente
 (
 @MateriaDocenteId INT,
 @AsignaturaId INT,
-@Mañana bit,
-@Tarde bit,
+@TurnoID int,
 @Primaria BIT,
 @secundaria BIT
 )
@@ -44,8 +42,7 @@ begin
 		begin try
 		update dbd.MateriaDocente set		
 			AsignaturaId = @AsignaturaId,
-			Mañana = @Mañana,
-			Tarde = @Tarde,
+			TurnoID = @TurnoID,
 			Primaria = @Primaria,
 			Secundaria = @secundaria
 		where MateriaDocenteId = @MateriaDocenteId

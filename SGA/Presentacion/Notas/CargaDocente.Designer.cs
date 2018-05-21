@@ -34,8 +34,6 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.btningresar = new System.Windows.Forms.Button();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -117,28 +115,6 @@
             this.listBox2.Size = new System.Drawing.Size(169, 164);
             this.listBox2.TabIndex = 8;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(652, 39);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(156, 24);
-            this.comboBox1.TabIndex = 10;
-            // 
-            // materialLabel3
-            // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(687, 9);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(99, 19);
-            this.materialLabel3.TabIndex = 11;
-            this.materialLabel3.Text = "Ciclo Escolar";
-            // 
             // btningresar
             // 
             this.btningresar.BackColor = System.Drawing.Color.Blue;
@@ -201,8 +177,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.btningresar);
-            this.Controls.Add(this.materialLabel3);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.materialLabel1);
@@ -227,8 +201,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private System.Windows.Forms.Button btningresar;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;

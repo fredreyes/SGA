@@ -29,6 +29,7 @@ namespace Presentacion.Funcionarios
         {
             CargaFuncionarios();
             CargarAsinaturas();
+            CargarTurnos();
             CargarMateriaDocente();
             new frmPrincipal().CloseScreen();
         }
@@ -72,7 +73,24 @@ namespace Presentacion.Funcionarios
             }
         }
 
-       void CargarMateriaDocente()
+        void CargarTurnos()
+        {
+            try
+            {
+                NTurnos n = new NTurnos();
+                List<ETurnos> Lista = n.ListaTurnos();
+                cbmTurno.DataSource = Lista;
+                cbmTurno.DisplayMember = "Turno";
+                cbmTurno.ValueMember = "TurnoId";
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        void CargarMateriaDocente()
         {
             try
             {
@@ -84,15 +102,14 @@ namespace Presentacion.Funcionarios
                                       i.MateriaDocenteId,
                                       i.Funcionario.Nombres,
                                       i.Asignatura.Asignatura,
-                                      i.mañana,
-                                      i.tarde,
+                                      i.turno.Turno,
                                       i.Primaria,
                                       i.Secundaria
                                   }).ToList();
                 gridControl2.DataSource = NuevaLista;
                 gridView2.BestFitColumns();
                 gridView2.Columns[0].Visible = false;
-                gridView2.Columns[1].Group();
+                gridView2.Columns[2].Group();
             }
             catch (Exception ex)
             {
@@ -104,8 +121,7 @@ namespace Presentacion.Funcionarios
         void Limpiar()
         {
             listBox1.ClearSelected();
-            chkmañana.Checked = false;
-            chktarde.Checked = false;
+            cbmTurno.Text = "Seleccione un Turno";
             rbtnSecundaria.Checked = false;
             rbtnPrimaria.Checked = false;
             Bandera = false;
@@ -124,8 +140,7 @@ namespace Presentacion.Funcionarios
                     NMateriaDocenteID n = new NMateriaDocenteID();
                     md.Funcionario.FuncionarioId = DocenteID;
                     md.Asignatura.AsignaturaId = AsignaturaID;
-                    md.mañana = Convert.ToBoolean(chkmañana.Checked ? 1 : 0);
-                    md.tarde = Convert.ToBoolean(chktarde.Checked ? 1 : 0);
+                    md.turno.TurnoId = Convert.ToInt32(cbmTurno.SelectedValue.ToString());
                     md.Primaria = Convert.ToBoolean(rbtnPrimaria.Checked ? 1 : 0);
                     md.Secundaria = Convert.ToBoolean(rbtnSecundaria.Checked ? 1 : 0);
                     n.IngresarMateriaDocente(md);
@@ -141,8 +156,7 @@ namespace Presentacion.Funcionarios
                     NMateriaDocenteID n = new NMateriaDocenteID();
                     md.MateriaDocenteId = materiaDocenteId;
                     md.Asignatura.AsignaturaId = AsignaturaID;
-                    md.mañana = Convert.ToBoolean(chkmañana.Checked ? 1 : 0);
-                    md.tarde = Convert.ToBoolean(chktarde.Checked ? 1 : 0);
+                    md.turno.TurnoId = Convert.ToInt32(cbmTurno.SelectedValue.ToString());
                     md.Primaria = Convert.ToBoolean(rbtnPrimaria.Checked ? 1 : 0);
                     md.Secundaria = Convert.ToBoolean(rbtnSecundaria.Checked ? 1 : 0);
                     n.ModificarMateriaDocente(md);
@@ -192,14 +206,7 @@ namespace Presentacion.Funcionarios
             {
                 materiaDocenteId = Convert.ToInt32(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "MateriaDocenteId").ToString());
                 listBox1.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "Asignatura").ToString();
-                if (Convert.ToBoolean(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "mañana").ToString()) == true)
-                    chkmañana.Checked = true;
-                else
-                    chkmañana.Checked = false;
-                if (Convert.ToBoolean(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "tarde").ToString()) == true)
-                    chktarde.Checked = true;
-                else
-                    chktarde.Checked = false;
+                cbmTurno.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "Turno").ToString();
                 if (Convert.ToBoolean(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "Primaria").ToString()) == true)
                     rbtnPrimaria.Checked = true;
                 else
@@ -218,7 +225,7 @@ namespace Presentacion.Funcionarios
 
         private void btncancelar_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItem != null || chkmañana.Checked == true || chktarde.Checked == true)
+            if (listBox1.SelectedItem != null)
             {
                 DialogResult mensaje = MessageBox.Show("¿Realmente deseas cancelar?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (mensaje == DialogResult.OK)

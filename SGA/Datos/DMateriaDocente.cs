@@ -17,10 +17,11 @@ namespace Datos
         {
             try
             {
-                string sql = "select MateriaDocenteId,MD.FuncionarioId, CONCAT(Nombres, ' ',Apellidos) AS Docente, MD.AsignaturaId, Asignatura,Mañana,Tarde,Primaria,Secundaria \n"+
+                string sql = "select MateriaDocenteId,MD.FuncionarioId, CONCAT(Nombres, ' ',Apellidos) AS Docente, MD.AsignaturaId, Asignatura,MD.TurnoID,Turno,Primaria,Secundaria \n"+
                              "from dbd.MateriaDocente MD \n"+
                              "inner join dbd.Funcionarios F on MD.FuncionarioId = F.FuncionarioId \n"+
-                             "inner join dba.Asignaturas A on MD.AsignaturaId = A.AsignaturaId \n";
+                             "inner join dba.Asignaturas A on MD.AsignaturaId = A.AsignaturaId \n" +
+                             "inner join dba.Turnos t on MD.TurnoID = t.TurnoId";
 
                 comando = new SqlCommand(sql,conexion);
                 comando.CommandType = CommandType.Text;
@@ -35,8 +36,8 @@ namespace Datos
                     md.Funcionario.Nombres = leer[2].ToString();
                     md.Asignatura.AsignaturaId = (int)leer[3];
                     md.Asignatura.Asignatura = leer[4].ToString();
-                    md.mañana = (bool)leer[5];
-                    md.tarde = (bool)leer[6];
+                    md.turno.TurnoId = (int)leer[5];
+                    md.turno.Turno = leer[6].ToString();
                     md.Primaria = (bool)leer[7];
                     md.Secundaria = (bool)leer[8];
                     lista.Add(md);
@@ -61,8 +62,7 @@ namespace Datos
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@FuncionarioId", md.Funcionario.FuncionarioId);
                 comando.Parameters.AddWithValue("@AsignaturaId", md.Asignatura.AsignaturaId);
-                comando.Parameters.AddWithValue("@Mañana", md.mañana);
-                comando.Parameters.AddWithValue("@Tarde", md.tarde);
+                comando.Parameters.AddWithValue("@TurnoID", md.turno.TurnoId);
                 comando.Parameters.AddWithValue("@Primaria", md.Primaria);
                 comando.Parameters.AddWithValue("@Secundaria", md.Secundaria);
                 comando.Connection = conexion;
@@ -85,8 +85,7 @@ namespace Datos
                 comando = new SqlCommand("ModificarMateriaDocente");
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@AsignaturaId", md.Asignatura.AsignaturaId);
-                comando.Parameters.AddWithValue("@Mañana", md.mañana);
-                comando.Parameters.AddWithValue("@Tarde", md.tarde);
+                comando.Parameters.AddWithValue("@TurnoID", md.turno.TurnoId);
                 comando.Parameters.AddWithValue("@Primaria", md.Primaria);
                 comando.Parameters.AddWithValue("@Secundaria", md.Secundaria);
                 comando.Parameters.AddWithValue("@MateriaDocenteId", md.MateriaDocenteId);

@@ -17,14 +17,13 @@ namespace Presentacion.Notas
         public CargaDocente()
         {
             InitializeComponent();
-            CargarCicloEscolar();
-            CargarTurno();
         }
         
         public int AsignaturaID;
         private void CargaDocente_Load(object sender, EventArgs e)
         {
             CargarGrado();
+            CargarTurno();
         }
 
         void CargarGrado()
@@ -42,15 +41,6 @@ namespace Presentacion.Notas
             cbmTurno.DisplayMember = "Turno";
             cbmTurno.ValueMember = "TurnoID";
             cbmTurno.DataSource = lista;
-        }
-
-        void CargarCicloEscolar()
-        {
-            Nciclo n = new Nciclo();
-            List<CicloEscolar> lista = n.ListaCicloEscolar().Where(x=> x.Activo == true).ToList();
-            comboBox1.DisplayMember = "ciclo";
-            comboBox1.ValueMember = "CicloEscolarId";
-            comboBox1.DataSource = lista;
         }
 
          void CargarAsignaturas()
@@ -113,7 +103,6 @@ namespace Presentacion.Notas
                 ECargaDocente cd = new ECargaDocente();
                 NCargaDocente n = new NCargaDocente();
                 cd.AsingaturaId = AsignaturaID;
-                cd.CicloEscolarID = Convert.ToInt32(comboBox1.SelectedValue.ToString());
                 cd.FuncionarioId = Convert.ToInt32(listBox2.SelectedValue.ToString());
                 cd.GradoId = Convert.ToInt32(cbmGrados.SelectedValue.ToString());
                 cd.TurnoId = Convert.ToInt32(cbmTurno.SelectedValue.ToString());
