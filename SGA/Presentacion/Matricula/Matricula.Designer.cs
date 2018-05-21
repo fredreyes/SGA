@@ -290,6 +290,7 @@
             this.groupBoxColegio.TabIndex = 2;
             this.groupBoxColegio.TabStop = false;
             this.groupBoxColegio.Text = "Seleccionar Colegio";
+            this.groupBoxColegio.Visible = false;
             // 
             // cbmColegio
             // 
@@ -376,12 +377,12 @@
             // 
             this.materialLabel5.AutoSize = true;
             this.materialLabel5.Depth = 0;
-            this.materialLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel5.Location = new System.Drawing.Point(34, 69);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(128, 15);
+            this.materialLabel5.Size = new System.Drawing.Size(154, 19);
             this.materialLabel5.TabIndex = 46;
             this.materialLabel5.Text = "Capacidad Disponible";
             // 

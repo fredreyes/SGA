@@ -17,7 +17,11 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("select AulaId,Aula,Capacidad,Vacantes,A.GradoId,Grado,A.activo,A.TurnoId, Turno from Aulas A inner join GRADOS G ON A.GradoId = G.GradoId inner join Turnos T on A.TurnoId = T.TurnoId", conexion);
+                string sql = "select AulaId,Aula,Capacidad,Vacantes,A.GradoId,Grado,A.activo,A.TurnoId, Turno \n"+
+                            "from dba.Aulas A \n"+
+                            "inner join dba.Grados G ON A.GradoId = G.GradoId \n"+
+                            "inner join dba.Turnos T on A.TurnoId = T.TurnoId";
+                comando = new SqlCommand(sql, conexion);
                 comando.CommandType = CommandType.Text;
                 comando.Connection = conexion;
                 conexion.Open();

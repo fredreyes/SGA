@@ -17,7 +17,9 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("select ColegioId,Colegio,Telefono,c.DepartamentoId,Departamento d from colegio c inner join Departamentos d on c.DepartamentoId = d.DepartamentoID", conexion);
+                string sql = "select ColegioId,Colegio,Telefono,c.DepartamentoId,Departamento from dba.colegio c inner \n"+
+                              "join dba.Departamentos d on c.DepartamentoId = d.DepartamentoID";
+                comando = new SqlCommand(sql, conexion);
                 comando.CommandType = CommandType.Text;
                 comando.Connection = conexion;
                 conexion.Open();
@@ -30,7 +32,7 @@ namespace Datos
                     c.Colegio = leer[1].ToString();
                     c.Telefono = leer[2].ToString();
                     c.DepartamentoID = (int)leer["DepartamentoId"];
-                    c.Departamento = leer["d"].ToString();
+                    c.Departamento = leer["Departamento"].ToString();
                     lista.Add(c);
                 }
                 leer.Close();

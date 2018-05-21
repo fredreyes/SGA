@@ -13,7 +13,7 @@ as
 begin
 		declare @activo bit
 		set @activo = 1
-		insert into Aulas values
+		insert into dba.Aulas values
 		(
 		@Aula,
 		@capacidad,
@@ -38,7 +38,7 @@ create proc ModificarAula
 )
 as
 begin
-		update Aulas set
+		update dba.Aulas set
 		Aula = @Aula,
 		Capacidad = @capacidad,
 		Vacantes = @Vacantes,
@@ -55,6 +55,6 @@ create proc EliminarAulas
 )
 as
 begin
-delete Aulas where AulaId = @AulaId
+delete dba.Aulas where AulaId = @AulaId
 end
 go

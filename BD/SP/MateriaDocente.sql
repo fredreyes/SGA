@@ -13,7 +13,7 @@ begin
 		begin try
 		declare @MateriaDocenteId INT 
 		select @MateriaDocenteId = ISNULL(max(MateriaDocenteId),0)+ 1 from MateriaDocente
-		insert into MateriaDocente values
+		insert into dbd.MateriaDocente values
 		(
 			@MateriaDocenteId,
 			@FuncionarioId, 
@@ -42,7 +42,7 @@ create proc ModificarMateriaDocente
 as
 begin
 		begin try
-		update MateriaDocente set		
+		update dbd.MateriaDocente set		
 			AsignaturaId = @AsignaturaId,
 			Mañana = @Mañana,
 			Tarde = @Tarde,
@@ -63,6 +63,6 @@ create proc EliminarMateriaDocente
 )
 as
 begin
-	delete MateriaDocente where MateriaDocenteId = @MateriaDocenteID
+	delete dbd.MateriaDocente where MateriaDocenteId = @MateriaDocenteID
 end
 go

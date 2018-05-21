@@ -10,7 +10,7 @@ as
 begin
 		declare @activo bit
 		set @activo = 1		
-		insert into Turnos
+		insert into dba.Turnos
 		values
 		(
 		@Turno,
@@ -29,7 +29,7 @@ create proc ModificarTurnos
 )
 as
 begin
-		update Turnos set
+		update dba.Turnos set
 		Turno = @Turno,
 		Descripcion = @Descripcion,
 		Activo = @activo
@@ -42,6 +42,6 @@ create proc eliminarTurno
 )
 as
 begin
-	delete Turnos where TurnoId = @TurnoId
+	delete dba.Turnos where TurnoId = @TurnoId
 end
 GO

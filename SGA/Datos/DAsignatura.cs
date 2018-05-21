@@ -17,9 +17,8 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("SELECT * FROM Asignaturas");
+                comando = new SqlCommand("SELECT * FROM dba.Asignaturas", conexion);
                 comando.CommandType = CommandType.Text;
-                comando.Connection = conexion;
                 conexion.Open();
                 List<EAsignatura> lista = new List<EAsignatura>();
                 SqlDataReader leer = comando.ExecuteReader();

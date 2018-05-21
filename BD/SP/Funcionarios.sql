@@ -1,7 +1,7 @@
 use SGA
 go
 --FUNCIONARIOS
-create PROC IngresarFuncioarios
+alter PROC IngresarFuncioarios
 (
 @Nombres nvarchar(100),
 @Apellidos nvarchar(100),
@@ -19,7 +19,7 @@ AS
 BEGIN
 		declare @activo bit
 		set  @activo = 1
-		insert into Funcionarios values
+		insert into dbd.Funcionarios values
 		(
 		@Nombres,
 		@Apellidos,
@@ -45,7 +45,7 @@ BEGIN
 		set @FechaCreacion = GETDATE()
 		declare  @Tipo nvarchar(3)
 		set @Tipo = 'DCT' 
-		set @UserID = (select  top 1 FuncionarioId from Funcionarios order by  FuncionarioId desc)
+		set @UserID = (select  top 1 FuncionarioId from dbd.Funcionarios order by  FuncionarioId desc)
 		select @UsuarioID = ISNULL(max(UsuarioID),0)+1 from Users
 			if exists (select UserName,UserID from Users where UserName = @Nombres+@Apellidos and UserID = @UserID )
 			begin
@@ -56,9 +56,9 @@ BEGIN
 				insert into Users values
 				(
 				@UsuarioID,
+				@UserID,
 				@Nombres+@Apellidos,
 				HASHBYTES('SHA1',@Password),
-				@UserID,
 				@FechaCreacion,
 				@Tipo,
 				@Activo
@@ -89,7 +89,7 @@ create PROC ModificarFuncioarios
 )
 AS
 BEGIN
-		update Funcionarios set
+		update dbd.Funcionarios set
 		Nombres = @Nombres,
 		Apellidos = @Apellidos,
 		Cedula = @Cedula,
@@ -107,15 +107,15 @@ END
 GO
 --Crear Historial de cargo de Docente
 create trigger InsertarHistorialCargoDocente
-on Funcionarios after update,insert
+on dbdFuncionarios after update,insert
 as
 begin
 declare @FuncionarioId int = (select FuncionarioId from inserted)
-declare @Cargo nvarchar(100) = (select Cargo from Funcionarios where FuncionarioId = @FuncionarioId)
+declare @Cargo nvarchar(100) = (select Cargo from dbd.Funcionarios where FuncionarioId = @FuncionarioId)
 declare  @Fecha date = getdate()
 		if @FuncionarioId is null
 		begin
-				insert into HistorialCargoFuncionaario values
+				insert into dbd.HistorialCargoFuncionaario values
 				(
 				@FuncionarioId,
 				@Cargo,
@@ -124,7 +124,7 @@ declare  @Fecha date = getdate()
 		end
 		else
 		begin
-		insert into HistorialCargoFuncionaario values
+		insert into dbd.HistorialCargoFuncionaario values
 				(
 				@FuncionarioId,
 				@Cargo,
@@ -133,3 +133,5 @@ declare  @Fecha date = getdate()
 		end
 end
 go
+
+

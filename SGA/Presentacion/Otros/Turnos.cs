@@ -137,7 +137,7 @@ namespace Presentacion.Otros
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

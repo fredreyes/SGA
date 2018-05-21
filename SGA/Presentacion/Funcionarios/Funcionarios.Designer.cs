@@ -34,6 +34,7 @@
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnexportar = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -86,11 +87,25 @@
             this.btnexportar.Text = "Exportar";
             this.btnexportar.Click += new System.EventHandler(this.btnexportar_Click);
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.simpleButton1.ImageUri.Uri = "Refresh";
+            this.simpleButton1.Location = new System.Drawing.Point(12, 74);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(107, 37);
+            this.simpleButton1.TabIndex = 3;
+            this.simpleButton1.Text = "Actualizar";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // Funcionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(671, 448);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btnexportar);
             this.Controls.Add(this.gridControl1);
             this.MaximizeBox = false;
@@ -113,5 +128,6 @@
         private DevExpress.XtraEditors.SimpleButton btnexportar;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

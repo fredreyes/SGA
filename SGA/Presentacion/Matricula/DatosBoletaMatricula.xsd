@@ -24,8 +24,7 @@
             <Mappings>
               <Mapping SourceColumn="MatriculaId" DataSetColumn="MatriculaId" />
               <Mapping SourceColumn="FechaMatricula" DataSetColumn="FechaMatricula" />
-              <Mapping SourceColumn="CicloEscolarId" DataSetColumn="CicloEscolarId" />
-              <Mapping SourceColumn="Ciclo" DataSetColumn="Ciclo" />
+              <Mapping SourceColumn="CicloEscolar" DataSetColumn="CicloEscolar" />
               <Mapping SourceColumn="AlumnoId" DataSetColumn="AlumnoId" />
               <Mapping SourceColumn="Estudiante" DataSetColumn="Estudiante" />
               <Mapping SourceColumn="GradoId" DataSetColumn="GradoId" />
@@ -33,8 +32,6 @@
               <Mapping SourceColumn="Seccion" DataSetColumn="Seccion" />
               <Mapping SourceColumn="TurnoId" DataSetColumn="TurnoId" />
               <Mapping SourceColumn="Turno" DataSetColumn="Turno" />
-              <Mapping SourceColumn="ColegioId" DataSetColumn="ColegioId" />
-              <Mapping SourceColumn="Colegio" DataSetColumn="Colegio" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -51,8 +48,7 @@
             <xs:sequence>
               <xs:element name="MatriculaId" msprop:Generator_ColumnVarNameInTable="columnMatriculaId" msprop:Generator_ColumnPropNameInRow="MatriculaId" msprop:Generator_ColumnPropNameInTable="MatriculaIdColumn" msprop:Generator_UserColumnName="MatriculaId" type="xs:int" />
               <xs:element name="FechaMatricula" msprop:Generator_ColumnVarNameInTable="columnFechaMatricula" msprop:Generator_ColumnPropNameInRow="FechaMatricula" msprop:Generator_ColumnPropNameInTable="FechaMatriculaColumn" msprop:Generator_UserColumnName="FechaMatricula" type="xs:dateTime" />
-              <xs:element name="CicloEscolarId" msprop:Generator_ColumnVarNameInTable="columnCicloEscolarId" msprop:Generator_ColumnPropNameInRow="CicloEscolarId" msprop:Generator_ColumnPropNameInTable="CicloEscolarIdColumn" msprop:Generator_UserColumnName="CicloEscolarId" type="xs:int" minOccurs="0" />
-              <xs:element name="Ciclo" msprop:Generator_ColumnVarNameInTable="columnCiclo" msprop:Generator_ColumnPropNameInRow="Ciclo" msprop:Generator_ColumnPropNameInTable="CicloColumn" msprop:Generator_UserColumnName="Ciclo" type="xs:int" />
+              <xs:element name="CicloEscolar" msprop:Generator_ColumnVarNameInTable="columnCicloEscolar" msprop:Generator_ColumnPropNameInRow="CicloEscolar" msprop:Generator_ColumnPropNameInTable="CicloEscolarColumn" msprop:Generator_UserColumnName="CicloEscolar" type="xs:int" minOccurs="0" />
               <xs:element name="AlumnoId" msprop:Generator_ColumnVarNameInTable="columnAlumnoId" msprop:Generator_ColumnPropNameInRow="AlumnoId" msprop:Generator_ColumnPropNameInTable="AlumnoIdColumn" msprop:Generator_UserColumnName="AlumnoId" type="xs:int" />
               <xs:element name="Estudiante" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEstudiante" msprop:Generator_ColumnPropNameInRow="Estudiante" msprop:Generator_ColumnPropNameInTable="EstudianteColumn" msprop:Generator_UserColumnName="Estudiante" minOccurs="0">
                 <xs:simpleType>
@@ -81,14 +77,6 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ColegioId" msprop:Generator_ColumnVarNameInTable="columnColegioId" msprop:Generator_ColumnPropNameInRow="ColegioId" msprop:Generator_ColumnPropNameInTable="ColegioIdColumn" msprop:Generator_UserColumnName="ColegioId" type="xs:int" minOccurs="0" />
-              <xs:element name="Colegio" msprop:Generator_ColumnVarNameInTable="columnColegio" msprop:Generator_ColumnPropNameInRow="Colegio" msprop:Generator_ColumnPropNameInTable="ColegioColumn" msprop:Generator_UserColumnName="Colegio">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

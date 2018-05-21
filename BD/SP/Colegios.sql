@@ -9,7 +9,7 @@ create proc IngresarColegio
 )
 as
 begin
-		insert into Colegio values
+		insert into dba.Colegio values
 		(
 			@Colegio,
 			@Telefono,
@@ -27,7 +27,7 @@ create proc ModificarColegio
 as
 begin
 		begin try
-		update Colegio set
+		update dba.Colegio set
 			Colegio =	@Colegio,
 			Telefono = @Telefono,
 			DepartamentoId = @DepartamentoId
@@ -45,6 +45,6 @@ create proc EliminarColegio
 )
 as
 begin
-delete Colegio where ColegioId = @ColegioId
+delete dba.Colegio where ColegioId = @ColegioId
 end
 go

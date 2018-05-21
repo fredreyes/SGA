@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtprofesion = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btningresar = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
             this.chkeditar = new MaterialSkin.Controls.MaterialCheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -48,13 +48,21 @@
             this.editarToolStripMenuItem,
             this.eliminarToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(123, 48);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Image = global::Presentacion.Properties.Resources.edit;
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Image = global::Presentacion.Properties.Resources.delete__1_;
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
@@ -62,7 +70,7 @@
             // 
             this.txtprofesion.Depth = 0;
             this.txtprofesion.Hint = "Ocupación o Profesión";
-            this.txtprofesion.Location = new System.Drawing.Point(67, 92);
+            this.txtprofesion.Location = new System.Drawing.Point(67, 103);
             this.txtprofesion.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtprofesion.Name = "txtprofesion";
             this.txtprofesion.PasswordChar = '\0';
@@ -83,7 +91,7 @@
             this.btningresar.ForeColor = System.Drawing.Color.White;
             this.btningresar.Image = global::Presentacion.Properties.Resources.save;
             this.btningresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btningresar.Location = new System.Drawing.Point(40, 159);
+            this.btningresar.Location = new System.Drawing.Point(55, 132);
             this.btningresar.Name = "btningresar";
             this.btningresar.Size = new System.Drawing.Size(103, 38);
             this.btningresar.TabIndex = 4;
@@ -102,7 +110,7 @@
             this.btncancelar.ForeColor = System.Drawing.Color.White;
             this.btncancelar.Image = global::Presentacion.Properties.Resources.delete;
             this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncancelar.Location = new System.Drawing.Point(224, 159);
+            this.btncancelar.Location = new System.Drawing.Point(224, 132);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(103, 38);
             this.btncancelar.TabIndex = 5;
@@ -117,7 +125,7 @@
             this.chkeditar.Depth = 0;
             this.chkeditar.Enabled = false;
             this.chkeditar.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkeditar.Location = new System.Drawing.Point(261, 118);
+            this.chkeditar.Location = new System.Drawing.Point(261, 70);
             this.chkeditar.Margin = new System.Windows.Forms.Padding(0);
             this.chkeditar.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkeditar.MouseState = MaterialSkin.MouseState.HOVER;
@@ -127,6 +135,7 @@
             this.chkeditar.TabIndex = 6;
             this.chkeditar.Text = "Editar";
             this.chkeditar.UseVisualStyleBackColor = true;
+            this.chkeditar.Visible = false;
             // 
             // dataGridView1
             // 
@@ -135,24 +144,16 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
-            this.dataGridView1.Location = new System.Drawing.Point(40, 227);
+            this.dataGridView1.Location = new System.Drawing.Point(19, 176);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(326, 150);
             this.dataGridView1.TabIndex = 7;
-            // 
-            // editarToolStripMenuItem
-            // 
-            this.editarToolStripMenuItem.Image = global::Presentacion.Properties.Resources.edit;
-            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.editarToolStripMenuItem.Text = "Editar";
-            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // Ocupaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 389);
+            this.ClientSize = new System.Drawing.Size(357, 348);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.chkeditar);
             this.Controls.Add(this.btncancelar);

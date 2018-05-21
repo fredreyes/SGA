@@ -72,7 +72,8 @@
             this.ClientSize = new System.Drawing.Size(806, 354);
             this.Controls.Add(this.reportViewer1);
             this.Name = "BoletaMatricula";
-            this.Text = "BoletaMatricula";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Boleta Matricula";
             this.Load += new System.EventHandler(this.BoletaMatricula_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BoletaMatriculaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DatosBoletaMatricula)).EndInit();

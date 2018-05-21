@@ -21,8 +21,6 @@ namespace Negocio
         {
             try
             {
-                if (e.Aula == "")
-                    throw new ArgumentException("Ingrese una Aula");
                 List<EAulas> Lista = ListaAulas().Where(x => x.Aula == e.Aula && x.GradoId == e.GradoId && e.Turno == x.Turno).ToList();
                 if(Lista.Count >0)
                     throw new ArgumentException("La Aula " + e.Aula + " ya existe");

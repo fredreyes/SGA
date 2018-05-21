@@ -283,9 +283,7 @@ namespace Presentacion.Matricula {
             
             private global::System.Data.DataColumn columnFechaMatricula;
             
-            private global::System.Data.DataColumn columnCicloEscolarId;
-            
-            private global::System.Data.DataColumn columnCiclo;
+            private global::System.Data.DataColumn columnCicloEscolar;
             
             private global::System.Data.DataColumn columnAlumnoId;
             
@@ -300,10 +298,6 @@ namespace Presentacion.Matricula {
             private global::System.Data.DataColumn columnTurnoId;
             
             private global::System.Data.DataColumn columnTurno;
-            
-            private global::System.Data.DataColumn columnColegioId;
-            
-            private global::System.Data.DataColumn columnColegio;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -356,17 +350,9 @@ namespace Presentacion.Matricula {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CicloEscolarIdColumn {
+            public global::System.Data.DataColumn CicloEscolarColumn {
                 get {
-                    return this.columnCicloEscolarId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CicloColumn {
-                get {
-                    return this.columnCiclo;
+                    return this.columnCicloEscolar;
                 }
             }
             
@@ -428,22 +414,6 @@ namespace Presentacion.Matricula {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ColegioIdColumn {
-                get {
-                    return this.columnColegioId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ColegioColumn {
-                get {
-                    return this.columnColegio;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -479,22 +449,19 @@ namespace Presentacion.Matricula {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BoletaMatriculaRow AddBoletaMatriculaRow(int MatriculaId, System.DateTime FechaMatricula, int CicloEscolarId, int Ciclo, int AlumnoId, string Estudiante, int GradoId, string Grado, string Seccion, int TurnoId, string Turno, int ColegioId, string Colegio) {
+            public BoletaMatriculaRow AddBoletaMatriculaRow(int MatriculaId, System.DateTime FechaMatricula, int CicloEscolar, int AlumnoId, string Estudiante, int GradoId, string Grado, string Seccion, int TurnoId, string Turno) {
                 BoletaMatriculaRow rowBoletaMatriculaRow = ((BoletaMatriculaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MatriculaId,
                         FechaMatricula,
-                        CicloEscolarId,
-                        Ciclo,
+                        CicloEscolar,
                         AlumnoId,
                         Estudiante,
                         GradoId,
                         Grado,
                         Seccion,
                         TurnoId,
-                        Turno,
-                        ColegioId,
-                        Colegio};
+                        Turno};
                 rowBoletaMatriculaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBoletaMatriculaRow);
                 return rowBoletaMatriculaRow;
@@ -526,8 +493,7 @@ namespace Presentacion.Matricula {
             internal void InitVars() {
                 this.columnMatriculaId = base.Columns["MatriculaId"];
                 this.columnFechaMatricula = base.Columns["FechaMatricula"];
-                this.columnCicloEscolarId = base.Columns["CicloEscolarId"];
-                this.columnCiclo = base.Columns["Ciclo"];
+                this.columnCicloEscolar = base.Columns["CicloEscolar"];
                 this.columnAlumnoId = base.Columns["AlumnoId"];
                 this.columnEstudiante = base.Columns["Estudiante"];
                 this.columnGradoId = base.Columns["GradoId"];
@@ -535,8 +501,6 @@ namespace Presentacion.Matricula {
                 this.columnSeccion = base.Columns["Seccion"];
                 this.columnTurnoId = base.Columns["TurnoId"];
                 this.columnTurno = base.Columns["Turno"];
-                this.columnColegioId = base.Columns["ColegioId"];
-                this.columnColegio = base.Columns["Colegio"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -546,10 +510,8 @@ namespace Presentacion.Matricula {
                 base.Columns.Add(this.columnMatriculaId);
                 this.columnFechaMatricula = new global::System.Data.DataColumn("FechaMatricula", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFechaMatricula);
-                this.columnCicloEscolarId = new global::System.Data.DataColumn("CicloEscolarId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCicloEscolarId);
-                this.columnCiclo = new global::System.Data.DataColumn("Ciclo", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCiclo);
+                this.columnCicloEscolar = new global::System.Data.DataColumn("CicloEscolar", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCicloEscolar);
                 this.columnAlumnoId = new global::System.Data.DataColumn("AlumnoId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAlumnoId);
                 this.columnEstudiante = new global::System.Data.DataColumn("Estudiante", typeof(string), null, global::System.Data.MappingType.Element);
@@ -564,16 +526,11 @@ namespace Presentacion.Matricula {
                 base.Columns.Add(this.columnTurnoId);
                 this.columnTurno = new global::System.Data.DataColumn("Turno", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTurno);
-                this.columnColegioId = new global::System.Data.DataColumn("ColegioId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnColegioId);
-                this.columnColegio = new global::System.Data.DataColumn("Colegio", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnColegio);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMatriculaId}, true));
                 this.columnMatriculaId.AllowDBNull = false;
                 this.columnMatriculaId.Unique = true;
                 this.columnFechaMatricula.AllowDBNull = false;
-                this.columnCiclo.AllowDBNull = false;
                 this.columnAlumnoId.AllowDBNull = false;
                 this.columnEstudiante.ReadOnly = true;
                 this.columnEstudiante.MaxLength = 61;
@@ -584,8 +541,6 @@ namespace Presentacion.Matricula {
                 this.columnTurnoId.AllowDBNull = false;
                 this.columnTurno.AllowDBNull = false;
                 this.columnTurno.MaxLength = 20;
-                this.columnColegio.AllowDBNull = false;
-                this.columnColegio.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -750,28 +705,17 @@ namespace Presentacion.Matricula {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int CicloEscolarId {
+            public int CicloEscolar {
                 get {
                     try {
-                        return ((int)(this[this.tableBoletaMatricula.CicloEscolarIdColumn]));
+                        return ((int)(this[this.tableBoletaMatricula.CicloEscolarColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CicloEscolarId\' de la tabla \'BoletaMatricula\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CicloEscolar\' de la tabla \'BoletaMatricula\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBoletaMatricula.CicloEscolarIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Ciclo {
-                get {
-                    return ((int)(this[this.tableBoletaMatricula.CicloColumn]));
-                }
-                set {
-                    this[this.tableBoletaMatricula.CicloColumn] = value;
+                    this[this.tableBoletaMatricula.CicloEscolarColumn] = value;
                 }
             }
             
@@ -864,41 +808,14 @@ namespace Presentacion.Matricula {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ColegioId {
-                get {
-                    try {
-                        return ((int)(this[this.tableBoletaMatricula.ColegioIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ColegioId\' de la tabla \'BoletaMatricula\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBoletaMatricula.ColegioIdColumn] = value;
-                }
+            public bool IsCicloEscolarNull() {
+                return this.IsNull(this.tableBoletaMatricula.CicloEscolarColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Colegio {
-                get {
-                    return ((string)(this[this.tableBoletaMatricula.ColegioColumn]));
-                }
-                set {
-                    this[this.tableBoletaMatricula.ColegioColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCicloEscolarIdNull() {
-                return this.IsNull(this.tableBoletaMatricula.CicloEscolarIdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCicloEscolarIdNull() {
-                this[this.tableBoletaMatricula.CicloEscolarIdColumn] = global::System.Convert.DBNull;
+            public void SetCicloEscolarNull() {
+                this[this.tableBoletaMatricula.CicloEscolarColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -923,18 +840,6 @@ namespace Presentacion.Matricula {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetSeccionNull() {
                 this[this.tableBoletaMatricula.SeccionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsColegioIdNull() {
-                return this.IsNull(this.tableBoletaMatricula.ColegioIdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetColegioIdNull() {
-                this[this.tableBoletaMatricula.ColegioIdColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1099,8 +1004,7 @@ namespace Presentacion.Matricula.DatosBoletaMatriculaTableAdapters {
             tableMapping.DataSetTable = "BoletaMatricula";
             tableMapping.ColumnMappings.Add("MatriculaId", "MatriculaId");
             tableMapping.ColumnMappings.Add("FechaMatricula", "FechaMatricula");
-            tableMapping.ColumnMappings.Add("CicloEscolarId", "CicloEscolarId");
-            tableMapping.ColumnMappings.Add("Ciclo", "Ciclo");
+            tableMapping.ColumnMappings.Add("CicloEscolar", "CicloEscolar");
             tableMapping.ColumnMappings.Add("AlumnoId", "AlumnoId");
             tableMapping.ColumnMappings.Add("Estudiante", "Estudiante");
             tableMapping.ColumnMappings.Add("GradoId", "GradoId");
@@ -1108,8 +1012,6 @@ namespace Presentacion.Matricula.DatosBoletaMatriculaTableAdapters {
             tableMapping.ColumnMappings.Add("Seccion", "Seccion");
             tableMapping.ColumnMappings.Add("TurnoId", "TurnoId");
             tableMapping.ColumnMappings.Add("Turno", "Turno");
-            tableMapping.ColumnMappings.Add("ColegioId", "ColegioId");
-            tableMapping.ColumnMappings.Add("Colegio", "Colegio");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

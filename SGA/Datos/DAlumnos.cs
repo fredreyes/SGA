@@ -72,7 +72,7 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("IngresarEstudiante");
+                comando = new SqlCommand("IngresarEstudiante", conexion);
                 //Alumnos
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Nombres", a.Nombres);
@@ -92,20 +92,18 @@ namespace Datos
                 comando.Parameters.AddWithValue("@TelefonoMadre", p.TELEFONO_MADRE);
                 comando.Parameters.AddWithValue("@EmailMadre", p.EMAIL_MADRE);
                 comando.Parameters.AddWithValue("@OcupacionMadre", p.OCUPACION_MADRE);
-                //Documentos Alumnos
+                ////Documentos Alumnos
                 comando.Parameters.AddWithValue("@PartidaNaciminto", d.PARTIDA_DE_NACIMINETO);
                 comando.Parameters.AddWithValue("@CertificadoNotas", d.CERTIFICADO_NOTAS);
                 comando.Parameters.AddWithValue("@TarjetaVacuna", d.TARJETA_VACUNA);
                 comando.Parameters.AddWithValue("@CartaTraslado", d.CARTA_TRASLADO);
                 comando.Parameters.AddWithValue("@CertificadoSalud", d.CERTIFICADO_DE_SALUD);
                 comando.Parameters.AddWithValue("@Foto", d.FOTO);
-                //Tutor Alumno
-                //Tutor Alumno
+                ////Tutor Alumno
                 comando.Parameters.AddWithValue("@NombreTutor", a.NombreTutor);
                 comando.Parameters.AddWithValue("@CedulaTutor", a.CedulaTutor);
                 comando.Parameters.AddWithValue("@TelefonoTutor", a.TelefonoTutor);
                 comando.Parameters.AddWithValue("@ParentezcoAlumno", a.ParentezcoAlumno);
-                comando.Connection = conexion;
                 conexion.Open();
                 comando.ExecuteNonQuery();
                 conexion.Close();

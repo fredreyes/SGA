@@ -17,7 +17,7 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("select * FROM GRADOS ", conexion);
+                comando = new SqlCommand("select * FROM dba.GRADOS ", conexion);
                 comando.CommandType = CommandType.Text;
                 comando.Connection = conexion;
                 conexion.Open();

@@ -6,13 +6,12 @@ create proc BuscarAsignaturaPorGrados
 )
 as
 begin
-SELECT PlanClaseID,PC.AsignaturaId,A.Asignatura,PC.GradoId,CicloEscolarID FROM PlanClase PC
-left join Grados G on PC.GradoId = G.GradoId
-left join Asignaturas A on PC.AsignaturaId = A.AsignaturaId
+SELECT PlanClaseID,PC.AsignaturaId,A.Asignatura,PC.GradoId,CicloEscolar FROM PlanClase PC
+left join dba.Grados G on PC.GradoId = G.GradoId
+left join dba.Asignaturas A on PC.AsignaturaId = A.AsignaturaId
 where pc.GradoId = @GradoId
 end
 go
-
 
 create proc BuscarDocenePorAsignatura
 (
@@ -20,9 +19,9 @@ create proc BuscarDocenePorAsignatura
 )
 as
 begin
-select Nombres,Apellidos,Asignatura,md.FuncionarioId from MateriaDocente md
-inner join Funcionarios f on md.FuncionarioId = f.FuncionarioId
-left join Asignaturas a on md.AsignaturaId = a.AsignaturaId
+select Nombres,Apellidos,Asignatura,md.FuncionarioId from dbd.MateriaDocente md
+inner join dbd.Funcionarios f on md.FuncionarioId = f.FuncionarioId
+left join dba.Asignaturas a on md.AsignaturaId = a.AsignaturaId
 WHERE md.AsignaturaId = @Asignatura
 end
 go
@@ -37,7 +36,7 @@ create Proc InsertarCargaAcademicaDocente
 )
 as 
 begin
-insert into CargaAcademicaDocente
+insert into dbd.CargaAcademicaDocente
 values
 (
 @FuncionarioId,

@@ -120,7 +120,7 @@ namespace Presentacion.Otros
                 NDepartamento n = new NDepartamento();
                 d.DepartamentoID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["DepartamentoID"].Value.ToString());
                 var Departamento = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Departamento"].Value.ToString();
-                DialogResult o = MessageBox.Show("¿Eliminar el Departamento" + Departamento + "?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                DialogResult o = MessageBox.Show("¿Eliminar el Departamento " + Departamento + " ?", "SGA", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (o == DialogResult.OK)
                 {
                     n.EliminarDepartamento(d);

@@ -31,9 +31,9 @@ namespace Negocio
             {
                 if (t.Turno == "")
                     throw new ArgumentException("Ingrese un Turno");
-                //List<ETurnos> lista = ListaTurnos().Where(x => x.Turno == t.Turno).ToList();
-                //if (lista.Count >0)
-                //    throw new ArgumentException("El Turno: " + t.Turno + " ya existe");
+                List<ETurnos> lista = ListaTurnos().Where(x => x.Turno == t.Turno).ToList();
+                if (lista.Count >0)
+                   throw new ArgumentException("El Turno: " + t.Turno + " ya existe");
                 DTurno d = new DTurno();
                 d.IngresarTurno(t);
                     

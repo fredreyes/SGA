@@ -36,29 +36,38 @@ create proc IngresarEstudiante
 )
 as
 begin 
-declare @Activo bit
-set @Activo = 1
+--ciclo escolar
+declare @Año int = (select RIGHT(Ciclo,2) from dba.Parametros where Descripcion='CicloAcademico')
+--pADRES ID
+declare @PadresTutorId INT
+select @PadresTutorId = ISNULL(max(PadresTutorId),0) +1 from PadresTutorAlumno
+--TUTOR ID
+declare @TutorAlumnoID INT
+select @TutorAlumnoID = ISNULL(max(TutorAlumnoID),0) +1 from AlumnosTutor
+--dOCUEMTOS aLUMNOS
+declare @DocumentoId INT
+select @DocumentoId = ISNULL(max(DocumentoId),0) +1 from DocumentosAlumnos
+declare @Activo bit = 1
 DECLARE @ID int
-declare @Año int = (select RIGHT(Ciclo,2) from CicloEscolar where Activo = 1)
-declare @Sumar int  = (select top 1 COUNT(AlumnoId) from Alumnos where LEFT(AlumnoId,2) = @Año group by left(AlumnoId,2)) + 2
-select @ID = CONCAT(@Año,'0000')+ @Sumar
-select @ID
-		Begin Tran 
+declare @seleccion int = (select max(AlumnoId) from Alumnos where LEFT(AlumnoId,2) = @Año)
+	begin tran
+		IF EXISTS (SELECT AlumnoId FROM Alumnos where LEFT(AlumnoId,2) = @Año)
+		begin
+		declare @Sumar int  = (select top 1 COUNT(AlumnoId) from Alumnos where LEFT(AlumnoId,2) = @Año group by left(AlumnoId,2)) + 2
+		select @ID = concat(@Año,'0000')+@Sumar
 					insert into Alumnos values
-			(
-			@ID,
-			@Nombres,
-			@Apellidos,
-			@Sexo,
-			@FechaNacimiento,
-			@Direccion,
-			@CodigoMined,
-			@Activo
-			)
+						(
+						@ID,
+						@Nombres,
+						@Apellidos,
+						@Sexo,
+						@FechaNacimiento,
+						@Direccion,
+						@CodigoMined,
+						@Activo
+		 			)
 				if @ID is not null
 				begin
-				declare @PadresTutorId INT
-				select @PadresTutorId = ISNULL(max(PadresTutorId),0) +1 from PadresTutorAlumno
 					insert into PadresTutorAlumno 
 					values 
 					(
@@ -76,8 +85,6 @@ select @ID
 					@OcupacionMadre
 					)
 				--TUTOR
-				declare @TutorAlumnoID INT
-				select @TutorAlumnoID = ISNULL(max(TutorAlumnoID),0) +1 from AlumnosTutor
 				insert into AlumnosTutor values 
 				(
 				@TutorAlumnoID,
@@ -88,8 +95,6 @@ select @ID
 				@ParentezcoAlumno
 				)
 				--documentos
-				declare @DocumentoId INT
-				select @DocumentoId = ISNULL(max(DocumentoId),0) +1 from DocumentosAlumnos
 				insert into DocumentosAlumnos values
 				(
 				@DocumentoId,
@@ -102,9 +107,67 @@ select @ID
 				@Foto
 				)
 				end
-		commit
-		if @@TRANCOUNT> 1
-		Rollback tran
+		 end
+		 --Si no 
+		 else
+			begin
+			    set @ID =  concat(@Año,'0000') + 0 
+					insert into Alumnos values
+						(
+						@ID,
+						@Nombres,
+						@Apellidos,
+						@Sexo,
+						@FechaNacimiento,
+						@Direccion,
+						@CodigoMined,
+						@Activo
+		 			)
+					if @ID is not null
+				begin
+					insert into PadresTutorAlumno 
+					values 
+					(
+					@PadresTutorId,
+					@ID,
+					@NombresPadres,
+					@CedulaPadre,
+					@TelefonoPadre,
+					@EmailPadre,
+					@OcupacionPadre,
+					@NombresMadres,
+					@CedulaMadre,
+					@TelefonoMadre,
+					@EmailMadre,
+					@OcupacionMadre
+					)
+				--TUTOR
+				insert into AlumnosTutor values 
+				(
+				@TutorAlumnoID,
+				@ID,
+				@NombreTutor,
+				@CedulaTutor,
+				@TelefonoTutor,
+				@ParentezcoAlumno
+				)
+				--documentos
+				insert into DocumentosAlumnos values
+				(
+				@DocumentoId,
+				@ID,
+				@PartidaNaciminto,
+				@CertificadoNotas,
+				@TarjetaVacuna,
+				@CartaTraslado,
+				@CertificadoSalud,
+				@Foto
+				)
+			end
+		end
+	commit
+	if @@trancount > 0
+	ROLLBACK TRAN
 end
 go
 
@@ -206,18 +269,7 @@ TelefonoMadre,EmailMadre,OcupacionMadre,TutorAlumnoID,NombreTutor,CedulaTutor,Te
 inner join DocumentosAlumnos d on a.AlumnoId=d.AlumnoId
 inner join PadresTutorAlumno p on a.AlumnoId=p.AlumnoId
 inner join AlumnosTutor ATU on a.AlumnoId = ATU.AlumnoId
-where foto is not null and a.AlumnoId = @AlumnoId  
+where a.AlumnoId = @AlumnoId  
 end
 go
 
-create proc ListaAlumnoMatricula
-as
-begin
-select a.AlumnoId,Nombres,Apellidos,Sexo,FechaNacimiento,Direccion,CodigoMined,Activo
- from Alumnos a
-inner join DocumentosAlumnos d on a.AlumnoId=d.AlumnoId
-inner join PadresTutorAlumno p on a.AlumnoId=p.AlumnoId
-inner join AlumnosTutor ATU on a.AlumnoId = ATU.AlumnoId
-where foto is not null   
-end
-go

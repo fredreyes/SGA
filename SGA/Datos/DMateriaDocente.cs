@@ -17,7 +17,12 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("select MateriaDocenteId,MD.FuncionarioId, CONCAT(Nombres, ' ',Apellidos) AS Docente, MD.AsignaturaId, Asignatura,Mañana,Tarde,Primaria,Secundaria from MateriaDocente MD inner join Funcionarios F on MD.FuncionarioId = F.FuncionarioId inner join Asignaturas A on MD.AsignaturaId = A.AsignaturaId",conexion);
+                string sql = "select MateriaDocenteId,MD.FuncionarioId, CONCAT(Nombres, ' ',Apellidos) AS Docente, MD.AsignaturaId, Asignatura,Mañana,Tarde,Primaria,Secundaria \n"+
+                             "from dbd.MateriaDocente MD \n"+
+                             "inner join dbd.Funcionarios F on MD.FuncionarioId = F.FuncionarioId \n"+
+                             "inner join dba.Asignaturas A on MD.AsignaturaId = A.AsignaturaId \n";
+
+                comando = new SqlCommand(sql,conexion);
                 comando.CommandType = CommandType.Text;
                 conexion.Open();
                 List<EMateriasDocentes> lista = new List<EMateriasDocentes>();

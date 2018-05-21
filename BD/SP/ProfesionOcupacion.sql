@@ -8,7 +8,7 @@ create proc InsertarOcupacion
 as
 begin
 	begin try
-					insert into ProfesionOcupacion
+					insert into dbd.ProfesionOcupacion
 					values
 					(
 					@Ocupacion
@@ -28,7 +28,7 @@ CREATE PROC EditarOcupacion
 as
 begin
 		begin try
-					update ProfesionOcupacion set
+					update dbd.ProfesionOcupacion set
 					Ocupacion = @Ocupacion
 					where  @OcupacionId = OcupacionId
 		end try
@@ -44,6 +44,6 @@ create proc eliminarOcupacion
 )
 as
 begin
-	delete ProfesionOcupacion where OcupacionId = @ocupacionId
+	delete dbd.ProfesionOcupacion where OcupacionId = @ocupacionId
 end
 go

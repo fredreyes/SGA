@@ -57,9 +57,6 @@ namespace Negocio
         {
             try
             {
-                //List<EAlumnos> lista = ListaAlumnos(alumno).Where(x => x.CodigoMined == alumno.CodigoMined).ToList();
-                //if (lista.Count > 0)
-                  //  throw new ArgumentException("El codigo Mined " + alumno.CodigoMined + " ya existe");
                 DAlumnos d = new DAlumnos();
                 d.IngresarAlumno(alumno,padres,documentos);
             }

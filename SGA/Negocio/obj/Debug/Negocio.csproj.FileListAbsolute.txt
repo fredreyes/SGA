@@ -52,3 +52,12 @@ C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Negocio\bin\Debug\Entidades.pdb
 C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
 C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Negocio\obj\Debug\Negocio.dll
 C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Freddy\Pictures\SGA\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\Freddy\Pictures\SGA\Negocio\bin\Debug\Negocio.dll
+C:\Users\Freddy\Pictures\SGA\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Freddy\Pictures\SGA\Negocio\bin\Debug\Datos.dll
+C:\Users\Freddy\Pictures\SGA\Negocio\bin\Debug\Entidades.dll
+C:\Users\Freddy\Pictures\SGA\Negocio\bin\Debug\Datos.pdb
+C:\Users\Freddy\Pictures\SGA\Negocio\bin\Debug\Entidades.pdb
+C:\Users\Freddy\Pictures\SGA\Negocio\obj\Debug\Negocio.dll
+C:\Users\Freddy\Pictures\SGA\Negocio\obj\Debug\Negocio.pdb

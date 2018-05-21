@@ -116,18 +116,19 @@ namespace Presentacion.Otros
                     NGrado N = new NGrado();
                     if (Bandera == 0)
                     {
-                        g.Grado = txtxgrado.Text;
-                        char x;
-                        if (chk1.Checked)
-                            x = Convert.ToChar('I');
-                        else if (chk2.Checked)
-                            x = Convert.ToChar('P');
-                        else
-                            x = Convert.ToChar('S');
-                        g.Tipo = Convert.ToChar(x).ToString();
-                        N.IngresarGrado(g);
-                        MessageBox.Show("Grados ingresados con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LimpiaContorles();
+                            g.Grado = txtxgrado.Text;
+                            char x;
+                            if (chk1.Checked)
+                                x = Convert.ToChar('I');
+                            else if (chk2.Checked)
+                                x = Convert.ToChar('P');
+                            else
+                                x = Convert.ToChar('S');
+                            g.Tipo = Convert.ToChar(x).ToString();
+                            N.IngresarGrado(g);
+                            LimpiaContorles();
+                            txtxgrado.Focus();
+                            
                     }
                     if (Bandera == 1)
                     {
@@ -144,6 +145,7 @@ namespace Presentacion.Otros
                         g.Activo = Convert.ToBoolean(rbtnactivo.Checked ? 1 : 0);
                         N.ModificarGrado(g);
                         MessageBox.Show("Grados Modificados con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtxgrado.Focus();
                         LimpiaContorles();
                     }
                 }

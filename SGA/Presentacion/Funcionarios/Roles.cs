@@ -98,7 +98,7 @@ namespace Presentacion.Funcionarios
             catch (Exception ex)
             {
 
-                throw ex;
+                MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

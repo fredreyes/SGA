@@ -32,8 +32,7 @@ namespace Datos
                     pc.Asignatura.Asignatura = leer[2].ToString();
                     pc.Grado.GradoId = (int)leer[3];
                     pc.Grado.Grado = leer[4].ToString();
-                    pc.CicloEscolar.CicloEscolarId = (int)leer[5];
-                    pc.CicloEscolar.ciclo = (int)leer[6];
+                    pc.CicloEscolar.ciclo = (int)leer[5];
                     lista.Add(pc);
                 }
                 leer.Close();

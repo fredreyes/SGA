@@ -41,6 +41,8 @@
             this.disponibilidadDocenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargaAcademicaDocenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDocenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoDocenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarDocenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.rolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,8 +67,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Presentacion.WaitFormGlobal), true, true);
-            this.nuevoDocenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscarDocenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoAlumnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMatricula)).BeginInit();
             this.Matricula.SuspendLayout();
@@ -100,6 +101,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1218, 92);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnMatricula
             // 
@@ -180,6 +182,7 @@
             this.funcionariosToolStripMenuItem1.Name = "funcionariosToolStripMenuItem1";
             this.funcionariosToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
             this.funcionariosToolStripMenuItem1.Text = "Funcionarios";
+            this.funcionariosToolStripMenuItem1.Click += new System.EventHandler(this.funcionariosToolStripMenuItem1_Click);
             // 
             // disponibilidadDocenteToolStripMenuItem
             // 
@@ -204,6 +207,20 @@
             this.gestionDocenteToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.gestionDocenteToolStripMenuItem.Text = "Gestión Docente";
             this.gestionDocenteToolStripMenuItem.Click += new System.EventHandler(this.gestionDocenteToolStripMenuItem_Click);
+            // 
+            // nuevoDocenteToolStripMenuItem
+            // 
+            this.nuevoDocenteToolStripMenuItem.Name = "nuevoDocenteToolStripMenuItem";
+            this.nuevoDocenteToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.nuevoDocenteToolStripMenuItem.Text = "Nuevo Docente";
+            this.nuevoDocenteToolStripMenuItem.Click += new System.EventHandler(this.nuevoDocenteToolStripMenuItem_Click);
+            // 
+            // buscarDocenteToolStripMenuItem
+            // 
+            this.buscarDocenteToolStripMenuItem.Name = "buscarDocenteToolStripMenuItem";
+            this.buscarDocenteToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.buscarDocenteToolStripMenuItem.Text = "Buscar Docente";
+            this.buscarDocenteToolStripMenuItem.Click += new System.EventHandler(this.buscarDocenteToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem2
             // 
@@ -260,9 +277,10 @@
             this.Alumno.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionAlumnoToolStripMenuItem,
             this.usuariosToolStripMenuItem,
-            this.verAlumnosToolStripMenuItem});
+            this.verAlumnosToolStripMenuItem,
+            this.nuevoAlumnoToolStripMenuItem});
             this.Alumno.Name = "Alumno";
-            this.Alumno.Size = new System.Drawing.Size(162, 70);
+            this.Alumno.Size = new System.Drawing.Size(162, 114);
             // 
             // gestionAlumnoToolStripMenuItem
             // 
@@ -430,19 +448,12 @@
             // 
             this.splashScreenManager1.ClosingDelay = 500;
             // 
-            // nuevoDocenteToolStripMenuItem
+            // nuevoAlumnoToolStripMenuItem
             // 
-            this.nuevoDocenteToolStripMenuItem.Name = "nuevoDocenteToolStripMenuItem";
-            this.nuevoDocenteToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.nuevoDocenteToolStripMenuItem.Text = "Nuevo Docente";
-            this.nuevoDocenteToolStripMenuItem.Click += new System.EventHandler(this.nuevoDocenteToolStripMenuItem_Click);
-            // 
-            // buscarDocenteToolStripMenuItem
-            // 
-            this.buscarDocenteToolStripMenuItem.Name = "buscarDocenteToolStripMenuItem";
-            this.buscarDocenteToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.buscarDocenteToolStripMenuItem.Text = "Buscar Docente";
-            this.buscarDocenteToolStripMenuItem.Click += new System.EventHandler(this.buscarDocenteToolStripMenuItem_Click);
+            this.nuevoAlumnoToolStripMenuItem.Name = "nuevoAlumnoToolStripMenuItem";
+            this.nuevoAlumnoToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.nuevoAlumnoToolStripMenuItem.Text = "Nuevo Alumno";
+            this.nuevoAlumnoToolStripMenuItem.Click += new System.EventHandler(this.nuevoAlumnoToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -518,5 +529,6 @@
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
         private System.Windows.Forms.ToolStripMenuItem nuevoDocenteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarDocenteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevoAlumnoToolStripMenuItem;
     }
 }

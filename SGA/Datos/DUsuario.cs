@@ -59,7 +59,7 @@ namespace Datos
             try
             {
                 comando = new SqlCommand
-                ("select UsuarioID,Usuario,U.FuncionarioID,f.Nombres,f.Apellidos,u.RolId,r.Descripcion,u.Activo from Usuarios U inner join Funcionarios f on U.FuncionarioID = f.FuncionarioId inner join Rol r on U.RolId = r.RolId");
+                ("select UsuarioID,Usuario,U.FuncionarioID,f.Nombres,f.Apellidos,u.RolId,r.Descripcion,u.Activo from Usuarios U inner join dbd.Funcionarios f on U.FuncionarioID = f.FuncionarioId inner join Rol r on U.RolId = r.RolId");
                 comando.CommandType = CommandType.Text;
                 comando.Connection = conexion;
                 conexion.Open();

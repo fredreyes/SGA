@@ -63,7 +63,7 @@ namespace Presentacion.Otros
                                       i.GradoId,
                                       i.Grado,
                                       i.Activo
-                                  }).ToList();
+                                  }).OrderBy(x => x.TurnoName).ToList();
                 gridControl1.DataSource = NuevaLista;
                 gridView1.BestFitColumns();
                 gridView1.Columns[0].Visible = false;
@@ -151,17 +151,29 @@ namespace Presentacion.Otros
             {
                 if (Bandera == 0)
                 {
-                    a.Aula = txtaula.Text;
-                    a.Capacidad = int.Parse(txtcpacidad.Text);
-                    a.Vacantes = int.Parse(txtcpacidad.Text);
-                    a.GradoId = Convert.ToInt32(LbxGrado.SelectedValue.ToString());
-                    a.Turno = Convert.ToInt32(cbmTurno.SelectedValue.ToString());
-                    n.IngresaAulas(a);
-                    MessageBox.Show("Aula Ingresada con Exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar();
-                    CargarGrados();
-                    CargarLista();
-            }
+                    if (txtaula.Text != "")
+                    {
+                        if (txtcpacidad.Text != "")
+                        {
+                            a.Aula = txtaula.Text;
+                            a.Capacidad = int.Parse(txtcpacidad.Text);
+                            a.Vacantes = int.Parse(txtcpacidad.Text);
+                            a.GradoId = Convert.ToInt32(LbxGrado.SelectedValue.ToString());
+                            a.Turno = Convert.ToInt32(cbmTurno.SelectedValue.ToString());
+                            n.IngresaAulas(a);
+                            MessageBox.Show("Aula Ingresada con Exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Limpiar();
+                            CargarGrados();
+                            CargarLista();
+                        }
+                        else
+                            MessageBox.Show("Ingrese la capacidad del Aula", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingrese el Aula", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
                 if (Bandera == 1)
                 {
                     a.AulaId = Convert.ToInt32(txtaula.Tag);

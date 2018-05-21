@@ -21,14 +21,14 @@ namespace Presentacion.Matricula
             InitializeComponent();
             EstiloMenu x = new EstiloMenu();
             x.AplicarEstilo(this);
-            groupBoxColegio.Hide();
-            CargarGrados();
-            CargaColegio();           
+                  
         }
         public int modificar = 0;
         private void Matricula_Load(object sender, EventArgs e)
         {
             cargarTurno();
+            CargarGrados();
+            CargaColegio();
         }
 
         void cargarTurno()
@@ -40,6 +40,7 @@ namespace Presentacion.Matricula
                 cbmTurnos.DataSource = listaTurnos;
                 cbmTurnos.DisplayMember = "Turno";
                 cbmTurnos.ValueMember = "TurnoId";
+                cbmTurnos.Text = "Seleccione un Turno";
                 
             }
             catch (Exception ex)
@@ -58,6 +59,7 @@ namespace Presentacion.Matricula
                 cbmGrados.DisplayMember = "Grado";
                 cbmGrados.ValueMember = "GradoId";
                 cbmGrados.DataSource = listaGrado;
+                cbmGrados.Text = "Seleccione un Grado";
             }
             catch (Exception ex)
             {
@@ -74,6 +76,7 @@ namespace Presentacion.Matricula
                 cbmColegio.DataSource = listaColegio;
                 cbmColegio.DisplayMember = "Colegio";
                 cbmColegio.ValueMember = "ColegioId";
+                cbmColegio.Text = "Seleccione Colegio";
             }
             catch (Exception ex)
             {
@@ -144,6 +147,10 @@ namespace Presentacion.Matricula
                             matricula.seccion = comboBox1.SelectedValue.ToString();
                             matricula.Repitente = chkrepitente.Checked ? "SI" : "NO";
                             matricula.Turno.TurnoId = Convert.ToInt32(cbmTurnos.SelectedValue.ToString());
+                            //if (cbmColegio.SelectedItem != null)
+                            //    matricula.ColegioId = Convert.ToInt32(cbmColegio.SelectedValue.ToString());
+                            //else
+                            //    matricula.ColegioId = null;
                             matricula.ColegioId = chkPrimerIngreso.Checked ? Convert.ToInt32(cbmColegio.SelectedValue.ToString()) : 0;
                             NMatricula n = new NMatricula();
                             n.IngresarMatricula(matricula);

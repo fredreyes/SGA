@@ -51,7 +51,7 @@ namespace Presentacion.Otros
             try
             {
                 NColegio n = new NColegio();
-                List<EColegios> lista = n.ListaColegios();
+                List<EColegios> lista = n.ListaColegios().OrderBy(x => x.Departamento).ToList();
                 dataGridView1.DataSource = lista;
                 CargarDepartamento();
                 dataGridView1.Columns[0].Visible = false;
@@ -81,13 +81,17 @@ namespace Presentacion.Otros
               
                 if (Bandera == 0)
                 {
-                    C.Colegio = txtcolegio.Text;
-                    C.Telefono = txttelefono.Text;
-                    C.DepartamentoID = Convert.ToInt32(cbmDepartmento.SelectedValue.ToString());
-                    n.IngresarColegio(C);
-                    //MessageBox.Show("Colegio ingresado correctamente", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    limpiar();
-                    CargarColegios();
+                    if (cbmDepartmento.SelectedValue != null)
+                    {
+                        C.Colegio = txtcolegio.Text;
+                        C.Telefono = txttelefono.Text;
+                        C.DepartamentoID = Convert.ToInt32(cbmDepartmento.SelectedValue.ToString());
+                        n.IngresarColegio(C);
+                        limpiar();
+                        CargarColegios();
+                    }
+                    else
+                        MessageBox.Show("Seleccione un departamento");
                 }
                 if (Bandera == 1)
                 {
@@ -155,14 +159,22 @@ namespace Presentacion.Otros
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Colegio"].Value.ToString();
-            txtcolegio.Tag = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["ColegioId"].Value.ToString());
-            txtcolegio.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Colegio"].Value.ToString();
-            txttelefono.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Telefono"].Value.ToString();
-            cbmDepartmento.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Departamento"].Value.ToString();
-            Bandera = 1;
-            chkeditar.Visible = true;
-            chkeditar.Checked = true;
+            try
+            {
+                dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Colegio"].Value.ToString();
+                txtcolegio.Tag = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["ColegioId"].Value.ToString());
+                txtcolegio.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Colegio"].Value.ToString();
+                txttelefono.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Telefono"].Value.ToString();
+                cbmDepartmento.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Departamento"].Value.ToString();
+                Bandera = 1;
+                chkeditar.Visible = true;
+                chkeditar.Checked = true;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

@@ -408,6 +408,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -504,7 +505,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Ciclo.Value</Value>
+                              <Value>=Fields!CicloEscolar.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -755,12 +756,8 @@
           <DataField>FechaMatricula</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="CicloEscolarId">
-          <DataField>CicloEscolarId</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Ciclo">
-          <DataField>Ciclo</DataField>
+        <Field Name="CicloEscolar">
+          <DataField>CicloEscolar</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="AlumnoId">
@@ -791,18 +788,10 @@
           <DataField>Turno</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ColegioId">
-          <DataField>ColegioId</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Colegio">
-          <DataField>Colegio</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DatosBoletaMatricula</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\uSUARIO\Documents\GitHub\SGA\SGA\Presentacion\Matricula\DatosBoletaMatricula.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Freddy\Documents\GitHub\SGA\SGA\Presentacion\Matricula\DatosBoletaMatricula.xsd</rd:SchemaPath>
         <rd:TableName>BoletaMatricula</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

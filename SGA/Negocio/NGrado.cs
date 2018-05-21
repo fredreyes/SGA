@@ -33,6 +33,8 @@ namespace Negocio
                 List<EGrados> lista = ListaGrados().Where(x => x.Grado == g.Grado && x.Tipo == g.Tipo).ToList();
                 if (lista.Count > 0)
                             throw new ArgumentException("El Grado : " + g.Grado + " ya existe");
+                if (g.Tipo == null)
+                    throw new ArgumentException("Seleccione una clasificación");
                 DGrados n = new DGrados();
                 n.IngresarGrados(g);
             }

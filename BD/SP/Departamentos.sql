@@ -7,7 +7,7 @@ create proc IngresarDepartamento
 )
 as
 begin
-		insert into Departamentos
+		insert into dba.Departamentos
 		values
 		(
 			@Departamento
@@ -22,7 +22,7 @@ create proc ModificarDepartamento
 as
 begin
 	begin try
-		update Departamentos
+		update dba.Departamentos
 		set
 			Departamento = @Departamento
 			where DepartamentoId = @DepartamentoId
@@ -40,6 +40,6 @@ create proc EliminarDepartamento
 )
 as
 begin
-delete Departamentos where DepartamentoID = @DepartamentoID
+delete dba.Departamentos where DepartamentoID = @DepartamentoID
 end
 go

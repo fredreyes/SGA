@@ -11,7 +11,7 @@ begin
 	begin try
 	declare @activo bit
 	set @activo = 1
-		insert into Grados 
+		insert into dba.Grados 
 		values
 		(
 		@Grado,
@@ -36,7 +36,7 @@ create proc ModificarGrados
 as
 begin
 	begin try
-	update Grados 
+	update dba.Grados 
 		set		
 		Grado = @Grado,
 		Tipo = @Tipo,
@@ -55,6 +55,6 @@ create proc eliminarGrado
 )
 as
 begin
-	delete Grados where GradoId  = @GradoId
+	delete dba.Grados where GradoId  = @GradoId
 end
 go

@@ -213,7 +213,7 @@ namespace Presentacion
         }
         public void CloseScreen()
         {
-            SplashScreenManager.CloseForm();
+          SplashScreenManager.CloseForm();
         }
 
         private void buscarDocenteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -227,6 +227,21 @@ namespace Presentacion
             ShowScreen();
             Funcionarios.AgregarFuncionario a = new Funcionarios.AgregarFuncionario();
             a.ShowDialog();
+        }
+
+        private void funcionariosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void nuevoAlumnoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Student.AddNewStudent().ShowDialog();
         }
     }
 }

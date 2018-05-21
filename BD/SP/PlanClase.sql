@@ -10,15 +10,15 @@ as
 begin
 declare @PlanClase int
 select @PlanClase = ISNULL(max(PlanClaseID),0) +1 from PlanClase 
-declare @CicloEscolarID int
-select @CicloEscolarID = (select CicloEscolarId from CicloEscolar where Activo = 1)
+declare @CicloEscolar int
+select @CicloEscolar = (select Ciclo from dba.Parametros where Descripcion = 'CicloAcademico' and Activo = 1)
 
 insert into PlanClase  values 
 (
 @PlanClase,
 @AsignaturaId,
 @GradoId,
-@CicloEscolarID
+@CicloEscolar
 )
 end
 go
@@ -26,10 +26,9 @@ go
 create PROC ListaPlandeClase
 as
 begin
-select PlanClaseID,PC.AsignaturaId,A.Asignatura,PC.GradoId,G.Grado,PC.CicloEscolarID,CE.Ciclo from PlanClase PC
-inner join Asignaturas A ON PC.AsignaturaId = A.AsignaturaId
-INNER JOIN Grados G ON PC.GradoId = G.GradoId
-INNER JOIN CicloEscolar CE ON PC.CicloEscolarID = CE.CicloEscolarId
+select PlanClaseID,PC.AsignaturaId,A.Asignatura,PC.GradoId,G.Grado, CicloEscolar from PlanClase PC
+inner join dba.Asignaturas A ON PC.AsignaturaId = A.AsignaturaId
+INNER JOIN dba.Grados G ON PC.GradoId = G.GradoId
 order by PC.GradoId 
 end
 go
@@ -39,9 +38,11 @@ go
 select * from PlanClase PC
 inner join 
 (
-select * from Asignaturas
-where AsignaturaId in (select AsignaturaId from PlanClase where GradoId = 1)) a 
+select * from dba.Asignaturas
+where AsignaturaId in (select AsignaturaId from PlanClase where GradoId = 12)) a 
 on PC.AsignaturaId = a.AsignaturaId
-where GradoId = 1
+where GradoId = 12
+
+
 
 

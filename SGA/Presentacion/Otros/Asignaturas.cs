@@ -47,6 +47,7 @@ namespace Presentacion.Otros
                 NAsignatura n = new NAsignatura();
                 List<EAsignatura> l = n.ListaAsignatura();
                 dataGridView1.DataSource = l;
+                dataGridView1.Columns[0].Visible = false;
                 for (int i = 0; i < dataGridView1.RowCount; i++)
                 {
                     if (Convert.ToBoolean(dataGridView1.Rows[i].Cells["Activo"].Value.ToString()) == false)
@@ -55,9 +56,7 @@ namespace Presentacion.Otros
                     }
                     else
                         dataGridView1.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
-
                 }
-                dataGridView1.Columns[0].Visible = false;
             }
             catch (Exception ex)
             {
@@ -82,10 +81,10 @@ namespace Presentacion.Otros
                     n.IngresarAsignatura(E);
                     txtasignatura.Clear();
                     chkEditar.Checked = false;
-                    CargarLista();
                     MessageBox.Show("Asignatura Ingresado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtasignatura.Focus();
                     chkEditar.Visible = false;
+                    CargarLista();
                 }
                 if (Bandera == 1)
                 {
@@ -96,7 +95,6 @@ namespace Presentacion.Otros
                     E.Activo = Convert.ToBoolean(rbtnactivo.Checked ? 1 : 0);
                     n.ModificarAsignatura(E);
                     txtasignatura.Clear();
-                    CargarLista();
                     chkEditar.Checked = false;
                     rbtnactivo.Visible = false;
                     rbtnCancelar.Visible = false;
@@ -104,6 +102,7 @@ namespace Presentacion.Otros
                     Bandera = 0;
                     txtasignatura.Focus();
                     chkEditar.Visible = false;
+                    CargarLista();
                 }
             }
             catch (Exception ex)

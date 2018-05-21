@@ -30,7 +30,11 @@ namespace Presentacion.Funcionarios
         public int Bandera = 0;
         private void AgregarFuncionario_Load(object sender, EventArgs e)
         {
+            if (this.Text == "Editar Funcionario")
+                new Funcionarios().CloseScreen();
+            else
             new frmPrincipal().CloseScreen();
+           
         }
         void Limpiar()
         {
@@ -123,10 +127,6 @@ namespace Presentacion.Funcionarios
                     MessageBox.Show("Funcionario Modificado con exito","SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
                     this.Close();
-                    Funcionarios x = new Funcionarios();
-                    x.Show();
-                    
-             
                 }
             }
             catch (Exception ex)

@@ -40,6 +40,7 @@ namespace Presentacion.Matricula
                                       i.Grados.Grado,
                                       i.seccion,
                                       i.Turno.Turno,
+                                      i.Colegio,
                                       i.Repitente
                                   }).ToList();
                 gridControl1.DataSource = nuevaLista;

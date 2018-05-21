@@ -114,25 +114,30 @@ namespace Presentacion.Funcionarios
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
+            if (dataGridView1.RowCount > 0)
             {
-                EOcupaciones o = new EOcupaciones();
-                o.OcupacionId = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["OcupacionId"].Value.ToString());
-                var i = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Ocupacion"].Value.ToString();
-                DialogResult d = MessageBox.Show("¿Realmente desea Eliminar la ocupacion " + i + "?", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                if (d == DialogResult.OK)
+                try
                 {
-                    NOcupaciones n = new NOcupaciones();
-                    n.EliminarOcupacion(o);
-                    MessageBox.Show("Eliminado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Cargar();
+                    EOcupaciones o = new EOcupaciones();
+                    o.OcupacionId = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["OcupacionId"].Value.ToString());
+                    var i = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Ocupacion"].Value.ToString();
+                    DialogResult d = MessageBox.Show("¿Realmente desea Eliminar la ocupacion " + i + "?", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    if (d == DialogResult.OK)
+                    {
+                        NOcupaciones n = new NOcupaciones();
+                        n.EliminarOcupacion(o);
+                        MessageBox.Show("Eliminado con exito", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Cargar();
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message, "SGA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message,"SGA",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
+            else
+                MessageBox.Show("No hay registros que Eliminar", "SGA", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)

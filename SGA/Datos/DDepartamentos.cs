@@ -19,7 +19,7 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("SELECT * FROM Departamentos");
+                comando = new SqlCommand("SELECT * FROM dba.Departamentos");
                 comando.CommandType = CommandType.Text;
                 comando.Connection = conexion;
                 conexion.Open();

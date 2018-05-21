@@ -16,9 +16,11 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand
-               ("select FuncionarioId,Nombres,Apellidos,Cedula,Sexo,FechaNacimiento,Telefono,Cargo,F.OcupacionId,Ocupacion,Email,Foto,Activo,isDocente \n"+
-               "from funcionarios f inner join ProfesionOcupacion po on f.OcupacionId = po.OcupacionId",conexion);
+                string sql = "select FuncionarioId,Nombres,Apellidos,Cedula,Sexo,FechaNacimiento,Telefono,Cargo,F.OcupacionId,  \n"+
+                              "Ocupacion,Email,Foto,Activo,isDocente \n" +
+                              "from dbd.funcionarios f \n" +
+                               "inner join dbd.ProfesionOcupacion po on f.OcupacionId = po.OcupacionId";
+                comando = new SqlCommand(sql,conexion);
                 comando.CommandType = CommandType.Text;
                 comando.Connection = conexion;
                 conexion.Open();
@@ -57,7 +59,9 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("select FuncionarioId,Nombres,Apellidos,Telefono,Cargo from Funcionarios where FuncionarioId not in (select FuncionarioID from Usuarios)", conexion);
+                string sql = "select FuncionarioId,Nombres,Apellidos,Telefono,Cargo \n"+
+                             "from dbd.Funcionarios where FuncionarioId not in (select FuncionarioID from Usuarios)";
+                comando = new SqlCommand(sql, conexion);
                 comando.CommandType = CommandType.Text;
                 comando.Connection = conexion;
                 conexion.Open();

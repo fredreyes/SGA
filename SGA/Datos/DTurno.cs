@@ -17,9 +17,8 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("select * from turnos");
+                comando = new SqlCommand("select * from dba.turnos", conexion);
                 comando.CommandType = CommandType.Text;
-                comando.Connection = conexion;
                 conexion.Open();
                 List<ETurnos> lista = new List<ETurnos>();
                 SqlDataReader leer = comando.ExecuteReader();

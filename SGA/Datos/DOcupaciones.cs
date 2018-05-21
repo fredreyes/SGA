@@ -17,7 +17,7 @@ namespace Datos
         {
             try
             {
-                comando = new SqlCommand("select * from ProfesionOcupacion", conexion);
+                comando = new SqlCommand("select * from dbd.ProfesionOcupacion", conexion);
                 comando.Connection = conexion;
                 conexion.Open();
                 SqlDataReader leer = comando.ExecuteReader();

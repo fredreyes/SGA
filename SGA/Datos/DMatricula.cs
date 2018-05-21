@@ -72,17 +72,15 @@ namespace Datos
                 a.MatriculaId = (int)leer[0];
                 a.FechaMatricula = (DateTime)leer[1];
                 a.Ciclo.CicloEscolarId = (int)leer[2];
-                a.Ciclo.ciclo = (int)leer[3];
-                a.Alumnos.AlumnoId = (int)leer[4];
-                a.Alumnos.Nombres = leer[5].ToString();
-                a.Grados.GradoId = (int)leer[6];
-                a.Grados.Grado = leer[7].ToString();
-                a.seccion = leer[8].ToString();
-                a.Turno.TurnoId = (int)leer[9];
-                a.Turno.Turno = leer[10].ToString();
-                a.ColegioId = (int)leer[11];
-                a.Colegio = leer[12].ToString();
-                a.Repitente = leer[13].ToString();
+                a.Alumnos.AlumnoId = (int)leer[3];
+                a.Alumnos.Nombres = leer[4].ToString();
+                a.Grados.GradoId = (int)leer[5];
+                a.Grados.Grado = leer[6].ToString();
+                a.seccion = leer[7].ToString();
+                a.Turno.TurnoId = (int)leer[8];
+                a.Turno.Turno = leer[9].ToString();
+                a.Colegio = leer[10].ToString();
+                a.Repitente = leer[11].ToString();
                 lista.Add(a);
             }
             leer.Close();

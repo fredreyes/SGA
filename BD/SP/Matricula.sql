@@ -17,7 +17,7 @@ declare @MatriculaId int
 declare @CicloEscolarId INT
 declare @FechaMatricula DATE
 set @FechaMatricula = GETDATE()
-set @CicloEscolarId = (select CicloEscolarId from CicloEscolar where Activo = 1)
+set @CicloEscolarId = (select Ciclo from dba.Parametros where Descripcion = 'CicloAcademico')
 select @MatriculaId = isnull(Max(MatriculaId),0) + 1 from Matricula
 	insert into Matricula values
 	(
@@ -43,7 +43,7 @@ begin
 		declare  @Grado int = (select GradoId from inserted)
 		declare @TurnoId int = (select TurnoId  from inserted)
 		declare @seccion nvarchar(10) = (select Seccion from inserted)
-		update Aulas set 
+		update dba.Aulas set 
 		Vacantes = Vacantes - 1
 		where GradoId = @Grado and TurnoId = @TurnoId and @seccion = Aula
 end
@@ -57,7 +57,7 @@ create proc mostrarVacantesAula
 )
 as
 begin
-select Aula,Vacantes from Aulas
+select Aula,Vacantes from dba.Aulas
 where GradoId = @Gradoid and TurnoId = @Turno
 end
 go
@@ -65,20 +65,18 @@ go
 
 
 --ReporteMatricula
-create proc BoletaMatricula
+alter proc BoletaMatricula
 (
 @Matriculaid int
 )
 as
 begin
-select MatriculaId,FechaMatricula,m.CicloEscolarId, CE.Ciclo, M.AlumnoId, A.Nombres + ' ' + A.Apellidos [Estudiante],
-M.GradoId, G.Grado, Seccion, M.TurnoId, T.Turno, m.ColegioId,c.Colegio
+select MatriculaId,FechaMatricula,CicloEscolar, M.AlumnoId, A.Nombres + ' ' + A.Apellidos [Estudiante],
+M.GradoId, G.Grado, Seccion, M.TurnoId, T.Turno
 from Matricula M
 inner join Alumnos A ON M.AlumnoId = A.AlumnoId
-INNER JOIN Grados G ON M.GradoId = G.GradoId
-INNER JOIN Turnos T ON M.TurnoId = T.TurnoId
-INNER JOIN Colegio C ON M.ColegioId = C.ColegioId
-INNER JOIN CicloEscolar CE ON M.CicloEscolarId = CE.CicloEscolarId
+INNER JOIN dba.Grados G ON M.GradoId = G.GradoId
+INNER JOIN dba.Turnos T ON M.TurnoId = T.TurnoId
 where MatriculaId = @Matriculaid
 end
 go
@@ -86,13 +84,41 @@ go
 create proc ListaMatricula
 as
 begin
-select MatriculaId,FechaMatricula,m.CicloEscolarId, CE.Ciclo, M.AlumnoId, A.Nombres + ' ' + A.Apellidos [Estudiante],
-M.GradoId, G.Grado, Seccion, M.TurnoId, T.Turno, m.ColegioId,c.Colegio,Repitente
+select 
+MatriculaId,
+FechaMatricula,
+CicloEscolar,
+M.AlumnoId,
+A.Nombres + ' ' + A.Apellidos [Estudiante],
+M.GradoId,
+G.Grado, 
+Seccion, 
+M.TurnoId, 
+T.Turno, 
+'Colegio' = 
+CASE
+WHEN M.CicloEscolar = 0 THEN ''
+ELSE
+(SELECT Colegio FROM dba.Colegio where ColegioId = m.ColegioId)
+END,
+m.Repitente
 from Matricula M
 inner join Alumnos A ON M.AlumnoId = A.AlumnoId
-INNER JOIN Grados G ON M.GradoId = G.GradoId
-INNER JOIN Turnos T ON M.TurnoId = T.TurnoId
-INNER JOIN Colegio C ON M.ColegioId = C.ColegioId
-INNER JOIN CicloEscolar CE ON M.CicloEscolarId = CE.CicloEscolarId
+INNER JOIN dba.Grados G ON M.GradoId = G.GradoId
+INNER JOIN dba.Turnos T ON M.TurnoId = T.TurnoId
 end
 go
+
+create proc ListaAlumnoMatricula
+as
+begin
+select a.AlumnoId,Nombres,Apellidos,Sexo,FechaNacimiento,Direccion,CodigoMined,Activo
+ from Alumnos a
+inner join DocumentosAlumnos d on a.AlumnoId=d.AlumnoId
+inner join PadresTutorAlumno p on a.AlumnoId=p.AlumnoId
+inner join AlumnosTutor ATU on a.AlumnoId = ATU.AlumnoId
+where a.AlumnoId not in (select AlumnoId from Matricula)
+end
+go
+
+

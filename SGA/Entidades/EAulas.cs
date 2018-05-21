@@ -11,7 +11,7 @@ namespace Entidades
         public int AulaId { get; set; }
         public string Aula { get; set; }
         public int Capacidad { get; set; }
-        public int Vacantes { get; set; }
+        public int? Vacantes { get; set; }
         public int Turno { get; set; }
         public string TurnoName { get; set; }
         public new bool Activo { get; set; }

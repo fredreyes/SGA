@@ -9,7 +9,7 @@ create Proc LoginUsuario
 as
 begin
 select UsuarioID,Usuario,Password,U.FuncionarioID,f.Nombres,f.Apellidos,u.RolId, r.descripcion,r.Matricula,r.Administracion,r.Funcionarios,r.Calificaciones,u.Activo from Usuarios U
-inner join Funcionarios f on U.FuncionarioID = f.FuncionarioId
+inner join dbd.Funcionarios f on U.FuncionarioID = f.FuncionarioId
 inner join Rol r on U.RolId = r.RolId
 where Usuario = @Usuario and Password = HASHBYTES('SHA1',@Password) and u.Activo = 1
 end
@@ -81,7 +81,7 @@ on Alumnos  after insert
 as
 begin
 declare @msg int
-declare @userName nvarchar(100) =(select Nombres from inserted)
+declare @userName nvarchar(100) =(select Nombres+Apellidos from inserted)
 declare @Password nvarchar(max)
 set @Password = '123'
 declare @UserID int = (select AlumnoId from inserted)
@@ -102,9 +102,9 @@ select @UsuarioID = ISNULL(max(UsuarioID),0)+1 from Users
 		insert into Users values
 		(
 		@UsuarioID,
+		@UserID,
 		@userName,
 		HASHBYTES('SHA1',@Password),
-		@UserID,
 		@FechaCreacion,
 		@Tipo,
 		@Activo

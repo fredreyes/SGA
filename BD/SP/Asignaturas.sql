@@ -9,7 +9,7 @@ as
 begin
 		declare @activo bit
 		set @activo = 1
-		insert into Asignaturas values
+		insert into dba.Asignaturas values
 		(
 		@Asignatura,
 		@activo
@@ -25,7 +25,7 @@ create proc ModificarAsignatura
 )
 as
 begin
-		update Asignaturas set
+		update dba.Asignaturas set
 		Asignatura = @Asignatura,
 		Activo = @activo
 		where AsignaturaId = @AsignaturaId
@@ -38,7 +38,7 @@ create proc EliminarAsignatura
 )
 as
 begin
-		delete Asignaturas
+		delete dba.Asignaturas
 		where AsignaturaId = @AsignaturaId
 end
 go

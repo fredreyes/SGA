@@ -11,6 +11,8 @@ using Entidades;
 using Negocio;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using DevExpress.XtraSplashScreen;
+
 namespace Presentacion.Funcionarios
 {
     public partial class Funcionarios : MaterialForm
@@ -150,8 +152,21 @@ namespace Presentacion.Funcionarios
             agregarFuncionaroio.chkactivo.Visible = true;
             agregarFuncionaroio.chkcancelar.Visible = true;
             agregarFuncionaroio.Bandera = 1;
-            this.Hide();
-            agregarFuncionaroio.ShowDialog();
+            ShowScreen();
+            agregarFuncionaroio.Show();
+        }
+        public void ShowScreen()
+        {
+            SplashScreenManager.ShowForm(typeof(WaitFormGlobal));
+        }
+        public void CloseScreen()
+        {
+            SplashScreenManager.CloseForm();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            CargarFuncionarios();
         }
     }
 }

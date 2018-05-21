@@ -131,7 +131,7 @@ namespace Presentacion.Student
         }
         private void btncancelar_Click(object sender, EventArgs e)
         {
-           // txtbuscaralumno.Text = "";
+            txtbuscaralumno.Text = "";
             txtapellidos.Clear();
             txtcarnet.Clear();
             txtnombres.Clear();
